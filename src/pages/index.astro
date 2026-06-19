@@ -12,7 +12,17 @@ import { link } from '../lib/paths';
 const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
 const domainIcons = Object.fromEntries(lenses.map((d) => [d.key, d.icon]));
-const featured = terms.filter((t) => ['agent', 'llm', 'token'].includes(t.id)).slice(0, 3);
+
+// 3 Einstiegsbegriffe rotieren täglich per Build-Datum
+const buildDate = new Date();
+const yearStart = new Date(buildDate.getFullYear(), 0, 1);
+const dayOfYear = Math.floor((buildDate.getTime() - yearStart.getTime()) / (1000 * 60 * 60 * 24));
+const startIdx = dayOfYear % terms.length;
+const featured = [
+  terms[startIdx % terms.length],
+  terms[(startIdx + 1) % terms.length],
+  terms[(startIdx + 2) % terms.length],
+];
 ---
 <BaseLayout title="Von K.A. zu K.I.">
   <Hero />
@@ -27,7 +37,7 @@ const featured = terms.filter((t) => ['agent', 'llm', 'token'].includes(t.id)).s
       </a>
       <a class="card path-card" href={link('domaenen/')}>
         <h3>🔭 Domänenbrillen ansehen</h3>
-        <p class="muted">Dieselben Begriffe, erklärt über Automotive, Public Sector und Healthcare.</p>
+        <p class="muted">Dieselben Begriffe, erklärt über Automotive, Public Sector, Healthcare und Finance & Banking.</p>
       </a>
       <a class="card path-card" href={link('#oekosystem')}>
         <h3>🗺️ KI-Ökosystem verstehen</h3>
@@ -45,9 +55,9 @@ const featured = terms.filter((t) => ['agent', 'llm', 'token'].includes(t.id)).s
   </section>
 
   <section class="section container">
-    <h2>Drei Brillen, eine Sache</h2>
+    <h2>Vier Brillen, eine Sache</h2>
     <p class="lead">Eine Analogie ist eine Brille, nicht die Realität. Jede hat eine ehrliche Grenze.</p>
-    <div class="grid grid--3" style="margin-top:1.5rem">
+    <div class="grid grid--2" style="margin-top:1.5rem">
       {lenses.map((domain) => <DomainLensCard domain={domain} />)}
     </div>
   </section>

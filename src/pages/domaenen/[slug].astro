@@ -21,7 +21,11 @@ const best = domain.bestExplainedTerms
 ---
 <BaseLayout title={domain.name} description={domain.tagline}>
   <article class="section container">
-    <p class="breadcrumb"><a href={link('domaenen/')}>← Domänenbrillen</a></p>
+    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+      <a href={link('domaenen/')}>Domänenbrillen</a>
+      <span aria-hidden="true"> › </span>
+      <span aria-current="page">{domain.name}</span>
+    </nav>
     <header style="margin-bottom:2rem">
       <span class="domain-hero-icon" aria-hidden="true">{domain.icon}</span>
       <h1>{domain.name}</h1>

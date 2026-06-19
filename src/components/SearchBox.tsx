@@ -12,6 +12,7 @@ const difficultyLabel: Record<string, string> = {
   intermediate: 'Aufbau',
   advanced: 'Vertiefung',
 };
+const difficultyOrder: Record<string, number> = { basic: 0, intermediate: 1, advanced: 2 };
 const relevanceLabel: Record<string, string> = { low: 'gering', medium: 'mittel', high: 'hoch' };
 
 // Base-bewusste Linkaufloesung, auch clientseitig (Vite inlined BASE_URL).
@@ -24,6 +25,7 @@ export default function SearchBox({ terms, domains }: Props) {
   const [lens, setLens] = useState('');
   const [difficulty, setDifficulty] = useState('');
   const [relevance, setRelevance] = useState('');
+  const [sort, setSort] = useState<'alpha' | 'learn'>('alpha');
 
   const categories = useMemo(
     () => Array.from(new Set(terms.map((t) => t.category))),
@@ -54,14 +56,20 @@ export default function SearchBox({ terms, domains }: Props) {
   const results = useMemo(() => {
     let list = query.trim()
       ? fuse.search(query.trim()).map((r) => r.item)
-      : terms.slice().sort((a, b) => a.term.localeCompare(b.term, 'de'));
+      : terms.slice().sort((a, b) => {
+          if (sort === 'learn') {
+            const diff = (difficultyOrder[a.difficulty] ?? 0) - (difficultyOrder[b.difficulty] ?? 0);
+            if (diff !== 0) return diff;
+          }
+          return a.term.localeCompare(b.term, 'de');
+        });
 
     if (category) list = list.filter((t) => t.category === category);
     if (lens) list = list.filter((t) => Object.keys(t.domainAnalogies).includes(lens));
     if (difficulty) list = list.filter((t) => t.difficulty === difficulty);
     if (relevance) list = list.filter((t) => t.enterpriseRelevance === relevance);
     return list;
-  }, [query, category, lens, difficulty, relevance, fuse, terms]);
+  }, [query, category, lens, difficulty, relevance, sort, fuse, terms]);
 
   const activeFilters = [category, lens, difficulty, relevance].filter(Boolean).length;
   const reset = () => {
@@ -122,9 +130,31 @@ export default function SearchBox({ terms, domains }: Props) {
         )}
       </div>
 
+      {!query && (
+        <div className="sort-bar" role="group" aria-label="Sortierung">
+          <span className="sort-bar__label">Sortierung:</span>
+          <button
+            type="button"
+            className="sort-btn"
+            aria-pressed={sort === 'alpha'}
+            onClick={() => setSort('alpha')}
+          >
+            A – Z
+          </button>
+          <button
+            type="button"
+            className="sort-btn"
+            aria-pressed={sort === 'learn'}
+            onClick={() => setSort('learn')}
+          >
+            Lernbogen
+          </button>
+        </div>
+      )}
+
       <p className="search__count" aria-live="polite">
         {results.length} {results.length === 1 ? 'Begriff' : 'Begriffe'}
-        {query ? ` für „${query}“` : ''}
+        {query ? ` für „${query}"` : ''}
       </p>
 
       {results.length === 0 ? (
@@ -139,7 +169,7 @@ export default function SearchBox({ terms, domains }: Props) {
               </div>
               <p className="search-card__def">{t.shortDefinition}</p>
               <div className="search-card__meta">
-                <span className="badge">{difficultyLabel[t.difficulty] ?? t.difficulty}</span>
+                <span className={`badge badge--${t.difficulty}`}>{difficultyLabel[t.difficulty] ?? t.difficulty}</span>
                 <span className="badge">Enterprise: {relevanceLabel[t.enterpriseRelevance]}</span>
                 <span className="search-card__lenses" aria-label="Verfügbare Brillen">
                   {Object.keys(t.domainAnalogies).map((k) => (

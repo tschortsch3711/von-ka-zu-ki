@@ -24,15 +24,21 @@ const relevanceLabel: Record<string, string> = { low: 'gering', medium: 'mittel'
 const related = term.relatedTerms
   .map((id) => allTerms.find((t) => t.id === id || t.slug === id))
   .filter((t): t is GlossaryTerm => Boolean(t));
+
+const analogyEntries = Object.entries(term.domainAnalogies);
 ---
 <BaseLayout title={term.term} description={term.shortDefinition}>
   <article class="section container term">
-    <p class="breadcrumb"><a href={link('glossar/')}>← Glossar</a></p>
+    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+      <a href={link('glossar/')}>Glossar</a>
+      <span aria-hidden="true"> › </span>
+      <span aria-current="page">{term.term}</span>
+    </nav>
 
     <header class="term__header">
       <div class="term__badges">
         <span class="badge badge--accent">{term.category}</span>
-        <span class="badge">{difficultyLabel[term.difficulty] ?? term.difficulty}</span>
+        <span class={`badge badge--${term.difficulty}`}>{difficultyLabel[term.difficulty] ?? term.difficulty}</span>
         <span class="badge">Enterprise-Relevanz: {relevanceLabel[term.enterpriseRelevance] ?? term.enterpriseRelevance}</span>
       </div>
       <h1>{term.term}</h1>
@@ -69,17 +75,42 @@ const related = term.relatedTerms
     )}
 
     <section>
-      <h2>Drei Brillen</h2>
-      <p class="muted">Dieselbe Sache, über drei bekannte Domänen erklärt. Jede Analogie hat eine ehrliche Grenze.</p>
-      <div class="lens-grid" style="margin-top:1rem">
-        {Object.entries(term.domainAnalogies).map(([key, a]) => {
+      <h2>Domänenbrillen</h2>
+      <p class="muted">Dieselbe Sache, über bekannte Domänen erklärt. Jede Analogie hat eine ehrliche Grenze.</p>
+
+      <div class="lens-tabs" role="tablist" aria-label="Domänenbrille wählen" id="lens-tabs">
+        {analogyEntries.map(([key], i) => {
           const d = byKey[key];
           return (
-            <div class="lens-card">
+            <button
+              class="lens-tab"
+              role="tab"
+              aria-selected={i === 0 ? 'true' : 'false'}
+              aria-controls={`lens-panel-${key}`}
+              id={`lens-tab-${key}`}
+              type="button"
+            >
+              <span aria-hidden="true">{d?.icon ?? '🔭'}</span> {d?.name ?? key}
+            </button>
+          );
+        })}
+      </div>
+
+      <div class="lens-grid" style="margin-top:1rem">
+        {analogyEntries.map(([key, a], i) => {
+          const d = byKey[key];
+          return (
+            <div
+              class="lens-card"
+              role="tabpanel"
+              id={`lens-panel-${key}`}
+              aria-labelledby={`lens-tab-${key}`}
+              data-lens-panel
+            >
               <h4><span aria-hidden="true">{d?.icon ?? '🔭'}</span> {d?.name ?? key}</h4>
               <p><strong>{a.analogy}</strong></p>
               <p class="muted">{a.explanation}</p>
-              <p class="lens-limit"><strong>Wo die Analogie an Grenzen stößt</strong>{a.limits}</p>
+              <p class="lens-limit"><strong>⚠ Wo die Analogie an Grenzen stößt</strong>{a.limits}</p>
             </div>
           );
         })}
@@ -103,4 +134,48 @@ const related = term.relatedTerms
     .related-pill { font-size: 0.85rem; text-transform: none; letter-spacing: 0; padding: 0.4em 0.8em; }
     .related-pill:hover { text-decoration: none; filter: brightness(1.05); }
   </style>
+
+  <script is:inline>
+    (function () {
+      var tabs = document.querySelectorAll('.lens-tab');
+      var panels = document.querySelectorAll('[data-lens-panel]');
+      if (!tabs.length) return;
+
+      function activate(index) {
+        tabs.forEach(function (t, i) {
+          t.setAttribute('aria-selected', i === index ? 'true' : 'false');
+        });
+        if (window.innerWidth < 640) {
+          panels.forEach(function (p, i) {
+            if (i === index) p.removeAttribute('hidden');
+            else p.setAttribute('hidden', '');
+          });
+        }
+        try { localStorage.setItem('vkzk-lens-tab', String(index)); } catch (e) {}
+      }
+
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { activate(i); });
+      });
+
+      if (window.innerWidth < 640) {
+        var saved = 0;
+        try { saved = parseInt(localStorage.getItem('vkzk-lens-tab') || '0', 10) || 0; } catch (e) {}
+        activate(saved < tabs.length ? saved : 0);
+      }
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 640) {
+          panels.forEach(function (p) { p.removeAttribute('hidden'); });
+        } else {
+          var active = 0;
+          try { active = parseInt(localStorage.getItem('vkzk-lens-tab') || '0', 10) || 0; } catch (e) {}
+          panels.forEach(function (p, i) {
+            if (i === active) p.removeAttribute('hidden');
+            else p.setAttribute('hidden', '');
+          });
+        }
+      });
+    })();
+  </script>
 </BaseLayout>
