@@ -3,7 +3,11 @@
     "id": "ki",
     "slug": "ki",
     "term": "KI / AI",
-    "aliases": ["Künstliche Intelligenz", "Artificial Intelligence", "AI"],
+    "aliases": [
+      "Künstliche Intelligenz",
+      "Artificial Intelligence",
+      "AI"
+    ],
     "category": "Grundlagen",
     "difficulty": "basic",
     "enterpriseRelevance": "high",
@@ -30,16 +34,32 @@
         "analogy": "Die Medizin als Fachgebiet, nicht ein einzelnes Gerät",
         "explanation": "Medizin reicht von Diagnostik bis Therapie; KI reicht von Mustererkennung bis Sprachverarbeitung. Beides sind Oberbegriffe für viele Werkzeuge.",
         "limits": "Medizin hat Evidenz und Verantwortung als Fundament; KI liefert Wahrscheinlichkeiten ohne eigene Verantwortung."
+      },
+      "finance": {
+        "analogy": "Das gesamte Risikomanagement-Framework einer Bank, nicht ein einzelnes Risikomodell",
+        "explanation": "So wie das Risikomanagement-Framework einer Bank Kreditrisikomodelle, Marktrisikosysteme, Compliance-Filter und interne Kontrollen unter einem Dach bündelt, ist KI der Oberbegriff für viele verschiedene Verfahren – von Scoring-Algorithmen bis zu Sprachmodellen. Ebenso wie das Framework je nach Risikoart unterschiedliche Methoden einsetzt, bedient sich KI je nach Aufgabe unterschiedlicher Ansätze. Für Regulatoren wie die BaFin ist das Gesamtframework genehmigungspflichtig, nicht nur einzelne Modelle.",
+        "limits": "Ein Risikomanagement-Framework unterliegt klaren regulatorischen Vorgaben (Basel III/IV, SR 11-7) und hat definierte Verantwortlichkeiten; KI-Systeme hingegen unterliegen noch uneinheitlicher Regulierung und tragen keine rechtliche Eigenverantwortung."
       }
     },
-    "relatedTerms": ["machine-learning", "llm", "foundation-model", "ai-governance"],
-    "tags": ["grundlagen", "oberbegriff"]
+    "relatedTerms": [
+      "machine-learning",
+      "llm",
+      "foundation-model",
+      "ai-governance"
+    ],
+    "tags": [
+      "grundlagen",
+      "oberbegriff"
+    ]
   },
   {
     "id": "machine-learning",
     "slug": "machine-learning",
     "term": "Machine Learning",
-    "aliases": ["Maschinelles Lernen", "ML"],
+    "aliases": [
+      "Maschinelles Lernen",
+      "ML"
+    ],
     "category": "Grundlagen",
     "difficulty": "basic",
     "enterpriseRelevance": "high",
@@ -66,16 +86,34 @@
         "analogy": "Diagnostische Erfahrung aus vielen gesehenen Fällen",
         "explanation": "Wie Erfahrung aus vielen Patientenfällen das Erkennen typischer Muster schult, lernt ML aus großen Falldatenmengen.",
         "limits": "Ärztliche Erfahrung wird durch Evidenz und Reflexion korrigiert; ein Modell prüft seine Muster nicht selbst auf Sinnhaftigkeit."
+      },
+      "finance": {
+        "analogy": "Ein IRB-Kreditrisikomodell, das PD-Schätzungen aus historischen Ausfalldaten ableitet statt aus fest kodierten Expertenregeln",
+        "explanation": "Wie beim Internal Ratings-Based Approach die Bank aus Tausenden historischer Kreditakten Muster zu Ausfallwahrscheinlichkeiten ableitet und auf neue Kreditnehmer überträgt, lernt ein ML-Modell aus Beispieldaten statt aus manuell programmierten Regeln. Das Modell verbessert seine Schätzungen, wenn es mit mehr Daten gespeist wird – ähnlich wie ein IRB-Modell durch erweitertes Datenfundament an Trennschärfe gewinnt. Für Backtesting und Validierung gelten analoge Anforderungen: Beide müssen zeigen, dass die gelernten Muster auf neue, ungesehene Daten übertragbar sind.",
+        "limits": "Ein IRB-Modell liefert aufsichtsrechtlich prüfbare, erklärbare Treiber für jede PD-Schätzung; viele ML-Verfahren sind Black Boxes, die das Vier-Augen-Prinzip und den Audit-Trail im Sinne von SR 11-7 erschweren."
       }
     },
-    "relatedTerms": ["ki", "llm", "training-finetuning", "embeddings"],
-    "tags": ["grundlagen", "lernen", "daten"]
+    "relatedTerms": [
+      "ki",
+      "llm",
+      "training-finetuning",
+      "embeddings"
+    ],
+    "tags": [
+      "grundlagen",
+      "lernen",
+      "daten"
+    ]
   },
   {
     "id": "llm",
     "slug": "llm",
     "term": "LLM (Large Language Model)",
-    "aliases": ["Large Language Model", "Großes Sprachmodell", "Sprachmodell"],
+    "aliases": [
+      "Large Language Model",
+      "Großes Sprachmodell",
+      "Sprachmodell"
+    ],
     "category": "Grundlagen",
     "difficulty": "basic",
     "enterpriseRelevance": "high",
@@ -102,16 +140,35 @@
         "analogy": "Ein Lehrbuch-Gedächtnis ohne Patientenakte",
         "explanation": "Das Modell kennt viel Allgemeinwissen aus dem Training, aber nicht den konkreten Patienten, solange ihm keine Befunde gegeben werden.",
         "limits": "Lehrbuchwissen ohne aktuelle Evidenz kann veraltet oder falsch sein; medizinische Entscheidungen brauchen geprüfte Quellen und ärztliche Verantwortung."
+      },
+      "finance": {
+        "analogy": "Ein statistisches Scoringmodell, das aus Millionen Kreditakten Muster lernt und für neue Anfragen Wahrscheinlichkeiten formuliert – ohne die wirtschaftlichen Gründe dahinter zu kennen",
+        "explanation": "Ein LLM funktioniert wie ein hochdimensionales Scoring-System, das nicht Ausfallwahrscheinlichkeiten, sondern wahrscheinliche Wortfolgen aus riesigen Textmengen ableitet. So wie ein Kreditscoring-Modell keine kausalen Zusammenhänge kennt, sondern statistische Korrelationen nutzt, generiert das LLM Antworten, die plausibel klingen, ohne ein echtes Verständnis des Inhalts zu haben. Für Compliance-Beauftragte bedeutet das: Die Ausgabe kann regulatorisch korrekt klingen, ohne es zu sein.",
+        "limits": "Ein Kreditscoring-Modell liefert eine einzige, reproduzierbare Ausgabe mit definierten Konfidenzintervallen und ist vollständig dokumentierbar; ein LLM erzeugt bei gleicher Eingabe unterschiedliche Antworten und kann Fakten überzeugend falsch darstellen – was Audit-Trail-Anforderungen fundamental widerspricht."
       }
     },
-    "relatedTerms": ["ki", "machine-learning", "foundation-model", "token", "inference", "hallucination"],
-    "tags": ["grundlagen", "modell", "nlp"]
+    "relatedTerms": [
+      "ki",
+      "machine-learning",
+      "foundation-model",
+      "token",
+      "inference",
+      "hallucination"
+    ],
+    "tags": [
+      "grundlagen",
+      "modell",
+      "nlp"
+    ]
   },
   {
     "id": "foundation-model",
     "slug": "foundation-model",
     "term": "Foundation Model",
-    "aliases": ["Basismodell", "Grundlagenmodell"],
+    "aliases": [
+      "Basismodell",
+      "Grundlagenmodell"
+    ],
     "category": "Grundlagen",
     "difficulty": "intermediate",
     "enterpriseRelevance": "high",
@@ -138,16 +195,33 @@
         "analogy": "Die breite medizinische Grundausbildung vor der Spezialisierung",
         "explanation": "Wie nach dem Studium eine Fachrichtung folgt, wird ein Foundation Model erst durch Anpassung für einen konkreten Einsatz geeignet.",
         "limits": "Eine Facharztausbildung ist zertifiziert und geprüft; die Anpassung eines Modells garantiert keine geprüfte Qualität."
+      },
+      "finance": {
+        "analogy": "Eine generische Risikodatenplattform mit vorverarbeiteten Marktdaten, auf der verschiedene Fachbereiche ihre spezifischen Risikomodelle aufsetzen",
+        "explanation": "Wie eine zentrale Datenplattform (z.B. für Bloomberg- oder Reuters-Feeds) einmalig aufgebaut und dann von Kreditrisiko, Marktrisiko und Compliance gleichermaßen genutzt wird, stellt ein Foundation Model breit vortrainierte Sprachkompetenz bereit, auf der sich spezialisierte Anwendungen per Fine-Tuning aufbauen lassen. Die Plattform selbst ist generisch; der Mehrwert entsteht erst durch die fachspezifische Anpassung für Backtesting, AML-Screening oder Regulierungsreporting. Modell-Governance-Anforderungen gelten für die gesamte Kette, nicht nur für das nachgelagerte Fachmodell.",
+        "limits": "Eine Risikodatenplattform ist versioniert, auditierbar und hat definierte Datenqualitätsstandards; die Fähigkeiten und Grenzen eines Foundation Model sind schwer vollständig zu inventarisieren, was die Modellvalidierung nach SR 11-7 erheblich erschwert."
       }
     },
-    "relatedTerms": ["llm", "machine-learning", "training-finetuning", "inference"],
-    "tags": ["grundlagen", "modell", "plattform"]
+    "relatedTerms": [
+      "llm",
+      "machine-learning",
+      "training-finetuning",
+      "inference"
+    ],
+    "tags": [
+      "grundlagen",
+      "modell",
+      "plattform"
+    ]
   },
   {
     "id": "inference",
     "slug": "inferenz",
     "term": "Inferenz",
-    "aliases": ["Inference", "Modellanwendung"],
+    "aliases": [
+      "Inference",
+      "Modellanwendung"
+    ],
     "category": "Grundlagen",
     "difficulty": "basic",
     "enterpriseRelevance": "medium",
@@ -174,16 +248,35 @@
         "analogy": "Die einzelne Untersuchung mit einem fertig kalibrierten Gerät",
         "explanation": "Das Gerät ist kalibriert (trainiert); jede Untersuchung (Inferenz) liefert ein Ergebnis und verbraucht Ressourcen.",
         "limits": "Geräte haben Messgenauigkeiten mit Toleranzen; Modellausgaben sind probabilistisch und brauchen Einordnung."
+      },
+      "finance": {
+        "analogy": "Die Echtzeit-Bonitätsprüfung eines Kreditantrags durch ein fertig validiertes und genehmigtes Scoringmodell im Produktivbetrieb",
+        "explanation": "Inferenz ist der operative Betrieb: Das Modell ist trainiert, validiert und durch das Model Risk Management abgenommen – jetzt wird es auf jeden eingehenden Antrag angewendet, so wie ein produktives Kreditscoring-System rund um die Uhr Anfragen bewertet. Jede einzelne Bewertung (Inferenz) verursacht Rechenkosten und produziert einen revisionssicheren Output, ändert aber das Modell selbst nicht. Für den Regulator ist der Produktivbetrieb der relevante Kontrollpunkt: Hier greifen Monitoring, Schwellenwertprüfungen und Eskalationsregeln.",
+        "limits": "Ein Kreditscoring-System im Produktivbetrieb liefert deterministisch dieselbe Ausgabe für dieselbe Eingabe und ist vollständig nachvollziehbar; LLM-Inferenz ist probabilistisch und kann bei identischen Eingaben variieren, was Reproduzierbarkeit für Audit-Zwecke einschränkt."
       }
     },
-    "relatedTerms": ["llm", "foundation-model", "token", "training-finetuning"],
-    "tags": ["grundlagen", "betrieb", "kosten"]
+    "relatedTerms": [
+      "llm",
+      "foundation-model",
+      "token",
+      "training-finetuning"
+    ],
+    "tags": [
+      "grundlagen",
+      "betrieb",
+      "kosten"
+    ]
   },
   {
     "id": "training-finetuning",
     "slug": "training-und-fine-tuning",
     "term": "Training und Fine-Tuning",
-    "aliases": ["Training", "Fine-Tuning", "Feinabstimmung", "Nachtraining"],
+    "aliases": [
+      "Training",
+      "Fine-Tuning",
+      "Feinabstimmung",
+      "Nachtraining"
+    ],
     "category": "Grundlagen",
     "difficulty": "intermediate",
     "enterpriseRelevance": "medium",
@@ -210,16 +303,33 @@
         "analogy": "Medizinstudium (Training) und Facharztweiterbildung (Fine-Tuning)",
         "explanation": "Auf breitem Grundwissen baut eine spezialisierte Weiterbildung auf, die das vorhandene Können schärft.",
         "limits": "Weiterbildung ist geprüft und zertifiziert; Fine-Tuning bietet keine Garantie für korrekte Spezialleistung."
+      },
+      "finance": {
+        "analogy": "Erstentwicklung eines IRB-Risikomodells (Training) und anschließende Rekalibrierung auf ein neues Marktsegment oder Portfolio (Fine-Tuning)",
+        "explanation": "Wie eine Bank zunächst ein internes Kreditrisikomodell auf dem Gesamtportfolio entwickelt und dann für ein neues Kundensegment – etwa Mittelstandskredite – auf Basis segmentspezifischer Daten neu kalibriert, ohne das Modell vollständig neu zu entwickeln, nutzt Fine-Tuning das vorhandene Basismodell als Ausgangspunkt. Für beide Phasen gelten separate Validierungsanforderungen, und Veränderungen am Modell müssen dokumentiert und aufsichtsrechtlich bewertet werden. Das Backtesting prüft jeweils, ob die Anpassung die Trennschärfe verbessert hat.",
+        "limits": "Eine Modellrekalibrierung im IRB-Kontext erfolgt nach klar definierten statistischen Verfahren mit nachvollziehbaren Qualitätskennzahlen; Fine-Tuning eines KI-Modells kann schwer quantifizierbare Nebenwirkungen auf andere Fähigkeiten des Modells haben, die im Validierungsprozess nur aufwändig vollständig erfasst werden."
       }
     },
-    "relatedTerms": ["machine-learning", "foundation-model", "inference", "rag"],
-    "tags": ["grundlagen", "training", "anpassung"]
+    "relatedTerms": [
+      "machine-learning",
+      "foundation-model",
+      "inference",
+      "rag"
+    ],
+    "tags": [
+      "grundlagen",
+      "training",
+      "anpassung"
+    ]
   },
   {
     "id": "token",
     "slug": "token",
     "term": "Token",
-    "aliases": ["Tokens", "Tokenisierung"],
+    "aliases": [
+      "Tokens",
+      "Tokenisierung"
+    ],
     "category": "Funktionsweise",
     "difficulty": "basic",
     "enterpriseRelevance": "high",
@@ -246,16 +356,33 @@
         "analogy": "Minutentakt einer Sprechstunde",
         "explanation": "Jede zusätzliche Information kostet Zeit im Takt; ausführlichere Eingaben und Antworten verbrauchen mehr Budget.",
         "limits": "Zeit ist linear erlebbar; Tokenkosten sind unsichtbar und werden leicht unterschätzt, bis das Kontextfenster voll ist."
+      },
+      "finance": {
+        "analogy": "Die Transaktionsstückelung im Zahlungsverkehr: jede Nachricht wird in kleinste verarbeitbare Einheiten zerlegt, die Volumen und Kosten bestimmen",
+        "explanation": "So wie im SWIFT-Zahlungsverkehr Nachrichten in standardisierte Felder und Zeichen zerlegt werden und das Volumen die Verarbeitungskosten treibt, zerlegt ein Sprachmodell jeden Text in Tokens, deren Anzahl direkt Rechenzeit und API-Kosten bestimmt. Für CFOs und IT-Beschaffung bedeutet das: Tokenkontingente sind das Budget-Äquivalent der Transaktionsvolumina – sie müssen geplant, überwacht und bei Bedarf gedeckelt werden. Langatmige Prompts und umfangreiche Dokumente treiben den Token-Verbrauch ebenso wie hohe Transaktionsvolumina die Abwicklungskosten.",
+        "limits": "Transaktionsvolumina sind exakt zählbar und ex ante planbar; Tokenverbrauch hängt von Sprache, Formulierung und Sonderzeichen ab und ist ohne Vorabkalkulation schwer budgetierbar – das erschwert die Kostentransparenz in der internen Leistungsverrechnung."
       }
     },
-    "relatedTerms": ["llm", "context-window", "inference", "prompt"],
-    "tags": ["funktionsweise", "kosten", "tokenoekonomie"]
+    "relatedTerms": [
+      "llm",
+      "context-window",
+      "inference",
+      "prompt"
+    ],
+    "tags": [
+      "funktionsweise",
+      "kosten",
+      "tokenoekonomie"
+    ]
   },
   {
     "id": "context-window",
     "slug": "kontextfenster",
     "term": "Kontextfenster",
-    "aliases": ["Context Window", "Kontextlänge"],
+    "aliases": [
+      "Context Window",
+      "Kontextlänge"
+    ],
     "category": "Funktionsweise",
     "difficulty": "basic",
     "enterpriseRelevance": "high",
@@ -282,16 +409,34 @@
         "analogy": "Die Befunde, die zur Visite vorliegen",
         "explanation": "In die Beurteilung fließt nur ein, was zur Visite mitgebracht wurde. Fehlende Befunde fehlen schlicht.",
         "limits": "Ein Behandlungsteam erinnert sich über Tage; das Kontextfenster hat kein Gedächtnis über die Anfrage hinaus."
+      },
+      "finance": {
+        "analogy": "Die Unterlagen, die einem Kreditkomitee zur Sitzung vorliegen: nur was auf dem Tisch liegt, fließt in die Entscheidung ein",
+        "explanation": "Ein Kreditkomitee entscheidet ausschließlich auf Basis der vorgelegten Kreditakte, Bonitätsunterlagen und Risikoberichte – fehlt ein Dokument, bleibt es unberücksichtigt, egal wie relevant es wäre. Ebenso verarbeitet ein Sprachmodell nur, was im Kontextfenster enthalten ist: fehlen Vertragsbedingungen, frühere Korrespondenz oder regulatorische Vorgaben, fließen sie nicht in die Antwort ein. Für Compliance-Zwecke bedeutet das: Der vollständige Informationsstand muss aktiv in den Prompt eingebracht werden, analog zur vollständigen Vorlage aller relevanten Unterlagen im Komitee.",
+        "limits": "Ein Kreditkomitee kann fehlende Unterlagen anfordern und die Entscheidung vertagen; ein Modell ergänzt fehlende Informationen im Zweifel mit plausibel klingenden, aber nicht belegten Annahmen – ohne dies transparent zu machen."
       }
     },
-    "relatedTerms": ["token", "llm", "rag", "prompt"],
-    "tags": ["funktionsweise", "speicher", "grenzen"]
+    "relatedTerms": [
+      "token",
+      "llm",
+      "rag",
+      "prompt"
+    ],
+    "tags": [
+      "funktionsweise",
+      "speicher",
+      "grenzen"
+    ]
   },
   {
     "id": "prompt",
     "slug": "prompt",
     "term": "Prompt",
-    "aliases": ["Eingabeaufforderung", "Anweisung", "Prompting"],
+    "aliases": [
+      "Eingabeaufforderung",
+      "Anweisung",
+      "Prompting"
+    ],
     "category": "Funktionsweise",
     "difficulty": "basic",
     "enterpriseRelevance": "high",
@@ -318,16 +463,34 @@
         "analogy": "Die Überweisung mit Fragestellung und Vorbefunden",
         "explanation": "Eine präzise Fragestellung mit relevanten Vorbefunden lenkt die Beurteilung in die richtige Richtung.",
         "limits": "Fehlende Angaben fallen Fachpersonal auf; ein Modell ergänzt Lücken eher mit Vermutungen."
+      },
+      "finance": {
+        "analogy": "Der strukturierte Kreditantrag mit Fragestellung, Sachverhalt und Limit-Parametern, der die Analyse des Risikoteams steuert",
+        "explanation": "Wie ein präzise formulierter Kreditantrag mit klarer Fragestellung (Bonität, Sicherheiten, Laufzeit), vollständigem Sachverhalt und definierten Beurteilungsgrenzen eine zielgerichtete Risikoanalyse ermöglicht, steuert der Prompt die Qualität der Modellausgabe. Unvollständige oder mehrdeutige Prompts führen zu unbrauchbaren Antworten – ebenso wie ein lückenhafter Kreditantrag das Komitee zu Rückfragen zwingt oder zu einer Fehlbewertung führt. Für regulatorisch sensible Anwendungen (z.B. AML-Screening, Regulierungsreporting) müssen Prompt-Vorlagen standardisiert, versioniert und einem Review-Prozess unterzogen werden.",
+        "limits": "Ein Kreditantrag folgt einem normierten Schema mit Pflichtfeldern und löst bei Lücken definierte Eskalationsprozesse aus; ein Modell füllt unvollständige Prompts mit Vermutungen auf, ohne den Nutzer auf die Lücken hinzuweisen – was in regulierten Prozessen zu nicht erkennbaren Fehlentscheidungen führen kann."
       }
     },
-    "relatedTerms": ["token", "context-window", "llm", "prompt-injection"],
-    "tags": ["funktionsweise", "eingabe", "steuerung"]
+    "relatedTerms": [
+      "token",
+      "context-window",
+      "llm",
+      "prompt-injection"
+    ],
+    "tags": [
+      "funktionsweise",
+      "eingabe",
+      "steuerung"
+    ]
   },
   {
     "id": "hallucination",
     "slug": "halluzination",
     "term": "Halluzination",
-    "aliases": ["Hallucination", "Konfabulation", "erfundene Inhalte"],
+    "aliases": [
+      "Hallucination",
+      "Konfabulation",
+      "erfundene Inhalte"
+    ],
     "category": "Funktionsweise",
     "difficulty": "basic",
     "enterpriseRelevance": "high",
@@ -354,16 +517,33 @@
         "analogy": "Eine überzeugend klingende, aber falsche Befundinterpretation",
         "explanation": "Die Aussage klingt fachkundig, ist aber nicht durch Befunde gedeckt und kann in die Irre führen.",
         "limits": "Im Gesundheitswesen sind Halluzinationen besonders gefährlich; deshalb sind Quellenbindung und ärztliche Prüfung Pflicht."
+      },
+      "finance": {
+        "analogy": "Ein IRB-Modell, das eine solide Bonität ausgibt, obwohl die zugrunde liegenden Trainingsdaten systematisch fehlerhaft waren – und die Validierung dies nicht aufgedeckt hat.",
+        "explanation": "Wie ein intern entwickeltes Ratingmodell plausibel wirkende PD-Werte liefern kann, die auf korrumpierten Historien basieren, produziert ein Sprachmodell zuversichtlich formulierte Aussagen ohne Verankerung in korrekten Fakten. Der Output besteht die Plausibilitätsprüfung auf den ersten Blick, weil er formal konsistent klingt – genau wie ein Ratingergebnis, das alle Scorecards passiert, aber auf falschen Eingabedaten beruht.",
+        "limits": "Ein Ratingmodell lässt sich per Backtesting und Out-of-Sample-Validierung systematisch auf Kalibrierfehler prüfen; bei Sprachmodellen gibt es kein vergleichbares formales Verfahren, das Halluzinationen zuverlässig vor dem Einsatz identifiziert."
       }
     },
-    "relatedTerms": ["llm", "rag", "guardrails", "ai-governance"],
-    "tags": ["funktionsweise", "risiko", "qualitaet"]
+    "relatedTerms": [
+      "llm",
+      "rag",
+      "guardrails",
+      "ai-governance"
+    ],
+    "tags": [
+      "funktionsweise",
+      "risiko",
+      "qualitaet"
+    ]
   },
   {
     "id": "agent",
     "slug": "agent",
     "term": "KI-Agent",
-    "aliases": ["AI Agent", "Agentic AI"],
+    "aliases": [
+      "AI Agent",
+      "Agentic AI"
+    ],
     "category": "Agentische Schicht",
     "difficulty": "intermediate",
     "enterpriseRelevance": "high",
@@ -390,16 +570,37 @@
         "analogy": "Assistenzarzt mit Zugriff auf Labor, Akte und Leitlinien",
         "explanation": "Er sammelt Informationen, schlägt Schritte vor und braucht bei kritischen Entscheidungen Freigabe.",
         "limits": "Er ersetzt keine menschliche Verantwortung und keine ärztliche Letztentscheidung."
+      },
+      "finance": {
+        "analogy": "Ein automatisierter Handelstisch, der Marktdaten auswertet, Orders über mehrere Systeme routet und dabei vorgegebene Risikolimits und Compliance-Regeln eigenständig überwacht.",
+        "explanation": "Wie ein algorithmischer Handelsprozess selbstständig Ziele verfolgt (z. B. Execution-Optimierung), auf verschiedene Tools zugreift (Orderbuch, Risikorechner, Meldestrecke) und bei Schwellenwertüberschreitung eskaliert, plant ein KI-Agent Zwischenschritte, ruft externe Funktionen auf und trifft innerhalb definierter Parameter autonome Entscheidungen. Die Parallele hilft, das Konzept von Autonomie, Toolnutzung und Zielorientierung greifbar zu machen.",
+        "limits": "Ein Handelssystem operiert auf vollständig formalisierten, maschinenlesbaren Regeln mit deterministischen Ausführungsgarantien; ein KI-Agent arbeitet probabilistisch, kann Ziele fehlinterpretieren und besitzt keine regulatorisch anerkannte Verantwortlichkeitsstruktur im Sinne von MiFID II oder SR 11-7."
       }
     },
-    "relatedTerms": ["llm", "tool-calling", "mcp", "context-window", "ai-governance"],
-    "tags": ["agentic", "tools", "automation", "enterprise"]
+    "relatedTerms": [
+      "llm",
+      "tool-calling",
+      "mcp",
+      "context-window",
+      "ai-governance"
+    ],
+    "tags": [
+      "agentic",
+      "tools",
+      "automation",
+      "enterprise"
+    ]
   },
   {
     "id": "tool-calling",
     "slug": "tool-calling",
     "term": "Tool Calling / Function Calling",
-    "aliases": ["Tool Calling", "Function Calling", "Werkzeugaufruf", "Funktionsaufruf"],
+    "aliases": [
+      "Tool Calling",
+      "Function Calling",
+      "Werkzeugaufruf",
+      "Funktionsaufruf"
+    ],
     "category": "Agentische Schicht",
     "difficulty": "intermediate",
     "enterpriseRelevance": "high",
@@ -426,16 +627,32 @@
         "analogy": "Die gezielte Anforderung von Labor oder Bildgebung",
         "explanation": "Wie eine ärztliche Anforderung von Labor oder Bildgebung gezielt Informationen beschafft, ruft das Modell passende Werkzeuge auf.",
         "limits": "Anforderungen folgen Indikation und Verantwortung; ein Modell kann Werkzeuge auch unnötig oder falsch einsetzen."
+      },
+      "finance": {
+        "analogy": "Das gezielte Absetzen einer API-Anfrage an ein Kernbankensystem, einen Marktdatenfeed oder ein Kreditregister – initiiert durch das Modell, nicht durch den Nutzer.",
+        "explanation": "Wie ein Risikocontrolling-System bei Bedarf automatisiert Bloomberg-Kurse, interne Limitdatenbanken oder externe Bonitätsdaten abruft, ruft ein Modell beim Tool Calling definierte Funktionen mit spezifischen Parametern auf, um aktuelle oder strukturierte Informationen zu beschaffen. Die Analogie macht deutlich, dass das Modell die Anfrage formuliert und abschickt, aber nicht selbst die Datenquelle ist.",
+        "limits": "Systemaufrufe im Bankbetrieb sind durch Berechtigungskonzepte, Audit-Trails und technische Kontrollen abgesichert; ein Modell, das Tools aufruft, kann falsche Parameter übergeben oder ungeeignete Funktionen wählen, ohne dass dies automatisch protokolliert oder gesperrt wird."
       }
     },
-    "relatedTerms": ["agent", "mcp", "llm", "guardrails"],
-    "tags": ["agentic", "tools", "integration"]
+    "relatedTerms": [
+      "agent",
+      "mcp",
+      "llm",
+      "guardrails"
+    ],
+    "tags": [
+      "agentic",
+      "tools",
+      "integration"
+    ]
   },
   {
     "id": "mcp",
     "slug": "mcp",
     "term": "MCP (Model Context Protocol)",
-    "aliases": ["Model Context Protocol"],
+    "aliases": [
+      "Model Context Protocol"
+    ],
     "category": "Agentische Schicht",
     "difficulty": "advanced",
     "enterpriseRelevance": "high",
@@ -462,16 +679,34 @@
         "analogy": "Ein Interoperabilitätsstandard wie ein einheitliches Datenformat zwischen Systemen",
         "explanation": "Wie ein gemeinsames Datenformat Befunde zwischen Systemen austauschbar macht, macht MCP Werkzeuge für Modelle einheitlich nutzbar.",
         "limits": "Interoperabilität löst nicht automatisch Fragen von Datenschutz, Qualität und Verantwortung."
+      },
+      "finance": {
+        "analogy": "Eine standardisierte Finanzmarkt-Schnittstelle wie FIX oder ISO 20022 – ein einheitliches Protokoll, über das verschiedene Systeme Nachrichten und Daten austauschen, ohne für jede Verbindung ein eigenes Format zu entwickeln.",
+        "explanation": "Wie ISO 20022 Banken, Clearingstellen und Zentralbanken ein gemeinsames Nachrichtenformat gibt und so Interoperabilität ohne bilaterale Sonderlösungen ermöglicht, definiert MCP eine einheitliche Kommunikationsschicht zwischen KI-Modellen und externen Werkzeugen oder Datenquellen. Die Analogie veranschaulicht, warum ein offener Standard den Integrationsaufwand erheblich reduziert.",
+        "limits": "ISO 20022 regelt Nachrichtenformat und Semantik, nicht aber Datenschutz, Berechtigungen oder Haftung – ebenso definiert MCP nur die Verbindungsschicht; Zugriffskontrolle, Datensensitivität und regulatorische Compliance müssen separat adressiert werden."
       }
     },
-    "relatedTerms": ["agent", "tool-calling", "rag", "ai-governance"],
-    "tags": ["agentic", "standard", "integration", "interoperabilitaet"]
+    "relatedTerms": [
+      "agent",
+      "tool-calling",
+      "rag",
+      "ai-governance"
+    ],
+    "tags": [
+      "agentic",
+      "standard",
+      "integration",
+      "interoperabilitaet"
+    ]
   },
   {
     "id": "rag",
     "slug": "rag",
     "term": "RAG (Retrieval-Augmented Generation)",
-    "aliases": ["Retrieval-Augmented Generation", "abrufgestützte Generierung"],
+    "aliases": [
+      "Retrieval-Augmented Generation",
+      "abrufgestützte Generierung"
+    ],
     "category": "Agentische Schicht",
     "difficulty": "intermediate",
     "enterpriseRelevance": "high",
@@ -498,16 +733,35 @@
         "analogy": "Vor der Empfehlung Leitlinie und Patientenakte konsultieren",
         "explanation": "Wie eine fundierte Empfehlung Leitlinien und konkrete Befunde heranzieht, stützt RAG die Antwort auf abgerufene Quellen.",
         "limits": "Stimmen die herangezogenen Quellen nicht oder fehlen sie, kann die Empfehlung trotz Beleg falsch sein."
+      },
+      "finance": {
+        "analogy": "Ein Kreditanalyst, der vor dem Votum nicht aus dem Gedächtnis urteilt, sondern gezielt aktuelle Jahresabschlüsse, Branchenreports und interne Ratinghistorien aus dem Dokumentenmanagementsystem zieht.",
+        "explanation": "Wie ein fundiertes Kreditvotum auf konkret herangezogenen, aktuellen Unterlagen basiert und nicht auf dem allgemeinen Erfahrungsschatz des Analysten, stützt RAG jede Antwort auf zur Laufzeit abgerufene Dokumente – das Modell generiert nicht aus dem Training heraus, sondern aus dem bereitgestellten Kontext. Das reduziert Halluzinationsrisiken analog zur Belegpflicht im Kreditprozess.",
+        "limits": "Ist die Dokumentenbasis veraltet, unvollständig oder falsch indexiert, produziert auch RAG fehlerhafte Ergebnisse – genau wie ein Kreditvotum auf Basis falscher Bilanzen; die Qualität der Retrieval-Schicht und der Quelldaten ist entscheidend und braucht eigene Governance."
       }
     },
-    "relatedTerms": ["embeddings", "llm", "context-window", "hallucination", "mcp"],
-    "tags": ["agentic", "wissen", "retrieval", "enterprise"]
+    "relatedTerms": [
+      "embeddings",
+      "llm",
+      "context-window",
+      "hallucination",
+      "mcp"
+    ],
+    "tags": [
+      "agentic",
+      "wissen",
+      "retrieval",
+      "enterprise"
+    ]
   },
   {
     "id": "embeddings",
     "slug": "embeddings",
     "term": "Embeddings",
-    "aliases": ["Vektoreinbettungen", "Einbettungen"],
+    "aliases": [
+      "Vektoreinbettungen",
+      "Einbettungen"
+    ],
     "category": "Agentische Schicht",
     "difficulty": "advanced",
     "enterpriseRelevance": "medium",
@@ -534,16 +788,33 @@
         "analogy": "Eine Symptomähnlichkeits-Sortierung von Fällen",
         "explanation": "Wie ähnliche Krankheitsbilder gedanklich zusammengefasst werden, fasst der Vektorraum bedeutungsähnliche Texte zusammen.",
         "limits": "Oberflächliche Ähnlichkeit kann klinisch in die Irre führen; Nähe im Vektorraum ersetzt keine fachliche Bewertung."
+      },
+      "finance": {
+        "analogy": "Ein multidimensionaler Risiko-Fingerabdruck, der Kreditnehmer nach Merkmalen wie Branche, Laufzeitprofil und Ausfallhistorie in einem Merkmalsraum verortet – ähnliche Schuldner liegen nahe beieinander.",
+        "explanation": "Wie ein internes Ratingverfahren Unternehmen anhand vieldimensionaler Finanzkennzahlen in Risikoklassen gruppiert und dabei inhaltliche Nähe durch Ähnlichkeit im Merkmalsraum abbildet, überführen Embeddings Texte in numerische Vektoren, sodass semantisch verwandte Inhalte geometrisch nahe beieinander liegen. Das ermöglicht etwa die Suche nach ähnlichen Präzedenzfällen oder Vertragsklauseln ohne exakte Schlüsselwortübereinstimmung.",
+        "limits": "Risikoklassen basieren auf regulatorisch definierten, revisionssicheren Kriterien; warum zwei Textvektoren als ähnlich eingestuft werden, ist im Embedding-Raum oft nicht nachvollziehbar und erfüllt damit nicht die Anforderungen an Modell-Transparenz und Erklärbarkeit nach SR 11-7 oder dem EU AI Act."
       }
     },
-    "relatedTerms": ["rag", "machine-learning", "llm"],
-    "tags": ["agentic", "vektoren", "semantik", "retrieval"]
+    "relatedTerms": [
+      "rag",
+      "machine-learning",
+      "llm"
+    ],
+    "tags": [
+      "agentic",
+      "vektoren",
+      "semantik",
+      "retrieval"
+    ]
   },
   {
     "id": "ai-governance",
     "slug": "ai-governance",
     "term": "AI Governance",
-    "aliases": ["KI-Governance", "KI-Steuerung"],
+    "aliases": [
+      "KI-Governance",
+      "KI-Steuerung"
+    ],
     "category": "Enterprise & Sicherheit",
     "difficulty": "intermediate",
     "enterpriseRelevance": "high",
@@ -570,16 +841,34 @@
         "analogy": "Qualitätsmanagement, Zulassung und ärztliche Verantwortung",
         "explanation": "Wie Qualitätsmanagement und Zulassungswege den sicheren Einsatz von Verfahren sichern, sichert Governance den verantwortbaren KI-Einsatz.",
         "limits": "Medizinische Zulassung ist streng standardisiert; KI-Governance ist oft weniger formalisiert und entwickelt sich noch."
+      },
+      "finance": {
+        "analogy": "Model Risk Management nach SR 11-7: unabhängige Validierung, klare Ownership, lückenlose Dokumentation und ein Eskalationspfad für jedes produktiv eingesetzte Modell.",
+        "explanation": "Wie die Leitlinien des Fed-Rundschreibens SR 11-7 für quantitative Risikomodelle Entwicklung, Validierung, Genehmigung und laufendes Monitoring strukturieren, definiert AI Governance Rollen, Prüfpflichten und Kontrollprozesse für KI-Systeme. Die Analogie macht deutlich, dass es nicht um technische Einschränkungen allein geht, sondern um institutionelle Verantwortlichkeit über den gesamten Modelllebenszyklus.",
+        "limits": "SR 11-7 gilt für klar abgegrenzte quantitative Modelle mit definierten Inputs und statistisch prüfbaren Outputs; KI-Systeme – insbesondere Sprachmodelle – sind schwerer zu validieren, ihre Risiken sind breiter gestreut und die regulatorischen Standards für KI-Governance im Finanzsektor sind noch nicht konsolidiert."
       }
     },
-    "relatedTerms": ["guardrails", "prompt-injection", "hallucination", "agent"],
-    "tags": ["enterprise", "sicherheit", "verantwortung", "compliance"]
+    "relatedTerms": [
+      "guardrails",
+      "prompt-injection",
+      "hallucination",
+      "agent"
+    ],
+    "tags": [
+      "enterprise",
+      "sicherheit",
+      "verantwortung",
+      "compliance"
+    ]
   },
   {
     "id": "guardrails",
     "slug": "guardrails",
     "term": "Guardrails",
-    "aliases": ["Leitplanken", "Schutzmechanismen"],
+    "aliases": [
+      "Leitplanken",
+      "Schutzmechanismen"
+    ],
     "category": "Enterprise & Sicherheit",
     "difficulty": "intermediate",
     "enterpriseRelevance": "high",
@@ -606,16 +895,33 @@
         "analogy": "Sicherheitschecks, Dosisgrenzen und Freigabeschritte",
         "explanation": "Wie Sicherheitschecks und Grenzwerte gefährliche Schritte verhindern, blockieren Guardrails riskante Aktionen des Systems.",
         "limits": "Auch klinische Sicherheitschecks haben Lücken; Guardrails brauchen laufende Pflege und ersetzen keine Fachverantwortung."
+      },
+      "finance": {
+        "analogy": "Plausibilitätsprüfungen, Limitsysteme und Eskalationsregeln, die verhindern, dass ein Risikomodell oder Handelssystem Entscheidungen außerhalb regulatorisch und intern genehmigter Parameter ausführt.",
+        "explanation": "Wie ein Handelssystem Orders automatisch sperrt, die Positionslimits oder VaR-Schwellen verletzen würden, und wie Kreditentscheidungssysteme bei überschrittenen Risikoparametern in die manuelle Prüfung eskalieren, begrenzen Guardrails das Verhalten eines KI-Systems auf vorab definierte, zulässige Ausgaben. Die Analogie verdeutlicht, dass Guardrails keine nachträgliche Absicherung sind, sondern in den Prozess eingebettete Kontrollpunkte.",
+        "limits": "Limitsysteme im Handel basieren auf präzise quantifizierten Schwellenwerten mit deterministischer Wirkung; KI-Guardrails arbeiten oft heuristisch oder modellbasiert und können durch unerwartete Formulierungen umgangen werden – ihre Wirksamkeit erfordert kontinuierliches Testen und ist schwerer formal zu zertifizieren."
       }
     },
-    "relatedTerms": ["ai-governance", "prompt-injection", "hallucination", "tool-calling"],
-    "tags": ["enterprise", "sicherheit", "schutz"]
+    "relatedTerms": [
+      "ai-governance",
+      "prompt-injection",
+      "hallucination",
+      "tool-calling"
+    ],
+    "tags": [
+      "enterprise",
+      "sicherheit",
+      "schutz"
+    ]
   },
   {
     "id": "prompt-injection",
     "slug": "prompt-injection",
     "term": "Prompt Injection",
-    "aliases": ["Prompt-Injektion", "Eingabe-Manipulation"],
+    "aliases": [
+      "Prompt-Injektion",
+      "Eingabe-Manipulation"
+    ],
     "category": "Enterprise & Sicherheit",
     "difficulty": "advanced",
     "enterpriseRelevance": "high",
@@ -642,9 +948,24 @@
         "analogy": "Eine gefälschte Anweisung in der Patientenakte",
         "explanation": "Wie eine untergeschobene Anweisung gefährliche Schritte auslösen könnte, kann eingeschleuster Text ein System zu falschem Handeln bringen.",
         "limits": "Im Gesundheitswesen gibt es strenge Verifikationsketten; ein Modell hat diese Prüfreflexe nicht eingebaut."
+      },
+      "finance": {
+        "analogy": "Eine eingeschleuste, gefälschte Transaktionsanweisung in einem SWIFT-Nachrichtenstrom, die das System zu einer nicht autorisierten Ausführung veranlasst – analog zum Bangladesh-Bank-Hack 2016.",
+        "explanation": "Wie beim SWIFT-Betrugsfall manipulierte Nachrichten legitime Instruktionen imitierten und automatisierte Prozesse zu unautorisierten Überweisungen veranlassten, schleust Prompt Injection manipulierten Text in Modelleingaben ein, der das System dazu bringt, die ursprüngliche Aufgabe zu ignorieren und stattdessen fremde Anweisungen auszuführen. Die Analogie hilft, die Ernsthaftigkeit des Angriffsvektors und die Notwendigkeit von Input-Validierung greifbar zu machen.",
+        "limits": "SWIFT-Nachrichten durchlaufen mehrstufige kryptografische Authentifizierung und Autorisierungskontrollen; ein Sprachmodell kann legitime und eingeschleuste Anweisungen strukturell nicht unterscheiden, weil es keinen vergleichbaren Mechanismus zur Herkunftsverifikation von Text besitzt."
       }
     },
-    "relatedTerms": ["guardrails", "ai-governance", "prompt", "agent"],
-    "tags": ["enterprise", "sicherheit", "angriff", "risiko"]
+    "relatedTerms": [
+      "guardrails",
+      "ai-governance",
+      "prompt",
+      "agent"
+    ],
+    "tags": [
+      "enterprise",
+      "sicherheit",
+      "angriff",
+      "risiko"
+    ]
   }
 ]
