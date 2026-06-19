@@ -1,7 +1,6 @@
 ---
 import type { Domain } from '../data/types';
 import { domainHref } from '../lib/paths';
-import BrilleIcon from './BrilleIcon.astro';
 
 export interface Props {
   domain: Domain;
@@ -9,7 +8,7 @@ export interface Props {
 const { domain } = Astro.props;
 ---
 <a class="domain-card" href={domainHref(domain.slug)}>
-  <BrilleIcon domainKey={domain.key} class="domain-card__icon" />
+  <span class="domain-card__icon" aria-hidden="true">{domain.icon}</span>
   <h3>{domain.name}</h3>
   <p>{domain.tagline}</p>
   <span class="domain-card__more">Brille öffnen →</span>
@@ -30,7 +29,7 @@ const { domain } = Astro.props;
     transition: border-color 0.15s ease, transform 0.15s ease;
   }
   .domain-card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
-  .domain-card__icon { width: 2rem; height: 2rem; color: var(--accent); }
+  .domain-card__icon { font-size: 2rem; }
   .domain-card h3 { margin: 0; }
   .domain-card p { margin: 0; color: var(--text-muted); flex: 1; }
   .domain-card__more { font-weight: 600; color: var(--accent); }

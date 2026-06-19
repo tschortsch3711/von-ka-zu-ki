@@ -11,6 +11,7 @@ import { link } from '../lib/paths';
 
 const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
+const domainIcons = Object.fromEntries(lenses.map((d) => [d.key, d.icon]));
 
 // 3 Einstiegsbegriffe wechseln pro Build, abgeleitet aus dem Build-Datum (keine echte Tagesrotation ohne geplanten Rebuild)
 const buildDate = new Date();
@@ -48,7 +49,7 @@ const featured = [
   <section class="section container">
     <h2>Begriffe zum Reinschnuppern</h2>
     <div class="grid grid--3" style="margin-top:1.5rem">
-      {featured.map((term) => <GlossaryCard term={term} />)}
+      {featured.map((term) => <GlossaryCard term={term} domainIcons={domainIcons} />)}
     </div>
     <p style="margin-top:1.2rem"><a class="btn" href={link('glossar/')}>Alle Begriffe ansehen →</a></p>
   </section>
