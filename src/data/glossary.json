@@ -967,5 +967,1046 @@
       "angriff",
       "risiko"
     ]
+  },
+  {
+    "id": "deep-learning",
+    "slug": "deep-learning",
+    "term": "Deep Learning",
+    "aliases": [
+      "Tiefes Lernen",
+      "Deep Neural Networks",
+      "Tiefe neuronale Netze",
+      "DL"
+    ],
+    "category": "Modellarchitektur",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Deep Learning ist eine Form des maschinellen Lernens mit vielschichtigen neuronalen Netzen, die hierarchische Merkmale direkt aus Rohdaten lernen.",
+    "technicalDefinition": "Deep Learning nutzt künstliche neuronale Netze mit vielen aufeinanderfolgenden Schichten (Layern), die Eingabedaten Schritt für Schritt in zunehmend abstraktere Repräsentationen überführen. Trainiert werden diese Netze meist über Backpropagation: Der Fehler am Ausgang wird rückwärts durch alle Schichten propagiert und die Gewichte werden per Gradientenabstieg schrittweise angepasst. Anders als klassisches Machine Learning kommt Deep Learning weitgehend ohne manuell definierte Merkmale aus und lernt die relevanten Merkmale selbst aus den Rohdaten. Es bildet die Grundlage moderner KI-Systeme, einschließlich der Transformer hinter heutigen großen Sprachmodellen.",
+    "whyItMatters": "Deep Learning ist das technische Fundament nahezu aller aktuellen Durchbrüche in Sprach-, Bild- und Mustererkennung und damit auch die Basis der KI-Systeme, die zunehmend in Unternehmensprozesse einziehen. Wer seine Stärken (Mustererkennung aus großen Datenmengen) und Schwächen (Datenhunger, hoher Rechenbedarf, schwere Erklärbarkeit) kennt, kann realistisch einschätzen, wofür sich der Einsatz lohnt.",
+    "misconceptions": [
+      "Mehr Schichten bedeuten nicht automatisch ein besseres Modell - zu tiefe Netze können schlechter generalisieren, instabil trainieren oder die verfügbaren Daten überfordern.",
+      "Deep Learning lässt sich nicht beliebig mit wenig Daten betreiben - es entfaltet seine Stärke meist erst bei großen Datenmengen und hohem Rechenaufwand.",
+      "Ein trainiertes Deep-Learning-Modell ist keine nachvollziehbare Regelsammlung, sondern weitgehend eine Black Box, deren Entscheidungswege sich nur eingeschränkt erklären lassen."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Eine Bildverarbeitungskette in der Fertigung, die aus rohen Kamerapixeln zunächst Kanten, dann Bauteilkonturen und schließlich das komplette montierte Bauteil erkennt.",
+        "explanation": "Wie eine erste Stufe in den Pixeln nur Helligkeitskanten findet, die nächste daraus Konturen einzelner Teile zusammensetzt und eine spätere ganze Baugruppen identifiziert, baut ein tiefes Netz Schicht für Schicht immer abstraktere Merkmale auf. Jede Ebene arbeitet ausschließlich mit den verdichteten Merkmalen der vorigen.",
+        "limits": "Im Werk legt ein Ingenieur jede Verarbeitungsstufe bewusst fest und kann sie einzeln justieren, während das Netz seine Zwischenmerkmale selbst und ohne nachvollziehbare Begründung bildet."
+      },
+      "publicSector": {
+        "analogy": "Ein mehrstufiger Aktenlauf, bei dem ein Antrag von Sachbearbeitung über Fachreferat bis Entscheidungsebene durch immer abstraktere Bewertungsstufen wandert.",
+        "explanation": "Wie jede Verwaltungsebene die Vorlage der vorigen verdichtet und nur das Wesentliche nach oben gibt, extrahiert jede Netzschicht aus dem Output der vorigen die für die Entscheidung relevanten Muster. Am Ende steht ein Gesamturteil, das auf vielen Vorstufen aufbaut.",
+        "limits": "Im Amt ist jede Stufe mit dokumentierten Zuständigkeiten und Begründungspflicht hinterlegt; beim Netz bleiben die Zwischenstufen undurchsichtig und rechtlich nicht begründbar."
+      },
+      "healthcare": {
+        "analogy": "Eine gestufte Befundung, bei der ein Bild vom Screening über die Fachradiologie bis zum Tumorboard immer tiefer interpretiert wird.",
+        "explanation": "Wie eine erste Sichtung Auffälligkeiten markiert, die Fachebene Strukturen einordnet und das Board die klinische Bedeutung bewertet, verarbeitet ein tiefes Netz ein Bild von Kanten über Formen bis zu diagnostisch relevanten Mustern. Jede Schicht baut auf der Abstraktion der vorigen auf.",
+        "limits": "Ärzte können ihre einzelnen Befundungsschritte begründen und gegenüber dem Patienten verantworten, das Netz liefert das Ergebnis ohne nachvollziehbare Zwischenbegründung."
+      },
+      "finance": {
+        "analogy": "Ein gestaffeltes Betrugserkennungssystem, in dem jede Stufe aus den Signalen der vorigen ein verdichtetes Risikomerkmal formt - von einzelnen Transaktionsattributen über Verhaltensmuster bis zum konsolidierten Betrugsscore.",
+        "explanation": "Wie ein mehrstufiges Anti-Fraud- oder Risikomodell zunächst Rohmerkmale je Transaktion erfasst, daraus auf einer höheren Ebene Verhaltens- und Beziehungsmuster ableitet und erst ganz oben ein aggregiertes Urteil bildet, lernt ein tiefes Netz seine Merkmalshierarchie selbst aus den Daten statt aus fest kodierten Expertenregeln. In der Bankpraxis ersetzt diese erlernte Merkmalsextraktion zunehmend handgepflegte Regelwerke und ermöglicht die Erkennung subtiler, nichtlinearer Muster - was zugleich die Anforderungen an Validierung und Dokumentation erhöht. Genau hier setzen das Model Risk Management nach SR 11-7 und die MaRisk an, da die erlernten Zwischenmerkmale aufsichtlich nachvollziehbar und unabhängig validiert sein müssen.",
+        "limits": "Die Analogie unterstellt klar benennbare Stufen wie in einem klassischen Risikomodell, doch die Zwischenrepräsentationen eines tiefen Netzes sind weder fachlich interpretierbar noch einzeln validierbar - was im regulierten Umfeld (etwa bei der Genehmigung interner Modelle nach dem IRB-Ansatz unter Basel) ein echtes Erklärbarkeits- und Abnahmeproblem schafft."
+      }
+    },
+    "relatedTerms": [
+      "ki",
+      "machine-learning",
+      "transformer",
+      "training-finetuning",
+      "gpu-vram-npu"
+    ],
+    "tags": [
+      "modellarchitektur",
+      "neuronale-netze",
+      "machine-learning",
+      "compute",
+      "enterprise"
+    ]
+  },
+  {
+    "id": "transformer",
+    "slug": "transformer",
+    "term": "Transformer-Architektur",
+    "aliases": [
+      "Transformer",
+      "Attention-Architektur",
+      "Self-Attention-Modell"
+    ],
+    "category": "Modellarchitektur",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Die Transformer-Architektur ist ein neuronales Netzwerkdesign, das mithilfe von Self-Attention alle Elemente einer Eingabe gleichzeitig im Verhältnis zueinander gewichtet und damit die Grundlage praktisch aller heutigen Sprachmodelle bildet.",
+    "technicalDefinition": "Der Transformer wurde 2017 im Paper \"Attention is all you need\" vorgestellt und ersetzte die zuvor üblichen rekurrenten Netze (RNN), die Sequenzen Schritt für Schritt verarbeiteten. Sein Kern ist der Self-Attention-Mechanismus: Für jedes Token berechnet das Modell, wie stark es mit jedem anderen Token zusammenhängt, und gewichtet die Repräsentationen entsprechend. Weil diese Gewichtung nicht sequenziell, sondern für alle Token parallel erfolgt, lässt sich die Architektur effizient auf moderner Hardware skalieren. Diese Skalierbarkeit ist der wesentliche Grund, warum Transformer die Basis für große Sprachmodelle und viele multimodale Modelle bilden.",
+    "whyItMatters": "Die parallele Verarbeitung und die Fähigkeit, weitreichende Zusammenhänge zu erfassen, haben das Training sehr großer Modelle erst praktikabel gemacht und sind damit die technische Voraussetzung für nahezu jedes heute eingesetzte Sprachmodell. Wer die Architektur versteht, kann Stärken, Kostentreiber und Grenzen heutiger KI-Systeme realistischer einschätzen.",
+    "misconceptions": [
+      "Ein Transformer ist nicht dasselbe wie ein LLM: Der Transformer ist die zugrunde liegende Architektur, ein LLM eine konkrete, trainierte Anwendung dieser Architektur.",
+      "Die \"Attention\" im Transformer hat nichts mit menschlicher Aufmerksamkeit zu tun, sondern ist eine mathematische Gewichtung der Beziehungen zwischen Token.",
+      "Transformer verarbeiten Text nicht zwingend Wort für Wort von links nach rechts, sondern können alle Token einer Eingabe gleichzeitig und in Beziehung zueinander betrachten."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein Verkehrsleitsystem, das jede Ampel einer Stadt nicht isoliert schaltet, sondern gleichzeitig im Verhältnis zum Zustand aller anderen Kreuzungen des Netzes gewichtet.",
+        "explanation": "Wie das Leitsystem die Schaltung einer Kreuzung erst aus den Verkehrsflüssen des gesamten Netzes ableitet, gewichtet der Transformer jedes Token im Verhältnis zu allen anderen Token gleichzeitig. Die richtige Schaltung ergibt sich aus dem Zusammenspiel, nicht aus jeder Kreuzung für sich.",
+        "limits": "Das Verkehrsleitsystem verfolgt ein definiertes Optimierungsziel wie Stauvermeidung; der Transformer erkennt nur statistische Muster der Trainingsdaten ohne ein eigenes Ziel."
+      },
+      "publicSector": {
+        "analogy": "Eine ressortübergreifende Lagebesprechung, in der jede Behörde ihren Beitrag im Licht aller anderen Meldungen bewertet.",
+        "explanation": "Wie eine gemeinsame Lagebesprechung jede einzelne Meldung erst im Zusammenhang mit allen anderen einordnet, gewichtet der Transformer jedes Token relativ zum gesamten Kontext. Die Bedeutung ergibt sich aus den Beziehungen, nicht aus der Reihenfolge des Eingangs.",
+        "limits": "Eine Lagebesprechung verfolgt ein bewusstes Ziel; der Transformer optimiert nur eine Rechenfunktion ohne eigenes Verständnis des Sachverhalts."
+      },
+      "healthcare": {
+        "analogy": "Ein interdisziplinäres Tumorboard, das jeden Befund eines Patienten im Verhältnis zu allen anderen Befunden bewertet, bevor es ein Gesamturteil bildet.",
+        "explanation": "Wie das Tumorboard Laborwerte, Bildgebung und Anamnese nicht isoliert, sondern in ihrer gegenseitigen Bedeutung wägt, gewichtet der Transformer jedes Token im Kontext aller anderen. Erst dieses Beziehungsgeflecht ergibt die Repräsentation.",
+        "limits": "Das Tumorboard trägt medizinische Verantwortung und kausales Fachwissen; der Transformer kennt nur Korrelationen, keine biologischen Ursachen."
+      },
+      "finance": {
+        "analogy": "Ein Marktrisikomodell mit voller Korrelationsmatrix, das jede Position nicht für sich, sondern im Verhältnis zu allen anderen Positionen des Portfolios bewertet.",
+        "explanation": "Wie ein Value-at-Risk-Modell den Risikobeitrag einer Anleihe erst über ihre Korrelationen zu jeder anderen Position bestimmt, errechnet die Self-Attention für jedes Token ein Gewicht gegenüber allen übrigen Token. Beide bilden eine vollständige Beziehungsmatrix, in der nicht der Einzelwert, sondern das Zusammenspiel entscheidet. In der Bankpraxis ist diese Matrixlogik aus Marktrisikomodellen vertraut, deren Diversifikations- und Konzentrationseffekte unter den Basel-Vorgaben zum Handelsbuch (FRTB) berechnet und im Rahmen des Model Risk Management nach SR 11-7 validiert werden.",
+        "limits": "Eine Korrelationsmatrix beruht auf ökonomisch interpretierbaren, stabil schätzbaren Kennzahlen; die Attention-Gewichte sind hochdimensionale, kontextabhängige Lernparameter ohne direkte fachliche Deutung. Zudem ist die Korrelationsmatrix symmetrisch, während Attention gerichtet ist - Token A kann Token B anders gewichten als umgekehrt."
+      }
+    },
+    "relatedTerms": [
+      "llm",
+      "foundation-model",
+      "deep-learning",
+      "token",
+      "embeddings"
+    ],
+    "tags": [
+      "modellarchitektur",
+      "attention",
+      "deep-learning",
+      "llm",
+      "infrastruktur"
+    ]
+  },
+  {
+    "id": "reasoning-model",
+    "slug": "reasoning-model",
+    "term": "Reasoning Model",
+    "aliases": [
+      "Reasoning-Modell",
+      "Denkmodell",
+      "Chain-of-Thought-Modell",
+      "Reasoning LLM"
+    ],
+    "category": "Modellarchitektur",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Ein Sprachmodell, das vor der eigentlichen Antwort explizite Zwischenschritte erzeugt und dafür zusätzliche Rechenzeit zur Laufzeit aufwendet.",
+    "technicalDefinition": "Ein Reasoning Model ist ein Sprachmodell, das eine Aufgabe nicht in einem Zug beantwortet, sondern zunächst eine sichtbare oder verborgene Kette von Zwischenschritten (Chain of Thought) erzeugt und erst daraus die Endantwort ableitet. Dafür wird zur Laufzeit deutlich mehr Rechenleistung aufgewendet als bei einer direkten Antwort, sogenanntes Test-Time Compute. Dieser Ansatz erhöht die Trefferquote vor allem bei mehrstufigen Aufgaben wie Mathematik, Code oder logischer Planung, weil das Modell Teilergebnisse aufeinander aufbauen kann. Die Zwischenschritte sind eine statistisch erzeugte Textfolge und kein bewusster Denkprozess; sie müssen zudem nicht zwingend dem tatsächlichen internen Rechenweg des Modells entsprechen.",
+    "whyItMatters": "Reasoning Models lösen komplexe, mehrstufige Aufgaben zuverlässiger, kosten dafür aber mehr Zeit und Geld pro Anfrage; die Wahl zwischen schnellem Standardmodell und Reasoning Model ist deshalb eine bewusste Abwägung von Genauigkeit gegen Latenz und Kosten.",
+    "misconceptions": [
+      "Das Reasoning eines Modells ist kein menschliches Nachdenken, sondern eine wahrscheinlichkeitsbasiert erzeugte Folge von Zwischentexten.",
+      "Mehr Zwischenschritte garantieren keine korrekte Antwort; ein Modell kann sich auch über viele Schritte hinweg überzeugend in die falsche Richtung argumentieren.",
+      "Reasoning Models sind nicht generell besser, sondern bei einfachen Aufgaben oft nur langsamer und teurer ohne Mehrwert."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein Navigationssystem, das vor der Zielführung mehrere Routenvarianten durchrechnet, statt sofort loszufahren",
+        "explanation": "Wie das Navi erst Stau, Maut und Streckenlänge gegeneinander abwägt, bevor es eine Route empfiehlt, durchläuft das Reasoning Model erst Zwischenüberlegungen, bevor es antwortet. Das kostet einen Moment mehr, führt bei verzweigten Strecken aber seltener in die Sackgasse.",
+        "limits": "Das Navi rechnet mit geprüften Kartendaten und festen Regeln; die Zwischenschritte des Modells können selbst fehlerhaft sein und trotzdem überzeugend wirken."
+      },
+      "publicSector": {
+        "analogy": "Ein begründeter Bescheid mit dokumentierter Sachverhaltsprüfung statt einer bloßen Ja-Nein-Auskunft am Schalter",
+        "explanation": "Wie eine Behörde bei einem komplexen Antrag erst Sachverhalt, Rechtsgrundlage und Abwägung schriftlich festhält und dann entscheidet, legt das Reasoning Model seine Zwischenschritte offen, bevor es zum Ergebnis kommt. Das macht den Weg zur Antwort nachvollziehbarer.",
+        "limits": "Ein behördlicher Begründungstext bindet rechtlich und ist überprüfbar; die Denkkette des Modells ist nur eine plausible Erzählung und keine Garantie, dass die Antwort tatsächlich so zustande kam."
+      },
+      "healthcare": {
+        "analogy": "Eine Differenzialdiagnose, bei der mögliche Ursachen schrittweise ausgeschlossen werden, statt sofort eine Verdachtsdiagnose zu nennen",
+        "explanation": "Wie ein Arzt bei unklarem Befund systematisch Hypothesen aufstellt und nacheinander prüft, arbeitet das Reasoning Model die Aufgabe über mehrere Zwischenschritte ab, bevor es ein Ergebnis liefert. Das senkt bei mehrdeutigen Fällen das Risiko vorschneller Schlüsse.",
+        "limits": "Die ärztliche Differenzialdiagnose stützt sich auf Messwerte und Leitlinien; die Zwischenschritte des Modells erzeugen nur den Anschein methodischer Sicherheit, ohne sie tatsächlich zu prüfen."
+      },
+      "finance": {
+        "analogy": "Ein strukturierter, dokumentierter Kreditentscheidungsprozess mit nachvollziehbaren Zwischenschritten – Bonitätsanalyse, Sicherheitenbewertung, Limitprüfung – statt einer Bauchentscheidung des Kreditsachbearbeiters",
+        "explanation": "Wie eine Bank bei größeren Engagements nicht aus dem Bauch entscheidet, sondern Cashflow-Analyse, Rating, Sicherheiten und Limitauslastung in einer dokumentierten Beschlussvorlage Schritt für Schritt abarbeitet, erzeugt ein Reasoning Model eine explizite Kette von Zwischenüberlegungen vor der Antwort. Im Rahmen des Model Risk Management nach SR 11-7 und der MaRisk ist gerade die Nachvollziehbarkeit des Entscheidungswegs ein Prüfkriterium, sodass eine dokumentierte Denkkette die Arbeit von Validierung und Revision unterstützen kann. Mehr Zwischenschritte ersetzen jedoch keine unabhängige Modellvalidierung.",
+        "limits": "Eine Kreditbeschlussvorlage bindet die handelnden Personen, ist auditfähig und folgt verbindlichen Vier-Augen- und Kompetenzregeln; die vom Modell ausgegebene Denkkette ist eine nachträglich plausible Textbegründung, die nicht zwingend dem tatsächlichen internen Rechenweg entspricht und daher für aufsichtsrechtliche Nachweiszwecke nur eingeschränkt belastbar ist."
+      }
+    },
+    "relatedTerms": [
+      "llm",
+      "inference",
+      "inference-performance",
+      "hallucination",
+      "eval-benchmark"
+    ],
+    "tags": [
+      "modellarchitektur",
+      "reasoning",
+      "compute",
+      "inference",
+      "enterprise"
+    ]
+  },
+  {
+    "id": "multimodal-model",
+    "slug": "multimodales-modell",
+    "term": "Multimodales Modell",
+    "aliases": [
+      "Multimodal Model",
+      "Multimodale KI",
+      "Vision-Language Model",
+      "Any-to-Any-Modell"
+    ],
+    "category": "Modellarchitektur",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Ein Modell, das mehrere Datenarten wie Text, Bild, Audio und Video gemeinsam verarbeitet oder erzeugt.",
+    "technicalDefinition": "Ein multimodales Modell nimmt mehr als eine Modalität entgegen – etwa Text und Bild – und lernt Zusammenhänge zwischen ihnen. Die einzelnen Modalitäten werden über spezialisierte Encoder eingelesen und in eine gemeinsame Vektordarstellung überführt; manche Architekturen projizieren alle Modalitäten in einen gemeinsamen Repräsentationsraum, andere verknüpfen getrennte Encoder über Cross-Attention. So kann das Modell etwa ein Diagramm im Bild auf eine textuelle Frage beziehen oder umgekehrt aus Text ein Bild erzeugen. Manche Modelle verarbeiten Modalitäten nur als Eingabe, andere geben sie auch als Ausgabe aus.",
+    "whyItMatters": "Viele reale Aufgaben kombinieren Quellen unterschiedlicher Art – Dokumente, Fotos, Tabellen, Tonaufnahmen –, und ein multimodales Modell kann diese gemeinsam auswerten, statt sie in getrennten Pipelines zu behandeln. Das senkt Integrationsaufwand und erschließt Zusammenhänge, die in einer Einzelmodalität unsichtbar bleiben.",
+    "misconceptions": [
+      "Ein multimodales Modell ist nicht automatisch in jeder Einzelmodalität besser als ein spezialisiertes Text- oder Bildmodell.",
+      "Dass ein Modell Bilder verarbeitet, bedeutet nicht, dass es wie ein Mensch sieht – es erkennt statistische Muster, kein visuelles Verständnis im menschlichen Sinn.",
+      "Multimodal heißt nicht, dass das Modell jede Modalität sowohl lesen als auch erzeugen kann; viele nehmen Bilder nur entgegen, geben aber nur Text aus."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein Sensorfusions-Steuergerät, das Kamera, Radar und Ultraschall zu einem gemeinsamen Umfeldmodell verschmilzt.",
+        "explanation": "Wie das Steuergerät Bilddaten, Abstandsechos und Geschwindigkeitswerte in einem einzigen Lagebild zusammenführt, verarbeitet das multimodale Modell Text, Bild und Audio gemeinsam. Die Aussagekraft entsteht erst aus der Kombination der Quellen.",
+        "limits": "Die Sensorfusion ist auf physikalisch klar definierte Messgrößen geeicht, während das Modell auf statistisch gelernten Mustern beruht und keine kalibrierte Wahrheit über die Welt besitzt."
+      },
+      "publicSector": {
+        "analogy": "Ein Sachbearbeiter, der einen Antrag gleichzeitig anhand des Formulars, eines beigefügten Lichtbilds und eines Scans der Urkunde prüft.",
+        "explanation": "Wie der Sachbearbeiter Text, Foto und Dokument zusammen würdigt, statt jede Unterlage isoliert zu betrachten, wertet das Modell verschiedene Modalitäten in einem Vorgang aus. Der Gesamteindruck ergibt sich aus dem Zusammenspiel.",
+        "limits": "Der Sachbearbeiter kann bei Zweifeln gezielt nachfragen oder einen Augenschein anordnen, während das Modell nur mit dem ihm vorgelegten Material arbeitet."
+      },
+      "healthcare": {
+        "analogy": "Ein Tumorboard, das Befundtext, Radiologiebilder und Laborwerte eines Patienten gemeinsam beurteilt.",
+        "explanation": "Wie das interdisziplinäre Board Bild, Schrift und Messwerte zu einer Einschätzung verbindet, integriert das multimodale Modell verschiedene Datenarten in eine gemeinsame Bewertung. Erst die Zusammenschau ergibt das vollständige Bild.",
+        "limits": "Das Board trägt klinische Verantwortung und kann Bildbefunde am Patienten verifizieren, während das Modell Bildmuster nur erkennt, ohne sie diagnostisch abzusichern."
+      },
+      "finance": {
+        "analogy": "Ein Equity-Analyst, der den Geschäftsbericht (Text), die Kurscharts (Bild) und die Audioaufzeichnung des Earnings Calls gemeinsam auswertet, um zu einem Anlagevotum zu gelangen.",
+        "explanation": "Wie der Analyst quantitative Bilanzdaten, die Tonalität des Managements im Call und das technische Chartbild zu einer einzigen Einschätzung verdichtet, führt das multimodale Modell diese Modalitäten in einer gemeinsamen Verarbeitung zusammen. In der Bankpraxis sind solche Quellen heute meist auf getrennte Systeme verteilt – Research-Datenbank, Marktdaten-Terminal, Transkriptions-Tool –, deren manuelle Zusammenführung der eigentliche Aufwand ist. Setzt eine Bank ein solches Modell in Research oder Anlageberatung ein, greifen die Modellvalidierung nach SR 11-7 und die Wohlverhaltenspflichten der MiFID II, da die Auswertung in eine Anlageentscheidung einfließt.",
+        "limits": "Der Analyst kann das Management direkt zurückrufen, Annahmen offenlegen und seine Einschätzung begründen, während das Modell aus den drei Modalitäten ein Muster ableitet, ohne kausale Begründung oder Haftung; zudem ist die Audio-Auswertung eines Calls keine belastbare Sentiment-Messung, sondern ein statistischer Näherungswert, der Ironie, Vorbehalte oder bewusste Kommunikationssteuerung systematisch verfehlen kann."
+      }
+    },
+    "relatedTerms": [
+      "llm",
+      "foundation-model",
+      "embeddings",
+      "token",
+      "transformer"
+    ],
+    "tags": [
+      "modellarchitektur",
+      "multimodal",
+      "vision",
+      "foundation-model",
+      "enterprise"
+    ]
+  },
+  {
+    "id": "distillation",
+    "slug": "distillation",
+    "term": "Distillation (Knowledge Distillation)",
+    "aliases": [
+      "Knowledge Distillation",
+      "Wissensdestillation",
+      "Teacher-Student-Training",
+      "Modelldestillation"
+    ],
+    "category": "Modellarchitektur",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Verfahren, bei dem ein großes Lehrer-Modell ein kleineres Schüler-Modell trainiert, das dessen Verhalten nachahmt und dadurch schneller und günstiger läuft.",
+    "technicalDefinition": "Bei der Knowledge Distillation lernt ein kompaktes Schüler-Modell (Student) nicht nur aus den richtigen Antworten, sondern aus den vollständigen Ausgabeverteilungen eines bereits trainierten, deutlich größeren Lehrer-Modells (Teacher). Diese weichen Wahrscheinlichkeiten tragen mehr Information als bloße Richtig/Falsch-Labels und erlauben es dem Schüler, das Verhalten des Lehrers mit einem Bruchteil der Parameter näherungsweise nachzubilden. Das Ergebnis ist kleiner, schneller und günstiger im Betrieb, meist bei moderatem Qualitätsverlust. Distillation ist damit ein eigener Trainingsschritt und nicht bloß eine nachträgliche Verkleinerung der Zahlendarstellung wie bei der Quantisierung.",
+    "whyItMatters": "Distillation macht leistungsfähige Modelle wirtschaftlich einsetzbar, weil das Schüler-Modell mit weniger Rechenleistung, weniger Speicher und geringerer Latenz auskommt. Das senkt die Inferenzkosten spürbar und ermöglicht den Betrieb auf bescheidenerer Hardware oder direkt am Endgerät.",
+    "misconceptions": [
+      "Das Schüler-Modell erbt nicht alle Fähigkeiten des Lehrers; seltene Spezialfälle und komplexes Schlussfolgern gehen oft teilweise verloren.",
+      "Distillation ist nicht dasselbe wie Quantisierung: Hier wird ein neues, kleineres Modell trainiert, statt nur die Zahlendarstellung eines bestehenden zu verkleinern.",
+      "Kleiner heißt nicht beliebig klein ohne Folgen; ab einem gewissen Kompressionsgrad bricht die Qualität spürbar ein."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein erfahrener Fahrlehrer, der sein Können an einen Fahrschüler weitergibt.",
+        "explanation": "Wie der Fahrlehrer nicht nur 'richtig oder falsch' sagt, sondern sein abgestuftes Urteil zu einer Situation mitgibt, überträgt das Lehrer-Modell seine fein abgestuften Einschätzungen auf das Schüler-Modell. Der Schüler fährt am Ende selbstständig, mit weniger Erfahrung, aber ähnlichem Stil.",
+        "limits": "Der Fahrschüler kann in seltenen Extremsituationen scheitern, die der Lehrer noch souverän gemeistert hätte."
+      },
+      "publicSector": {
+        "analogy": "Eine eingedampfte Bearbeitungshilfe, die das Wissen eines erfahrenen Sachbearbeiters für die Sachbearbeitung am Schalter bündelt.",
+        "explanation": "Wie ein erfahrener Beamter sein Fachwissen in eine knappe Handreichung gießt, mit der auch neue Kräfte Standardfälle zügig bearbeiten, überträgt das Lehrer-Modell sein Verhalten in ein schlankes Schüler-Modell. Der Routinebetrieb wird schneller und ressourcenschonender.",
+        "limits": "Atypische Anträge, die fundiertes Hintergrundwissen erfordern, übersteigen die Handreichung und brauchen weiterhin den erfahrenen Fachmann."
+      },
+      "healthcare": {
+        "analogy": "Ein klinischer Kurzleitfaden für die Triage, abgeleitet aus dem Urteil erfahrener Fachärzte.",
+        "explanation": "Wie ein knapper Triage-Leitfaden das abgewogene Urteil von Spezialisten in eine schnell anwendbare Form bringt, destilliert das Schüler-Modell das Verhalten des großen Lehrer-Modells in eine kompakte, rasch einsatzfähige Variante. So lassen sich Standardentscheidungen zügig und auf einfacher Infrastruktur treffen.",
+        "limits": "Bei seltenen oder mehrdeutigen Krankheitsbildern fehlt dem Leitfaden die Tiefe, die nur die volle fachärztliche Expertise liefert."
+      },
+      "finance": {
+        "analogy": "Eine vereinfachte Scorecard, abgeleitet aus einem komplexen internen IRB-Risikomodell, für schnelle Kreditentscheidungen im Mengengeschäft am Point of Sale.",
+        "explanation": "So wie eine Bank aus einem aufwändigen, validierten IRB-Modell eine schlanke Punktbewertungs-Scorecard ableitet, die ein Berater in Sekunden anwenden kann, überträgt Distillation das Verhalten des großen Lehrer-Modells in ein kleines, schnelles Schüler-Modell. Die Scorecard reproduziert die Entscheidungslogik des Kernmodells näherungsweise und ist im Massengeschäft kostengünstig einsetzbar. Unter SR 11-7 und MaRisk (AT 4.3.5) bleibt jedoch auch das abgeleitete Modell ein eigenständig validierungs- und dokumentationspflichtiges Modell, dessen Abweichung vom Ursprungsmodell laufend überwacht werden muss.",
+        "limits": "Die vereinfachte Scorecard verliert die Trennschärfe des IRB-Modells bei atypischen Schuldnern und Randsegmenten; verlässt sich die Bank im Einzelfall blind auf sie, drohen systematisch falsche Bonitätseinstufungen, die das destillierte Modell nicht mehr auffängt."
+      }
+    },
+    "relatedTerms": [
+      "training-finetuning",
+      "quantization",
+      "inference-performance",
+      "foundation-model",
+      "inference"
+    ],
+    "tags": [
+      "infrastruktur",
+      "kompression",
+      "effizienz",
+      "deployment",
+      "compute"
+    ]
+  },
+  {
+    "id": "quantization",
+    "slug": "quantisierung",
+    "term": "Quantisierung",
+    "aliases": [
+      "Quantization",
+      "Modellquantisierung",
+      "INT8/INT4-Quantisierung",
+      "Post-Training Quantization"
+    ],
+    "category": "Modellarchitektur",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Quantisierung reduziert die Zahlenpraezision der Modellgewichte (und teils der Aktivierungen), um Speicherbedarf zu senken und die Inferenz zu beschleunigen.",
+    "technicalDefinition": "Bei der Quantisierung werden die Gewichte eines Modells von hoeher aufloesenden Fliesskommazahlen (z. B. FP16 oder BF16) auf kompaktere Formate wie INT8 oder INT4 abgebildet. Dadurch belegt jedes Gewicht weniger Bits, das Modell passt in kleineren Speicher und viele Rechenoperationen laufen schneller. Der Preis ist ein gewisser Genauigkeitsverlust, der bei moderater Quantisierung gering bleibt, bei aggressiver Reduktion aber spuerbar werden kann; oft werden empfindliche Schichten daher hoeher aufgeloest belassen. Die Quantisierung veraendert nicht das gelernte Wissen, sondern nur, wie fein die bereits gelernten Werte gespeichert und verrechnet werden.",
+    "whyItMatters": "Quantisierung entscheidet oft darueber, ob ein leistungsfaehiges Modell ueberhaupt auf vorhandener Hardware oder zu vertretbaren Kosten betrieben werden kann. Sie ist ein zentraler Hebel, um Modellqualitaet gegen Speicher, Geschwindigkeit und Betriebskosten abzuwaegen.",
+    "misconceptions": [
+      "Quantisierung sei verlustfrei - tatsaechlich gehen Detailinformationen verloren, auch wenn der Effekt haeufig klein ist.",
+      "Mehr Quantisierung sei immer besser, weil schneller und kleiner - ab einem gewissen Punkt sinkt die Antwortqualitaet deutlich.",
+      "Quantisierung sei dasselbe wie Distillation oder ein erneutes Training - sie aendert nur die Speicherpraezision bereits gelernter Gewichte, nicht das Modell oder dessen Wissen selbst."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Wie ein Tacho, der nur noch in Fuenf-km/h-Schritten statt exakt anzeigt.",
+        "explanation": "Wie ein groeber skalierter Tacho weniger Feinheit darstellt, dafuer aber schneller und einfacher abzulesen ist, speichert ein quantisiertes Modell seine Werte in groeberen Stufen und arbeitet dadurch ressourcenschonender.",
+        "limits": "Ein Tacho rundet nur die Anzeige, waehrend Quantisierung die intern verrechneten Werte selbst vergroebert und sich der Rundungsfehler ueber Milliarden Gewichte fortpflanzt."
+      },
+      "publicSector": {
+        "analogy": "Wie eine Einkommenserfassung, die nur noch in groben Gehaltsstufen statt auf den Euro genau erhebt.",
+        "explanation": "Wie eine Behoerde mit groeberen Einkommensklassen Antraege schneller und mit weniger Aufwand bearbeitet, verarbeitet ein quantisiertes Modell groeber gespeicherte Werte und spart so Rechenressourcen.",
+        "limits": "Bei Antragstellern nahe einer Einkommensgrenze kann die Einstufung kippen - ein Detailverlust, der bei reinen Statistikzwecken folgenlos bliebe."
+      },
+      "healthcare": {
+        "analogy": "Wie ein Fieberthermometer, das nur noch in halben Grad-Schritten statt auf eine Nachkommastelle genau misst.",
+        "explanation": "Wie ein groeber aufloesendes Thermometer fuer die meisten Verlaufskontrollen ausreicht und einfacher abzulesen ist, kommt ein quantisiertes Modell mit groeberen Werten aus und benoetigt weniger Speicher.",
+        "limits": "Bei einer kritischen Temperaturschwelle kann die fehlende Nachkommastelle eine relevante Veraenderung verschleiern, die ein praezises Geraet noch erfasst haette."
+      },
+      "finance": {
+        "analogy": "Wie das Mapping einer feinkoernigen PD-Schaetzung auf eine grobe Masterskala mit wenigen Ratingklassen, statt die Ausfallwahrscheinlichkeit auf Basispunkte genau zu fuehren.",
+        "explanation": "In der Bankpraxis fasst eine Ratingmasterskala feine Ausfallwahrscheinlichkeiten in wenige Bonitaetsstufen zusammen und vereinfacht so Reporting, Limitpruefung und Kapitalunterlegung - analog bildet Quantisierung feine Gewichtswerte auf ein grobes Raster ab und spart Speicher sowie Rechenzeit. Solange die Stufung weit von Entscheidungsschwellen entfernt liegt, bleibt der Effekt unkritisch. Im Modellrisikomanagement (etwa nach SR 11-7 bzw. unter MaRisk/BAIT) muss eine solche Vergroeberung dokumentiert und ihr Einfluss durch Validierung und Backtesting belegt werden.",
+        "limits": "Genau an einer Klassengrenze - etwa zwischen zwei IRB-Ratingklassen oder an einem Limit - kann das Runden eine Entscheidung kippen, die mit feiner Aufloesung anders ausgefallen waere; anders als eine einzelne gerundete Kennzahl verteilt sich der Quantisierungsfehler zudem ueber alle Gewichte und kann sich kumulieren."
+      }
+    },
+    "relatedTerms": [
+      "distillation",
+      "inference",
+      "inference-performance",
+      "gpu-vram-npu",
+      "llm"
+    ],
+    "tags": [
+      "modellarchitektur",
+      "compute",
+      "deployment",
+      "inferenz",
+      "effizienz"
+    ]
+  },
+  {
+    "id": "gpu-vram-npu",
+    "slug": "gpu-vram-npu",
+    "term": "GPU, VRAM & NPU",
+    "aliases": [
+      "Grafikprozessor",
+      "Beschleuniger",
+      "AI Accelerator",
+      "Grafikspeicher"
+    ],
+    "category": "Infrastruktur & Compute",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Spezialisierte Rechenhardware (GPU/NPU) und ihr Speicher (VRAM), die durch massiv parallele Matrixrechnung bestimmen, welche KI-Modelle wie schnell laufen.",
+    "technicalDefinition": "GPUs (Graphics Processing Units) und NPUs (Neural Processing Units) führen die für neuronale Netze typischen Matrixmultiplikationen massiv parallel aus und sind dafür um Größenordnungen schneller als eine klassische CPU. Der VRAM (Video RAM) ist der schnelle Speicher direkt am Beschleuniger; seine Kapazität legt fest, wie groß ein Modell sein darf, das vollständig geladen und genutzt werden kann. Passt ein Modell nicht in den VRAM, muss es ausgelagert oder verkleinert werden, was die Geschwindigkeit drastisch senkt. Die verfügbare Hardware entscheidet damit unmittelbar, ob ein bestimmtes Modell überhaupt betreibbar ist und mit welcher Latenz es antwortet.",
+    "whyItMatters": "Die Hardwarewahl ist die harte physische Grenze jedes KI-Vorhabens: Sie entscheidet über machbare Modellgröße, Antwortzeit und Betriebskosten, lange bevor Software oder Modellqualität eine Rolle spielen.",
+    "misconceptions": [
+      "Mehr VRAM macht ein Modell nicht von sich aus schneller, sondern ermöglicht zunächst, dass größere Modelle überhaupt vollständig geladen werden.",
+      "Eine leistungsfähige CPU kann eine GPU/NPU bei großen Modellen nicht ersetzen, weil ihr die massive Parallelität für Matrixrechnung fehlt.",
+      "VRAM ist nicht dasselbe wie der Arbeitsspeicher (RAM) des Systems; für die ladbare Modellgröße zählt nur der Speicher direkt am Beschleuniger."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Eine GPU ist wie ein Fließband mit hunderten Arbeitern, die identische Handgriffe gleichzeitig ausführen, während die CPU ein einzelner Allround-Mechaniker ist.",
+        "explanation": "Wie ein Fließband tausende gleichartige Schweißpunkte parallel setzt, rechnet die GPU tausende Matrixoperationen gleichzeitig; der VRAM ist das Materiallager direkt an der Linie, dessen Größe bestimmt, wie umfangreich das gefertigte Modell sein darf.",
+        "limits": "Anders als ein Fließband, das immer nur die gerade bearbeitete Karosserie braucht, muss die GPU das gesamte Modell vollständig im VRAM vorhalten, nicht nur das aktuell berechnete Teil."
+      },
+      "publicSector": {
+        "analogy": "Eine NPU ist wie ein Großraumbüro voller Sachbearbeiter, die einen Aktenstapel gleichzeitig statt nacheinander abarbeiten.",
+        "explanation": "Wie eine Behörde Anträge schneller bescheidet, wenn hunderte Sachbearbeiter parallel prüfen, beschleunigt die GPU/NPU die Rechnung durch Parallelität; der VRAM ist der Schreibtischplatz, der begrenzt, wie viele Akten gleichzeitig offen liegen können.",
+        "limits": "Mehr Schreibtischplatz beschleunigt die einzelne Bearbeitung nicht, er erlaubt nur, einen umfangreicheren Vorgang überhaupt komplett auszubreiten."
+      },
+      "healthcare": {
+        "analogy": "Eine GPU ist wie ein Labor mit hunderten parallel laufenden Analysegeräten statt eines einzelnen, das Probe für Probe abarbeitet.",
+        "explanation": "Wie ein Großlabor tausende Blutproben gleichzeitig auswertet, verarbeitet die GPU tausende Rechenoperationen parallel; der VRAM ist der Probenkühlschrank am Gerät, dessen Größe bestimmt, wie umfangreich der gleichzeitig vorgehaltene Datensatz sein darf.",
+        "limits": "Ein größerer Kühlschrank lässt die einzelne Analyse nicht schneller laufen, er ermöglicht nur, einen größeren Probenumfang gleichzeitig vorzuhalten."
+      },
+      "finance": {
+        "analogy": "Beschleuniger und VRAM sind wie die co-lokalisierte Low-Latency-Infrastruktur eines Hochfrequenzhändlers direkt neben der Matching-Engine der Börse: Sie definiert, was technisch überhaupt machbar ist, bevor die Handelsstrategie zählt.",
+        "explanation": "Wie ein HFT-Desk seine Server per Co-Location im Rechenzentrum der Börse platziert und auf FPGAs sowie spezialisierte Hardware setzt, weil Mikrosekunden über die Profitabilität entscheiden, bestimmt die GPU/NPU-Ausstattung, ob ein Modell mit akzeptabler Latenz produktiv läuft. Der VRAM entspricht dabei der Speichertiefe, die die Hardware vorhalten kann: Reicht sie für das gewünschte Modell nicht aus, muss dieses quantisiert oder verkleinert werden. Diese physische Schranke lässt sich nicht durch besseren Code wegoptimieren und fließt unmittelbar in die Investitions- und Betriebskostenrechnung ein, etwa wenn der Betrieb großer Modelle als Auslagerung an einen Cloud-Anbieter (DORA-relevante IKT-Drittdienstleister) abgewogen wird.",
+        "limits": "Die Analogie versagt bei der Wirkungslogik: Ein zu geringer Co-Location-Vorsprung verlangsamt einen HFT-Desk nur graduell gegenüber Konkurrenten, während zu wenig VRAM keine graduelle Verlangsamung, sondern eine harte Ja/Nein-Grenze ist – das Modell lässt sich dann schlicht nicht laden."
+      }
+    },
+    "relatedTerms": [
+      "inference",
+      "quantization",
+      "datacenter-cloud-inference",
+      "inference-performance",
+      "llm"
+    ],
+    "tags": [
+      "infrastruktur",
+      "compute",
+      "hardware",
+      "gpu",
+      "deployment"
+    ]
+  },
+  {
+    "id": "inference-performance",
+    "slug": "inferenz-latenz-durchsatz",
+    "term": "Inferenz-Latenz & Durchsatz",
+    "aliases": [
+      "Latency & Throughput",
+      "Time-to-First-Token",
+      "Tokens pro Sekunde",
+      "Antwortzeit und Verarbeitungsmenge"
+    ],
+    "category": "Infrastruktur & Compute",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Latenz misst, wie schnell ein KI-Modell auf eine einzelne Anfrage reagiert, der Durchsatz, wie viele Anfragen es insgesamt pro Zeiteinheit bewältigt - beide Ziele stehen bei fester Hardware oft im Konflikt.",
+    "technicalDefinition": "Die Inferenz-Latenz beschreibt die Reaktionszeit eines Modells, typischerweise gemessen als Time-to-First-Token (Zeit bis zum ersten ausgegebenen Token) und als Generierungsrate in Tokens pro Sekunde. Der Durchsatz beziffert dagegen die Gesamtmenge an verarbeiteten Tokens oder Anfragen pro Zeiteinheit über alle gleichzeitigen Nutzer hinweg. Beide hängen an derselben begrenzten Rechenkapazität: Durch Batching - das Bündeln mehrerer Anfragen zu einem gemeinsamen Rechenschritt - lässt sich der Durchsatz deutlich steigern, weil die Hardware besser ausgelastet wird, doch einzelne Anfragen warten dann länger, was ihre Latenz erhöht. Die Wahl der Optimierung hängt vom Anwendungsfall ab: interaktiver Chat verlangt niedrige Latenz, eine nächtliche Massenauswertung von Dokumenten profitiert von hohem Durchsatz.",
+    "whyItMatters": "Latenz und Durchsatz bestimmen unmittelbar Nutzererlebnis, Hardwarekosten und Skalierbarkeit eines KI-Dienstes - wer beides verwechselt, dimensioniert Infrastruktur und Service-Level falsch.",
+    "misconceptions": [
+      "Niedrige Latenz und hoher Durchsatz lassen sich bei fester Hardware nicht gleichzeitig maximieren - man verbessert meist das eine auf Kosten des anderen.",
+      "Ein schnelleres Modell ist nicht automatisch das bessere, weil die passende Kennzahl vom Anwendungsfall abhängt: für einen Chatbot zählt die Reaktionszeit, für eine Stapelverarbeitung die Gesamtmenge.",
+      "Batching senkt nicht die Antwortzeit, sondern erhöht sie für die Einzelanfrage - es steigert lediglich die insgesamt verarbeitete Menge durch bessere Auslastung der Hardware."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Die Beschleunigung eines einzelnen Autos von 0 auf 100 km/h gegenüber der Zahl der Fahrzeuge, die eine Autobahnspur pro Stunde durchschleust.",
+        "explanation": "Wie ein einzelnes Auto möglichst schnell anfahren soll (Latenz), während die Spur insgesamt möglichst viele Fahrzeuge pro Stunde durchlassen soll (Durchsatz), optimiert auch ein KI-System entweder die Einzelreaktion oder die Gesamtmenge. Dichter Verkehr erhöht den Durchsatz der Spur, verlangsamt aber jedes einzelne Auto.",
+        "limits": "Anders als Autos, die nacheinander dieselbe Spur befahren, werden gebatchte Anfragen tatsächlich gemeinsam in einem Rechenschritt verarbeitet, nicht nur hintereinander gereiht."
+      },
+      "publicSector": {
+        "analogy": "Die Wartezeit am einzelnen Bürgeramt-Schalter gegenüber der Zahl aller an einem Tag bearbeiteten Anträge.",
+        "explanation": "Wie eine Behörde abwägt, ob ein einzelner Bürger schnell drankommt (Latenz) oder ob über den Tag möglichst viele Vorgänge erledigt werden (Durchsatz), muss auch ein KI-Dienst zwischen schneller Einzelantwort und hoher Gesamtkapazität wählen. Das Bündeln gleichartiger Anträge erhöht die Tagesmenge, lässt den Einzelnen aber länger warten.",
+        "limits": "Eine Behörde kann bei Andrang spontan zusätzliche Schalter öffnen, während die KI-Rechenkapazität (GPUs) kurzfristig fest begrenzt und nicht beliebig erweiterbar ist."
+      },
+      "healthcare": {
+        "analogy": "Die Reaktionszeit der Notaufnahme für einen kritischen Fall gegenüber dem Tagesdurchsatz eines Routine-Labors mit Sammelläufen.",
+        "explanation": "Wie eine Notaufnahme einen Einzelfall sofort versorgt (Latenz), während ein Labor Proben in Sammelläufen analysiert, um die Tagesmenge zu maximieren (Durchsatz), trennt auch ein KI-System zwischen Sofort- und Mengenbetrieb. Sammelläufe nutzen die Analysegeräte besser aus, verzögern aber das einzelne Ergebnis.",
+        "limits": "In der Medizin entscheidet die klinische Dringlichkeit über die Priorität, beim KI-Batching dagegen rein die technische Auslastungsoptimierung ohne inhaltliche Triage."
+      },
+      "finance": {
+        "analogy": "Die Orderausführungslatenz im Hochfrequenzhandel gegenüber dem Tagesdurchsatz der Wertpapierabwicklung im nächtlichen Batch-Settlement.",
+        "explanation": "Im Börsenhandel zählt für eine einzelne Order jede Mikrosekunde bis zur Ausführung (Latenz), weshalb Co-Location und direkter Marktzugang (DEA) genau diesem Ziel dienen - während das Back-Office im Batch-Settlement (etwa über T2S oder definierte Clearing-Zyklen) auf maximalen Tagesdurchsatz Zehntausender Transaktionen optimiert. Beide Welten teilen sich Infrastruktur, verfolgen aber gegensätzliche Optimierungsziele, und die Vorgaben sind teils reguliert, etwa die MiFID-II-Anforderungen an Uhrensynchronisation (RTS 25) und Best Execution. Genauso muss ein KI-Betrieb entscheiden, ob er auf schnelle Einzelantwort oder hohe aggregierte Verarbeitungsmenge auslegt.",
+        "limits": "Im Handel ist Latenz ein direkter Wettbewerbs- und Ertragsfaktor mit harter regulatorischer Messpflicht, während KI-Latenz primär Nutzererlebnis und Kosten betrifft; zudem sind Abwicklungszyklen rechtlich fixiert, das KI-Batchverhalten dagegen frei konfigurierbar."
+      }
+    },
+    "relatedTerms": [
+      "inference",
+      "gpu-vram-npu",
+      "rate-limit",
+      "datacenter-cloud-inference"
+    ],
+    "tags": [
+      "infrastruktur",
+      "compute",
+      "performance",
+      "deployment",
+      "enterprise"
+    ]
+  },
+  {
+    "id": "datacenter-cloud-inference",
+    "slug": "rechenzentrum-cloud-inference",
+    "term": "Rechenzentrum & Cloud-Inference",
+    "aliases": [
+      "Cloud-Inference",
+      "On-Premise-KI",
+      "Hybrid-Deployment",
+      "Inference-Hosting"
+    ],
+    "category": "Infrastruktur & Compute",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Die Frage, wo ein KI-Modell tatsächlich rechnet: auf eigener Hardware im Haus, über eine fremde Cloud-API oder in einer Mischung aus beidem.",
+    "technicalDefinition": "Cloud-Inference bezeichnet den Betrieb eines trainierten Modells im Produktivbetrieb auf entfernter, gemieteter Infrastruktur, die über eine API angesprochen wird. Die Gegenmodelle sind On-Premise-Betrieb auf eigenen GPUs im eigenen Rechenzentrum sowie hybride Architekturen, die beides kombinieren. Die Wahl ist eine Abwägung zwischen Datenhoheit, Gesamtkosten, Skalierbarkeit und Latenz: Eigene Hardware bindet Kapital und Betriebs-Know-how, gibt aber volle Kontrolle; eine API skaliert elastisch und ohne Vorabinvestition, verlagert aber Datenverarbeitung und Verfügbarkeit zu einem Dritten.",
+    "whyItMatters": "Diese Architekturentscheidung bestimmt laufende Kosten, regulatorische Angreifbarkeit und die Abhängigkeit von einem einzelnen Anbieter über Jahre hinweg. Sie lässt sich später nur mit erheblichem Aufwand revidieren.",
+    "misconceptions": [
+      "Cloud ist nicht automatisch günstiger: Bei konstant hoher Auslastung kann eigene Hardware über die Laufzeit deutlich billiger sein als die Abrechnung pro Token über eine API.",
+      "On-Premise ist nicht automatisch DSGVO-konform: Eigene Server schützen nicht vor unzureichenden Zugriffskontrollen, fehlender Verschlüsselung oder mangelhafter Protokollierung.",
+      "Cloud bedeutet nicht automatisch unsicher und On-Premise nicht automatisch sicher: Das Sicherheitsniveau hängt von Konfiguration und Betrieb ab, nicht vom Standort der Hardware."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Eigener Fuhrpark mit Werkshalle versus ein Mietwagen-Abo nach Bedarf.",
+        "explanation": "Wie ein Spediteur zwischen eigenen LKW samt Werkstatt und einem flexiblen Mietmodell wählt, entscheidet ein Betrieb zwischen eigenen GPUs und gemieteter Cloud-Rechenleistung. Der eigene Fuhrpark lohnt bei voller Auslastung, das Mietmodell bei schwankendem Bedarf.",
+        "limits": "Ein Mietwagen fährt überall gleich; bei einer Cloud-API verlassen zusätzlich die transportierten Daten das eigene Gelände, was beim LKW so nicht passiert."
+      },
+      "publicSector": {
+        "analogy": "Ein behördeneigenes Rechenzentrum versus ein zentral betriebener Dienst eines staatlichen IT-Dienstleisters wie dem ITZBund.",
+        "explanation": "Wie eine Behörde abwägt, ob sie Fachverfahren selbst betreibt oder an einen staatlichen Dienstleister auslagert, wägt sie bei KI zwischen eigener Hardware und externem Inference-Dienst ab. Beides muss die Anforderungen an die Verarbeitung sensibler Bürgerdaten erfüllen.",
+        "limits": "Ein staatlicher Dienstleister bleibt an Recht und Weisung gebunden; ein kommerzieller Cloud-Anbieter unterliegt unter Umständen ausländischem Zugriffsrecht wie dem US CLOUD Act."
+      },
+      "healthcare": {
+        "analogy": "Ein hauseigenes Klinik-MRT versus ein externes Befundungszentrum, an das Aufnahmen verschickt werden.",
+        "explanation": "Wie ein Krankenhaus entscheidet, ob es teure Bildgebung selbst vorhält oder Befunde an ein spezialisiertes Zentrum auslagert, wählt es bei KI zwischen eigener Rechenkapazität und externem Dienst. Das eigene Gerät kostet auch im Stillstand, das externe verschickt Patientendaten.",
+        "limits": "Beim externen Befundungszentrum verlassen identifizierbare Patientendaten das Haus und erfordern einen Auftragsverarbeitungsvertrag; eine lokale GPU verarbeitet sie im geschützten Kliniknetz."
+      },
+      "finance": {
+        "analogy": "Die Entscheidung zwischen einem bankeigenen Rechenzentrum und der Auslagerung der Inferenz an einen Cloud-Provider unter dem Auslagerungsmanagement nach BAIT und DORA.",
+        "explanation": "Wie eine Bank bei der Auslagerung wesentlicher IT-Dienstleistungen zwischen Eigenbetrieb, Auslagerung und Cloud-Bezug abwägt, entscheidet sie auch beim Hosting von KI-Inferenz – nur dass hier zusätzlich sensible Kunden- und Transaktionsdaten in fremde Hände gelangen können. BAIT und die EU-Verordnung DORA verlangen bei Cloud-Auslagerung ein vollständiges Informationsregister der vertraglichen Vereinbarungen, eine Risikoanalyse, vertragliche Audit- und Weisungsrechte sowie eine glaubhafte Ausstiegsstrategie gegen Anbieterabhängigkeit. Eine Konzentration kritischer Last bei einem einzigen Hyperscaler wird von der BaFin zunehmend als Konzentrationsrisiko bewertet.",
+        "limits": "Die Analogie zur klassischen IT-Auslagerung greift zu kurz, weil bei generativer KI nicht nur Rechenzeit, sondern oft auch der Prompt-Inhalt – also potenziell Geschäftsgeheimnisse oder Kundendaten – beim Anbieter landet und in dessen Logs oder Trainingsdaten einfließen könnte; die klassische Auslagerung etwa der Lohnbuchhaltung hat diese Daten-Leakage-Dimension nicht in dieser Schärfe."
+      }
+    },
+    "relatedTerms": [
+      "inference",
+      "gpu-vram-npu",
+      "inference-performance",
+      "rate-limit",
+      "data-leakage"
+    ],
+    "tags": [
+      "infrastruktur",
+      "compute",
+      "deployment",
+      "cloud",
+      "datenhoheit"
+    ]
+  },
+  {
+    "id": "rate-limit",
+    "slug": "rate-limit",
+    "term": "Rate Limit",
+    "aliases": [
+      "Ratenbegrenzung",
+      "Drosselung",
+      "Throttling",
+      "API-Limit"
+    ],
+    "category": "Infrastruktur & Compute",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Ein Rate Limit ist die vom Anbieter festgelegte Obergrenze, wie viele Anfragen oder Tokens ein Nutzer innerhalb eines Zeitfensters an eine KI-Schnittstelle senden darf.",
+    "technicalDefinition": "Ein Rate Limit begrenzt den Zugriff auf eine KI-API typischerweise über zwei Achsen: Anfragen pro Minute (RPM) und Tokens pro Minute (TPM). Es schützt die geteilte Inferenz-Infrastruktur vor Überlastung, sichert eine faire Verteilung der Kapazität zwischen den Kunden und wehrt Missbrauch ab. Wird ein Limit überschritten, antwortet die Schnittstelle meist mit dem Statuscode HTTP 429 und häufig einem Retry-After-Hinweis, woraufhin die aufrufende Anwendung mit Strategien wie Retry, exponentiellem Backoff und Queueing reagieren muss.",
+    "whyItMatters": "Rate Limits bestimmen maßgeblich, wie skalierbar und stabil eine KI-Anwendung im Produktivbetrieb läuft, und zwingen Entwickler dazu, Lastspitzen durch Warteschlangen und Wiederholungslogik abzufedern statt sie ungebremst durchzureichen.",
+    "misconceptions": [
+      "Ein niedriges Rate Limit sagt nichts über die Qualität oder Leistungsfähigkeit des Modells aus, sondern nur über die zugeteilte Kapazität.",
+      "Limits sind nicht willkürlich gesetzt, sondern dienen dem Schutz vor Überlastung und Missbrauch der geteilten Infrastruktur.",
+      "Ein Rate Limit ist keine harte Kostenobergrenze: Es begrenzt das Tempo der Nutzung, nicht den insgesamt entstehenden Aufwand oder Preis."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Eine Zuflussdosierampel an der Autobahnauffahrt, die Fahrzeuge im Sekundentakt einzeln auf die Spur lässt.",
+        "explanation": "Wie die Dosierampel verhindert, dass zu viele Autos gleichzeitig auffahren und die Hauptbahn ins Stocken bringen, lässt das Rate Limit nur eine bestimmte Zahl an Anfragen pro Zeit auf die Inferenz-Infrastruktur. Beide regeln nicht das Ziel, sondern nur das Zuflusstempo.",
+        "limits": "Anders als die Ampel, die den Verkehr nur kurz verzögert, kann ein hartes Rate Limit Anfragen vollständig abweisen statt sie nur zu staffeln."
+      },
+      "publicSector": {
+        "analogy": "Das Nummernziehen und Aufrufsystem in einem Bürgeramt mit begrenzten Schaltern.",
+        "explanation": "Wie das Amt pro Stunde nur so viele Wartenummern aufruft, wie Sachbearbeiter abfertigen können, lässt das Rate Limit nur so viele Anfragen zu, wie die Infrastruktur fair bedienen kann. Beide schützen vor Überlauf, indem sie den Zugang takten statt ihn ganz zu sperren.",
+        "limits": "Im Bürgeramt bleibt die gezogene Nummer gültig, während eine abgewiesene API-Anfrage oft verfällt und aktiv erneut gesendet werden muss."
+      },
+      "healthcare": {
+        "analogy": "Die Triage in einer Notaufnahme, die den Patientenzustrom auf die verfügbaren Behandlungskapazitäten verteilt.",
+        "explanation": "Wie die Triage steuert, wie viele Fälle gleichzeitig in die begrenzten Behandlungsräume gelangen, regelt das Rate Limit den Zustrom an Anfragen zur knappen Rechenkapazität. Beide stellen Systemstabilität über die sofortige Bedienung jedes Einzelnen.",
+        "limits": "Die Triage bewertet die Dringlichkeit inhaltlich, während ein Rate Limit rein mengenmäßig drosselt und keine Anfrage als wichtiger einstuft."
+      },
+      "finance": {
+        "analogy": "Die Transaktionslimits und das Throttling im Zahlungsverkehr, etwa Tages- oder Minutenobergrenzen für SEPA-Überweisungen und Kartenzahlungen.",
+        "explanation": "Wie eine Bank die Zahl und das Volumen von Transaktionen pro Zeitfenster deckelt, um Clearing- und Settlement-Systeme vor Überlast und Konten vor Betrug zu schützen, begrenzt ein Rate Limit Anfragen und Tokens pro Minute. In der Bankpraxis greifen solche Drosselungen sowohl aus Kapazitätsgründen im Massenzahlungsverkehr als auch aus Sicht der Betrugsprävention, wo ungewöhnliche Frequenzen Fraud-Monitoring-Regeln auslösen. Eine Überschreitung führt zu Ablehnung oder Verzögerung der Order, die der aufrufende Prozess über Wiederholung oder Warteschlange auffangen muss.",
+        "limits": "Die Analogie versagt beim Auslöser: Ein Transaktionslimit kann gezielt eine einzelne verdächtige Zahlung blockieren, während ein API-Rate-Limit inhaltsblind allein die Frequenz misst und keine Risiko- oder Betrugsbewertung der einzelnen Anfrage vornimmt."
+      }
+    },
+    "relatedTerms": [
+      "inference",
+      "datacenter-cloud-inference",
+      "inference-performance",
+      "token",
+      "orchestration"
+    ],
+    "tags": [
+      "infrastruktur",
+      "compute",
+      "deployment",
+      "api",
+      "skalierung"
+    ]
+  },
+  {
+    "id": "vector-database",
+    "slug": "vektordatenbank",
+    "term": "Vector Database",
+    "aliases": [
+      "Vektordatenbank",
+      "Vector Store",
+      "Embedding-Datenbank",
+      "Vektorindex"
+    ],
+    "category": "Daten & Retrieval",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Eine Datenbank, die Embeddings speichert und über Ähnlichkeitssuche schnell die inhaltlich nächstgelegenen Einträge zu einer Anfrage findet.",
+    "technicalDefinition": "Eine Vektordatenbank speichert Texte, Bilder oder andere Inhalte als hochdimensionale Embeddings und sucht nicht nach exakten Übereinstimmungen, sondern nach geometrischer Nähe im Vektorraum. Statt jeden Eintrag einzeln zu vergleichen, nutzt sie eine ungefähre Nächste-Nachbarn-Suche (Approximate Nearest Neighbor), häufig über Indexstrukturen wie HNSW, und liefert so auch in Millionen von Vektoren in Millisekunden die ähnlichsten Treffer. Sie ist die Infrastruktur-Grundlage, die RAG bei großen Datenmengen überhaupt skalierbar macht. Die Suche liefert die wahrscheinlich relevantesten, nicht zwingend die objektiv korrekten Einträge.",
+    "whyItMatters": "Ohne eine Vektordatenbank lässt sich relevantes Wissen aus großen Dokumentbeständen nicht schnell genug für RAG-Anwendungen auffinden; sie entscheidet maßgeblich über Antwortqualität und Latenz produktiver KI-Systeme.",
+    "misconceptions": [
+      "Eine Vektordatenbank ersetzt keine klassische SQL-Datenbank: Sie findet Ähnliches, nicht exakt Bestimmtes wie eine Kundennummer oder einen Kontostand.",
+      "Ähnlichkeit ist nicht dasselbe wie Korrektheit: Der nächstgelegene Treffer kann fachlich falsch sein, wenn die Frage anders gemeint war.",
+      "Die Datenbank ist nur so gut wie die zugrunde liegenden Embeddings: Schlechte oder unpassend trainierte Embedding-Modelle liefern auch bei perfekter Suchtechnik unbrauchbare Treffer."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein Werkstatt-Diagnosesystem, das ein unbekanntes Fehlerbild mit den ähnlichsten je dokumentierten Schadensfällen abgleicht.",
+        "explanation": "Wie das System nicht nach einer exakten Fehlernummer, sondern nach dem ähnlichsten Symptommuster aus tausenden Reparaturhistorien sucht, findet die KI zu einer Anfrage die inhaltlich nächstgelegenen gespeicherten Fälle. So lassen sich auch unscharf beschriebene Probleme einer wahrscheinlichen Ursache zuordnen.",
+        "limits": "Der ähnlichste dokumentierte Fall kann eine ganz andere Ursache haben, wenn zwei verschiedene Defekte zufällig dasselbe Symptombild erzeugen."
+      },
+      "publicSector": {
+        "analogy": "Ein Aktenarchiv, das zu einem neuen Bürgerantrag automatisch thematisch verwandte Altfälle heraussucht, statt nur nach Aktenzeichen zu blättern.",
+        "explanation": "Wie eine Sachbearbeiterin zu einem Antrag inhaltlich vergleichbare Präzedenzfälle findet, ordnet die KI eine Anfrage den ähnlichsten archivierten Vorgängen zu. Das beschleunigt das Auffinden einschlägiger Vorgänge auch ohne passendes Schlagwort.",
+        "limits": "Thematische Nähe ersetzt keine rechtliche Einschlägigkeit; ein ähnlich klingender Altfall kann rechtlich völlig anders gelagert sein."
+      },
+      "healthcare": {
+        "analogy": "Ein Befundarchiv, das zu einem neuen Röntgenbild die visuell ähnlichsten dokumentierten Aufnahmen vergangener Patienten anzeigt.",
+        "explanation": "Wie ein Radiologe ein aktuelles Bild mit gespeicherten Vergleichsfällen abgleicht, findet die KI die ähnlichsten archivierten Befunde im Vektorraum. Das unterstützt die Einordnung seltener oder uneindeutiger Muster.",
+        "limits": "Visuelle Ähnlichkeit ist keine Diagnose; zwei optisch nahe Befunde können klinisch entgegengesetzte Bedeutung haben."
+      },
+      "finance": {
+        "analogy": "Ein durchsuchbares Musterarchiv der Transaktionshistorie, in dem die Betrugs- und Geldwäscheerkennung zu einer verdächtigen Buchung die ähnlichsten je beobachteten Betrugs- und Normalmuster abruft.",
+        "explanation": "Statt eine Transaktion nur gegen starre Schwellenwerte zu prüfen, verortet das System sie als Vektor und sucht die nächstgelegenen historischen Muster, etwa typische Verschleierungssequenzen aus früheren Fällen. In der Bankpraxis ergänzt das die regelbasierten Limit- und Transaktionsmonitoring-Systeme und liefert dem Geldwäschebeauftragten Vergleichsfälle für die manuelle Bewertung. Anders als ein Scoring- oder Ratingmodell trifft die Datenbank selbst keine Entscheidung, sondern stellt nur die ähnlichsten Präzedenzfälle bereit.",
+        "limits": "Ähnlichkeit zu bekannten Mustern erkennt keine völlig neue Betrugsmasche und kann zugleich harmlose, aber ungewöhnliche Buchungen fälschlich neben Betrugsfälle einsortieren; für die Nachweis- und Dokumentationspflichten nach MaRisk und Geldwäschegesetz bleibt die nachvollziehbare Begründung eines Treffers entscheidend, die eine reine Ähnlichkeitsmetrik nicht liefert."
+      }
+    },
+    "relatedTerms": [
+      "embeddings",
+      "rag",
+      "memory",
+      "inference-performance",
+      "hallucination"
+    ],
+    "tags": [
+      "retrieval",
+      "infrastruktur",
+      "embeddings",
+      "datenbank",
+      "rag"
+    ]
+  },
+  {
+    "id": "memory",
+    "slug": "memory",
+    "term": "Memory (Agent-Gedächtnis)",
+    "aliases": [
+      "Agent Memory",
+      "Langzeitgedächtnis",
+      "Persistent Memory",
+      "Konversationsgedächtnis"
+    ],
+    "category": "Daten & Retrieval",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Die Fähigkeit eines KI-Agenten, Informationen über die aktuelle Anfrage hinaus zu behalten – durch ein flüchtiges Kurzzeitgedächtnis im Kontextfenster und einen persistenten Langzeitspeicher außerhalb des Modells.",
+    "technicalDefinition": "Memory bezeichnet die Mechanismen, mit denen ein Agent Kontext speichert und wiederverwendet. Das Kurzzeitgedächtnis ist das Kontextfenster: alles, was in der laufenden Sitzung mitgegeben wird, aber nach deren Ende verloren geht. Das Langzeitgedächtnis ist ein bewusst angelegter, externer Speicher – häufig eine Vektordatenbank oder ein strukturierter Datenspeicher –, aus dem relevante frühere Informationen bei Bedarf abgerufen und in den Kontext zurückgespielt werden. Das Sprachmodell selbst speichert dabei nichts; Memory ist Infrastruktur, die die Anwendung um das Modell herum bereitstellt.",
+    "whyItMatters": "Erst Memory macht aus einem zustandslosen Modell einen Assistenten, der sich über Sitzungen hinweg an Präferenzen, Vorgänge und Entscheidungen erinnert. Weil dieser Speicher personenbezogene Daten dauerhaft vorhält, ist er zugleich ein eigenständiger Gegenstand für Datenschutz, Löschkonzepte und Zugriffskontrolle.",
+    "misconceptions": [
+      "Das Sprachmodell merke sich Gespräche von selbst – tatsächlich ist es zustandslos und vergisst nach jeder Anfrage alles, was nicht erneut in den Kontext gegeben wird.",
+      "Memory sei eine Eigenschaft des Modells – in Wahrheit ist es externe Infrastruktur (Speicher, Datenbank, Abruflogik), die die Anwendung um das Modell herum baut.",
+      "Ein dauerhaftes Gedächtnis sei reiner Komfort ohne Schattenseiten – tatsächlich entsteht ein persistenter Datenbestand mit eigenen Datenschutz-, Lösch- und Zugriffsrisiken."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Das Fahrtenbuch eines Dienstwagens, das Routen und Tankstopps über viele Fahrten hinweg festhält.",
+        "explanation": "Wie das Fahrtenbuch frühere Fahrten dauerhaft dokumentiert, während das Armaturenbrett nur die aktuelle Fahrt zeigt, trennt der Agent ein flüchtiges Kurzzeitgedächtnis vom persistenten Langzeitspeicher.",
+        "limits": "Ein Fahrtenbuch wird nur sequenziell beschrieben und linear gelesen, während Agent-Memory gezielt nach Ähnlichkeit durchsucht und selektiv zurückgespielt wird."
+      },
+      "publicSector": {
+        "analogy": "Die Verwaltungsakte eines Bürgers, die bei jedem neuen Antrag aus der Registratur hervorgeholt wird.",
+        "explanation": "Wie der Sachbearbeiter die Akte aktiv aus dem Archiv zieht, statt sich an den Vorgang zu erinnern, ruft der Agent benötigten Kontext bewusst aus einem externen Speicher ab.",
+        "limits": "Eine Akte unterliegt klaren gesetzlichen Aufbewahrungs- und Löschfristen, während ein KI-Speicher solche Regeln erst durch zusätzliche Governance erhält."
+      },
+      "healthcare": {
+        "analogy": "Die Patientenakte, die ein Arzt vor jedem Termin durchsieht, statt sich Diagnosen aus dem Kopf zu vergegenwärtigen.",
+        "explanation": "Wie die Akte Anamnese und Verläufe dauerhaft sichert und das Gedächtnis des Arztes nur für das aktuelle Gespräch reicht, ergänzt der externe Speicher das vergessliche Modell um eine belastbare Historie.",
+        "limits": "Eine Patientenakte ist kuratiert und ärztlich verantwortet, während Agent-Memory unbemerkt fehlerhafte oder veraltete Einträge fortschreiben kann."
+      },
+      "finance": {
+        "analogy": "Die über Jahre gepflegte CRM-Kundenakte, die ein Private-Banking-Berater vor jedem Termin bewusst heranzieht – gespeichert im System, nicht im Kopf des Beraters.",
+        "explanation": "Wie der Berater Risikoneigung, frühere Anlageentscheidungen und Gesprächsnotizen aus dem CRM abruft, statt sich auf sein Erinnern zu verlassen, kombiniert der Agent ein flüchtiges Kontextfenster mit einem persistenten Speicher, aus dem relevante Kundenhistorie zurückgeholt wird. In der Bankpraxis ist dieser Speicher zugleich regulierter Gegenstand: Die Geeignetheitsprüfung nach MiFID II setzt voraus, dass Kundenangaben dokumentiert und für spätere Beratungen nachvollziehbar wieder herangezogen werden, und unter der DSGVO greifen Zweckbindung, Aufbewahrungsfristen und das Recht auf Löschung.",
+        "limits": "Die CRM-Akte ist von Beratern kuratiert, attributiert und auditierbar versioniert, während ein Vektor-Memory Inhalte unstrukturiert ablegt und beim Abruf nach unscharfer Ähnlichkeit auswählt – wodurch unklar bleibt, ob ein Eintrag noch gültig ist und wer ihn wann erzeugt hat. Zudem lässt sich ein einzelner Datensatz in der CRM-Akte gezielt löschen, während Informationen, die einmal in Embeddings eingeflossen sind, deutlich schwerer rückstandsfrei zu entfernen sind."
+      }
+    },
+    "relatedTerms": [
+      "context-window",
+      "agent",
+      "vector-database",
+      "rag",
+      "data-leakage"
+    ],
+    "tags": [
+      "retrieval",
+      "agent",
+      "infrastruktur",
+      "datenschutz",
+      "enterprise"
+    ]
+  },
+  {
+    "id": "data-leakage",
+    "slug": "data-leakage",
+    "term": "Data Leakage",
+    "aliases": [
+      "Datenleck",
+      "Trainingsdaten-Leakage",
+      "Eval-Kontamination",
+      "Information Leakage"
+    ],
+    "category": "Daten & Retrieval",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Data Leakage bezeichnet das unbeabsichtigte Durchsickern von Daten dorthin, wo sie nicht hingehoeren - entweder aus den Trainingsdaten in die Modellantworten oder aus Testdaten in das Training.",
+    "technicalDefinition": "Der Begriff hat zwei verschiedene Bedeutungen. Erstens kann ein Modell Teile seiner Trainingsdaten auswendig gelernt haben (Memorization) und sie wortgetreu oder in Fragmenten wiedergeben - ein Vertraulichkeits- und Datenschutzrisiko, wenn dabei personenbezogene oder geschaeftskritische Inhalte austreten. Zweitens spricht man von Eval-Kontamination, wenn Benchmark- oder Testdaten versehentlich im Training gelandet sind: Das Modell kennt dann die Antworten bereits, und die gemessenen Leistungswerte sind systematisch zu gut und nicht aussagekraeftig. Beide Formen entstehen meist unbeabsichtigt, etwa durch ueberlappende Datensaetze, unsaubere Trennung von Trainings- und Testmengen oder durch das Einspeisen sensibler Inhalte in Feintuning- oder Retrieval-Daten.",
+    "whyItMatters": "Data Leakage untergraebt zugleich die Vertraulichkeit (sensible Daten treten aus) und die Validitaet von Leistungstests (Benchmarks luegen), was zu Fehlentscheidungen bei Modellauswahl und Freigabe fuehren kann.",
+    "misconceptions": [
+      "Data Leakage ist nicht nur ein Datenschutzthema - die Eval-Kontamination verfaelscht auch Benchmarks und damit die Validitaet von Leistungsaussagen.",
+      "Leakage geschieht meist nicht absichtlich, sondern durch unsaubere Datentrennung oder ueberlappende Datensaetze.",
+      "Ein Modell, das im Benchmark hervorragend abschneidet, ist nicht zwangslaeufig gut - es kann die Testfragen schlicht im Training gesehen haben."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein Pruefstand-Test, bei dem das Auto die exakte Teststrecke schon vorab abgefahren ist.",
+        "explanation": "Wie ein Fahrzeug, das genau auf den Abgaszyklus optimiert wurde, auf dem es spaeter geprueft wird, liefert ein kontaminiertes Modell glaenzende Testwerte, die im echten Verkehr nicht halten. Zugleich kann es interne Konstruktionsdaten ausplaudern, die es nie haette preisgeben duerfen.",
+        "limits": "Anders als beim Abgasskandal steckt hinter Data Leakage selten Betrugsabsicht, sondern meist eine unsaubere Trennung der Datensaetze."
+      },
+      "publicSector": {
+        "analogy": "Eine Pruefung, bei der die Klausurfragen vorab an einzelne Prueflinge durchgesickert sind.",
+        "explanation": "Wie eine Abschlusspruefung wertlos wird, sobald die Aufgaben vorher bekannt waren, verliert ein Benchmark seine Aussagekraft, wenn die Testfragen im Training enthalten waren. Parallel koennen vertrauliche Verwaltungsdaten ungewollt aus den Modellantworten austreten.",
+        "limits": "Die Pruefungs-Analogie erklaert nur die Eval-Kontamination, nicht das datenschutzrechtliche Austreten sensibler Buergerdaten."
+      },
+      "healthcare": {
+        "analogy": "Ein Patientenakten-Schnipsel, der aus einer Studienauswertung in einen fremden Befundbericht rutscht.",
+        "explanation": "Wie ein versehentlich uebernommener Patientendatensatz die Schweigepflicht verletzt, kann ein Modell auswendig gelernte Klinikdaten in seinen Antworten preisgeben. Und wie eine Diagnostik-Studie wertlos wird, wenn die Validierungsfaelle schon im Trainingskollektiv steckten, verfaelscht Eval-Kontamination die gemessene Modellguete.",
+        "limits": "Die Akten-Analogie unterschaetzt, dass Memorization auch verstreute, schwer nachverfolgbare Fragmente betrifft, nicht nur ganze Dokumente."
+      },
+      "finance": {
+        "analogy": "Ein Backtesting eines Handels- oder Risikomodells, in das versehentlich Zukunftsinformationen (Look-ahead-Bias) oder Out-of-Time-Daten einfliessen, sodass die Validierung eine Performance vorgaukelt, die out-of-sample nicht haelt.",
+        "explanation": "Wie ein Backtest die Guete einer Trading- oder Scoring-Strategie systematisch ueberschaetzt, sobald Daten aus dem Validierungs- oder Zukunftsfenster in die Kalibrierung sickern, sehen kontaminierte Modelle ihre Testfragen bereits im Training und liefern geschoente Benchmark-Werte ohne Aussagekraft fuer die echte Anwendung. In der Bankpraxis ist die saubere zeitliche und stichprobenmaessige Trennung von Entwicklungs-, Test- und Out-of-Time-Stichproben fester Bestandteil der Modellvalidierung; unter Model Risk Management nach SR 11-7 und der MaRisk-Validierung muss eine unabhaengige Instanz solche Leakage-Quellen gezielt aufdecken, bevor ein Modell (etwa fuer IRB-Ratings) freigegeben wird.",
+        "limits": "Die Backtesting-Analogie trifft praezise die Eval-Kontamination und den methodischen Validitaetsverlust, deckt aber nicht die zweite Spielart ab - das datenschutzrechtliche Austreten auswendig gelernter, vertraulicher Mandanten- oder Personendaten in den Modellantworten."
+      }
+    },
+    "relatedTerms": [
+      "training-finetuning",
+      "eval-benchmark",
+      "ai-governance",
+      "embeddings",
+      "prompt-injection"
+    ],
+    "tags": [
+      "daten",
+      "sicherheit",
+      "datenschutz",
+      "evaluation",
+      "compliance"
+    ]
+  },
+  {
+    "id": "orchestration",
+    "slug": "orchestrierung",
+    "term": "Orchestrierung (Multi-Agent)",
+    "aliases": [
+      "Multi-Agent-Orchestrierung",
+      "Agent Orchestration",
+      "Orchestrator-Worker-Muster",
+      "Agent Coordination"
+    ],
+    "category": "Orchestrierung & Deployment",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Das koordinierte Zusammenspiel mehrerer KI-Agenten, bei dem ein Planer Aufgaben zerlegt, an spezialisierte Worker delegiert und deren Ergebnisse zusammenführt.",
+    "technicalDefinition": "Bei der Multi-Agent-Orchestrierung arbeitet nicht ein einzelnes Modell an einer Aufgabe, sondern ein Verbund spezialisierter Agenten unter gemeinsamer Koordination. Im verbreiteten Orchestrator-Worker-Muster zerlegt ein Orchestrator (Planer) die Gesamtaufgabe in Teilschritte, leitet diese per Routing an passende Worker-Agenten weiter und führt deren Teilergebnisse zu einer Gesamtantwort zusammen. Die Worker können jeweils eigene Werkzeuge, Wissensquellen oder Modelle nutzen und teils parallel, teils sequenziell arbeiten. Der Aufwand verschiebt sich damit von der reinen Modellgüte hin zur Steuerung von Kontrollfluss, Fehlerbehandlung und Ergebnisaggregation.",
+    "whyItMatters": "Komplexe Aufgaben lassen sich oft besser durch arbeitsteilige Spezialisten als durch ein einzelnes Allzweckmodell lösen; gleichzeitig entscheidet die Qualität der Orchestrierung darüber, ob das System zuverlässig oder fehleranfällig wird.",
+    "misconceptions": [
+      "Mehr Agenten führen nicht automatisch zu besseren Ergebnissen - jeder zusätzliche Agent erhöht Koordinationsaufwand, Latenz und Kosten.",
+      "Fehler eines Worker-Agenten verschwinden nicht im Verbund, sondern können sich durch die Kette fortpflanzen und das Gesamtergebnis verfälschen.",
+      "Orchestrierung ersetzt nicht die Qualität der einzelnen Modelle - ein gut koordiniertes System aus schwachen Workern bleibt schwach."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein Boxenstopp-Team, in dem ein Crew-Chief die Spezialisten für Reifen, Tank und Frontflügel synchron dirigiert.",
+        "explanation": "Wie der Crew-Chief jeden Handgriff zuteilt und die Einzelarbeiten zu einem reibungslosen Stopp zusammenführt, zerlegt der Orchestrator die Aufgabe und koordiniert die spezialisierten Agenten. Das Ergebnis hängt am Timing der Übergaben, nicht nur am Können der Einzelnen.",
+        "limits": "Ein Boxenstopp folgt einem festen, geprobten Ablauf, während KI-Agenten auf unvorhergesehene Zwischenergebnisse dynamisch neu planen müssen."
+      },
+      "publicSector": {
+        "analogy": "Eine behördenübergreifende Task Force, in der eine Koordinationsstelle Teilaufträge an Fachämter vergibt und deren Zuarbeiten in einen Beschluss zusammenführt.",
+        "explanation": "Wie die Koordinationsstelle Zuständigkeiten verteilt und die Stellungnahmen der Fachämter bündelt, delegiert der Orchestrator Teilaufgaben und aggregiert die Ergebnisse. Jede Stelle bearbeitet nur ihren Ausschnitt.",
+        "limits": "Behördliche Zuständigkeiten sind rechtlich fest verankert, während die Aufgabenverteilung im Agentensystem zur Laufzeit flexibel und teils intransparent erfolgt."
+      },
+      "healthcare": {
+        "analogy": "Ein klinisches Tumorboard, in dem ein leitender Onkologe die Befunde von Radiologie, Pathologie und Chirurgie einholt und zu einer Therapieentscheidung verdichtet.",
+        "explanation": "Wie der leitende Arzt gezielt die jeweiligen Fachdisziplinen befragt und ihre Einschätzungen zu einem Behandlungsplan zusammenführt, routet der Orchestrator Teilfragen an spezialisierte Agenten und synthetisiert deren Antworten.",
+        "limits": "Im Tumorboard tragen approbierte Fachärzte persönliche Verantwortung, während ein Orchestrator Ergebnisse zusammenführt, ohne dass eine instanzübergreifende Haftung oder fachliche Plausibilitätsprüfung garantiert ist."
+      },
+      "finance": {
+        "analogy": "Ein Chief Investment Officer, der die spezialisierten Desks für Aktien, Fixed Income, FX und Risiko koordiniert und ihre Einschätzungen zu einer Allokationsentscheidung zusammenführt.",
+        "explanation": "Wie der CIO die Mandatsfrage in Teilaufträge an die einzelnen Trading- und Research-Desks zerlegt, deren Spezialeinschätzungen einholt und gewichtet zu einer Gesamtallokation verdichtet, delegiert der Orchestrator Teilaufgaben an Worker-Agenten und aggregiert deren Ausgaben. In regulierten Häusern ist diese Arbeitsteilung zusätzlich durch Chinese Walls und Limitsysteme strukturiert, und das Model Risk Management (in den USA nach SR 11-7, hierzulande über MaRisk/BAIT-Anforderungen) verlangt dokumentierte Verantwortung pro eingesetztem Modell.",
+        "limits": "Im Investmenthaus haftet der CIO persönlich und jeder Desk unterliegt dokumentierten Mandaten und Limiten, während im Agentensystem die Verantwortungskette über mehrere Modelle hinweg verschwimmt und sich Fehler eines Workers - anders als ein abgegrenztes Desk-Limit - unbemerkt durch die gesamte Kette fortpflanzen können."
+      }
+    },
+    "relatedTerms": [
+      "agent",
+      "tool-calling",
+      "observability",
+      "audit-trail"
+    ],
+    "tags": [
+      "orchestrierung",
+      "agenten",
+      "deployment",
+      "enterprise",
+      "koordination"
+    ]
+  },
+  {
+    "id": "eval-benchmark",
+    "slug": "eval-und-benchmark",
+    "term": "Eval & Benchmark",
+    "aliases": [
+      "Modellevaluation",
+      "Benchmarking",
+      "Eval",
+      "Model Evaluation"
+    ],
+    "category": "Orchestrierung & Deployment",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Die systematische, messbare Bewertung der Modellqualität für eine konkrete Aufgabe anhand definierter Testsets und Metriken.",
+    "technicalDefinition": "Eine Eval ist ein definiertes Verfahren, das die Ausgaben eines Modells gegen ein Testset und festgelegte Metriken misst, um Qualität, Zuverlässigkeit und Eignung für eine Aufgabe zu quantifizieren. Standardisierte Benchmarks (etwa MMLU oder GSM8K) vergleichen Modelle aufgabenübergreifend, während eigene, anwendungsnahe Evals die Leistung auf den realen Daten und Anforderungen des konkreten Einsatzfalls prüfen. Ein guter Benchmark-Wert belegt allgemeine Fähigkeiten, garantiert aber keine Eignung für die spezifische Produktivaufgabe. Belastbare Evals trennen Trainings- und Testdaten sauber, definieren die Metrik vorab und werden bei Modell- oder Prompt-Änderungen wiederholt.",
+    "whyItMatters": "Ohne anwendungsnahe Evals lässt sich nicht objektiv entscheiden, ob ein Modell oder Prompt für den Produktiveinsatz taugt – Bauchgefühl und Demo-Beispiele ersetzen keine Messung. Sie sind die Grundlage, um Modellwechsel, Regressionen und reale Risiken vor dem Go-live zu erkennen.",
+    "misconceptions": [
+      "Ein Spitzenplatz in einem öffentlichen Benchmark bedeutet nicht, dass das Modell für die eigene, spezifische Aufgabe das beste ist.",
+      "Benchmarks können durch Datenkontamination (Testdaten im Training) oder gezielte Überoptimierung verfälscht sein und dann eine trügerisch hohe Leistung ausweisen.",
+      "Eine einmalige Eval reicht nicht – schon kleine Prompt-, Daten- oder Modellversionsänderungen können die Qualität verschieben und müssen erneut gemessen werden."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Der Unterschied zwischen einem genormten WLTP-Prüfstandszyklus und einer echten Testfahrt auf der eigenen Pendelstrecke.",
+        "explanation": "Wie der Prüfstand vergleichbare Laborwerte für alle Fahrzeuge liefert, die reale Strecke aber den tatsächlichen Verbrauch zeigt, misst ein Benchmark allgemein und eine eigene Eval die Eignung für den konkreten Einsatz. Beides braucht klar definierte Messbedingungen.",
+        "limits": "Die eigene Testfahrt ist nur so aussagekräftig wie die Strecke repräsentativ ist – ein einmal gemessener Verbrauch sagt nichts über Winterbetrieb oder volle Beladung."
+      },
+      "publicSector": {
+        "analogy": "Der Unterschied zwischen einer bundesweiten PISA-Vergleichsstudie und einer Klassenarbeit, die exakt den behandelten Lehrstoff abprüft.",
+        "explanation": "Wie PISA Schulsysteme vergleichbar misst, die Klassenarbeit aber prüft, ob der konkrete Stoff sitzt, vergleicht ein Benchmark breit und eine eigene Eval die tatsächliche Aufgabe der Behörde. Die Metrik muss vorab feststehen.",
+        "limits": "Wenn die Prüfungsaufgaben vorab durchsickern, misst der Test nur das Auswendiglernen, nicht das Können – analog zur Datenkontamination bei Benchmarks."
+      },
+      "healthcare": {
+        "analogy": "Der Unterschied zwischen der in einer Zulassungsstudie ermittelten Sensitivität/Spezifität eines diagnostischen Tests und seiner Trefferquote in der eigenen Patientenpopulation.",
+        "explanation": "Wie ein Diagnosetest in der Studie unter Idealbedingungen glänzt, aber an der realen Klinik neu validiert werden muss, prüft ein Benchmark allgemein und eine eigene Eval die Leistung am konkreten Patientengut. Gemessen wird gegen einen verlässlichen Goldstandard.",
+        "limits": "Eine in einer Population gemessene Trefferquote überträgt sich nicht automatisch auf eine andere mit abweichender Krankheitshäufigkeit – der positive Vorhersagewert kippt mit der Prävalenz."
+      },
+      "finance": {
+        "analogy": "Das Out-of-Sample-Backtesting und die unabhängige Modellvalidierung eines Risiko- oder Handelsmodells, das gegen ungesehene Marktdaten getestet wird.",
+        "explanation": "In der Bankpraxis darf ein Scoring- oder VaR-Modell nicht nur auf den Daten glänzen, mit denen es entwickelt wurde; eine vom Entwicklungsteam unabhängige Validierung testet es strikt out-of-sample und über Stressperioden, bevor es freigegeben wird. SR 11-7 (Model Risk Management) und die MaRisk verlangen genau diese Trennung von Entwicklungs- und Testdaten sowie laufendes Backtesting, weil ein nur in-sample optimiertes Modell eine trügerische Performance ausweist. Ein Modell, das auf jeden historischen Tag perfekt passt, ist oft überangepasst und versagt im echten Markt – das Pendant zu einem überoptimierten Benchmark.",
+        "limits": "Selbst ein sauberes Out-of-Sample-Backtesting bleibt rückwärtsgewandt: Es misst gegen vergangene Marktregime und kann strukturelle Brüche oder bislang nie aufgetretene Stressszenarien nicht abbilden, weshalb es eine vorausschauende Stresstest- und Szenarioanalyse nie ersetzt."
+      }
+    },
+    "relatedTerms": [
+      "hallucination",
+      "observability",
+      "data-leakage",
+      "inference-performance",
+      "ai-governance"
+    ],
+    "tags": [
+      "evaluation",
+      "benchmark",
+      "qualitaet",
+      "validierung",
+      "deployment"
+    ]
+  },
+  {
+    "id": "observability",
+    "slug": "observability",
+    "term": "Observability",
+    "aliases": [
+      "Beobachtbarkeit",
+      "KI-Observability",
+      "LLM Observability",
+      "Monitoring"
+    ],
+    "category": "Orchestrierung & Deployment",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Die Fähigkeit, anhand von Logs, Traces und Metriken nachzuvollziehen, was ein KI-System im Betrieb tatsächlich getan hat.",
+    "technicalDefinition": "Observability bezeichnet die durchgängige Erfassung von Logs, Traces und Metriken, um das Verhalten eines KI-Systems im Produktivbetrieb sichtbar zu machen. Bei Agenten bedeutet das, einen Ablauf über mehrere Modellaufrufe und Werkzeugnutzungen hinweg lückenlos zu verfolgen: welcher Prompt hineinging, welche Zwischenschritte und Tool-Aufrufe folgten, welche Antwort herauskam. Ziel ist es, Fehler, unerwartetes Verhalten und schleichende Qualitäts- oder Datenverschiebungen (Drift) zu erkennen, bevor sie Schaden anrichten. Anders als klassisches Infrastruktur-Monitoring, das vor allem Verfügbarkeit und Auslastung misst, richtet sich KI-Observability auf die inhaltliche Qualität nichtdeterministischer Ausgaben.",
+    "whyItMatters": "Ohne Observability bleibt ein produktiv eingesetztes KI-System eine Blackbox, deren Fehlentscheidungen erst auffallen, wenn sie bereits Wirkung entfaltet haben. Sie ist die Voraussetzung dafür, Vorfälle zu rekonstruieren, Qualität über die Zeit zu sichern und gegenüber Aufsicht oder Revision Rechenschaft abzulegen.",
+    "misconceptions": [
+      "Observability ist nicht dasselbe wie Uptime-Monitoring: dass ein System läuft, sagt nichts darüber aus, ob seine Antworten richtig sind.",
+      "Die Ausgabequalität eines Sprachmodells lässt sich nicht einfach als grüne oder rote Kennzahl ablesen, sondern erfordert eigene Bewertungsverfahren und Stichproben.",
+      "Es genügt nicht, nur die finale Antwort zu protokollieren; ohne Tracing über alle Modell- und Werkzeugschritte hinweg bleibt der eigentliche Fehlerort verborgen."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Der Fahrtenschreiber zusammen mit dem auslesbaren Fehlerspeicher eines modernen Fahrzeugs.",
+        "explanation": "Wie ein Fahrtenschreiber lückenlos festhält, was bei welchem Tempo und welchem Bremsmanöver geschah, zeichnet Observability jeden Schritt eines KI-Systems auf. So lässt sich nach einem Vorfall rekonstruieren, was wirklich passiert ist, statt zu raten.",
+        "limits": "Der Fehlerspeicher meldet klar definierte Defektcodes; bei einem Sprachmodell gibt es kein eindeutiges Signal dafür, dass eine inhaltlich falsche Antwort ein Fehler war."
+      },
+      "publicSector": {
+        "analogy": "Ein Echtzeit-Lagebild im Lagezentrum, das eingehende Vorgänge laufend beobachtet und bei Auffälligkeiten Alarm auslöst.",
+        "explanation": "Wie ein Lagezentrum nicht nur im Nachhinein dokumentiert, sondern den aktuellen Stand vieler Vorgänge fortlaufend überwacht und Abweichungen meldet, beobachtet Observability den KI-Betrieb live und macht Auffälligkeiten sichtbar. Beides erlaubt es, einzugreifen, solange noch Handlungsspielraum besteht.",
+        "limits": "Im Lagezentrum entscheiden geschulte Menschen, was eine Auffälligkeit bedeutet; Observability erzeugt eine Flut maschineller Spuren, aus denen das Wesentliche erst herausgefiltert werden muss, ohne dass ein klarer Schwellenwert für eine falsche Antwort existiert."
+      },
+      "healthcare": {
+        "analogy": "Die Vitalparameter-Überwachung am Patientenmonitor auf der Intensivstation.",
+        "explanation": "Wie ein Patientenmonitor laufend Herzfrequenz, Sauerstoffsättigung und Blutdruck erfasst und bei Abweichungen Alarm schlägt, beobachtet Observability die Kennzahlen eines KI-Systems und meldet auffällige Verschiebungen. So werden Probleme erkannt, solange noch Zeit zum Eingreifen bleibt.",
+        "limits": "Vitalwerte haben medizinisch etablierte Normbereiche; für die inhaltliche Güte einer Modellantwort gibt es keinen vergleichbar objektiven Grenzwert."
+      },
+      "finance": {
+        "analogy": "Das laufende Transaktions- und Systemmonitoring mit Risiko- und Latenz-Dashboards im Bankbetrieb, das jederzeit nachvollziehbar macht, welche Buchungen und Systemaktionen tatsächlich stattgefunden haben.",
+        "explanation": "Wie eine Bank jede Buchung und jede Systemaktion fortlaufend gegen Limitsysteme und Schwellenwerte überwacht, auffällige Muster zur Prüfung eskaliert und dabei vollständige Betriebsprotokolle führt, verfolgt Observability die Aufrufe und Ausgaben eines KI-Systems über den gesamten Verarbeitungspfad. In beiden Fällen reicht die punktuelle Endkontrolle nicht: erst die lückenlose Laufzeit-Spur erlaubt es, einen fehlerhaften Schritt zu lokalisieren und gegenüber Aufsicht und interner Revision zu belegen. Die in MaRisk und BAIT geforderte laufende Überwachung produktiver Modelle und IT-Prozesse zielt genau auf diese fortlaufende Beobachtbarkeit im Betrieb.",
+        "limits": "Bei Buchungen und Limitverletzungen gibt es einen objektiv eingetretenen, prüfbaren Zustand; bei einem Sprachmodell fehlt diese harte Referenz, weil sich die inhaltliche Antwortqualität aus den reinen Betriebsspuren nicht ablesen lässt, sondern nur über aufwendige Bewertungsverfahren und Stichproben angenähert werden kann."
+      }
+    },
+    "relatedTerms": [
+      "audit-trail",
+      "eval-benchmark",
+      "orchestration",
+      "agent",
+      "ai-governance"
+    ],
+    "tags": [
+      "deployment",
+      "monitoring",
+      "enterprise",
+      "betrieb",
+      "tracing"
+    ]
+  },
+  {
+    "id": "audit-trail",
+    "slug": "audit-trail",
+    "term": "Audit Trail",
+    "aliases": [
+      "Revisionssichere Protokollierung",
+      "Prüfpfad",
+      "Nachweisprotokoll",
+      "Audit Log"
+    ],
+    "category": "Orchestrierung & Deployment",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Eine lückenlose, manipulationssichere Aufzeichnung darüber, wer wann was mit einem KI-System getan hat, die als Nachweis für Prüfungen und Aufsicht dient.",
+    "technicalDefinition": "Ein Audit Trail protokolliert jede nachweisrelevante Interaktion mit einem KI-System – Eingaben, Modellausgaben, Konfigurations- und Versionsänderungen sowie Zugriffe – so, dass die Aufzeichnung im Nachhinein nicht unbemerkt verändert werden kann. Entscheidend sind Vollständigkeit und Integrität (etwa durch Append-only-Speicher, digitale Signaturen oder kryptografische Verkettung der Einträge), nicht das bloße Sammeln von Logzeilen. Anders als Observability, die der Beobachtung des laufenden Betriebs dient, verfolgt der Audit Trail einen Beweiszweck: Er soll vor Wirtschaftsprüfern, Aufsichtsbehörden oder Gerichten Bestand haben. Damit wird nachvollziehbar, auf welcher Datengrundlage und durch welche Modellversion eine Entscheidung zustande kam.",
+    "whyItMatters": "Ohne revisionssicheren Nachweis lässt sich im Streit- oder Prüfungsfall nicht belegen, dass ein KI-System regelkonform betrieben wurde – was Compliance, Haftung und Zulassung gefährdet. Regelwerke wie der EU AI Act (Protokollierungspflicht für Hochrisiko-Systeme), MaRisk oder GoBD setzen lückenlose Nachvollziehbarkeit für hochriskante oder geschäftskritische Systeme voraus.",
+    "misconceptions": [
+      "Normale Anwendungs-Logs sind automatisch audit-fähig – tatsächlich fehlt ihnen meist die garantierte Unveränderbarkeit und Vollständigkeit, die einen Beweiswert erst herstellen.",
+      "Ein Audit Trail dient der Fehlersuche im Betrieb – das ist die Aufgabe von Observability; der Audit Trail verfolgt primär einen Nachweis- und Beweiszweck.",
+      "Mehr protokollieren ist immer besser – ein Audit Trail muss gerade die nachweisrelevanten Ereignisse vollständig und integer erfassen, nicht beliebige Datenmengen ohne Manipulationsschutz."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Der manipulationssichere digitale Fahrtenschreiber (Tachograph) im Lkw, dessen Aufzeichnung bei einer Kontrolle vorgelegt werden muss.",
+        "explanation": "Wie der Tachograph Lenk- und Ruhezeiten fälschungssicher festhält, damit sie später überprüfbar sind, zeichnet der Audit Trail jede Aktion am KI-System revisionssicher auf. Beide dienen dem Nachweis gegenüber einer Kontrollinstanz, nicht dem Fahren bzw. dem laufenden Betrieb selbst.",
+        "limits": "Der Tachograph erfasst nur wenige standardisierte Größen, während ein KI-Audit-Trail heterogene Eingaben, Modellversionen und Entscheidungspfade zusammenführen und konsistent verketten muss."
+      },
+      "publicSector": {
+        "analogy": "Die fortlaufend nummerierte, unveränderbare Aktenführung in einer Behörde mit Eingangsstempel und Zeichnungsvermerk.",
+        "explanation": "Wie eine ordnungsgemäße Verwaltungsakte jeden Bearbeitungsschritt und jede Zeichnung nachvollziehbar dokumentiert, hält der Audit Trail fest, wer wann welche Entscheidung im KI-System ausgelöst hat. Beides muss einer späteren Rechts- oder Rechnungsprüfung standhalten.",
+        "limits": "Eine Papierakte ist statisch und überschaubar, während ein KI-System tausende automatisierte Entscheidungen pro Sekunde erzeugt, die maschinell lückenlos und ohne nachträgliche Lücken erfasst werden müssen."
+      },
+      "healthcare": {
+        "analogy": "Die fälschungssichere Patientenakte, in der jeder Eintrag mit Zeitstempel und Behandler versehen und nicht nachträglich gelöscht werden kann.",
+        "explanation": "Wie eine Krankenakte jede Diagnose und Medikation samt verantwortlicher Person dokumentiert und so die Behandlung im Haftungsfall belegbar macht, weist der Audit Trail nach, auf welcher Grundlage ein KI-System zu einer Empfehlung kam. Der Zweck ist Nachweisbarkeit, nicht die laufende Versorgung.",
+        "limits": "In der Akte verantwortet ein namentlich benannter Arzt jeden Eintrag, während sich bei automatisierten KI-Entscheidungen die Zurechnung der Verantwortung auf eine konkrete Person nur schwer dokumentieren lässt."
+      },
+      "finance": {
+        "analogy": "Die revisionssichere Belegkette des Rechnungswesens nach GoBD, in der ein Wirtschaftsprüfer jeden Beleg lückenlos und unveränderbar bis zur Buchung im Hauptbuch zurückverfolgen kann.",
+        "explanation": "Wie die Buchführung nach GoBD jede Buchung unveränderbar, vollständig und zeitgerecht festhalten muss, damit der Beleg-zu-Buchung-Pfad jederzeit rekonstruierbar bleibt, dokumentiert der Audit Trail jede KI-Modellentscheidung samt Eingabe, Modellversion und Freigabestand. Unter MaRisk und den Grundsätzen des Model Risk Management muss eine Bank für jedes produktiv eingesetzte Modell belegen können, wer es validiert, freigegeben, geändert oder überstimmt hat – etwa wenn ein Kreditvotum manuell vom Scoring-Ergebnis abweicht. Im Prüfungs- oder Aufsichtsfall (BaFin, Wirtschaftsprüfer) ist der Trail das primäre Beweismittel.",
+        "limits": "Eine Buchung ist ein eindeutiger, abgeschlossener Vorgang mit klarer Belegkette, während eine probabilistische Modellentscheidung von Trainingsdaten, Schwellenwerten und Kontextfenster abhängt, die sich nur schwer in eine einzige revisionssichere Belegkette gießen lassen. Zudem deckt GoBD-Konformität nur die buchhalterische Nachweispflicht ab, nicht die fachliche Validität oder Diskriminierungsfreiheit der KI-Entscheidung selbst."
+      }
+    },
+    "relatedTerms": [
+      "observability",
+      "ai-governance",
+      "compliance-ai-act",
+      "agent",
+      "data-leakage"
+    ],
+    "tags": [
+      "compliance",
+      "governance",
+      "revisionssicherheit",
+      "deployment",
+      "enterprise"
+    ]
+  },
+  {
+    "id": "compliance-ai-act",
+    "slug": "compliance-ai-act",
+    "term": "Compliance & EU AI Act",
+    "aliases": [
+      "EU AI Act",
+      "KI-Verordnung",
+      "AI Act",
+      "Artificial Intelligence Act"
+    ],
+    "category": "Orchestrierung & Deployment",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Der regulatorische Rahmen, der KI-Systeme nach ihrem Risiko einstuft und daran abgestufte Pflichten für Anbieter und Betreiber knüpft.",
+    "technicalDefinition": "Der EU AI Act ist die erste umfassende KI-Regulierung der EU und ordnet Systeme einer von vier Risikoklassen zu: unannehmbar (verboten), hoch, begrenzt und minimal. Für Hochrisiko-Systeme gelten besondere Pflichten wie Risikomanagement, Datenqualität, technische Dokumentation, menschliche Aufsicht und Konformitätsbewertung; für allgemeine KI-Modelle (GPAI) bestehen daneben eigene Transparenz- und Dokumentationspflichten. Die Vorgaben greifen über gestaffelte Übergangsfristen und gelten neben – nicht anstelle – bestehender Regulierung wie der DSGVO. Adressiert werden sowohl Anbieter (provider) als auch Betreiber (deployer) eines Systems.",
+    "whyItMatters": "Wer KI in regulierten Prozessen einsetzt, muss die Risikoklasse seines Systems kennen, weil daran Dokumentations-, Aufsichts- und Konformitätspflichten mit empfindlichen Bußgeldern hängen. Eine falsche Einstufung oder ein übersehener Betreiberpflichtenkatalog kann Produktivsysteme rechtlich angreifbar machen.",
+    "misconceptions": [
+      "Der AI Act betrifft nur Hersteller von KI – tatsächlich treffen auch Betreiber, die ein fremdes System nur einsetzen, eigene Pflichten.",
+      "\"Wir nutzen keine KI\" befreit nicht automatisch, denn die Definition ist weit gefasst und kann auch eingekaufte Software oder eingebettete Funktionen erfassen.",
+      "Alle Pflichten gelten sofort – tatsächlich greifen sie über mehrere Jahre gestaffelt, je nach Risikoklasse und Systemtyp."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Die Typgenehmigung, die je nach Fahrzeugklasse unterschiedlich strenge Auflagen verlangt.",
+        "explanation": "Wie ein Lkw andere Prüf- und Dokumentationsauflagen erfüllen muss als ein E-Bike, ordnet der AI Act jedem System nach seinem Gefährdungspotenzial einen eigenen Pflichtenkatalog zu.",
+        "limits": "Anders als bei der einmaligen Typgenehmigung verlangt der AI Act fortlaufendes Monitoring über den gesamten Lebenszyklus des Systems."
+      },
+      "publicSector": {
+        "analogy": "Eine behördliche Genehmigungspflicht, die nach Eingriffstiefe zwischen Anzeige, Erlaubnis und Verbot abstuft.",
+        "explanation": "Wie das Baurecht je nach Vorhaben von der bloßen Anzeige bis zur vollen Genehmigung staffelt, knüpft der AI Act die Anforderungen an die Risikoklasse des KI-Systems.",
+        "limits": "Im Gegensatz zu einer rein nationalen Genehmigung wirkt der AI Act EU-weit harmonisiert und überlagert sich mit anderem Recht wie der DSGVO."
+      },
+      "healthcare": {
+        "analogy": "Die Risikoklassifizierung von Medizinprodukten von Klasse I bis III.",
+        "explanation": "Wie ein Pflaster (Klasse I) viel geringere Nachweispflichten hat als ein Herzschrittmacher (Klasse III), bestimmt beim AI Act die Risikoklasse, wie streng ein KI-System dokumentiert und überwacht werden muss.",
+        "limits": "Die Medizinprodukte-Analogie greift zu kurz, weil der AI Act auch verbotene Praktiken kennt, für die es gar keine zulassungsfähige Klasse gibt."
+      },
+      "finance": {
+        "analogy": "Die Einstufung eines KI-gestützten Kreditscorings als Hochrisiko-Anwendung, die parallel zu MaRisk und BAIT erfüllt werden muss.",
+        "explanation": "Der AI Act benennt KI zur Bonitätsbewertung natürlicher Personen in Anhang III ausdrücklich als Hochrisiko-System und verlangt Risikomanagement, Datengüte, menschliche Aufsicht und Konformitätsbewertung. In der Bankpraxis verzahnt sich das mit dem bestehenden Model Risk Management nach MaRisk und den IT-Anforderungen der BAIT, sodass ein Scoringmodell gleich mehreren, teils überlappenden Aufsichtsregimen genügen muss. Die menschliche Aufsicht des AI Act trifft dabei auf die ohnehin geforderte unabhängige Modellvalidierung.",
+        "limits": "Die Analogie zum vertrauten MaRisk-Validierungszyklus täuscht über Lücken hinweg: Der AI Act adressiert ausdrücklich auch den Betreiber und Grundrechtsrisiken wie Diskriminierung, die ein klassisches, rein auf Ausfallwahrscheinlichkeit fokussiertes Modellrisiko-Framework gar nicht abdeckt."
+      }
+    },
+    "relatedTerms": [
+      "ai-governance",
+      "audit-trail",
+      "guardrails",
+      "observability",
+      "ki"
+    ],
+    "tags": [
+      "compliance",
+      "regulierung",
+      "governance",
+      "enterprise",
+      "deployment"
+    ]
   }
 ]
