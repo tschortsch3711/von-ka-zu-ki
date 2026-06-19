@@ -9,7 +9,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "validate": "node --experimental-strip-types --no-warnings scripts/validate-glossary.ts"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.3",
