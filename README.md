@@ -3,7 +3,7 @@
 > Ein universelles, analogiebasiertes KI-Glossar mit Domänenbrillen.
 
 Ein verständliches KI-Glossar, das zentrale Begriffe fachlich korrekt erklärt und über bekannte
-Domänen wie **Automotive**, **Public Sector** und **Healthcare** greifbar macht.
+Domänen wie **Automotive**, **Public Sector**, **Healthcare** und **Finance & Banking** greifbar macht.
 
 🌐 **Live:** <https://tschortsch3711.github.io/von-ka-zu-ki/>
 
@@ -18,7 +18,7 @@ die zentrale Begriffe sauber einordnen wollen, ohne sich in Buzzwords zu verlier
 KI-Begriffe werden oft entweder zu technisch oder zu schwammig erklärt. Dieses Projekt geht einen
 dritten Weg: **eine fachlich korrekte Definition pro Begriff, mehrere Erklärwelten daneben.**
 Wer in Autos denkt, bekommt die Auto-Brille; wer in Verwaltungsvorgängen denkt, die Verwaltungsbrille;
-wer aus dem Gesundheitswesen kommt, die Healthcare-Brille.
+wer aus dem Gesundheitswesen kommt, die Healthcare-Brille; wer aus dem Bankwesen kommt, die Finance-Brille.
 
 ## Grundprinzip: ein Begriff, eine Definition, mehrere Erklärwelten
 
@@ -27,7 +27,7 @@ Jeder Begriff hat:
 - eine **fachliche Definition** (korrekt, nicht verwässert),
 - den Abschnitt **„warum das wichtig ist“**,
 - typische **Missverständnisse**,
-- **drei Domänenbrillen** mit je einer Analogie, einer Erklärung und – verpflichtend –
+- **mehrere Domänenbrillen** mit je einer Analogie, einer Erklärung und – verpflichtend –
   einer **ehrlichen Grenze** (`limits`).
 
 > Analogien lecken immer. Genau das ist Teil der Aussage: Jede Brille zeigt eine Seite und verschweigt
@@ -84,10 +84,10 @@ In den Repository-Einstellungen ist **Settings → Pages → Source = GitHub Act
 src/
 ├── data/
 │   ├── glossary.json   # alle Begriffe (das inhaltliche Herzstück)
-│   ├── domains.json    # die drei Domänenbrillen
+│   ├── domains.json    # die Domänenbrillen
 │   └── types.ts        # das TypeScript-Datenmodell
 ├── pages/              # Routen (Index, Glossar, Domänen, Roadmap, Recht)
-├── components/         # Hero, Suche, Karten, fünf Diagramme
+├── components/         # Hero, Suche, Karten, Diagramme
 ├── layouts/            # BaseLayout (Header, Nav, Footer, Theme)
 └── styles/global.css   # Designsystem, Hell-/Dunkelmodus
 
@@ -101,7 +101,7 @@ docs/                   # längere Hintergrundtexte (Vision, Grundidee, Brillen,
 2. **Pflichtfelder** beachten: `id`, `slug`, `term`, `category`, `difficulty`, `enterpriseRelevance`,
    `shortDefinition`, `technicalDefinition`, `whyItMatters`, `misconceptions`, `domainAnalogies`,
    `relatedTerms`, `tags`.
-3. In `domainAnalogies` **alle drei Brillen** (`automotive`, `publicSector`, `healthcare`) füllen –
+3. In `domainAnalogies` **alle Brillen** (`automotive`, `publicSector`, `healthcare`, `finance`) füllen –
    jede mit `analogy`, `explanation` **und** `limits`. Das `limits`-Feld ist **Pflicht**.
 4. `relatedTerms` nur auf existierende `id`/`slug` setzen (Konsistenz hält den Lernbogen zusammen).
 
@@ -120,8 +120,8 @@ Das Schema ist bewusst erweiterbar gehalten, damit v2 ohne Umbau Begriffe und Br
 - Die Seite setzt **keine Cookies**, nutzt **kein Tracking** und lädt **keine externen Ressourcen**.
   Die Suche läuft vollständig im Browser.
 - Es sind **keine Unternehmensinterna**, keine kundenspezifischen oder sensiblen Inhalte enthalten.
-- **Impressum und Datenschutzerklärung** sind als Platzhalter angelegt und müssen vor Veröffentlichung
-  mit echten Daten gefüllt werden (siehe die mit „Nikola: hier eigene Daten eintragen“ markierten Stellen).
+- **Impressum und Datenschutzerklärung** sind mit den Kontaktdaten des Kleingewerbes (Geschäftsadresse
+  und Gewerbe-Mail) gefüllt, bewusst statt privater Daten. Das Projekt ist privat betrieben und nicht kommerziell.
 
 ## Lizenz
 

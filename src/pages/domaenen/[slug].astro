@@ -5,6 +5,7 @@ import glossary from '../../data/glossary.json';
 import domains from '../../data/domains.json';
 import type { GlossaryTerm, Domain } from '../../data/types';
 import { link, termHref } from '../../lib/paths';
+import BrilleIcon from '../../components/BrilleIcon.astro';
 
 export function getStaticPaths() {
   const lenses = domains as Domain[];
@@ -14,7 +15,7 @@ export function getStaticPaths() {
 const { domain } = Astro.props as { domain: Domain };
 const allTerms = glossary as GlossaryTerm[];
 
-// Begriffe, die laut Liste besonders gut ueber diese Brille erklaerbar sind
+// Begriffe, die laut Liste besonders gut über diese Brille erklärbar sind
 const best = domain.bestExplainedTerms
   .map((id) => allTerms.find((t) => t.id === id || t.slug === id))
   .filter((t): t is GlossaryTerm => Boolean(t));
@@ -27,7 +28,7 @@ const best = domain.bestExplainedTerms
       <span aria-current="page">{domain.name}</span>
     </nav>
     <header style="margin-bottom:2rem">
-      <span class="domain-hero-icon" aria-hidden="true">{domain.icon}</span>
+      <BrilleIcon domainKey={domain.key} class="domain-hero-icon" />
       <h1>{domain.name}</h1>
       <p class="lead">{domain.tagline}</p>
     </header>
@@ -73,7 +74,7 @@ const best = domain.bestExplainedTerms
   </article>
 
   <style>
-    .domain-hero-icon { font-size: 3rem; display: block; }
+    .domain-hero-icon { width: 3rem; height: 3rem; display: block; margin-bottom: 0.5rem; color: var(--accent); }
     .lens-limit-block { border-color: var(--warning-border); background: var(--warning-soft); }
     .best-term { color: var(--text); transition: border-color 0.15s ease, transform 0.15s ease; }
     .best-term:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }

@@ -372,7 +372,7 @@
     "tags": [
       "funktionsweise",
       "kosten",
-      "tokenoekonomie"
+      "tokenökonomie"
     ]
   },
   {
@@ -533,7 +533,7 @@
     "tags": [
       "funktionsweise",
       "risiko",
-      "qualitaet"
+      "qualität"
     ]
   },
   {
@@ -696,7 +696,7 @@
       "agentic",
       "standard",
       "integration",
-      "interoperabilitaet"
+      "interoperabilität"
     ]
   },
   {
@@ -1270,34 +1270,34 @@
     "category": "Modellarchitektur",
     "difficulty": "advanced",
     "enterpriseRelevance": "medium",
-    "shortDefinition": "Quantisierung reduziert die Zahlenpraezision der Modellgewichte (und teils der Aktivierungen), um Speicherbedarf zu senken und die Inferenz zu beschleunigen.",
-    "technicalDefinition": "Bei der Quantisierung werden die Gewichte eines Modells von hoeher aufloesenden Fliesskommazahlen (z. B. FP16 oder BF16) auf kompaktere Formate wie INT8 oder INT4 abgebildet. Dadurch belegt jedes Gewicht weniger Bits, das Modell passt in kleineren Speicher und viele Rechenoperationen laufen schneller. Der Preis ist ein gewisser Genauigkeitsverlust, der bei moderater Quantisierung gering bleibt, bei aggressiver Reduktion aber spuerbar werden kann; oft werden empfindliche Schichten daher hoeher aufgeloest belassen. Die Quantisierung veraendert nicht das gelernte Wissen, sondern nur, wie fein die bereits gelernten Werte gespeichert und verrechnet werden.",
-    "whyItMatters": "Quantisierung entscheidet oft darueber, ob ein leistungsfaehiges Modell ueberhaupt auf vorhandener Hardware oder zu vertretbaren Kosten betrieben werden kann. Sie ist ein zentraler Hebel, um Modellqualitaet gegen Speicher, Geschwindigkeit und Betriebskosten abzuwaegen.",
+    "shortDefinition": "Quantisierung reduziert die Zahlenpräzision der Modellgewichte (und teils der Aktivierungen), um Speicherbedarf zu senken und die Inferenz zu beschleunigen.",
+    "technicalDefinition": "Bei der Quantisierung werden die Gewichte eines Modells von höher auflösenden Fliesskommazahlen (z. B. FP16 oder BF16) auf kompaktere Formate wie INT8 oder INT4 abgebildet. Dadurch belegt jedes Gewicht weniger Bits, das Modell passt in kleineren Speicher und viele Rechenoperationen laufen schneller. Der Preis ist ein gewisser Genauigkeitsverlust, der bei moderater Quantisierung gering bleibt, bei aggressiver Reduktion aber spürbar werden kann; oft werden empfindliche Schichten daher höher aufgelöst belassen. Die Quantisierung verändert nicht das gelernte Wissen, sondern nur, wie fein die bereits gelernten Werte gespeichert und verrechnet werden.",
+    "whyItMatters": "Quantisierung entscheidet oft darüber, ob ein leistungsfähiges Modell überhaupt auf vorhandener Hardware oder zu vertretbaren Kosten betrieben werden kann. Sie ist ein zentraler Hebel, um Modellqualität gegen Speicher, Geschwindigkeit und Betriebskosten abzuwägen.",
     "misconceptions": [
-      "Quantisierung sei verlustfrei - tatsaechlich gehen Detailinformationen verloren, auch wenn der Effekt haeufig klein ist.",
-      "Mehr Quantisierung sei immer besser, weil schneller und kleiner - ab einem gewissen Punkt sinkt die Antwortqualitaet deutlich.",
-      "Quantisierung sei dasselbe wie Distillation oder ein erneutes Training - sie aendert nur die Speicherpraezision bereits gelernter Gewichte, nicht das Modell oder dessen Wissen selbst."
+      "Quantisierung sei verlustfrei - tatsächlich gehen Detailinformationen verloren, auch wenn der Effekt häufig klein ist.",
+      "Mehr Quantisierung sei immer besser, weil schneller und kleiner - ab einem gewissen Punkt sinkt die Antwortqualität deutlich.",
+      "Quantisierung sei dasselbe wie Distillation oder ein erneutes Training - sie ändert nur die Speicherpräzision bereits gelernter Gewichte, nicht das Modell oder dessen Wissen selbst."
     ],
     "domainAnalogies": {
       "automotive": {
-        "analogy": "Wie ein Tacho, der nur noch in Fuenf-km/h-Schritten statt exakt anzeigt.",
-        "explanation": "Wie ein groeber skalierter Tacho weniger Feinheit darstellt, dafuer aber schneller und einfacher abzulesen ist, speichert ein quantisiertes Modell seine Werte in groeberen Stufen und arbeitet dadurch ressourcenschonender.",
-        "limits": "Ein Tacho rundet nur die Anzeige, waehrend Quantisierung die intern verrechneten Werte selbst vergroebert und sich der Rundungsfehler ueber Milliarden Gewichte fortpflanzt."
+        "analogy": "Wie ein Tacho, der nur noch in Fünf-km/h-Schritten statt exakt anzeigt.",
+        "explanation": "Wie ein gröber skalierter Tacho weniger Feinheit darstellt, dafür aber schneller und einfacher abzulesen ist, speichert ein quantisiertes Modell seine Werte in gröberen Stufen und arbeitet dadurch ressourcenschonender.",
+        "limits": "Ein Tacho rundet nur die Anzeige, während Quantisierung die intern verrechneten Werte selbst vergröbert und sich der Rundungsfehler über Milliarden Gewichte fortpflanzt."
       },
       "publicSector": {
         "analogy": "Wie eine Einkommenserfassung, die nur noch in groben Gehaltsstufen statt auf den Euro genau erhebt.",
-        "explanation": "Wie eine Behoerde mit groeberen Einkommensklassen Antraege schneller und mit weniger Aufwand bearbeitet, verarbeitet ein quantisiertes Modell groeber gespeicherte Werte und spart so Rechenressourcen.",
+        "explanation": "Wie eine Behörde mit gröberen Einkommensklassen Anträge schneller und mit weniger Aufwand bearbeitet, verarbeitet ein quantisiertes Modell gröber gespeicherte Werte und spart so Rechenressourcen.",
         "limits": "Bei Antragstellern nahe einer Einkommensgrenze kann die Einstufung kippen - ein Detailverlust, der bei reinen Statistikzwecken folgenlos bliebe."
       },
       "healthcare": {
         "analogy": "Wie ein Fieberthermometer, das nur noch in halben Grad-Schritten statt auf eine Nachkommastelle genau misst.",
-        "explanation": "Wie ein groeber aufloesendes Thermometer fuer die meisten Verlaufskontrollen ausreicht und einfacher abzulesen ist, kommt ein quantisiertes Modell mit groeberen Werten aus und benoetigt weniger Speicher.",
-        "limits": "Bei einer kritischen Temperaturschwelle kann die fehlende Nachkommastelle eine relevante Veraenderung verschleiern, die ein praezises Geraet noch erfasst haette."
+        "explanation": "Wie ein gröber auflösendes Thermometer für die meisten Verlaufskontrollen ausreicht und einfacher abzulesen ist, kommt ein quantisiertes Modell mit gröberen Werten aus und benötigt weniger Speicher.",
+        "limits": "Bei einer kritischen Temperaturschwelle kann die fehlende Nachkommastelle eine relevante Veränderung verschleiern, die ein präzises Gerät noch erfasst hätte."
       },
       "finance": {
-        "analogy": "Wie das Mapping einer feinkoernigen PD-Schaetzung auf eine grobe Masterskala mit wenigen Ratingklassen, statt die Ausfallwahrscheinlichkeit auf Basispunkte genau zu fuehren.",
-        "explanation": "In der Bankpraxis fasst eine Ratingmasterskala feine Ausfallwahrscheinlichkeiten in wenige Bonitaetsstufen zusammen und vereinfacht so Reporting, Limitpruefung und Kapitalunterlegung - analog bildet Quantisierung feine Gewichtswerte auf ein grobes Raster ab und spart Speicher sowie Rechenzeit. Solange die Stufung weit von Entscheidungsschwellen entfernt liegt, bleibt der Effekt unkritisch. Im Modellrisikomanagement (etwa nach SR 11-7 bzw. unter MaRisk/BAIT) muss eine solche Vergroeberung dokumentiert und ihr Einfluss durch Validierung und Backtesting belegt werden.",
-        "limits": "Genau an einer Klassengrenze - etwa zwischen zwei IRB-Ratingklassen oder an einem Limit - kann das Runden eine Entscheidung kippen, die mit feiner Aufloesung anders ausgefallen waere; anders als eine einzelne gerundete Kennzahl verteilt sich der Quantisierungsfehler zudem ueber alle Gewichte und kann sich kumulieren."
+        "analogy": "Wie das Mapping einer feinkörnigen PD-Schätzung auf eine grobe Masterskala mit wenigen Ratingklassen, statt die Ausfallwahrscheinlichkeit auf Basispunkte genau zu führen.",
+        "explanation": "In der Bankpraxis fasst eine Ratingmasterskala feine Ausfallwahrscheinlichkeiten in wenige Bonitätsstufen zusammen und vereinfacht so Reporting, Limitprüfung und Kapitalunterlegung - analog bildet Quantisierung feine Gewichtswerte auf ein grobes Raster ab und spart Speicher sowie Rechenzeit. Solange die Stufung weit von Entscheidungsschwellen entfernt liegt, bleibt der Effekt unkritisch. Im Modellrisikomanagement (etwa nach SR 11-7 bzw. unter MaRisk/BAIT) muss eine solche Vergröberung dokumentiert und ihr Einfluss durch Validierung und Backtesting belegt werden.",
+        "limits": "Genau an einer Klassengrenze - etwa zwischen zwei IRB-Ratingklassen oder an einem Limit - kann das Runden eine Entscheidung kippen, die mit feiner Auflösung anders ausgefallen wäre; anders als eine einzelne gerundete Kennzahl verteilt sich der Quantisierungsfehler zudem über alle Gewichte und kann sich kumulieren."
       }
     },
     "relatedTerms": [
@@ -1675,34 +1675,34 @@
     "category": "Daten & Retrieval",
     "difficulty": "advanced",
     "enterpriseRelevance": "high",
-    "shortDefinition": "Data Leakage bezeichnet das unbeabsichtigte Durchsickern von Daten dorthin, wo sie nicht hingehoeren - entweder aus den Trainingsdaten in die Modellantworten oder aus Testdaten in das Training.",
-    "technicalDefinition": "Der Begriff hat zwei verschiedene Bedeutungen. Erstens kann ein Modell Teile seiner Trainingsdaten auswendig gelernt haben (Memorization) und sie wortgetreu oder in Fragmenten wiedergeben - ein Vertraulichkeits- und Datenschutzrisiko, wenn dabei personenbezogene oder geschaeftskritische Inhalte austreten. Zweitens spricht man von Eval-Kontamination, wenn Benchmark- oder Testdaten versehentlich im Training gelandet sind: Das Modell kennt dann die Antworten bereits, und die gemessenen Leistungswerte sind systematisch zu gut und nicht aussagekraeftig. Beide Formen entstehen meist unbeabsichtigt, etwa durch ueberlappende Datensaetze, unsaubere Trennung von Trainings- und Testmengen oder durch das Einspeisen sensibler Inhalte in Feintuning- oder Retrieval-Daten.",
-    "whyItMatters": "Data Leakage untergraebt zugleich die Vertraulichkeit (sensible Daten treten aus) und die Validitaet von Leistungstests (Benchmarks luegen), was zu Fehlentscheidungen bei Modellauswahl und Freigabe fuehren kann.",
+    "shortDefinition": "Data Leakage bezeichnet das unbeabsichtigte Durchsickern von Daten dorthin, wo sie nicht hingehören - entweder aus den Trainingsdaten in die Modellantworten oder aus Testdaten in das Training.",
+    "technicalDefinition": "Der Begriff hat zwei verschiedene Bedeutungen. Erstens kann ein Modell Teile seiner Trainingsdaten auswendig gelernt haben (Memorization) und sie wortgetreu oder in Fragmenten wiedergeben - ein Vertraulichkeits- und Datenschutzrisiko, wenn dabei personenbezogene oder geschäftskritische Inhalte austreten. Zweitens spricht man von Eval-Kontamination, wenn Benchmark- oder Testdaten versehentlich im Training gelandet sind: Das Modell kennt dann die Antworten bereits, und die gemessenen Leistungswerte sind systematisch zu gut und nicht aussagekräftig. Beide Formen entstehen meist unbeabsichtigt, etwa durch überlappende Datensätze, unsaubere Trennung von Trainings- und Testmengen oder durch das Einspeisen sensibler Inhalte in Feintuning- oder Retrieval-Daten.",
+    "whyItMatters": "Data Leakage untergräbt zugleich die Vertraulichkeit (sensible Daten treten aus) und die Validität von Leistungstests (Benchmarks lügen), was zu Fehlentscheidungen bei Modellauswahl und Freigabe führen kann.",
     "misconceptions": [
-      "Data Leakage ist nicht nur ein Datenschutzthema - die Eval-Kontamination verfaelscht auch Benchmarks und damit die Validitaet von Leistungsaussagen.",
-      "Leakage geschieht meist nicht absichtlich, sondern durch unsaubere Datentrennung oder ueberlappende Datensaetze.",
-      "Ein Modell, das im Benchmark hervorragend abschneidet, ist nicht zwangslaeufig gut - es kann die Testfragen schlicht im Training gesehen haben."
+      "Data Leakage ist nicht nur ein Datenschutzthema - die Eval-Kontamination verfälscht auch Benchmarks und damit die Validität von Leistungsaussagen.",
+      "Leakage geschieht meist nicht absichtlich, sondern durch unsaubere Datentrennung oder überlappende Datensätze.",
+      "Ein Modell, das im Benchmark hervorragend abschneidet, ist nicht zwangsläufig gut - es kann die Testfragen schlicht im Training gesehen haben."
     ],
     "domainAnalogies": {
       "automotive": {
-        "analogy": "Ein Pruefstand-Test, bei dem das Auto die exakte Teststrecke schon vorab abgefahren ist.",
-        "explanation": "Wie ein Fahrzeug, das genau auf den Abgaszyklus optimiert wurde, auf dem es spaeter geprueft wird, liefert ein kontaminiertes Modell glaenzende Testwerte, die im echten Verkehr nicht halten. Zugleich kann es interne Konstruktionsdaten ausplaudern, die es nie haette preisgeben duerfen.",
-        "limits": "Anders als beim Abgasskandal steckt hinter Data Leakage selten Betrugsabsicht, sondern meist eine unsaubere Trennung der Datensaetze."
+        "analogy": "Ein Prüfstand-Test, bei dem das Auto die exakte Teststrecke schon vorab abgefahren ist.",
+        "explanation": "Wie ein Fahrzeug, das genau auf den Abgaszyklus optimiert wurde, auf dem es später geprüft wird, liefert ein kontaminiertes Modell glänzende Testwerte, die im echten Verkehr nicht halten. Zugleich kann es interne Konstruktionsdaten ausplaudern, die es nie hätte preisgeben dürfen.",
+        "limits": "Anders als beim Abgasskandal steckt hinter Data Leakage selten Betrugsabsicht, sondern meist eine unsaubere Trennung der Datensätze."
       },
       "publicSector": {
-        "analogy": "Eine Pruefung, bei der die Klausurfragen vorab an einzelne Prueflinge durchgesickert sind.",
-        "explanation": "Wie eine Abschlusspruefung wertlos wird, sobald die Aufgaben vorher bekannt waren, verliert ein Benchmark seine Aussagekraft, wenn die Testfragen im Training enthalten waren. Parallel koennen vertrauliche Verwaltungsdaten ungewollt aus den Modellantworten austreten.",
-        "limits": "Die Pruefungs-Analogie erklaert nur die Eval-Kontamination, nicht das datenschutzrechtliche Austreten sensibler Buergerdaten."
+        "analogy": "Eine Prüfung, bei der die Klausurfragen vorab an einzelne Prüflinge durchgesickert sind.",
+        "explanation": "Wie eine Abschlussprüfung wertlos wird, sobald die Aufgaben vorher bekannt waren, verliert ein Benchmark seine Aussagekraft, wenn die Testfragen im Training enthalten waren. Parallel können vertrauliche Verwaltungsdaten ungewollt aus den Modellantworten austreten.",
+        "limits": "Die Prüfungs-Analogie erklärt nur die Eval-Kontamination, nicht das datenschutzrechtliche Austreten sensibler Bürgerdaten."
       },
       "healthcare": {
         "analogy": "Ein Patientenakten-Schnipsel, der aus einer Studienauswertung in einen fremden Befundbericht rutscht.",
-        "explanation": "Wie ein versehentlich uebernommener Patientendatensatz die Schweigepflicht verletzt, kann ein Modell auswendig gelernte Klinikdaten in seinen Antworten preisgeben. Und wie eine Diagnostik-Studie wertlos wird, wenn die Validierungsfaelle schon im Trainingskollektiv steckten, verfaelscht Eval-Kontamination die gemessene Modellguete.",
-        "limits": "Die Akten-Analogie unterschaetzt, dass Memorization auch verstreute, schwer nachverfolgbare Fragmente betrifft, nicht nur ganze Dokumente."
+        "explanation": "Wie ein versehentlich übernommener Patientendatensatz die Schweigepflicht verletzt, kann ein Modell auswendig gelernte Klinikdaten in seinen Antworten preisgeben. Und wie eine Diagnostik-Studie wertlos wird, wenn die Validierungsfälle schon im Trainingskollektiv steckten, verfälscht Eval-Kontamination die gemessene Modellgüte.",
+        "limits": "Die Akten-Analogie unterschätzt, dass Memorization auch verstreute, schwer nachverfolgbare Fragmente betrifft, nicht nur ganze Dokumente."
       },
       "finance": {
-        "analogy": "Ein Backtesting eines Handels- oder Risikomodells, in das versehentlich Zukunftsinformationen (Look-ahead-Bias) oder Out-of-Time-Daten einfliessen, sodass die Validierung eine Performance vorgaukelt, die out-of-sample nicht haelt.",
-        "explanation": "Wie ein Backtest die Guete einer Trading- oder Scoring-Strategie systematisch ueberschaetzt, sobald Daten aus dem Validierungs- oder Zukunftsfenster in die Kalibrierung sickern, sehen kontaminierte Modelle ihre Testfragen bereits im Training und liefern geschoente Benchmark-Werte ohne Aussagekraft fuer die echte Anwendung. In der Bankpraxis ist die saubere zeitliche und stichprobenmaessige Trennung von Entwicklungs-, Test- und Out-of-Time-Stichproben fester Bestandteil der Modellvalidierung; unter Model Risk Management nach SR 11-7 und der MaRisk-Validierung muss eine unabhaengige Instanz solche Leakage-Quellen gezielt aufdecken, bevor ein Modell (etwa fuer IRB-Ratings) freigegeben wird.",
-        "limits": "Die Backtesting-Analogie trifft praezise die Eval-Kontamination und den methodischen Validitaetsverlust, deckt aber nicht die zweite Spielart ab - das datenschutzrechtliche Austreten auswendig gelernter, vertraulicher Mandanten- oder Personendaten in den Modellantworten."
+        "analogy": "Ein Backtesting eines Handels- oder Risikomodells, in das versehentlich Zukunftsinformationen (Look-ahead-Bias) oder Out-of-Time-Daten einfliessen, sodass die Validierung eine Performance vorgaukelt, die out-of-sample nicht hält.",
+        "explanation": "Wie ein Backtest die Güte einer Trading- oder Scoring-Strategie systematisch überschätzt, sobald Daten aus dem Validierungs- oder Zukunftsfenster in die Kalibrierung sickern, sehen kontaminierte Modelle ihre Testfragen bereits im Training und liefern geschönte Benchmark-Werte ohne Aussagekraft für die echte Anwendung. In der Bankpraxis ist die saubere zeitliche und stichprobenmässige Trennung von Entwicklungs-, Test- und Out-of-Time-Stichproben fester Bestandteil der Modellvalidierung; unter Model Risk Management nach SR 11-7 und der MaRisk-Validierung muss eine unabhängige Instanz solche Leakage-Quellen gezielt aufdecken, bevor ein Modell (etwa für IRB-Ratings) freigegeben wird.",
+        "limits": "Die Backtesting-Analogie trifft präzise die Eval-Kontamination und den methodischen Validitätsverlust, deckt aber nicht die zweite Spielart ab - das datenschutzrechtliche Austreten auswendig gelernter, vertraulicher Mandanten- oder Personendaten in den Modellantworten."
       }
     },
     "relatedTerms": [
@@ -1830,7 +1830,7 @@
     "tags": [
       "evaluation",
       "benchmark",
-      "qualitaet",
+      "qualität",
       "validierung",
       "deployment"
     ]

@@ -11,9 +11,8 @@ import { link } from '../lib/paths';
 
 const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
-const domainIcons = Object.fromEntries(lenses.map((d) => [d.key, d.icon]));
 
-// 3 Einstiegsbegriffe rotieren täglich per Build-Datum
+// 3 Einstiegsbegriffe wechseln pro Build, abgeleitet aus dem Build-Datum (keine echte Tagesrotation ohne geplanten Rebuild)
 const buildDate = new Date();
 const yearStart = new Date(buildDate.getFullYear(), 0, 1);
 const dayOfYear = Math.floor((buildDate.getTime() - yearStart.getTime()) / (1000 * 60 * 60 * 24));
@@ -33,7 +32,7 @@ const featured = [
     <div class="grid grid--3" style="margin-top:1.5rem">
       <a class="card path-card" href={link('glossar/')}>
         <h3>📚 Glossar durchsuchen</h3>
-        <p class="muted">Alle Begriffe mit Definition, Missverständnissen und drei Brillen. Volltextsuche und Filter.</p>
+        <p class="muted">Alle Begriffe mit Definition, Missverständnissen und mehreren Brillen. Volltextsuche und Filter.</p>
       </a>
       <a class="card path-card" href={link('domaenen/')}>
         <h3>🔭 Domänenbrillen ansehen</h3>
@@ -49,13 +48,13 @@ const featured = [
   <section class="section container">
     <h2>Begriffe zum Reinschnuppern</h2>
     <div class="grid grid--3" style="margin-top:1.5rem">
-      {featured.map((term) => <GlossaryCard term={term} domainIcons={domainIcons} />)}
+      {featured.map((term) => <GlossaryCard term={term} />)}
     </div>
     <p style="margin-top:1.2rem"><a class="btn" href={link('glossar/')}>Alle Begriffe ansehen →</a></p>
   </section>
 
   <section class="section container">
-    <h2>Vier Brillen, eine Sache</h2>
+    <h2>Mehrere Brillen, eine Sache</h2>
     <p class="lead">Eine Analogie ist eine Brille, nicht die Realität. Jede hat eine ehrliche Grenze.</p>
     <div class="grid grid--2" style="margin-top:1.5rem">
       {lenses.map((domain) => <DomainLensCard domain={domain} />)}

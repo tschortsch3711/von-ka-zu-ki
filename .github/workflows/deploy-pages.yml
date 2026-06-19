@@ -4,10 +4,10 @@ on:
   # Bei jedem Push auf main bauen und deployen
   push:
     branches: [main]
-  # Manuelles Ausloesen ueber die Actions-Oberflaeche erlauben
+  # Manuelles Auslösen über die Actions-Oberfläche erlauben
   workflow_dispatch:
 
-# Berechtigungen, die GitHub Pages Deployment benoetigt
+# Berechtigungen, die das GitHub Pages Deployment benötigt
 permissions:
   contents: read
   pages: write
@@ -27,10 +27,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # Node 22+ wird für das validate-Skript benötigt (--experimental-strip-types)
+          node-version: 22
           cache: npm
       - name: Install dependencies
         run: npm ci
+      # Qualitäts-Gate: bricht den Deploy ab, bevor fehlerhafte Inhalte oder Typfehler live gehen
+      - name: Validate content
+        run: npm run validate
+      - name: Type check
+        run: npm run check
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Build with Astro

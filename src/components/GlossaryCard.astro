@@ -1,12 +1,12 @@
 ---
 import type { GlossaryTerm } from '../data/types';
 import { termHref } from '../lib/paths';
+import BrilleIcon from './BrilleIcon.astro';
 
 export interface Props {
   term: GlossaryTerm;
-  domainIcons?: Record<string, string>;
 }
-const { term, domainIcons = {} } = Astro.props;
+const { term } = Astro.props;
 const relevanceLabel: Record<string, string> = { low: 'gering', medium: 'mittel', high: 'hoch' };
 const difficultyLabel: Record<string, string> = { basic: 'Einstieg', intermediate: 'Aufbau', advanced: 'Vertiefung' };
 const lenses = Object.keys(term.domainAnalogies);
@@ -21,7 +21,7 @@ const lenses = Object.keys(term.domainAnalogies);
     <span class={`badge badge--${term.difficulty}`}>{difficultyLabel[term.difficulty] ?? term.difficulty}</span>
     <span class="badge">Enterprise: {relevanceLabel[term.enterpriseRelevance] ?? term.enterpriseRelevance}</span>
     <span class="glossary-card__lenses" aria-label="Verfügbare Domänenbrillen">
-      {lenses.map((l) => <span title={l}>{domainIcons[l] ?? '•'}</span>)}
+      {lenses.map((l) => <span title={l}><BrilleIcon domainKey={l} class="lens-icon" /></span>)}
     </span>
   </div>
 </a>
@@ -45,5 +45,6 @@ const lenses = Object.keys(term.domainAnalogies);
   .glossary-card__head h3 { margin: 0; font-size: 1.1rem; }
   .glossary-card__def { margin: 0; color: var(--text-muted); font-size: 0.95rem; flex: 1; }
   .glossary-card__meta { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
-  .glossary-card__lenses { margin-left: auto; font-size: 1.1rem; letter-spacing: 0.1em; }
+  .glossary-card__lenses { margin-left: auto; display: flex; gap: 0.3rem; align-items: center; }
+  .lens-icon { width: 1rem; height: 1rem; }
 </style>

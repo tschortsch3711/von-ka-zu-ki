@@ -2,6 +2,15 @@ import { useMemo, useState } from 'react';
 import Fuse from 'fuse.js';
 import type { GlossaryTerm, Domain } from '../data/types';
 
+function BrilleIconSvg({ domainKey }: { domainKey: string }) {
+  const p = { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.75, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const, 'aria-hidden': true, width: '1em', height: '1em', style: { display: 'inline-block', verticalAlign: 'middle' } };
+  if (domainKey === 'automotive') return <svg {...p}><path d="M6.5 11L9 6h6l2.5 5"/><path d="M2 11h20v5a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-5z"/><circle cx="6.5" cy="18" r="1.5"/><circle cx="17.5" cy="18" r="1.5"/></svg>;
+  if (domainKey === 'publicSector') return <svg {...p}><path d="M12 2L2 8h20L12 2z"/><line x1="2" y1="8" x2="22" y2="8"/><line x1="6" y1="9" x2="6" y2="19"/><line x1="12" y1="9" x2="12" y2="19"/><line x1="18" y1="9" x2="18" y2="19"/><line x1="2" y1="19" x2="22" y2="19"/><line x1="2" y1="21" x2="22" y2="21"/></svg>;
+  if (domainKey === 'healthcare') return <svg {...p}><path d="M12 2L4 6v5c0 5.5 3.5 9.5 8 11 4.5-1.5 8-5.5 8-11V6L12 2z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>;
+  if (domainKey === 'finance') return <svg {...p}><path d="M3 21V3"/><path d="M3 21h18"/><path d="M7 14h3v7H7z"/><path d="M11 10h3v11h-3z"/><path d="M15 6h3v15h-3z"/></svg>;
+  return <span aria-hidden="true">•</span>;
+}
+
 interface Props {
   terms: GlossaryTerm[];
   domains: Domain[];
@@ -15,7 +24,7 @@ const difficultyLabel: Record<string, string> = {
 const difficultyOrder: Record<string, number> = { basic: 0, intermediate: 1, advanced: 2 };
 const relevanceLabel: Record<string, string> = { low: 'gering', medium: 'mittel', high: 'hoch' };
 
-// Base-bewusste Linkaufloesung, auch clientseitig (Vite inlined BASE_URL).
+// Base-bewusste Linkauflösung, auch clientseitig (Vite inlined BASE_URL).
 const base = import.meta.env.BASE_URL;
 const termHref = (slug: string) => `${base}/glossar/${slug}/`.replace(/\/{2,}/g, '/');
 
@@ -30,10 +39,6 @@ export default function SearchBox({ terms, domains }: Props) {
   const categories = useMemo(
     () => Array.from(new Set(terms.map((t) => t.category))),
     [terms],
-  );
-  const domainIcons = useMemo(
-    () => Object.fromEntries(domains.map((d) => [d.key, d.icon])),
-    [domains],
   );
 
   const fuse = useMemo(
@@ -173,7 +178,7 @@ export default function SearchBox({ terms, domains }: Props) {
                 <span className="badge">Enterprise: {relevanceLabel[t.enterpriseRelevance]}</span>
                 <span className="search-card__lenses" aria-label="Verfügbare Brillen">
                   {Object.keys(t.domainAnalogies).map((k) => (
-                    <span key={k} title={k}>{domainIcons[k] ?? '•'}</span>
+                    <span key={k} title={k}><BrilleIconSvg domainKey={k} /></span>
                   ))}
                 </span>
               </div>

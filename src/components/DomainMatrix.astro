@@ -1,10 +1,11 @@
 ---
-// Domaenenbrillen-Matrix: welche Begriffe sich ueber welche Brille besonders gut erklaeren.
+// Domänenbrillen-Matrix: welche Begriffe sich über welche Brille besonders gut erklären.
 // Datengetrieben: ein Haken, wenn der Begriff in domain.bestExplainedTerms steht.
 import glossary from '../data/glossary.json';
 import domains from '../data/domains.json';
 import type { GlossaryTerm, Domain } from '../data/types';
 import { termHref } from '../lib/paths';
+import BrilleIcon from './BrilleIcon.astro';
 
 const terms = (glossary as GlossaryTerm[]).slice().sort((a, b) => a.term.localeCompare(b.term, 'de'));
 const lenses = domains as Domain[];
@@ -17,7 +18,7 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
     <thead>
       <tr>
         <th scope="col">Begriff</th>
-        {lenses.map((d) => <th scope="col"><span aria-hidden="true">{d.icon}</span><span class="th-label">{d.name}</span></th>)}
+        {lenses.map((d) => <th scope="col"><BrilleIcon domainKey={d.key} class="matrix-icon" /><span class="th-label">{d.name}</span></th>)}
       </tr>
     </thead>
     <tbody>
@@ -34,7 +35,7 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
       ))}
     </tbody>
   </table>
-  <figcaption>Abb. 4 — Ein gefüllter Punkt markiert eine besonders tragfähige Brille. Jeder Begriff lässt sich über alle vier Brillen erklären.</figcaption>
+  <figcaption>Abb. 4 — Ein gefüllter Punkt markiert eine besonders tragfähige Brille. Jeder Begriff lässt sich über alle Brillen erklären.</figcaption>
 </figure>
 
 <style>
@@ -43,6 +44,7 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
   .matrix th, .matrix td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); text-align: left; }
   .matrix thead th { font-size: 0.85rem; color: var(--text-muted); vertical-align: bottom; }
   .matrix thead th .th-label { display: block; font-weight: 600; }
+  .matrix-icon { width: 1.2rem; height: 1.2rem; display: block; margin-bottom: 0.2rem; }
   .matrix tbody th { font-weight: 600; }
   .matrix tbody th a { color: var(--text); }
   .matrix td { text-align: center; font-size: 1.2rem; }

@@ -8,30 +8,29 @@ Planungsstand für Mitwirkende fest.
 
 Ein bewusst tiefer, vertikaler Schnitt statt Breite:
 
-- **18 Begriffe**, jeweils vollständig über **3 Domänenbrillen** inklusive `limits`.
-- Drei ausgearbeitete Domänenbrillen: Automotive, Public Sector, Healthcare.
+- Begriffe, jeweils vollständig über mehrere Domänenbrillen inklusive `limits`.
+- Ausgearbeitete Domänenbrillen: Automotive, Public Sector, Healthcare und Finance & Banking.
 - Clientseitige Volltextsuche (Fuse.js) mit Facettenfiltern (Kategorie, Brille, Schwierigkeit,
   Enterprise-Relevanz).
-- Fünf Diagramme: KI-Ökosystem, Tokenökonomie, Agentic Loop, Domänenbrillen-Matrix, Automotive-Showcase.
+- Diagramme: KI-Ökosystem, Tokenökonomie, Agentic Loop, Domänenbrillen-Matrix, Automotive-Showcase.
 - Hell-/Dunkelmodus, mobil-first, barrierearm.
 - Rechtsseiten (Impressum, Datenschutz) als auszufüllende Platzhalter.
 
 ## v2 (geplant)
 
-### Weitere Begriffe (als `advanced` zu taggen)
+### Mehr Einstiegsbreite
 
-Deep Learning, Reasoning Model, multimodale Modelle, Distillation, Quantisierung, KV Cache, VRAM,
-GPU/TPU/NPU, Rechenzentrum, Vector Database, Memory, Orchestrierung, CI/CD, Eval, Benchmark,
-Observability, Rate Limit, Data Leakage, Audit Trail, Compliance sowie entwicklernahe Git-Begriffe.
+Zusätzliche `basic`/`intermediate`-Begriffe, damit die Breite für Nicht-Fachleute wächst. Der Bestand
+ist aktuell stark `advanced`-lastig.
 
 ### Weitere Domänenbrillen
 
-Über Automotive, Public Sector und Healthcare hinaus.
+Über die bestehenden Brillen hinaus.
 
 ### Weitere Ideen
 
 - Vertiefte Querverweise und geführte Lernpfade.
-- Mehrsprachigkeit.
+- Mehrsprachigkeit (DE/EN).
 
 ## Zurückgestellt: KI-Lab
 
