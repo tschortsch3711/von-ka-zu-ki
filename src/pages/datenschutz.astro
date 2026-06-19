@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Datenschutzerklärung" description="Datenschutzerklärung für diese statische Website.">
+  <section class="section container prose">
+    <h1>Datenschutzerklärung</h1>
+
+    <div class="placeholder">
+      <strong>Hinweis an Nikola:</strong> Diese Erklärung ist eine schlanke Vorlage für eine rein statische
+      Seite ohne Tracking. Bitte die mit [eckigen Klammern] markierten Stellen ausfüllen und vor
+      Veröffentlichung juristisch prüfen.
+    </div>
+
+    <h2>Verantwortlicher</h2>
+    <p>
+      Verantwortlich im Sinne der DSGVO ist die im <a href="impressum/">Impressum</a> genannte Person.
+      [Name und Kontakt wie im Impressum.]
+    </p>
+
+    <h2>Grundsatz: keine Cookies, kein Tracking</h2>
+    <p>
+      Diese Website ist eine statische Seite. Sie setzt <strong>keine Cookies</strong>, nutzt
+      <strong>kein Tracking</strong> und <strong>keine Analyse-Werkzeuge</strong>. Es werden
+      <strong>keine externen Ressourcen</strong> wie Schriftarten-, Bild- oder Skript-CDNs geladen.
+      Eine clientseitige Suche läuft vollständig im Browser; dabei werden keine Daten an einen Server gesendet.
+    </p>
+
+    <h2>Hosting über GitHub Pages</h2>
+    <p>
+      Die Seite wird über GitHub Pages (GitHub Inc., bzw. Microsoft) gehostet. Beim Aufruf der Seite
+      verarbeitet der Hosting-Anbieter technisch notwendige Verbindungsdaten in Server-Logfiles, darunter
+      typischerweise IP-Adresse, Datum und Uhrzeit des Zugriffs, abgerufene Datei und übertragene Datenmenge.
+      Diese Verarbeitung erfolgt zur sicheren und stabilen Bereitstellung der Seite
+      (Art. 6 Abs. 1 lit. f DSGVO). [Bei Bedarf auf die GitHub-Datenschutzerklärung verweisen.]
+    </p>
+
+    <h2>Ihre Rechte</h2>
+    <p>
+      Sie haben nach der DSGVO das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der
+      Verarbeitung, Datenübertragbarkeit und Widerspruch sowie ein Beschwerderecht bei einer
+      Aufsichtsbehörde. [Kontakt für die Wahrnehmung dieser Rechte wie im Impressum.]
+    </p>
+
+    <h2>Stand</h2>
+    <p>[Datum der letzten Aktualisierung eintragen.]</p>
+  </section>
+
+  <style>
+    .placeholder {
+      background: var(--warning-soft);
+      border: 1px solid var(--warning-border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</BaseLayout>

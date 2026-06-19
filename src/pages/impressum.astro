@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Impressum" description="Impressum nach deutschem Recht.">
+  <section class="section container prose">
+    <h1>Impressum</h1>
+
+    <div class="placeholder">
+      <strong>Hinweis an Nikola:</strong> Bitte hier die echten Angaben eintragen. Die folgenden Felder sind
+      Platzhalter und müssen vor Veröffentlichung mit korrekten Daten gefüllt werden. Es wurden bewusst
+      <em>keine</em> Daten erfunden.
+    </div>
+
+    <h2>Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</h2>
+    <p>
+      [Vor- und Nachname]<br />
+      [Straße und Hausnummer]<br />
+      [PLZ und Ort]<br />
+      [Land]
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      E-Mail: [E-Mail-Adresse]<br />
+      Telefon (optional): [Telefonnummer]
+    </p>
+
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>
+      [Vor- und Nachname]<br />
+      [Anschrift wie oben]
+    </p>
+
+    <h2>Haftung für Inhalte und Links</h2>
+    <p>
+      [Optionaler Standardtext zu Haftung für Inhalte und externe Links. Bitte juristisch prüfen
+      und an die eigene Situation anpassen.]
+    </p>
+
+    <h2>Urheberrecht</h2>
+    <p>
+      Die Inhalte dieses Glossars stehen unter CC BY-SA 4.0, der Quellcode unter der MIT-Lizenz.
+      Siehe Lizenzhinweise im Repository.
+    </p>
+  </section>
+
+  <style>
+    .placeholder {
+      background: var(--warning-soft);
+      border: 1px solid var(--warning-border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</BaseLayout>

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import glossary from '../../data/glossary.json';
+import domains from '../../data/domains.json';
+import type { GlossaryTerm, Domain } from '../../data/types';
+import { link, termHref } from '../../lib/paths';
+
+export function getStaticPaths() {
+  const terms = glossary as GlossaryTerm[];
+  return terms.map((term) => ({ params: { slug: term.slug }, props: { term } }));
+}
+
+const { term } = Astro.props as { term: GlossaryTerm };
+const allTerms = glossary as GlossaryTerm[];
+const lenses = domains as Domain[];
+const byKey = Object.fromEntries(lenses.map((d) => [d.key, d]));
+
+const difficultyLabel: Record<string, string> = { basic: 'Einstieg', intermediate: 'Aufbau', advanced: 'Vertiefung' };
+const relevanceLabel: Record<string, string> = { low: 'gering', medium: 'mittel', high: 'hoch' };
+
+// relatedTerms aufloesen (nur existierende Begriffe verlinken)
+const related = term.relatedTerms
+  .map((id) => allTerms.find((t) => t.id === id || t.slug === id))
+  .filter((t): t is GlossaryTerm => Boolean(t));
+---
+<BaseLayout title={term.term} description={term.shortDefinition}>
+  <article class="section container term">
+    <p class="breadcrumb"><a href={link('glossar/')}>← Glossar</a></p>
+
+    <header class="term__header">
+      <div class="term__badges">
+        <span class="badge badge--accent">{term.category}</span>
+        <span class="badge">{difficultyLabel[term.difficulty] ?? term.difficulty}</span>
+        <span class="badge">Enterprise-Relevanz: {relevanceLabel[term.enterpriseRelevance] ?? term.enterpriseRelevance}</span>
+      </div>
+      <h1>{term.term}</h1>
+      {term.aliases.length > 0 && (
+        <p class="muted">Auch: {term.aliases.join(', ')}</p>
+      )}
+      <p class="lead">{term.shortDefinition}</p>
+    </header>
+
+    <section class="prose">
+      <h2>Fachliche Definition</h2>
+      <p>{term.technicalDefinition}</p>
+
+      <h2>Warum das wichtig ist</h2>
+      <p>{term.whyItMatters}</p>
+
+      <h2>Häufige Missverständnisse</h2>
+      <ul class="checks">
+        {term.misconceptions.map((m) => <li>{m}</li>)}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Drei Brillen</h2>
+      <p class="muted">Dieselbe Sache, über drei bekannte Domänen erklärt. Jede Analogie hat eine ehrliche Grenze.</p>
+      <div class="lens-grid" style="margin-top:1rem">
+        {Object.entries(term.domainAnalogies).map(([key, a]) => {
+          const d = byKey[key];
+          return (
+            <div class="lens-card">
+              <h4><span aria-hidden="true">{d?.icon ?? '🔭'}</span> {d?.name ?? key}</h4>
+              <p><strong>{a.analogy}</strong></p>
+              <p class="muted">{a.explanation}</p>
+              <p class="lens-limit"><strong>Wo die Analogie an Grenzen stößt</strong>{a.limits}</p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    {related.length > 0 && (
+      <section style="margin-top:2.5rem">
+        <h2>Verwandte Begriffe</h2>
+        <div class="related-list">
+          {related.map((r) => <a class="badge badge--accent related-pill" href={termHref(r.slug)}>{r.term}</a>)}
+        </div>
+      </section>
+    )}
+  </article>
+
+  <style>
+    .term__header { margin-bottom: 2rem; }
+    .term__badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; }
+    .related-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .related-pill { font-size: 0.85rem; text-transform: none; letter-spacing: 0; padding: 0.4em 0.8em; }
+    .related-pill:hover { text-decoration: none; filter: brightness(1.05); }
+  </style>
+</BaseLayout>

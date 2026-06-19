@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import GlossaryCard from '../components/GlossaryCard.astro';
+import DomainLensCard from '../components/DomainLensCard.astro';
+import EcosystemMap from '../components/EcosystemMap.astro';
+import glossary from '../data/glossary.json';
+import domains from '../data/domains.json';
+import type { GlossaryTerm, Domain } from '../data/types';
+import { link } from '../lib/paths';
+
+const terms = glossary as GlossaryTerm[];
+const lenses = domains as Domain[];
+const domainIcons = Object.fromEntries(lenses.map((d) => [d.key, d.icon]));
+const featured = terms.filter((t) => ['agent', 'llm', 'token'].includes(t.id)).slice(0, 3);
+---
+<BaseLayout title="Von K.A. zu K.I.">
+  <Hero />
+
+  <section class="section container">
+    <h2>Drei Wege hinein</h2>
+    <p class="lead">Such dir einen Einstieg, der zu deiner Denkweise passt.</p>
+    <div class="grid grid--3" style="margin-top:1.5rem">
+      <a class="card path-card" href={link('glossar/')}>
+        <h3>📚 Glossar durchsuchen</h3>
+        <p class="muted">Alle Begriffe mit Definition, Missverständnissen und drei Brillen. Volltextsuche und Filter.</p>
+      </a>
+      <a class="card path-card" href={link('domaenen/')}>
+        <h3>🔭 Domänenbrillen ansehen</h3>
+        <p class="muted">Dieselben Begriffe, erklärt über Automotive, Public Sector und Healthcare.</p>
+      </a>
+      <a class="card path-card" href={link('#oekosystem')}>
+        <h3>🗺️ KI-Ökosystem verstehen</h3>
+        <p class="muted">Wie Nutzer, Modelle, Tools, APIs, Rechenzentren und Governance zusammenspielen.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section container">
+    <h2>Begriffe zum Reinschnuppern</h2>
+    <div class="grid grid--3" style="margin-top:1.5rem">
+      {featured.map((term) => <GlossaryCard term={term} domainIcons={domainIcons} />)}
+    </div>
+    <p style="margin-top:1.2rem"><a class="btn" href={link('glossar/')}>Alle Begriffe ansehen →</a></p>
+  </section>
+
+  <section class="section container">
+    <h2>Drei Brillen, eine Sache</h2>
+    <p class="lead">Eine Analogie ist eine Brille, nicht die Realität. Jede hat eine ehrliche Grenze.</p>
+    <div class="grid grid--3" style="margin-top:1.5rem">
+      {lenses.map((domain) => <DomainLensCard domain={domain} />)}
+    </div>
+  </section>
+
+  <section id="oekosystem" class="section container">
+    <h2>Das KI-Ökosystem auf einen Blick</h2>
+    <p class="lead">Wer steuert, wer leistet die Arbeit, wer prüft – und wie hängt das zusammen.</p>
+    <div style="margin-top:1.5rem">
+      <EcosystemMap />
+    </div>
+  </section>
+
+  <style>
+    .path-card { color: var(--text); transition: border-color 0.15s ease, transform 0.15s ease; }
+    .path-card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
+    .path-card h3 { margin: 0 0 0.5rem; }
+    .path-card p { margin: 0; }
+  </style>
+</BaseLayout>

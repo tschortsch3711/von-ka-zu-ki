@@ -1,0 +1,110 @@
+[
+  {
+    "id": "llm",
+    "slug": "llm",
+    "term": "LLM (Large Language Model)",
+    "aliases": ["Large Language Model", "Großes Sprachmodell", "Sprachmodell"],
+    "category": "Grundlagen",
+    "difficulty": "basic",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Ein großes neuronales Modell, das auf riesigen Textmengen trainiert wurde und wahrscheinliche Wortfolgen erzeugt.",
+    "technicalDefinition": "Ein Large Language Model ist ein neuronales Netz mit sehr vielen Parametern, das darauf trainiert wurde, das jeweils nächste Token in einer Sequenz vorherzusagen. Aus dieser einfachen Aufgabe entstehen Fähigkeiten wie Zusammenfassen, Übersetzen, Klassifizieren und Schlussfolgern, weil im Training statistische Muster der Sprache gelernt werden.",
+    "whyItMatters": "LLMs sind die Grundlage praktisch aller aktuellen generativen KI-Anwendungen. Wer ihre Funktionsweise versteht, kann Stärken nutzen und typische Fehler wie Halluzination einordnen.",
+    "misconceptions": [
+      "Ein LLM versteht Sprache nicht so wie ein Mensch, sondern berechnet Wahrscheinlichkeiten.",
+      "Ein LLM hat kein eingebautes, stets aktuelles Faktenwissen und kann sich irren.",
+      "Größer ist nicht automatisch besser für jede Aufgabe."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Der Motor des Fahrzeugs",
+        "explanation": "Das Modell ist der Motor: Es leistet die eigentliche Arbeit und wandelt Eingaben in Ausgaben um. Ohne Fahrer, Straße und Ziel fährt es aber nirgendwohin.",
+        "limits": "Ein Motor liefert reproduzierbar dieselbe Leistung; ein LLM kann bei gleicher Eingabe unterschiedliche Antworten erzeugen und liegt manchmal überzeugend falsch."
+      },
+      "publicSector": {
+        "analogy": "Ein sehr belesener Sachbearbeiter ohne Aktenzugriff",
+        "explanation": "Das Modell hat enorm viel gelesen und formuliert flüssig, kennt aber den konkreten Vorgang nicht, solange ihm die Akte nicht vorgelegt wird.",
+        "limits": "Anders als ein Sachbearbeiter haftet das Modell für nichts und prüft Fakten nicht eigenständig auf Rechtsverbindlichkeit."
+      },
+      "healthcare": {
+        "analogy": "Ein Lehrbuch-Gedächtnis ohne Patientenakte",
+        "explanation": "Das Modell kennt viel Allgemeinwissen aus dem Training, aber nicht den konkreten Patienten, solange ihm keine Befunde gegeben werden.",
+        "limits": "Lehrbuchwissen ohne aktuelle Evidenz kann veraltet oder falsch sein; medizinische Entscheidungen brauchen geprüfte Quellen und ärztliche Verantwortung."
+      }
+    },
+    "relatedTerms": ["ki", "machine-learning", "foundation-model", "token", "inference", "hallucination"],
+    "tags": ["grundlagen", "modell", "nlp"]
+  },
+  {
+    "id": "token",
+    "slug": "token",
+    "term": "Token",
+    "aliases": ["Tokens", "Tokenisierung"],
+    "category": "Funktionsweise",
+    "difficulty": "basic",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Die kleinste Verarbeitungseinheit eines Sprachmodells, meist ein Wortteil. Tokens bestimmen Kosten und Länge.",
+    "technicalDefinition": "Ein Token ist die Einheit, in die Text vor der Verarbeitung zerlegt wird. Ein Token entspricht grob einem kurzen Wort oder Wortteil. Modelle verarbeiten und erzeugen Text Token für Token, und nahezu alle Kosten- und Längenbegrenzungen werden in Tokens gemessen, nicht in Zeichen oder Wörtern.",
+    "whyItMatters": "Tokens sind die Recheneinheit und die Abrechnungseinheit zugleich. Wer in Tokens denkt, versteht Kosten, Geschwindigkeit und die Grenzen des Kontextfensters.",
+    "misconceptions": [
+      "Ein Token ist nicht dasselbe wie ein Wort; lange Wörter bestehen aus mehreren Tokens.",
+      "Mehr Text bedeutet nicht nur mehr Zeit, sondern direkt mehr Kosten.",
+      "Auch die erzeugte Antwort verbraucht Tokens, nicht nur die Eingabe."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Der Verbrauchszähler bzw. der Sprit",
+        "explanation": "Jede Fahrt verbraucht Treibstoff: Je länger Anfrage und Antwort, desto mehr Tokens werden verbraucht und desto höher die Kosten.",
+        "limits": "Spritverbrauch ist physikalisch fix pro Strecke; Tokenverbrauch hängt stark von Formulierung und Sprache ab und ist schwerer vorab exakt zu berechnen."
+      },
+      "publicSector": {
+        "analogy": "Gebühreneinheiten pro bearbeiteter Seite",
+        "explanation": "Wie bei einer seitenbasierten Gebühr summiert sich der Aufwand mit jeder Seite Text, die ein- und ausgeht.",
+        "limits": "Seiten sind klar abgrenzbar; Tokengrenzen verlaufen mitten in Wörtern und sind für Laien nicht direkt sichtbar."
+      },
+      "healthcare": {
+        "analogy": "Minutentakt einer Sprechstunde",
+        "explanation": "Jede zusätzliche Information kostet Zeit im Takt; ausführlichere Eingaben und Antworten verbrauchen mehr Budget.",
+        "limits": "Zeit ist linear erlebbar; Tokenkosten sind unsichtbar und werden leicht unterschätzt, bis das Kontextfenster voll ist."
+      }
+    },
+    "relatedTerms": ["llm", "context-window", "inference", "prompt"],
+    "tags": ["funktionsweise", "kosten", "tokenoekonomie"]
+  },
+  {
+    "id": "agent",
+    "slug": "agent",
+    "term": "KI-Agent",
+    "aliases": ["AI Agent", "Agentic AI"],
+    "category": "Agentische Schicht",
+    "difficulty": "intermediate",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Ein KI-System, das Ziele verfolgt, Schritte plant und Tools nutzt.",
+    "technicalDefinition": "Ein Agent ist ein KI-basiertes System, das nicht nur Antworten erzeugt, sondern Aufgaben in Teilschritte zerlegt, externe Werkzeuge nutzen kann, Zwischenergebnisse bewertet und iterativ auf ein Ziel hinarbeitet.",
+    "whyItMatters": "Agenten verschieben KI-Nutzung von reiner Assistenz hin zu teilautomatisierter Ausführung.",
+    "misconceptions": [
+      "Ein Agent ist nicht automatisch autonom.",
+      "Ein Chatbot ist nicht automatisch ein Agent.",
+      "Mehr Tool-Zugriff bedeutet nicht automatisch bessere Ergebnisse."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Fahrer oder Fahrzeug mit Assistenzsystem",
+        "explanation": "Der Agent plant die Route, nutzt Werkzeuge und fährt Schritt für Schritt zum Ziel.",
+        "limits": "Ein echter KI-Agent versteht sein Ziel nicht wie ein Mensch, sondern arbeitet nach Modellwahrscheinlichkeiten, Kontext und Tools."
+      },
+      "publicSector": {
+        "analogy": "Sachbearbeitung mit Aktenzugriff und festen Zuständigkeiten",
+        "explanation": "Der Agent kann Vorgänge vorbereiten, prüfen und strukturieren, muss aber innerhalb klarer Regeln arbeiten.",
+        "limits": "Rechtsverbindliche Entscheidungen benötigen Governance und menschliche Verantwortung."
+      },
+      "healthcare": {
+        "analogy": "Assistenzarzt mit Zugriff auf Labor, Akte und Leitlinien",
+        "explanation": "Er sammelt Informationen, schlägt Schritte vor und braucht bei kritischen Entscheidungen Freigabe.",
+        "limits": "Er ersetzt keine menschliche Verantwortung und keine ärztliche Letztentscheidung."
+      }
+    },
+    "relatedTerms": ["llm", "tool-calling", "mcp", "context-window", "ai-governance"],
+    "tags": ["agentic", "tools", "automation", "enterprise"]
+  }
+]

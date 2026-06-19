@@ -1,0 +1,84 @@
+---
+// KI-Ökosystem-Karte als Inline-SVG, ohne externe Abhaengigkeiten.
+// Farben ueber currentColor / CSS-Variablen, damit Hell-/Dunkelmodus mitgeht.
+---
+<figure class="diagram-figure">
+  <svg viewBox="0 0 760 440" role="img" aria-labelledby="eco-title eco-desc" class="eco">
+    <title id="eco-title">Karte des KI-Ökosystems</title>
+    <desc id="eco-desc">
+      Nutzer und Unternehmen stellen Anfragen an agentische Tools. Diese nutzen Modelle über APIs und MCP.
+      Modelle laufen in Rechenzentren und greifen auf Daten zu. Governance umschließt das gesamte System.
+    </desc>
+
+    <!-- Governance-Rahmen -->
+    <rect x="8" y="8" width="744" height="424" rx="16" class="frame" />
+    <text x="24" y="32" class="frame-label">AI Governance · Regeln, Aufsicht, Verantwortung (der „TÜV“)</text>
+
+    <!-- Knoten -->
+    <g class="node node--user">
+      <rect x="40" y="70" width="150" height="64" rx="10" />
+      <text x="115" y="98">Nutzer</text>
+      <text x="115" y="118" class="sub">stellt Anfragen</text>
+    </g>
+    <g class="node node--user">
+      <rect x="40" y="170" width="150" height="64" rx="10" />
+      <text x="115" y="198">Unternehmen</text>
+      <text x="115" y="218" class="sub">Flottenmanager</text>
+    </g>
+
+    <g class="node node--agent">
+      <rect x="300" y="120" width="170" height="70" rx="10" />
+      <text x="385" y="150">Agentische Tools</text>
+      <text x="385" y="170" class="sub">planen &amp; nutzen Werkzeuge</text>
+    </g>
+
+    <g class="node node--api">
+      <rect x="300" y="240" width="170" height="60" rx="10" />
+      <text x="385" y="266">APIs / MCP</text>
+      <text x="385" y="286" class="sub">Straßen &amp; Anschlüsse</text>
+    </g>
+
+    <g class="node node--model">
+      <rect x="560" y="120" width="160" height="70" rx="10" />
+      <text x="640" y="150">Modelle</text>
+      <text x="640" y="170" class="sub">die „Motoren“</text>
+    </g>
+
+    <g class="node node--infra">
+      <rect x="560" y="240" width="160" height="60" rx="10" />
+      <text x="640" y="266">Rechenzentren</text>
+      <text x="640" y="286" class="sub">Raffinerien</text>
+    </g>
+
+    <g class="node node--data">
+      <rect x="300" y="340" width="420" height="58" rx="10" />
+      <text x="510" y="366">Daten</text>
+      <text x="510" y="386" class="sub">Wissensbasis, Akten, Befunde, Telemetrie</text>
+    </g>
+
+    <!-- Kanten -->
+    <g class="edge">
+      <line x1="190" y1="102" x2="300" y2="150" />
+      <line x1="190" y1="202" x2="300" y2="165" />
+      <line x1="470" y1="155" x2="560" y2="155" />
+      <line x1="385" y1="190" x2="385" y2="240" />
+      <line x1="470" y1="270" x2="560" y2="270" />
+      <line x1="640" y1="190" x2="640" y2="240" />
+      <line x1="470" y1="285" x2="500" y2="340" />
+      <line x1="640" y1="300" x2="600" y2="340" />
+    </g>
+  </svg>
+  <figcaption>Abb. 1 — KI-Ökosystem: Wer steuert, wer leistet die Arbeit, wer prüft, und wie alles zusammenhängt.</figcaption>
+</figure>
+
+<style>
+  .eco { width: 100%; font-family: var(--font-sans); }
+  .eco .frame { fill: none; stroke: var(--warning-border); stroke-width: 2; stroke-dasharray: 6 5; }
+  .eco .frame-label { fill: var(--text-muted); font-size: 13px; font-weight: 600; }
+  .eco .node rect { fill: var(--bg-subtle); stroke: var(--border); stroke-width: 1.5; }
+  .eco .node text { fill: var(--text); font-size: 15px; font-weight: 600; text-anchor: middle; }
+  .eco .node .sub { fill: var(--text-muted); font-size: 11px; font-weight: 500; }
+  .eco .node--agent rect { fill: var(--accent-soft); stroke: var(--accent); }
+  .eco .node--model rect { fill: var(--accent-soft); stroke: var(--accent); }
+  .eco .edge line { stroke: var(--text-muted); stroke-width: 1.6; opacity: 0.6; }
+</style>

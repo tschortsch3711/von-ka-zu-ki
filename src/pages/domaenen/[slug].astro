@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import glossary from '../../data/glossary.json';
+import domains from '../../data/domains.json';
+import type { GlossaryTerm, Domain } from '../../data/types';
+import { link, termHref } from '../../lib/paths';
+
+export function getStaticPaths() {
+  const lenses = domains as Domain[];
+  return lenses.map((domain) => ({ params: { slug: domain.slug }, props: { domain } }));
+}
+
+const { domain } = Astro.props as { domain: Domain };
+const allTerms = glossary as GlossaryTerm[];
+
+// Begriffe, die laut Liste besonders gut ueber diese Brille erklaerbar sind
+const best = domain.bestExplainedTerms
+  .map((id) => allTerms.find((t) => t.id === id || t.slug === id))
+  .filter((t): t is GlossaryTerm => Boolean(t));
+---
+<BaseLayout title={domain.name} description={domain.tagline}>
+  <article class="section container">
+    <p class="breadcrumb"><a href={link('domaenen/')}>← Domänenbrillen</a></p>
+    <header style="margin-bottom:2rem">
+      <span class="domain-hero-icon" aria-hidden="true">{domain.icon}</span>
+      <h1>{domain.name}</h1>
+      <p class="lead">{domain.tagline}</p>
+    </header>
+
+    <div class="grid grid--2">
+      <section class="card">
+        <h2>Warum als Analogie geeignet</h2>
+        <p class="muted">{domain.whyGood}</p>
+      </section>
+      <section class="card">
+        <h2>Wo die Brille hilft</h2>
+        <p class="muted">{domain.helpfulWhen}</p>
+      </section>
+    </div>
+
+    <section class="card lens-limit-block" style="margin-top:1rem">
+      <h2>Wo die Brille an Grenzen stößt</h2>
+      <p class="muted">{domain.limits}</p>
+    </section>
+
+    <section style="margin-top:2.5rem">
+      <h2>Besonders gut über diese Brille erklärbar</h2>
+      <div class="grid grid--2" style="margin-top:1rem">
+        {best.map((t) => (
+          <a class="card best-term" href={termHref(t.slug)}>
+            <h3>{t.term}</h3>
+            <p class="muted">{t.shortDefinition}</p>
+            {t.domainAnalogies[domain.key] && (
+              <p class="best-analogy"><strong>{t.domainAnalogies[domain.key].analogy}:</strong> {t.domainAnalogies[domain.key].explanation}</p>
+            )}
+          </a>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <style>
+    .domain-hero-icon { font-size: 3rem; display: block; }
+    .lens-limit-block { border-color: var(--warning-border); background: var(--warning-soft); }
+    .best-term { color: var(--text); transition: border-color 0.15s ease, transform 0.15s ease; }
+    .best-term:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
+    .best-term h3 { margin: 0 0 0.4rem; }
+    .best-analogy { margin-top: 0.6rem; font-size: 0.92rem; }
+  </style>
+</BaseLayout>

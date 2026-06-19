@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GlossaryCard from '../../components/GlossaryCard.astro';
+import glossary from '../../data/glossary.json';
+import domains from '../../data/domains.json';
+import type { GlossaryTerm, Domain } from '../../data/types';
+
+const terms = (glossary as GlossaryTerm[]).slice().sort((a, b) => a.term.localeCompare(b.term, 'de'));
+const lenses = domains as Domain[];
+const domainIcons = Object.fromEntries(lenses.map((d) => [d.key, d.icon]));
+---
+<BaseLayout title="Glossar" description="Alle KI-Begriffe mit fachlicher Definition und drei Domänenbrillen.">
+  <section class="section container">
+    <h1>Glossar</h1>
+    <p class="lead">
+      Jeder Begriff: eine fachlich korrekte Definition, typische Missverständnisse und drei Erklärwelten.
+      Volltextsuche und Filter folgen.
+    </p>
+    <div class="grid grid--3" style="margin-top:2rem">
+      {terms.map((term) => <GlossaryCard term={term} domainIcons={domainIcons} />)}
+    </div>
+  </section>
+</BaseLayout>

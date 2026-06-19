@@ -1,0 +1,36 @@
+---
+import type { Domain } from '../data/types';
+import { domainHref } from '../lib/paths';
+
+export interface Props {
+  domain: Domain;
+}
+const { domain } = Astro.props;
+---
+<a class="domain-card" href={domainHref(domain.slug)}>
+  <span class="domain-card__icon" aria-hidden="true">{domain.icon}</span>
+  <h3>{domain.name}</h3>
+  <p>{domain.tagline}</p>
+  <span class="domain-card__more">Brille öffnen →</span>
+</a>
+
+<style>
+  .domain-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.3rem;
+    box-shadow: var(--shadow);
+    color: var(--text);
+    height: 100%;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .domain-card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
+  .domain-card__icon { font-size: 2rem; }
+  .domain-card h3 { margin: 0; }
+  .domain-card p { margin: 0; color: var(--text-muted); flex: 1; }
+  .domain-card__more { font-weight: 600; color: var(--accent); }
+</style>

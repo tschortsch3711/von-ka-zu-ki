@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const done = [
+  '18 zentrale KI-Begriffe, jeweils vollständig erklärt',
+  'Drei Domänenbrillen: Automotive, Public Sector, Healthcare',
+  'Jede Analogie mit einer ehrlichen Grenze (limits)',
+  'Clientseitige Volltextsuche und Facettenfilter',
+  'Fünf Diagramme zum KI-Ökosystem, zur Tokenökonomie und mehr',
+];
+
+const v2 = [
+  'Weitere Begriffe (advanced): Deep Learning, Reasoning Model, multimodale Modelle, Distillation, Quantisierung, KV Cache, VRAM, GPU/TPU/NPU, Vector Database, Memory, Orchestrierung, Eval, Benchmark, Observability und mehr',
+  'Weitere Domänenbrillen über Automotive, Public Sector und Healthcare hinaus',
+  'Vertiefte Querverweise und Lernpfade',
+  'Mehrsprachigkeit',
+];
+---
+<BaseLayout title="Roadmap" description="Was in v1 enthalten ist und was für v2 geplant ist.">
+  <section class="section container prose">
+    <h1>Roadmap</h1>
+    <p class="lead">v1 ist ein bewusst tiefer, vertikaler Schnitt: lieber 18 Begriffe vollständig über drei Brillen als viele Begriffe halb.</p>
+
+    <h2>In v1 enthalten</h2>
+    <ul>
+      {done.map((d) => <li>{d}</li>)}
+    </ul>
+
+    <h2>Geplant für v2</h2>
+    <ul>
+      {v2.map((d) => <li>{d}</li>)}
+    </ul>
+
+    <h2>Idee: KI-Lab</h2>
+    <p>
+      Ein interaktives KI-Lab zum spielerischen Ausprobieren von Konzepten (z.&nbsp;B. Tokenisierung oder
+      Kontextfenster) ist als Idee vorgemerkt, aber bewusst <strong>nicht Teil von v1</strong>.
+    </p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+// Domaenenbrillen-Matrix: welche Begriffe sich ueber welche Brille besonders gut erklaeren.
+// Datengetrieben: ein Haken, wenn der Begriff in domain.bestExplainedTerms steht.
+import glossary from '../data/glossary.json';
+import domains from '../data/domains.json';
+import type { GlossaryTerm, Domain } from '../data/types';
+import { termHref } from '../lib/paths';
+
+const terms = (glossary as GlossaryTerm[]).slice().sort((a, b) => a.term.localeCompare(b.term, 'de'));
+const lenses = domains as Domain[];
+const bestSets = Object.fromEntries(lenses.map((d) => [d.id, new Set(d.bestExplainedTerms)]));
+const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) || bestSets[d.id].has(term.slug);
+---
+<figure class="diagram-figure">
+  <table class="matrix">
+    <caption class="sr-caption">Abb. 4 — Domänenbrillen-Matrix: Begriffe und die besonders gut passenden Brillen</caption>
+    <thead>
+      <tr>
+        <th scope="col">Begriff</th>
+        {lenses.map((d) => <th scope="col"><span aria-hidden="true">{d.icon}</span><span class="th-label">{d.name}</span></th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {terms.map((term) => (
+        <tr>
+          <th scope="row"><a href={termHref(term.slug)}>{term.term}</a></th>
+          {lenses.map((d) => (
+            <td class={isBest(term, d) ? 'on' : 'off'}>
+              <span aria-hidden="true">{isBest(term, d) ? '●' : '·'}</span>
+              <span class="sr-only">{isBest(term, d) ? 'besonders gut erklärbar' : 'erklärbar'}</span>
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <figcaption>Abb. 4 — Ein gefüllter Punkt markiert eine besonders tragfähige Brille. Jeder Begriff lässt sich über alle drei Brillen erklären.</figcaption>
+</figure>
+
+<style>
+  .matrix { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  .matrix caption.sr-caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .matrix th, .matrix td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); text-align: left; }
+  .matrix thead th { font-size: 0.85rem; color: var(--text-muted); vertical-align: bottom; }
+  .matrix thead th .th-label { display: block; font-weight: 600; }
+  .matrix tbody th { font-weight: 600; }
+  .matrix tbody th a { color: var(--text); }
+  .matrix td { text-align: center; font-size: 1.2rem; }
+  .matrix td.on { color: var(--accent); }
+  .matrix td.off { color: var(--text-muted); opacity: 0.5; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>

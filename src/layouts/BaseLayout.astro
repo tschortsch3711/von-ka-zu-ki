@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Ein universelles, analogiebasiertes KI-Glossar mit Domaenenbrillen.' } = Astro.props;
+
+// Alle internen Pfade ueber BASE_URL aufloesen, niemals hart "/"-relativ.
+const base = import.meta.env.BASE_URL; // z.B. "/von-ka-zu-ki/"
+const link = (p: string) => `${base}${p}`.replace(/\/{2,}/g, '/');
+
+// Aktuellen Pfad fuer aria-current bestimmen
+const here = Astro.url.pathname.replace(/\/+$/, '');
+const isActive = (p: string) => here === link(p).replace(/\/+$/, '');
+
+// Kein Emoji im <title> und in OpenGraph (Lesbarkeit, Screenreader, Vorschau)
+const siteTitle = 'Von K.A. zu K.I.';
+const fullTitle = title === siteTitle ? title : `${title} – ${siteTitle}`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+const nav = [
+  { href: link('glossar/'), label: 'Glossar' },
+  { href: link('domaenen/'), label: 'Domänenbrillen' },
+  { href: link('roadmap/'), label: 'Roadmap' },
+];
+---
+
+<!doctype html>
+<html lang="de" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={link('favicon.svg')} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <!-- Theme vor dem Paint setzen, um Flackern zu vermeiden -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('vkzk-theme');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href={link('')}>Von K.A. → K.I.</a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          {nav.map((item) => (
+            <a href={item.href} aria-current={isActive(item.href.replace(base, '')) ? 'page' : undefined}>{item.label}</a>
+          ))}
+          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Hell-/Dunkelmodus umschalten" title="Hell-/Dunkelmodus umschalten">
+            <span aria-hidden="true" id="theme-icon">🌙</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© 2026 Nikola Djordjevic · Code: MIT · Inhalte: CC BY-SA 4.0</span>
+        <nav aria-label="Rechtliches">
+          <a href={link('impressum/')}>Impressum</a>
+          <a href={link('datenschutz/')}>Datenschutz</a>
+          <a href="https://github.com/tschortsch3711/von-ka-zu-ki" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script is:inline>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        var icon = document.getElementById('theme-icon');
+        function sync() {
+          var t = document.documentElement.getAttribute('data-theme');
+          if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙';
+        }
+        sync();
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var cur = document.documentElement.getAttribute('data-theme');
+            var next = cur === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            try { localStorage.setItem('vkzk-theme', next); } catch (e) {}
+            sync();
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
