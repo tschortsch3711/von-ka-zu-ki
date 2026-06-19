@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import AutomotiveDiagram from '../../components/AutomotiveDiagram.astro';
 import glossary from '../../data/glossary.json';
 import domains from '../../data/domains.json';
 import type { GlossaryTerm, Domain } from '../../data/types';
@@ -42,6 +43,14 @@ const best = domain.bestExplainedTerms
       <h2>Wo die Brille an Grenzen stößt</h2>
       <p class="muted">{domain.limits}</p>
     </section>
+
+    {domain.id === 'automotive' && (
+      <section style="margin-top:2.5rem">
+        <h2>Die Auto-Brille als Showcase</h2>
+        <p class="muted">Bekannte Auto-Begriffe, übersetzt in KI-Begriffe – eine Brille von dreien.</p>
+        <div style="margin-top:1rem"><AutomotiveDiagram /></div>
+      </section>
+    )}
 
     <section style="margin-top:2.5rem">
       <h2>Besonders gut über diese Brille erklärbar</h2>

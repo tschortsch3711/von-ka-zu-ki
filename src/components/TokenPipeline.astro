@@ -1,0 +1,52 @@
+---
+// Tokenoekonomie-Pipeline als Inline-SVG: Anfrage -> Kontext -> Modell -> Compute -> Tokens -> Antwort -> Kosten.
+const steps = [
+  { label: 'Anfrage', sub: 'Prompt' },
+  { label: 'Kontext', sub: 'Fenster füllt sich' },
+  { label: 'Modell', sub: 'der „Motor“' },
+  { label: 'Compute', sub: 'Rechenzeit' },
+  { label: 'Tokens', sub: 'verbrauchte Einheiten' },
+  { label: 'Antwort', sub: 'Ausgabe' },
+  { label: 'Kosten', sub: 'Tokens × Preis' },
+];
+const w = 150;
+const gap = 24;
+const totalW = steps.length * w + (steps.length - 1) * gap;
+---
+<figure class="diagram-figure">
+  <svg viewBox={`0 0 ${totalW} 150`} role="img" aria-labelledby="tok-title tok-desc" class="pipe">
+    <title id="tok-title">Tokenökonomie-Pipeline</title>
+    <desc id="tok-desc">
+      Eine Anfrage füllt den Kontext, das Modell verarbeitet sie mit Rechenzeit, dabei werden Tokens
+      verbraucht, eine Antwort entsteht, und daraus ergeben sich die Kosten.
+    </desc>
+    {steps.map((s, i) => {
+      const x = i * (w + gap);
+      const accent = s.label === 'Tokens' || s.label === 'Kosten';
+      return (
+        <g class={`pstep ${accent ? 'pstep--accent' : ''}`}>
+          <rect x={x} y="40" width={w} height="70" rx="10" />
+          <text x={x + w / 2} y="72">{s.label}</text>
+          <text x={x + w / 2} y="92" class="sub">{s.sub}</text>
+          {i < steps.length - 1 && (
+            <g class="arrow">
+              <line x1={x + w} y1="75" x2={x + w + gap} y2="75" />
+              <polygon points={`${x + w + gap},75 ${x + w + gap - 7},71 ${x + w + gap - 7},79`} />
+            </g>
+          )}
+        </g>
+      );
+    })}
+  </svg>
+  <figcaption>Abb. 2 — Tokenökonomie: Von der Anfrage bis zu den Kosten zählt jedes Token doppelt – als Recheneinheit und als Abrechnungseinheit.</figcaption>
+</figure>
+
+<style>
+  .pipe { width: 100%; min-width: 680px; font-family: var(--font-sans); }
+  .pstep rect { fill: var(--bg-subtle); stroke: var(--border); stroke-width: 1.5; }
+  .pstep text { fill: var(--text); font-size: 15px; font-weight: 600; text-anchor: middle; }
+  .pstep .sub { fill: var(--text-muted); font-size: 11px; font-weight: 500; }
+  .pstep--accent rect { fill: var(--accent-soft); stroke: var(--accent); }
+  .arrow line { stroke: var(--text-muted); stroke-width: 2; }
+  .arrow polygon { fill: var(--text-muted); }
+</style>

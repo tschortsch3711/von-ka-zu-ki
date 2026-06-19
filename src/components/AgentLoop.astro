@@ -1,0 +1,67 @@
+---
+// Agentic Workflow Loop als Inline-SVG: Planen -> Ausfuehren -> Tool nutzen -> Pruefen -> Verbessern -> Ergebnis.
+// Kreisfoermige Anordnung mit Pfeilen im Uhrzeigersinn, Ergebnis als Ausgang.
+const steps = [
+  { label: 'Planen', angle: -90 },
+  { label: 'Ausführen', angle: -30 },
+  { label: 'Tool nutzen', angle: 30 },
+  { label: 'Prüfen', angle: 90 },
+  { label: 'Verbessern', angle: 150 },
+];
+const cx = 230, cy = 200, r = 130;
+const rad = (a: number) => (a * Math.PI) / 180;
+const pos = (a: number) => ({ x: cx + r * Math.cos(rad(a)), y: cy + r * Math.sin(rad(a)) });
+const pts = steps.map((s) => ({ ...s, ...pos(s.angle) }));
+---
+<figure class="diagram-figure">
+  <svg viewBox="0 0 460 420" role="img" aria-labelledby="loop-title loop-desc" class="loop">
+    <title id="loop-title">Agentic Workflow Loop</title>
+    <desc id="loop-desc">
+      Ein Agent durchläuft wiederholt die Schritte Planen, Ausführen, Tool nutzen, Prüfen und Verbessern,
+      bis ein Ergebnis vorliegt.
+    </desc>
+
+    <!-- Verbindungs-Pfeile im Kreis -->
+    {pts.map((p, i) => {
+      const next = pts[(i + 1) % pts.length];
+      return (
+        <line class="loop-edge" x1={p.x} y1={p.y} x2={next.x} y2={next.y}
+              marker-end="url(#loop-arrow)" />
+      );
+    })}
+
+    <defs>
+      <marker id="loop-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L8,3 L0,6 Z" class="loop-arrowhead" />
+      </marker>
+    </defs>
+
+    <!-- Knoten -->
+    {pts.map((p, i) => (
+      <g class="loop-node">
+        <circle cx={p.x} cy={p.y} r="42" />
+        <text x={p.x} y={p.y + 4}>{p.label}</text>
+        <text x={p.x} y={p.y - 14} class="loop-num">{i + 1}</text>
+      </g>
+    ))}
+
+    <!-- Ausgang: Ergebnis -->
+    <g class="loop-result">
+      <line x1={cx} y1={cy} x2={cx} y2={cy + 0} />
+      <rect x={cx - 60} y={cy - 26} width="120" height="52" rx="10" />
+      <text x={cx} y={cy + 5}>Ergebnis</text>
+    </g>
+  </svg>
+  <figcaption>Abb. 3 — Agentic Workflow Loop: Ein Agent iteriert, statt in einem Schritt zu antworten. Geprüft und verbessert wird, bis ein Ergebnis steht.</figcaption>
+</figure>
+
+<style>
+  .loop { width: 100%; max-width: 460px; font-family: var(--font-sans); }
+  .loop-node circle { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+  .loop-node text { fill: var(--text); font-size: 13px; font-weight: 600; text-anchor: middle; }
+  .loop-node .loop-num { fill: var(--accent); font-size: 11px; font-weight: 700; }
+  .loop-edge { stroke: var(--text-muted); stroke-width: 2; opacity: 0.7; }
+  .loop-arrowhead { fill: var(--text-muted); }
+  .loop-result rect { fill: var(--bg-subtle); stroke: var(--border); stroke-width: 1.5; }
+  .loop-result text { fill: var(--text); font-size: 14px; font-weight: 700; text-anchor: middle; }
+</style>

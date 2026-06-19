@@ -1,23 +1,28 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import GlossaryCard from '../../components/GlossaryCard.astro';
+import SearchBox from '../../components/SearchBox.tsx';
 import glossary from '../../data/glossary.json';
 import domains from '../../data/domains.json';
 import type { GlossaryTerm, Domain } from '../../data/types';
 
-const terms = (glossary as GlossaryTerm[]).slice().sort((a, b) => a.term.localeCompare(b.term, 'de'));
+const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
-const domainIcons = Object.fromEntries(lenses.map((d) => [d.key, d.icon]));
 ---
-<BaseLayout title="Glossar" description="Alle KI-Begriffe mit fachlicher Definition und drei Domänenbrillen.">
+<BaseLayout title="Glossar" description="Alle KI-Begriffe mit fachlicher Definition und drei Domänenbrillen. Mit Volltextsuche und Filtern.">
   <section class="section container">
     <h1>Glossar</h1>
     <p class="lead">
       Jeder Begriff: eine fachlich korrekte Definition, typische Missverständnisse und drei Erklärwelten.
-      Volltextsuche und Filter folgen.
+      Such per Volltext oder filtere nach Kategorie, Brille, Schwierigkeit und Enterprise-Relevanz.
     </p>
-    <div class="grid grid--3" style="margin-top:2rem">
-      {terms.map((term) => <GlossaryCard term={term} domainIcons={domainIcons} />)}
+    <div style="margin-top:1.8rem">
+      <SearchBox client:load terms={terms} domains={lenses} />
     </div>
+    <noscript>
+      <p class="muted" style="margin-top:1.5rem">
+        Die interaktive Suche benötigt JavaScript. Eine vollständige Begriffsliste findest du dennoch über die
+        einzelnen Begriffsseiten und die Domänenbrillen.
+      </p>
+    </noscript>
   </section>
 </BaseLayout>

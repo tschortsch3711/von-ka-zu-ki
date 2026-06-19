@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TokenPipeline from '../../components/TokenPipeline.astro';
+import AgentLoop from '../../components/AgentLoop.astro';
 import glossary from '../../data/glossary.json';
 import domains from '../../data/domains.json';
 import type { GlossaryTerm, Domain } from '../../data/types';
@@ -52,6 +54,19 @@ const related = term.relatedTerms
         {term.misconceptions.map((m) => <li>{m}</li>)}
       </ul>
     </section>
+
+    {term.id === 'token' && (
+      <section style="margin-top:2rem">
+        <h2>Wie aus einer Anfrage Kosten werden</h2>
+        <TokenPipeline />
+      </section>
+    )}
+    {term.id === 'agent' && (
+      <section style="margin-top:2rem">
+        <h2>Wie ein Agent iterativ arbeitet</h2>
+        <AgentLoop />
+      </section>
+    )}
 
     <section>
       <h2>Drei Brillen</h2>
