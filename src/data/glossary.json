@@ -1,5 +1,77 @@
 [
   {
+    "id": "ki",
+    "slug": "ki",
+    "term": "KI / AI",
+    "aliases": ["Künstliche Intelligenz", "Artificial Intelligence", "AI"],
+    "category": "Grundlagen",
+    "difficulty": "basic",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Oberbegriff für Systeme, die Aufgaben übernehmen, für die man üblicherweise menschliche Intelligenz annimmt.",
+    "technicalDefinition": "Künstliche Intelligenz ist ein Sammelbegriff für Verfahren, mit denen Computer Aufgaben lösen, die als typisch intelligent gelten: Wahrnehmen, Schlussfolgern, Sprache verstehen, Entscheiden. Heutige praxisrelevante KI beruht überwiegend auf maschinellem Lernen, also auf aus Daten gelernten Mustern statt fest programmierten Regeln.",
+    "whyItMatters": "KI ist der Dachbegriff, unter dem alle anderen Begriffe dieses Glossars einzuordnen sind. Ohne klare Begriffsbasis entstehen schnell überzogene Erwartungen.",
+    "misconceptions": [
+      "KI ist kein Bewusstsein und kein Verstehen im menschlichen Sinn.",
+      "Nicht jede Automatisierung ist KI; feste Regeln sind noch keine KI.",
+      "KI ist kein einzelnes Produkt, sondern ein Feld vieler Verfahren."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Das gesamte Mobilitätssystem, nicht ein einzelnes Auto",
+        "explanation": "KI ist der Oberbegriff wie Mobilität: Fahrzeuge, Fahrer, Straßen und Werkstätten gehören dazu. Einzelne KI-Verfahren sind konkrete Fahrzeuge in diesem System.",
+        "limits": "Mobilität ist physisch und gut verstanden; KI umfasst sehr unterschiedliche Verfahren, deren Verhalten nicht immer erklärbar ist."
+      },
+      "publicSector": {
+        "analogy": "Die Verwaltung als Ganzes, nicht eine einzelne Behörde",
+        "explanation": "Wie Verwaltung viele Ämter und Verfahren bündelt, bündelt KI viele Methoden für verschiedene Aufgaben.",
+        "limits": "Verwaltung folgt klaren Zuständigkeiten und Rechtsnormen; KI hat keine Zuständigkeit und kein Rechtsverständnis."
+      },
+      "healthcare": {
+        "analogy": "Die Medizin als Fachgebiet, nicht ein einzelnes Gerät",
+        "explanation": "Medizin reicht von Diagnostik bis Therapie; KI reicht von Mustererkennung bis Sprachverarbeitung. Beides sind Oberbegriffe für viele Werkzeuge.",
+        "limits": "Medizin hat Evidenz und Verantwortung als Fundament; KI liefert Wahrscheinlichkeiten ohne eigene Verantwortung."
+      }
+    },
+    "relatedTerms": ["machine-learning", "llm", "foundation-model", "ai-governance"],
+    "tags": ["grundlagen", "oberbegriff"]
+  },
+  {
+    "id": "machine-learning",
+    "slug": "machine-learning",
+    "term": "Machine Learning",
+    "aliases": ["Maschinelles Lernen", "ML"],
+    "category": "Grundlagen",
+    "difficulty": "basic",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Verfahren, bei denen Systeme aus Beispieldaten Muster lernen, statt fest programmiert zu werden.",
+    "technicalDefinition": "Machine Learning ist der Teilbereich der KI, in dem ein Modell anhand vieler Beispiele Parameter so anpasst, dass es Muster erkennt und auf neue, ungesehene Fälle verallgemeinert. Statt explizit Regeln zu schreiben, definiert man eine Aufgabe, liefert Daten und lässt das Modell die Regelmäßigkeiten selbst herausarbeiten.",
+    "whyItMatters": "Fast jede moderne KI-Anwendung, von Spracherkennung bis LLM, beruht auf maschinellem Lernen. Es erklärt, warum Datenqualität so entscheidend ist.",
+    "misconceptions": [
+      "ML lernt nicht wie ein Mensch, sondern optimiert numerische Parameter.",
+      "Mehr Daten helfen nur, wenn sie relevant und sauber sind.",
+      "Ein gelerntes Modell kann Vorurteile aus den Daten übernehmen."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein Fahrer, der durch viele gefahrene Kilometer Erfahrung sammelt",
+        "explanation": "Statt jede Situation vorab als Regel zu lernen, verbessert sich der Fahrer durch viele Beispiele und überträgt Erfahrung auf neue Strecken.",
+        "limits": "Ein Mensch versteht Ursachen; ML erkennt Korrelationen und kann bei untypischen Situationen unzuverlässig werden."
+      },
+      "publicSector": {
+        "analogy": "Einarbeitung durch viele bearbeitete Fälle statt durch ein Regelhandbuch",
+        "explanation": "Wie erfahrene Sachbearbeitung aus vielen Vorgängen ein Gespür entwickelt, lernt ML Muster aus vielen Beispielen.",
+        "limits": "Verwaltung muss Entscheidungen begründen; ML-Muster sind oft nicht direkt nachvollziehbar."
+      },
+      "healthcare": {
+        "analogy": "Diagnostische Erfahrung aus vielen gesehenen Fällen",
+        "explanation": "Wie Erfahrung aus vielen Patientenfällen das Erkennen typischer Muster schult, lernt ML aus großen Falldatenmengen.",
+        "limits": "Ärztliche Erfahrung wird durch Evidenz und Reflexion korrigiert; ein Modell prüft seine Muster nicht selbst auf Sinnhaftigkeit."
+      }
+    },
+    "relatedTerms": ["ki", "llm", "training-finetuning", "embeddings"],
+    "tags": ["grundlagen", "lernen", "daten"]
+  },
+  {
     "id": "llm",
     "slug": "llm",
     "term": "LLM (Large Language Model)",
@@ -34,6 +106,114 @@
     },
     "relatedTerms": ["ki", "machine-learning", "foundation-model", "token", "inference", "hallucination"],
     "tags": ["grundlagen", "modell", "nlp"]
+  },
+  {
+    "id": "foundation-model",
+    "slug": "foundation-model",
+    "term": "Foundation Model",
+    "aliases": ["Basismodell", "Grundlagenmodell"],
+    "category": "Grundlagen",
+    "difficulty": "intermediate",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Ein breit vortrainiertes Basismodell, das sich für viele Aufgaben anpassen lässt.",
+    "technicalDefinition": "Ein Foundation Model ist ein sehr großes, auf breiten Daten vortrainiertes Modell, das als Grundlage für viele nachgelagerte Aufgaben dient. Statt für jede Aufgabe ein eigenes Modell zu bauen, wird das Basismodell durch Prompts, Anbindung an Daten oder Fine-Tuning an konkrete Anwendungen angepasst. LLMs sind eine Unterklasse davon.",
+    "whyItMatters": "Foundation Models verschieben Aufwand vom Bauen einzelner Modelle hin zum Anpassen vorhandener. Das verändert, wie Organisationen KI einführen und bewerten.",
+    "misconceptions": [
+      "Ein Foundation Model ist nicht für eine konkrete Aufgabe optimiert, sondern allgemein.",
+      "Es ist nicht automatisch sicher oder neutral, nur weil es groß ist.",
+      "Foundation Model und Endprodukt sind nicht dasselbe."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Eine Plattform-Architektur, auf der viele Modelle aufbauen",
+        "explanation": "Wie eine gemeinsame Fahrzeugplattform für Kombi, SUV und Van genutzt wird, dient ein Foundation Model als Basis für viele Anwendungen.",
+        "limits": "Eine Fahrzeugplattform ist exakt spezifiziert; ein Foundation Model hat schwer abgrenzbare Fähigkeiten und Schwächen."
+      },
+      "publicSector": {
+        "analogy": "Ein allgemein ausgebildeter Beamter vor der Fachverwendung",
+        "explanation": "Breit ausgebildet und vielseitig einsetzbar, wird das Modell erst durch konkrete Einweisung (Prompt, Daten, Fine-Tuning) für einen Fachbereich nutzbar.",
+        "limits": "Menschen tragen nach Einweisung Verantwortung; ein Basismodell bleibt ein Werkzeug ohne Verantwortung."
+      },
+      "healthcare": {
+        "analogy": "Die breite medizinische Grundausbildung vor der Spezialisierung",
+        "explanation": "Wie nach dem Studium eine Fachrichtung folgt, wird ein Foundation Model erst durch Anpassung für einen konkreten Einsatz geeignet.",
+        "limits": "Eine Facharztausbildung ist zertifiziert und geprüft; die Anpassung eines Modells garantiert keine geprüfte Qualität."
+      }
+    },
+    "relatedTerms": ["llm", "machine-learning", "training-finetuning", "inference"],
+    "tags": ["grundlagen", "modell", "plattform"]
+  },
+  {
+    "id": "inference",
+    "slug": "inferenz",
+    "term": "Inferenz",
+    "aliases": ["Inference", "Modellanwendung"],
+    "category": "Grundlagen",
+    "difficulty": "basic",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Die Anwendung eines fertig trainierten Modells auf eine konkrete Eingabe, um eine Ausgabe zu erzeugen.",
+    "technicalDefinition": "Inferenz ist die Nutzungsphase eines Modells: Das bereits trainierte Modell erhält eine Eingabe und berechnet daraus eine Ausgabe. Im Gegensatz zum Training werden dabei keine Parameter mehr verändert. Jede Antwort kostet Rechenzeit und damit Geld; Inferenz ist der laufende Betrieb, nicht das einmalige Lernen.",
+    "whyItMatters": "Die meisten Betriebskosten einer KI-Anwendung entstehen bei der Inferenz, nicht beim Training. Das ist zentral für Wirtschaftlichkeit und Skalierung.",
+    "misconceptions": [
+      "Beim Inferieren lernt das Modell nichts dazu.",
+      "Inferenz ist nicht kostenlos; jede Anfrage verbraucht Rechenleistung.",
+      "Schnellere Antworten bedeuten nicht automatisch bessere Antworten."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Das Fahren selbst, nicht der Bau des Autos",
+        "explanation": "Training ist die Konstruktion und Erprobung; Inferenz ist die alltägliche Fahrt, bei der das fertige Fahrzeug genutzt wird und Sprit verbraucht.",
+        "limits": "Beim Fahren verschleißt Material; bei der Inferenz verändert sich das Modell nicht, es entstehen nur Rechenkosten."
+      },
+      "publicSector": {
+        "analogy": "Die Bearbeitung eines konkreten Antrags nach abgeschlossener Ausbildung",
+        "explanation": "Die Ausbildung (Training) ist vorbei; jetzt wird Fall für Fall bearbeitet, jede Bearbeitung kostet Zeit und Ressourcen.",
+        "limits": "Sachbearbeitung lernt aus neuen Fällen weiter; reine Inferenz verändert das Modell nicht."
+      },
+      "healthcare": {
+        "analogy": "Die einzelne Untersuchung mit einem fertig kalibrierten Gerät",
+        "explanation": "Das Gerät ist kalibriert (trainiert); jede Untersuchung (Inferenz) liefert ein Ergebnis und verbraucht Ressourcen.",
+        "limits": "Geräte haben Messgenauigkeiten mit Toleranzen; Modellausgaben sind probabilistisch und brauchen Einordnung."
+      }
+    },
+    "relatedTerms": ["llm", "foundation-model", "token", "training-finetuning"],
+    "tags": ["grundlagen", "betrieb", "kosten"]
+  },
+  {
+    "id": "training-finetuning",
+    "slug": "training-und-fine-tuning",
+    "term": "Training und Fine-Tuning",
+    "aliases": ["Training", "Fine-Tuning", "Feinabstimmung", "Nachtraining"],
+    "category": "Grundlagen",
+    "difficulty": "intermediate",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Training baut das Modell aus großen Datenmengen auf; Fine-Tuning passt ein bestehendes Modell gezielt an.",
+    "technicalDefinition": "Beim Training lernt ein Modell aus sehr großen Datenmengen seine Parameter; das ist rechenintensiv und teuer. Fine-Tuning ist ein nachgelagerter Schritt, bei dem ein bereits trainiertes Modell mit deutlich weniger, spezifischen Daten weiter angepasst wird, etwa an einen Stil, eine Domäne oder bestimmte Aufgaben. Beides verändert Modellparameter, im Gegensatz zur reinen Nutzung (Inferenz).",
+    "whyItMatters": "Die Unterscheidung erklärt, wann sich eigenes Fine-Tuning lohnt und wann Prompting oder Datenanbindung (RAG) die bessere Wahl ist.",
+    "misconceptions": [
+      "Fine-Tuning ist nicht immer nötig; oft reichen guter Prompt oder RAG.",
+      "Fine-Tuning fügt kein verlässliches Faktenwissen hinzu, sondern prägt eher Verhalten und Stil.",
+      "Training und Nutzung sind getrennte Phasen mit sehr unterschiedlichen Kosten."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Konstruktion des Motors (Training) und Abstimmung auf eine Strecke (Fine-Tuning)",
+        "explanation": "Erst wird der Motor gebaut, dann für einen bestimmten Einsatz feinabgestimmt, etwa Rennstrecke oder Gelände.",
+        "limits": "Eine Abstimmung ist messbar und reversibel; Fine-Tuning kann unerwünschte Nebenwirkungen auf andere Fähigkeiten haben."
+      },
+      "publicSector": {
+        "analogy": "Grundausbildung (Training) und Fortbildung für ein Spezialgebiet (Fine-Tuning)",
+        "explanation": "Nach der breiten Ausbildung schult eine gezielte Fortbildung auf einen Fachbereich, ohne alles neu zu lernen.",
+        "limits": "Menschen reflektieren Gelerntes; ein feinabgestimmtes Modell kann auch falsche Muster verstärken."
+      },
+      "healthcare": {
+        "analogy": "Medizinstudium (Training) und Facharztweiterbildung (Fine-Tuning)",
+        "explanation": "Auf breitem Grundwissen baut eine spezialisierte Weiterbildung auf, die das vorhandene Können schärft.",
+        "limits": "Weiterbildung ist geprüft und zertifiziert; Fine-Tuning bietet keine Garantie für korrekte Spezialleistung."
+      }
+    },
+    "relatedTerms": ["machine-learning", "foundation-model", "inference", "rag"],
+    "tags": ["grundlagen", "training", "anpassung"]
   },
   {
     "id": "token",
@@ -72,6 +252,114 @@
     "tags": ["funktionsweise", "kosten", "tokenoekonomie"]
   },
   {
+    "id": "context-window",
+    "slug": "kontextfenster",
+    "term": "Kontextfenster",
+    "aliases": ["Context Window", "Kontextlänge"],
+    "category": "Funktionsweise",
+    "difficulty": "basic",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Die maximale Menge an Tokens, die ein Modell gleichzeitig berücksichtigen kann.",
+    "technicalDefinition": "Das Kontextfenster ist die obere Grenze an Tokens, die ein Modell bei einer Anfrage gleichzeitig verarbeiten kann, einschließlich Eingabe und erzeugter Antwort. Was nicht hineinpasst, wird abgeschnitten oder muss weggelassen werden. Das Fenster ist der unmittelbare Arbeitsspeicher des Modells für genau diese eine Anfrage.",
+    "whyItMatters": "Das Kontextfenster bestimmt, wie viel Hintergrund das Modell auf einmal kennt. Es erklärt, warum lange Dokumente Strategien wie RAG brauchen.",
+    "misconceptions": [
+      "Ein größeres Kontextfenster ist kein dauerhaftes Gedächtnis; nach der Anfrage ist es leer.",
+      "Mehr Kontext bedeutet nicht automatisch bessere Antworten; Relevanz zählt mehr als Menge.",
+      "Ein volles Kontextfenster erhöht Kosten und kann Wichtiges verdrängen."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Kofferraum und Armaturenbrett auf einer Fahrt",
+        "explanation": "Nur was in Kofferraum und Sichtfeld passt, steht für diese Fahrt zur Verfügung. Mehr passt nicht hinein, egal wie wichtig es wäre.",
+        "limits": "Ein Kofferraum behält Inhalt über viele Fahrten; das Kontextfenster ist nach jeder Anfrage wieder leer."
+      },
+      "publicSector": {
+        "analogy": "Die Akten, die gerade auf dem Schreibtisch liegen",
+        "explanation": "Entschieden wird nur auf Basis der vorliegenden Unterlagen. Was nicht auf dem Tisch liegt, fließt nicht ein.",
+        "limits": "Eine Behörde kann jederzeit Akten nachfordern; das Modell kennt nur, was im Fenster steht."
+      },
+      "healthcare": {
+        "analogy": "Die Befunde, die zur Visite vorliegen",
+        "explanation": "In die Beurteilung fließt nur ein, was zur Visite mitgebracht wurde. Fehlende Befunde fehlen schlicht.",
+        "limits": "Ein Behandlungsteam erinnert sich über Tage; das Kontextfenster hat kein Gedächtnis über die Anfrage hinaus."
+      }
+    },
+    "relatedTerms": ["token", "llm", "rag", "prompt"],
+    "tags": ["funktionsweise", "speicher", "grenzen"]
+  },
+  {
+    "id": "prompt",
+    "slug": "prompt",
+    "term": "Prompt",
+    "aliases": ["Eingabeaufforderung", "Anweisung", "Prompting"],
+    "category": "Funktionsweise",
+    "difficulty": "basic",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Die Eingabe an ein Modell: Anweisung, Frage und Kontext, die die Antwort steuern.",
+    "technicalDefinition": "Ein Prompt ist die gesamte Eingabe, mit der ein Modell zu einer Antwort veranlasst wird. Er kann Anweisungen, Beispiele, Kontextdaten und die eigentliche Frage enthalten. Da das Modell stark auf Formulierung und Struktur reagiert, ist das Gestalten guter Prompts (Prompt Engineering) ein wesentlicher Hebel für Qualität.",
+    "whyItMatters": "Der Prompt ist die wichtigste Stellschraube ohne Training. Kleine Änderungen können Ergebnisse deutlich verbessern oder verschlechtern.",
+    "misconceptions": [
+      "Ein guter Prompt ist nicht nur eine Frage, sondern liefert Kontext und Erwartung.",
+      "Es gibt keine geheime Zauberformel; klare, präzise Anweisungen wirken am stärksten.",
+      "Der Prompt zählt zum Kontextfenster und verbraucht Tokens."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Das Fahrziel und die Anweisungen an den Fahrer",
+        "explanation": "Wie ein präziser Fahrauftrag mit Ziel, Route und Bedingungen die Fahrt bestimmt, steuert der Prompt die Antwort.",
+        "limits": "Ein Fahrer fragt bei Unklarheit nach; ein Modell rät oft einfach weiter, statt nachzuhaken."
+      },
+      "publicSector": {
+        "analogy": "Der Bearbeitungsauftrag mit Sachverhalt und Fragestellung",
+        "explanation": "Je klarer Sachverhalt und Auftrag formuliert sind, desto brauchbarer fällt die Bearbeitung aus.",
+        "limits": "Ein unklarer Auftrag führt bei Menschen zu Rückfragen, beim Modell oft zu plausibel klingenden Fehlannahmen."
+      },
+      "healthcare": {
+        "analogy": "Die Überweisung mit Fragestellung und Vorbefunden",
+        "explanation": "Eine präzise Fragestellung mit relevanten Vorbefunden lenkt die Beurteilung in die richtige Richtung.",
+        "limits": "Fehlende Angaben fallen Fachpersonal auf; ein Modell ergänzt Lücken eher mit Vermutungen."
+      }
+    },
+    "relatedTerms": ["token", "context-window", "llm", "prompt-injection"],
+    "tags": ["funktionsweise", "eingabe", "steuerung"]
+  },
+  {
+    "id": "hallucination",
+    "slug": "halluzination",
+    "term": "Halluzination",
+    "aliases": ["Hallucination", "Konfabulation", "erfundene Inhalte"],
+    "category": "Funktionsweise",
+    "difficulty": "basic",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Eine überzeugend formulierte, aber falsche oder erfundene Aussage eines Modells.",
+    "technicalDefinition": "Halluzination bezeichnet Ausgaben, die plausibel und sicher klingen, aber sachlich falsch oder frei erfunden sind. Sie entstehen, weil ein Sprachmodell wahrscheinliche Wortfolgen erzeugt und nicht zwischen wahr und falsch unterscheidet. Ohne angebundene, geprüfte Quellen kann es Fakten, Zitate oder Quellen erfinden.",
+    "whyItMatters": "Halluzinationen sind das zentrale Vertrauensrisiko generativer KI. Sie erklären, warum Prüfprozesse, Belege und menschliche Kontrolle nötig sind.",
+    "misconceptions": [
+      "Eine selbstsichere Formulierung ist kein Zeichen für Richtigkeit.",
+      "Halluzinationen lassen sich verringern, aber nicht völlig ausschließen.",
+      "Auch korrekt klingende Quellenangaben können erfunden sein."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein Navi, das selbstbewusst eine Straße ansagt, die es nicht gibt",
+        "explanation": "Die Ansage klingt souverän, führt aber ins Leere. Ohne Abgleich mit der Realität merkt man den Fehler erst spät.",
+        "limits": "Ein Navi-Fehler ist meist schnell sichtbar; eine Texthalluzination kann lange unentdeckt bleiben."
+      },
+      "publicSector": {
+        "analogy": "Ein souverän vorgetragener, aber erfundener Aktenvermerk",
+        "explanation": "Der Vermerk wirkt formal korrekt, beruht aber auf nicht existenten Tatsachen oder Paragraphen.",
+        "limits": "In der Verwaltung gibt es Belegpflicht und Aktenprüfung; ein Modell prüft seine eigenen Aussagen nicht."
+      },
+      "healthcare": {
+        "analogy": "Eine überzeugend klingende, aber falsche Befundinterpretation",
+        "explanation": "Die Aussage klingt fachkundig, ist aber nicht durch Befunde gedeckt und kann in die Irre führen.",
+        "limits": "Im Gesundheitswesen sind Halluzinationen besonders gefährlich; deshalb sind Quellenbindung und ärztliche Prüfung Pflicht."
+      }
+    },
+    "relatedTerms": ["llm", "rag", "guardrails", "ai-governance"],
+    "tags": ["funktionsweise", "risiko", "qualitaet"]
+  },
+  {
     "id": "agent",
     "slug": "agent",
     "term": "KI-Agent",
@@ -106,5 +394,257 @@
     },
     "relatedTerms": ["llm", "tool-calling", "mcp", "context-window", "ai-governance"],
     "tags": ["agentic", "tools", "automation", "enterprise"]
+  },
+  {
+    "id": "tool-calling",
+    "slug": "tool-calling",
+    "term": "Tool Calling / Function Calling",
+    "aliases": ["Tool Calling", "Function Calling", "Werkzeugaufruf", "Funktionsaufruf"],
+    "category": "Agentische Schicht",
+    "difficulty": "intermediate",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Die Fähigkeit eines Modells, definierte externe Funktionen oder Werkzeuge gezielt aufzurufen.",
+    "technicalDefinition": "Tool Calling, auch Function Calling genannt, beschreibt, dass ein Modell nicht nur Text erzeugt, sondern strukturierte Aufrufe an vordefinierte Funktionen oder Werkzeuge ausgeben kann, etwa eine Suche, einen Rechner oder eine Datenbankabfrage. Das Modell entscheidet, wann ein Werkzeug sinnvoll ist, und nutzt dessen Ergebnis weiter. So verbindet sich Sprachfähigkeit mit konkreten Aktionen.",
+    "whyItMatters": "Tool Calling macht aus einem reinen Textmodell ein handlungsfähiges System und ist die technische Grundlage für Agenten.",
+    "misconceptions": [
+      "Das Modell führt Werkzeuge nicht selbst aus; eine umgebende Software tut das.",
+      "Tool Calling macht Antworten nicht automatisch korrekt; das Werkzeug muss verlässlich sein.",
+      "Mehr verfügbare Werkzeuge erhöhen auch Komplexität und Fehlerquellen."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Der Griff zu Bordwerkzeug und Anbaugeräten",
+        "explanation": "Wie ein Fahrzeug je nach Aufgabe Werkzeuge oder Anbauten nutzt, ruft das Modell passende Funktionen für eine Teilaufgabe auf.",
+        "limits": "Ein Werkzeug greift mechanisch zuverlässig; ein Modell kann das falsche Werkzeug oder falsche Parameter wählen."
+      },
+      "publicSector": {
+        "analogy": "Der Zugriff auf Fachverfahren und Register",
+        "explanation": "Wie Sachbearbeitung gezielt ein Fachverfahren oder Register abfragt, ruft das Modell definierte Funktionen für konkrete Daten ab.",
+        "limits": "Zugriffe sind rechtlich geregelt; ein Modell kennt diese Grenzen nicht von sich aus und braucht klare Einhegung."
+      },
+      "healthcare": {
+        "analogy": "Die gezielte Anforderung von Labor oder Bildgebung",
+        "explanation": "Wie eine ärztliche Anforderung von Labor oder Bildgebung gezielt Informationen beschafft, ruft das Modell passende Werkzeuge auf.",
+        "limits": "Anforderungen folgen Indikation und Verantwortung; ein Modell kann Werkzeuge auch unnötig oder falsch einsetzen."
+      }
+    },
+    "relatedTerms": ["agent", "mcp", "llm", "guardrails"],
+    "tags": ["agentic", "tools", "integration"]
+  },
+  {
+    "id": "mcp",
+    "slug": "mcp",
+    "term": "MCP (Model Context Protocol)",
+    "aliases": ["Model Context Protocol"],
+    "category": "Agentische Schicht",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Ein offener Standard, über den Modelle einheitlich mit Werkzeugen und Datenquellen verbunden werden.",
+    "technicalDefinition": "Das Model Context Protocol ist ein offener Standard, der definiert, wie KI-Anwendungen mit externen Werkzeugen, Datenquellen und Kontextdiensten kommunizieren. Statt für jede Integration eine eigene Sonderlösung zu bauen, bietet MCP eine gemeinsame Schnittstelle, über die sich Werkzeuge anbieten und nutzen lassen. Das senkt Integrationsaufwand und erhöht Wiederverwendbarkeit.",
+    "whyItMatters": "MCP standardisiert die Anbindung von Werkzeugen und Daten an Modelle und vereinfacht so den Aufbau interoperabler, wartbarer KI-Systeme.",
+    "misconceptions": [
+      "MCP ist kein Modell, sondern ein Verbindungsstandard.",
+      "Ein Standard allein macht eine Integration nicht automatisch sicher.",
+      "MCP ersetzt nicht die Notwendigkeit, Zugriffe zu kontrollieren."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Eine genormte Anschlussbuchse, etwa der OBD-Stecker oder ein Ladestandard",
+        "explanation": "Wie ein genormter Anschluss verschiedene Geräte ohne Sonderkabel verbindet, verbindet MCP Modelle und Werkzeuge über eine einheitliche Schnittstelle.",
+        "limits": "Eine Norm garantiert nur Anschlussfähigkeit, nicht die Qualität oder Sicherheit des angeschlossenen Geräts."
+      },
+      "publicSector": {
+        "analogy": "Eine standardisierte Schnittstelle zwischen Fachverfahren",
+        "explanation": "Wie eine einheitliche Datenschnittstelle den Austausch zwischen Verfahren regelt, regelt MCP den Austausch zwischen Modell und Werkzeugen.",
+        "limits": "Standardisierte Schnittstellen brauchen weiterhin Berechtigungskonzepte und Datenschutz; der Standard ersetzt das nicht."
+      },
+      "healthcare": {
+        "analogy": "Ein Interoperabilitätsstandard wie ein einheitliches Datenformat zwischen Systemen",
+        "explanation": "Wie ein gemeinsames Datenformat Befunde zwischen Systemen austauschbar macht, macht MCP Werkzeuge für Modelle einheitlich nutzbar.",
+        "limits": "Interoperabilität löst nicht automatisch Fragen von Datenschutz, Qualität und Verantwortung."
+      }
+    },
+    "relatedTerms": ["agent", "tool-calling", "rag", "ai-governance"],
+    "tags": ["agentic", "standard", "integration", "interoperabilitaet"]
+  },
+  {
+    "id": "rag",
+    "slug": "rag",
+    "term": "RAG (Retrieval-Augmented Generation)",
+    "aliases": ["Retrieval-Augmented Generation", "abrufgestützte Generierung"],
+    "category": "Agentische Schicht",
+    "difficulty": "intermediate",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Ein Verfahren, bei dem relevante Dokumente gesucht und dem Modell als Kontext mitgegeben werden.",
+    "technicalDefinition": "Retrieval-Augmented Generation kombiniert ein Sprachmodell mit einer Suche über eigene Daten. Zu einer Frage werden zuerst passende Textstellen aus einer Wissensbasis abgerufen, häufig über Embeddings, und dann gemeinsam mit der Frage in den Prompt gegeben. So antwortet das Modell auf Basis aktueller, geprüfter Quellen statt allein aus dem Trainingswissen und kann Belege liefern.",
+    "whyItMatters": "RAG ist der gängigste Weg, ein Modell mit aktuellem, unternehmensspezifischem Wissen zu versorgen und Halluzinationen zu reduzieren.",
+    "misconceptions": [
+      "RAG verhindert Halluzinationen nicht vollständig, reduziert sie aber deutlich.",
+      "Die Antwortqualität hängt stark von der Qualität der Wissensbasis ab.",
+      "RAG verändert das Modell nicht; es liefert nur besseren Kontext."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein Beifahrer, der vor der Antwort im aktuellen Bordhandbuch nachschlägt",
+        "explanation": "Statt aus dem Gedächtnis zu raten, schlägt das System erst in der passenden Quelle nach und antwortet dann belegt.",
+        "limits": "Ist das Handbuch veraltet oder falsch, hilft auch das Nachschlagen nicht; die Quelle muss stimmen."
+      },
+      "publicSector": {
+        "analogy": "Erst die zuständige Akte ziehen, dann den Vorgang bearbeiten",
+        "explanation": "Wie korrekte Sachbearbeitung erst die relevanten Unterlagen heranzieht, holt RAG erst die passenden Dokumente und antwortet darauf gestützt.",
+        "limits": "Falsche oder unvollständige Aktenlage führt auch hier zu falschen Ergebnissen; Aktualität und Vollständigkeit sind entscheidend."
+      },
+      "healthcare": {
+        "analogy": "Vor der Empfehlung Leitlinie und Patientenakte konsultieren",
+        "explanation": "Wie eine fundierte Empfehlung Leitlinien und konkrete Befunde heranzieht, stützt RAG die Antwort auf abgerufene Quellen.",
+        "limits": "Stimmen die herangezogenen Quellen nicht oder fehlen sie, kann die Empfehlung trotz Beleg falsch sein."
+      }
+    },
+    "relatedTerms": ["embeddings", "llm", "context-window", "hallucination", "mcp"],
+    "tags": ["agentic", "wissen", "retrieval", "enterprise"]
+  },
+  {
+    "id": "embeddings",
+    "slug": "embeddings",
+    "term": "Embeddings",
+    "aliases": ["Vektoreinbettungen", "Einbettungen"],
+    "category": "Agentische Schicht",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "medium",
+    "shortDefinition": "Numerische Darstellungen von Texten, in denen Ähnliches nahe beieinander liegt.",
+    "technicalDefinition": "Embeddings sind Vektoren, also Zahlenlisten, die Bedeutung von Texten (oder anderen Daten) in einem hochdimensionalen Raum abbilden. Inhaltlich ähnliche Texte erhalten ähnliche Vektoren und liegen nah beieinander. Dadurch lässt sich semantische Ähnlichkeit berechnen, was die Grundlage für semantische Suche und für das Retrieval in RAG bildet.",
+    "whyItMatters": "Embeddings ermöglichen Suche nach Bedeutung statt nach exakten Wörtern und sind das technische Fundament vieler Wissensanwendungen.",
+    "misconceptions": [
+      "Embeddings speichern keine Texte im Klartext, sondern deren Bedeutung als Zahlen.",
+      "Ähnlichkeit im Vektorraum bedeutet nicht zwingend inhaltliche Korrektheit.",
+      "Embeddings sind kein Suchindex aus Stichwörtern, sondern bilden Bedeutung ab."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Eine Landkarte, auf der ähnliche Orte nah beieinander liegen",
+        "explanation": "Wie nahe Orte auf einer Karte schnell erreichbar sind, liegen inhaltlich ähnliche Texte im Vektorraum nah beieinander.",
+        "limits": "Eine Karte bildet Entfernung exakt ab; Bedeutungs-Nähe ist eine Annäherung und kann täuschen."
+      },
+      "publicSector": {
+        "analogy": "Eine Verschlagwortung, die thematisch verwandte Vorgänge zusammenführt",
+        "explanation": "Wie eine gute Sachgebietssystematik Verwandtes gruppiert, gruppieren Embeddings Texte nach Bedeutung.",
+        "limits": "Eine Systematik ist erklärbar; warum zwei Vektoren als ähnlich gelten, ist oft schwer nachvollziehbar."
+      },
+      "healthcare": {
+        "analogy": "Eine Symptomähnlichkeits-Sortierung von Fällen",
+        "explanation": "Wie ähnliche Krankheitsbilder gedanklich zusammengefasst werden, fasst der Vektorraum bedeutungsähnliche Texte zusammen.",
+        "limits": "Oberflächliche Ähnlichkeit kann klinisch in die Irre führen; Nähe im Vektorraum ersetzt keine fachliche Bewertung."
+      }
+    },
+    "relatedTerms": ["rag", "machine-learning", "llm"],
+    "tags": ["agentic", "vektoren", "semantik", "retrieval"]
+  },
+  {
+    "id": "ai-governance",
+    "slug": "ai-governance",
+    "term": "AI Governance",
+    "aliases": ["KI-Governance", "KI-Steuerung"],
+    "category": "Enterprise & Sicherheit",
+    "difficulty": "intermediate",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Regeln, Rollen und Prozesse, die den verantwortungsvollen Einsatz von KI sicherstellen.",
+    "technicalDefinition": "AI Governance umfasst die organisatorischen Regeln, Verantwortlichkeiten, Richtlinien und Kontrollen für den Einsatz von KI. Dazu gehören Fragen wie: Welche Anwendungen sind erlaubt, wer trägt Verantwortung, wie werden Risiken bewertet, wie wird Nachvollziehbarkeit, Datenschutz und Konformität mit Vorgaben sichergestellt. Governance ist organisatorisch, nicht primär technisch.",
+    "whyItMatters": "Ohne Governance bleiben KI-Risiken unkontrolliert. Sie ist die Voraussetzung für vertrauenswürdigen, regelkonformen Einsatz in Organisationen.",
+    "misconceptions": [
+      "Governance ist nicht nur Technik, sondern vor allem Organisation und Verantwortung.",
+      "Governance ist kein einmaliges Projekt, sondern ein laufender Prozess.",
+      "Regeln allein wirken nur, wenn sie auch durchgesetzt und geprüft werden."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "TÜV, Zulassung und Verkehrsregeln zusammen",
+        "explanation": "Wie TÜV, Zulassung und Verkehrsregeln den sicheren Betrieb von Fahrzeugen rahmen, rahmt Governance den sicheren Einsatz von KI.",
+        "limits": "Verkehrsregeln sind klar kodifiziert und etabliert; KI-Governance ist jünger, im Fluss und stark kontextabhängig."
+      },
+      "publicSector": {
+        "analogy": "Dienstanweisungen, Zuständigkeitsordnung und Aufsicht",
+        "explanation": "Wie Verwaltungshandeln durch Dienstanweisungen, Zuständigkeiten und Aufsicht geregelt ist, regelt Governance den KI-Einsatz.",
+        "limits": "Verwaltungsregeln haben gewachsene Strukturen; KI-Governance muss vieles erst neu definieren."
+      },
+      "healthcare": {
+        "analogy": "Qualitätsmanagement, Zulassung und ärztliche Verantwortung",
+        "explanation": "Wie Qualitätsmanagement und Zulassungswege den sicheren Einsatz von Verfahren sichern, sichert Governance den verantwortbaren KI-Einsatz.",
+        "limits": "Medizinische Zulassung ist streng standardisiert; KI-Governance ist oft weniger formalisiert und entwickelt sich noch."
+      }
+    },
+    "relatedTerms": ["guardrails", "prompt-injection", "hallucination", "agent"],
+    "tags": ["enterprise", "sicherheit", "verantwortung", "compliance"]
+  },
+  {
+    "id": "guardrails",
+    "slug": "guardrails",
+    "term": "Guardrails",
+    "aliases": ["Leitplanken", "Schutzmechanismen"],
+    "category": "Enterprise & Sicherheit",
+    "difficulty": "intermediate",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Technische und inhaltliche Schutzmechanismen, die das Verhalten eines KI-Systems begrenzen.",
+    "technicalDefinition": "Guardrails sind Maßnahmen, die ein KI-System in sichere Bahnen lenken: Filter für unzulässige Ein- oder Ausgaben, Regeln für erlaubte Themen und Aktionen, Prüfungen vor Werkzeugaufrufen oder das Erzwingen bestimmter Antwortformate. Sie greifen rund um das Modell und reduzieren Risiken wie schädliche Inhalte, unerlaubte Aktionen oder Datenabfluss.",
+    "whyItMatters": "Guardrails sind die praktische Umsetzung von Sicherheitsanforderungen am System selbst und ergänzen organisatorische Governance.",
+    "misconceptions": [
+      "Guardrails machen ein System nicht vollständig sicher, sondern senken Risiken.",
+      "Zu strenge Guardrails können Nützliches blockieren und Akzeptanz mindern.",
+      "Guardrails ersetzen keine menschliche Kontrolle bei kritischen Entscheidungen."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Leitplanken, Spurhalteassistent und Geschwindigkeitsbegrenzer",
+        "explanation": "Wie Leitplanken und Assistenzsysteme das Fahrzeug in sicheren Grenzen halten, halten Guardrails das KI-System in erlaubten Bahnen.",
+        "limits": "Leitplanken verhindern nicht jeden Unfall; Guardrails verhindern nicht jeden Fehler oder Missbrauch."
+      },
+      "publicSector": {
+        "analogy": "Pflichtprüfschritte und Vier-Augen-Prinzip im Verfahren",
+        "explanation": "Wie verbindliche Prüfschritte und das Vier-Augen-Prinzip Fehler abfangen, fangen Guardrails problematische Ein- und Ausgaben ab.",
+        "limits": "Prüfschritte können umgangen oder fehlerhaft sein; Guardrails sind nur so gut wie ihre Definition."
+      },
+      "healthcare": {
+        "analogy": "Sicherheitschecks, Dosisgrenzen und Freigabeschritte",
+        "explanation": "Wie Sicherheitschecks und Grenzwerte gefährliche Schritte verhindern, blockieren Guardrails riskante Aktionen des Systems.",
+        "limits": "Auch klinische Sicherheitschecks haben Lücken; Guardrails brauchen laufende Pflege und ersetzen keine Fachverantwortung."
+      }
+    },
+    "relatedTerms": ["ai-governance", "prompt-injection", "hallucination", "tool-calling"],
+    "tags": ["enterprise", "sicherheit", "schutz"]
+  },
+  {
+    "id": "prompt-injection",
+    "slug": "prompt-injection",
+    "term": "Prompt Injection",
+    "aliases": ["Prompt-Injektion", "Eingabe-Manipulation"],
+    "category": "Enterprise & Sicherheit",
+    "difficulty": "advanced",
+    "enterpriseRelevance": "high",
+    "shortDefinition": "Ein Angriff, bei dem manipulierte Eingaben das Modell zu unerwünschtem Verhalten verleiten.",
+    "technicalDefinition": "Prompt Injection ist eine Angriffsklasse, bei der schädliche Anweisungen in Eingaben oder in vom Modell verarbeitete Inhalte eingeschleust werden, etwa in eine Webseite oder ein Dokument, das ein Agent liest. Das Modell kann diese eingeschleusten Anweisungen mit den legitimen verwechseln und dadurch Regeln umgehen, Daten preisgeben oder unerwünschte Aktionen ausführen.",
+    "whyItMatters": "Prompt Injection ist ein zentrales Sicherheitsrisiko, gerade für Agenten mit Tool- und Datenzugriff. Es zeigt, warum Eingaben nie blind vertraut werden darf.",
+    "misconceptions": [
+      "Prompt Injection betrifft nicht nur direkte Nutzereingaben, sondern auch verarbeitete Fremdinhalte.",
+      "Ein gutes Modell allein schützt nicht; es braucht Schutz auf Systemebene.",
+      "Das Risiko steigt, je mehr Werkzeuge und Datenzugriffe ein Agent hat."
+    ],
+    "domainAnalogies": {
+      "automotive": {
+        "analogy": "Ein gefälschtes Verkehrsschild, das den Fahrer in die Irre leitet",
+        "explanation": "Wie ein manipuliertes Schild falsche Anweisungen vortäuscht, schleust Prompt Injection falsche Anweisungen in die Eingaben des Modells ein.",
+        "limits": "Ein Mensch erkennt grobe Manipulationen oft; ein Modell unterscheidet legitime und eingeschleuste Anweisungen schlechter."
+      },
+      "publicSector": {
+        "analogy": "Ein untergeschobenes Schreiben mit gefälschter Weisung",
+        "explanation": "Wie eine gefälschte Weisung in der Akte zu falschem Handeln verleiten kann, verleitet eingeschleuster Text das Modell zu unerwünschten Schritten.",
+        "limits": "Verwaltung hat Echtheits- und Zuständigkeitsprüfungen; ein Modell prüft Herkunft und Legitimität von Anweisungen kaum von selbst."
+      },
+      "healthcare": {
+        "analogy": "Eine gefälschte Anweisung in der Patientenakte",
+        "explanation": "Wie eine untergeschobene Anweisung gefährliche Schritte auslösen könnte, kann eingeschleuster Text ein System zu falschem Handeln bringen.",
+        "limits": "Im Gesundheitswesen gibt es strenge Verifikationsketten; ein Modell hat diese Prüfreflexe nicht eingebaut."
+      }
+    },
+    "relatedTerms": ["guardrails", "ai-governance", "prompt", "agent"],
+    "tags": ["enterprise", "sicherheit", "angriff", "risiko"]
   }
 ]
