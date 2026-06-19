@@ -128,4 +128,4 @@ Das Schema ist bewusst erweiterbar gehalten, damit v2 ohne Umbau Begriffe und Br
 - **Code:** [MIT](./LICENSE)
 - **Inhalte:** [CC BY-SA 4.0](./LICENSE-CONTENT.md)
 
-© 2026 Nikola Djordjevic
+© 2026 [tschortsch3711](https://github.com/tschortsch3711)
