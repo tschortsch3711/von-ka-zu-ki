@@ -12,14 +12,21 @@ const { title, description = 'Ein universelles, analogiebasiertes KI-Glossar mit
 // base benoetigt fuer isActive-Pruefung (Pfad-Vergleich ohne Base-Praefix)
 const base = import.meta.env.BASE_URL;
 
-// Aktuellen Pfad fuer aria-current bestimmen
+// Aktuellen Pfad fuer aria-current bestimmen. Praefix-Match, damit auch Detailseiten
+// (z.B. /glossar/<slug>/) den Abschnitt in der Nav markieren, nicht nur die Index-Seite.
 const here = Astro.url.pathname.replace(/\/+$/, '');
-const isActive = (p: string) => here === link(p).replace(/\/+$/, '');
+const isActive = (p: string) => {
+  const target = link(p).replace(/\/+$/, '');
+  return here === target || here.startsWith(target + '/');
+};
 
 // Kein Emoji im <title> und in OpenGraph (Lesbarkeit, Screenreader, Vorschau)
 const siteTitle = 'Von K.A. zu K.I.';
 const fullTitle = title === siteTitle ? title : `${title} – ${siteTitle}`;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// Canonical/og:url konsequent mit Trailing-Slash, passend zur ausgelieferten Verzeichnis-URL.
+const canonicalPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonical = new URL(canonicalPath, Astro.site).href;
+const ogImage = new URL(link('og-image.png'), Astro.site).href;
 
 const nav = [
   { href: link('glossar/'), label: 'Glossar' },
@@ -41,7 +48,12 @@ const nav = [
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={fullTitle} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
     <!-- Theme vor dem Paint setzen, um Flackern zu vermeiden -->
     <script is:inline>
       (function () {
@@ -130,6 +142,8 @@ const nav = [
               burger.setAttribute('aria-expanded', 'true');
               burger.setAttribute('aria-label', 'Menü schließen');
               burger.querySelector('span').textContent = '✕';
+              var firstNavLink = siteHeader.querySelector('#site-nav-links a');
+              if (firstNavLink) firstNavLink.focus();
             }
           });
         }
@@ -137,7 +151,11 @@ const nav = [
           if (siteHeader && siteHeader.hasAttribute('data-nav-open') && !siteHeader.contains(e.target)) closeBurger();
         });
         document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') closeBurger();
+          // Escape schließt das Menü und gibt den Fokus an den Burger-Button zurück.
+          if (e.key === 'Escape' && siteHeader && siteHeader.hasAttribute('data-nav-open')) {
+            closeBurger();
+            if (burger) burger.focus();
+          }
         });
         document.querySelectorAll('#site-nav-links a').forEach(function (a) {
           a.addEventListener('click', closeBurger);

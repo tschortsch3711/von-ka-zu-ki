@@ -4,11 +4,28 @@ import SearchBox from '../../components/SearchBox.tsx';
 import glossary from '../../data/glossary.json';
 import domains from '../../data/domains.json';
 import type { GlossaryTerm, Domain } from '../../data/types';
+import { link } from '../../lib/paths';
 
 const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
+
+// schema.org DefinedTermSet: weist das Glossar als zusammenhängende Begriffssammlung aus.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  name: 'Von K.A. zu K.I.',
+  description: 'Analogiebasiertes KI-Glossar mit mehreren Perspektiven.',
+  inLanguage: 'de',
+  url: new URL(link('glossar/'), Astro.site).href,
+  hasDefinedTerm: terms.map((t) => ({
+    '@type': 'DefinedTerm',
+    name: t.term,
+    url: new URL(link(`glossar/${t.slug}/`), Astro.site).href,
+  })),
+};
 ---
 <BaseLayout title="Glossar" description="Mehr als nur Definitionen: Fachwissen, geklärte Missverständnisse und flexible Erklärwelten. Mit Volltextsuche und Filtern.">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <section class="section container">
     <h1>Glossar</h1>
     <p class="lead">

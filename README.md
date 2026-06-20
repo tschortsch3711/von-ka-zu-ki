@@ -1,6 +1,6 @@
 # Von K.A. zu K.I.
 
-> Ein universelles, analogiebasiertes KI-Glossar mit Domänenbrillen.
+> Ein universelles, analogiebasiertes KI-Glossar mit Perspektivwechsel.
 
 Ein verständliches KI-Glossar, das zentrale Begriffe fachlich korrekt erklärt und über bekannte
 Domänen wie **Automotive**, **Public Sector**, **Healthcare** und **Finance & Banking** greifbar macht.
@@ -27,7 +27,7 @@ Jeder Begriff hat:
 - eine **fachliche Definition** (korrekt, nicht verwässert),
 - den Abschnitt **„warum das wichtig ist“**,
 - typische **Missverständnisse**,
-- **mehrere Domänenbrillen** mit je einer Analogie, einer Erklärung und – verpflichtend –
+- **mehrere Perspektiven** mit je einer Analogie, einer Erklärung und – verpflichtend –
   einer **ehrlichen Grenze** (`limits`).
 
 > Analogien lecken immer. Genau das ist Teil der Aussage: Jede Brille zeigt eine Seite und verschweigt
@@ -84,14 +84,15 @@ In den Repository-Einstellungen ist **Settings → Pages → Source = GitHub Act
 src/
 ├── data/
 │   ├── glossary.json   # alle Begriffe (das inhaltliche Herzstück)
-│   ├── domains.json    # die Domänenbrillen
+│   ├── domains.json    # die Perspektiven (Domänen)
+│   ├── paths.json      # die Lernpfade
 │   └── types.ts        # das TypeScript-Datenmodell
-├── pages/              # Routen (Index, Glossar, Domänen, Roadmap, Recht)
+├── pages/              # Routen (Index, Glossar, Perspektiven, Lernpfade, Impressum, Datenschutz)
 ├── components/         # Hero, Suche, Karten, Diagramme
 ├── layouts/            # BaseLayout (Header, Nav, Footer, Theme)
 └── styles/global.css   # Designsystem, Hell-/Dunkelmodus
 
-docs/                   # längere Hintergrundtexte (Vision, Grundidee, Brillen, Roadmap)
+docs/                   # längere Hintergrundtexte (Vision, Grundidee, Perspektiven)
 ```
 
 ## Einen neuen Begriff ergänzen
@@ -101,19 +102,19 @@ docs/                   # längere Hintergrundtexte (Vision, Grundidee, Brillen,
 2. **Pflichtfelder** beachten: `id`, `slug`, `term`, `category`, `difficulty`, `enterpriseRelevance`,
    `shortDefinition`, `technicalDefinition`, `whyItMatters`, `misconceptions`, `domainAnalogies`,
    `relatedTerms`, `tags`.
-3. In `domainAnalogies` **alle Brillen** (`automotive`, `publicSector`, `healthcare`, `finance`) füllen –
+3. In `domainAnalogies` **alle Perspektiven** (`automotive`, `publicSector`, `healthcare`, `finance`) füllen –
    jede mit `analogy`, `explanation` **und** `limits`. Das `limits`-Feld ist **Pflicht**.
 4. `relatedTerms` nur auf existierende `id`/`slug` setzen (Konsistenz hält den Lernbogen zusammen).
 
 Seiten und Suche aktualisieren sich automatisch; es ist kein Code nötig.
 
-## Eine neue Domänenbrille ergänzen (v2)
+## Eine neue Perspektive ergänzen (v2)
 
-1. In [`src/data/domains.json`](src/data/domains.json) eine Brille mit
+1. In [`src/data/domains.json`](src/data/domains.json) eine Perspektive mit
    `id`, `slug`, `name`, `key`, `icon`, `tagline`, `whyGood`, `bestExplainedTerms`, `helpfulWhen`, `limits` anlegen.
 2. In **jedem** Begriff in `glossary.json` unter `domainAnalogies` einen Eintrag mit dem neuen `key` ergänzen.
 
-Das Schema ist bewusst erweiterbar gehalten, damit v2 ohne Umbau Begriffe und Brillen ergänzen kann.
+Das Schema ist bewusst erweiterbar gehalten, damit v2 ohne Umbau Begriffe und Perspektiven ergänzen kann.
 
 ## Datenschutz und Inhalte
 

@@ -15,3 +15,7 @@ pnpm-debug.log*
 # macOS / Windows
 .DS_Store
 Thumbs.db
+# lokale Arbeits-/Prompt-Dateien (nicht Teil der Seite)
+REVIEW.md
+build-prompt_*.md
+claude-code-task_*.md

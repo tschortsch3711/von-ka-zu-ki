@@ -327,7 +327,6 @@ main { min-height: 60vh; }
 }
 @media (min-width: 640px) { .grid--2 { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 860px) {
-  .grid--2 { grid-template-columns: repeat(2, 1fr); }
   .grid--3 { grid-template-columns: repeat(3, 1fr); }
 }
 
@@ -357,7 +356,7 @@ main { min-height: 60vh; }
   flex-direction: column;
   gap: 0.6rem;
 }
-.lens-card h4 { display: flex; align-items: center; gap: 0.5rem; }
+.lens-card h3 { display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem; }
 .lens-limit {
   margin-top: auto;
   background: var(--warning-soft);
@@ -533,27 +532,7 @@ figcaption { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.8rem; te
 }
 
 /* ---------- Lernpfade ---------- */
-.path-step {
-  display: flex;
-  gap: 1rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--border);
-  align-items: flex-start;
-}
-.path-step:last-of-type { border-bottom: none; }
-.path-step__num {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--accent);
-  min-width: 2rem;
-  padding-top: 0.15rem;
-}
-.path-step__body { flex: 1; }
-.path-step__body h3 { margin: 0 0 0.25rem; font-size: 1rem; }
-.path-step__body p { margin: 0; color: var(--text-muted); font-size: 0.92rem; }
-.path-step a { color: var(--text); }
-.path-step a:hover { text-decoration: none; color: var(--accent); }
-
+/* .path-step* wird komponenten-scoped in src/pages/lernpfade/[slug].astro definiert. */
 .lernbogen-cta {
   margin-top: 2.5rem;
   padding: 1.2rem 1.4rem;

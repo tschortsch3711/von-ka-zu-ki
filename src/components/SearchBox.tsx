@@ -1,6 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Fuse from 'fuse.js';
 import type { GlossaryTerm, Domain } from '../data/types';
+import { termHref } from '../lib/paths';
 
 interface Props {
   terms: GlossaryTerm[];
@@ -15,20 +16,18 @@ const difficultyLabel: Record<string, string> = {
 const difficultyOrder: Record<string, number> = { basic: 0, intermediate: 1, advanced: 2 };
 const relevanceLabel: Record<string, string> = { low: 'gering', medium: 'mittel', high: 'hoch' };
 
-// Base-bewusste Linkauflösung, auch clientseitig (Vite inlined BASE_URL).
-const base = import.meta.env.BASE_URL;
-const termHref = (slug: string) => `${base}/glossar/${slug}/`.replace(/\/{2,}/g, '/');
-
 export default function SearchBox({ terms, domains }: Props) {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('');
   const [lens, setLens] = useState('');
   const [difficulty, setDifficulty] = useState('');
   const [relevance, setRelevance] = useState('');
-  const [sort, setSort] = useState<'alpha' | 'learn'>(() => {
-    if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('sort') === 'learn') return 'learn';
-    return 'alpha';
-  });
+  // Start mit 'alpha' (= Server-Render), damit die erste Client-Render identisch zur SSR-Ausgabe ist.
+  // Den ?sort=learn-Deeplink erst nach dem Mount anwenden, sonst Hydration-Mismatch (Karten-Reihenfolge).
+  const [sort, setSort] = useState<'alpha' | 'learn'>('alpha');
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('sort') === 'learn') setSort('learn');
+  }, []);
 
   const categories = useMemo(
     () => Array.from(new Set(terms.map((t) => t.category))),
@@ -163,7 +162,7 @@ export default function SearchBox({ terms, domains }: Props) {
 
       <p className="search__count" aria-live="polite">
         {results.length} {results.length === 1 ? 'Begriff' : 'Begriffe'}
-        {query ? ` für „${query}"` : ''}
+        {query ? ` für „${query}“` : ''}
       </p>
 
       {results.length === 0 ? (

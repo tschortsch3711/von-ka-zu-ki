@@ -13,7 +13,7 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
 ---
 <figure class="diagram-figure">
   <table class="matrix">
-    <caption class="sr-caption">Abb. 4 — Perspektiven-Matrix: Begriffe und die besonders gut passenden Perspektiven</caption>
+    <caption class="sr-only">Abb. 4 — Perspektiven-Matrix: Begriffe und die besonders gut passenden Perspektiven</caption>
     <thead>
       <tr>
         <th scope="col">Begriff</th>
@@ -51,8 +51,9 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
 </script>
 
 <style>
-  .matrix { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-  .matrix caption.sr-caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  /* min-width sorgt dafür, dass die overflow-x-Scrollfläche (.diagram-figure) sauber greift,
+     statt die Spalten auf schmalen Screens zu quetschen. */
+  .matrix { width: 100%; min-width: 32rem; border-collapse: collapse; font-size: 0.92rem; }
   .matrix th, .matrix td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); text-align: left; }
   .matrix thead th { font-size: 0.85rem; color: var(--text-muted); vertical-align: bottom; }
   .matrix-col-head { text-align: center !important; }
@@ -66,5 +67,5 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
   .matrix td { text-align: center; font-size: 1.2rem; }
   .matrix td.on { color: var(--accent); }
   .matrix td.off { color: var(--text-muted); opacity: 0.5; }
-  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  /* .sr-only kommt global aus global.css */
 </style>

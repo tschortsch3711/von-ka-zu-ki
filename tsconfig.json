@@ -8,5 +8,5 @@
     "allowJs": true
   },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "scripts"]
+  "exclude": ["dist"]
 }

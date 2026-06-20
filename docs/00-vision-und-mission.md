@@ -16,7 +16,7 @@ werden, lassen wir die Definition korrekt und legen **Brillen** daneben.
 1. **Korrektheit vor Bequemlichkeit.** Eine eingängige, aber falsche Erklärung schadet mehr, als sie nützt.
 2. **Analogien lecken – und das sagen wir.** Jede Analogie hat eine ehrliche Grenze (`limits`).
 3. **Keine Buzzwords, keine Heilsversprechen.** KI ist ein Werkzeug, kein Wunder.
-4. **Mehrere Brillen, eine Sache.** Die Auto-Metapher ist eine von dreien, nicht das ganze Projekt.
+4. **Mehrere Perspektiven, eine Sache.** Die Auto-Metapher ist eine von vieren, nicht das ganze Projekt.
 5. **Erweiterbarkeit.** Das Datenmodell erlaubt es, Begriffe und Brillen zu ergänzen, ohne neu zu bauen.
 
 ## Was dieses Projekt nicht ist

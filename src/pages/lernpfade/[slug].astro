@@ -64,7 +64,10 @@ const nextPath = currentIdx < realPaths.length - 1 ? realPaths[currentIdx + 1] :
     {path.lernbogenCTA && (
       <div class="lernbogen-cta">
         <p>{path.lernbogenCTA}</p>
-        <a class="btn" href={link('glossar/')}>Zum Glossar mit Lernbogen-Sortierung →</a>
+        <a class="split-btn" href={link('glossar/') + '?sort=learn'}>
+          <span class="split-btn__text">Zum Glossar</span>
+          <span class="split-btn__arrow">Lernbogen →</span>
+        </a>
       </div>
     )}
 
@@ -84,7 +87,6 @@ const nextPath = currentIdx < realPaths.length - 1 ? realPaths[currentIdx + 1] :
 </BaseLayout>
 
 <style>
-  .path-steps { }
   .path-step {
     display: flex;
     align-items: flex-start;

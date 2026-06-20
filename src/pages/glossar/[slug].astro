@@ -29,8 +29,25 @@ const analogyEntries = Object.entries(term.domainAnalogies);
 
 const bestByKey = Object.fromEntries(lenses.map((d) => [d.key, new Set(d.bestExplainedTerms)]));
 const isBest = (key: string) => bestByKey[key]?.has(term.id) || bestByKey[key]?.has(term.slug);
+
+// schema.org DefinedTerm: macht jede Begriffsseite für Suchmaschinen als Glossar-Eintrag erkennbar.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: term.term,
+  ...(term.aliases.length > 0 ? { alternateName: term.aliases } : {}),
+  description: term.shortDefinition,
+  inLanguage: 'de',
+  url: new URL(link(`glossar/${term.slug}/`), Astro.site).href,
+  inDefinedTermSet: {
+    '@type': 'DefinedTermSet',
+    name: 'Von K.A. zu K.I.',
+    url: new URL(link('glossar/'), Astro.site).href,
+  },
+};
 ---
 <BaseLayout title={term.term} description={term.shortDefinition}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <article class="section container term">
     <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
       <a href={link('glossar/')}>Glossar</a>
@@ -111,7 +128,7 @@ const isBest = (key: string) => bestByKey[key]?.has(term.id) || bestByKey[key]?.
               aria-labelledby={`lens-tab-${key}`}
               data-lens-panel
             >
-              <h4><span aria-hidden="true">{d?.icon ?? '🔭'}</span> {d?.name ?? key}</h4>
+              <h3><span aria-hidden="true">{d?.icon ?? '🔭'}</span> {d?.name ?? key}</h3>
               <p><strong>{a.analogy}</strong></p>
               <p class="muted">{a.explanation}</p>
               <p class="lens-limit"><strong>⚠ Wo die Analogie an Grenzen stößt</strong>{a.limits}</p>
@@ -147,45 +164,93 @@ const isBest = (key: string) => bestByKey[key]?.has(term.id) || bestByKey[key]?.
 
   <script is:inline>
     (function () {
-      var tabs = document.querySelectorAll('.lens-tab');
-      var panels = document.querySelectorAll('[data-lens-panel]');
-      if (!tabs.length) return;
+      var tablist = document.getElementById('lens-tabs');
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.lens-tab'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('[data-lens-panel]'));
+      if (!tablist || !tabs.length) return;
 
-      function activate(index) {
-        tabs.forEach(function (t, i) {
-          t.setAttribute('aria-selected', i === index ? 'true' : 'false');
-        });
-        if (window.innerWidth < 640) {
-          panels.forEach(function (p, i) {
-            if (i === index) p.removeAttribute('hidden');
-            else p.setAttribute('hidden', '');
-          });
+      // Ursprüngliche ARIA-Bezüge sichern, um sie im Tab-Modus wiederherzustellen.
+      var tabControls = tabs.map(function (t) { return t.getAttribute('aria-controls'); });
+      var panelLabels = panels.map(function (p) { return p.getAttribute('aria-labelledby'); });
+      var mq = window.matchMedia('(max-width: 639px)');
+
+      function currentIndex() {
+        for (var i = 0; i < tabs.length; i++) {
+          if (tabs[i].getAttribute('aria-selected') === 'true') return i;
         }
+        return 0;
+      }
+
+      function selectTab(index, focus) {
+        tabs.forEach(function (t, i) {
+          var sel = i === index;
+          t.setAttribute('aria-selected', sel ? 'true' : 'false');
+          t.setAttribute('tabindex', sel ? '0' : '-1');
+          if (sel && focus) t.focus();
+        });
+        panels.forEach(function (p, i) {
+          if (i === index) p.removeAttribute('hidden');
+          else p.setAttribute('hidden', '');
+        });
         try { localStorage.setItem('vkzk-lens-tab', String(index)); } catch (e) {}
       }
 
-      tabs.forEach(function (tab, i) {
-        tab.addEventListener('click', function () { activate(i); });
-      });
-
-      if (window.innerWidth < 640) {
+      // Mobile: echtes Tab-Widget (Roving-Tabindex + nur ein Panel sichtbar).
+      function enableTabMode() {
+        tablist.setAttribute('role', 'tablist');
+        tabs.forEach(function (t, i) {
+          t.setAttribute('role', 'tab');
+          if (tabControls[i]) t.setAttribute('aria-controls', tabControls[i]);
+        });
+        panels.forEach(function (p, i) {
+          p.setAttribute('role', 'tabpanel');
+          p.setAttribute('tabindex', '0');
+          if (panelLabels[i]) p.setAttribute('aria-labelledby', panelLabels[i]);
+        });
         var saved = 0;
         try { saved = parseInt(localStorage.getItem('vkzk-lens-tab') || '0', 10) || 0; } catch (e) {}
-        activate(saved < tabs.length ? saved : 0);
+        selectTab(saved >= 0 && saved < tabs.length ? saved : 0, false);
       }
 
-      window.addEventListener('resize', function () {
-        if (window.innerWidth >= 640) {
-          panels.forEach(function (p) { p.removeAttribute('hidden'); });
-        } else {
-          var active = 0;
-          try { active = parseInt(localStorage.getItem('vkzk-lens-tab') || '0', 10) || 0; } catch (e) {}
-          panels.forEach(function (p, i) {
-            if (i === active) p.removeAttribute('hidden');
-            else p.setAttribute('hidden', '');
-          });
-        }
+      // Desktop: alle Panels sichtbar nebeneinander — Tab-Rollen wären hier irreführend, also entfernen.
+      function disableTabMode() {
+        tablist.removeAttribute('role');
+        tabs.forEach(function (t) {
+          t.removeAttribute('role');
+          t.removeAttribute('aria-selected');
+          t.removeAttribute('aria-controls');
+          t.removeAttribute('tabindex');
+        });
+        panels.forEach(function (p) {
+          p.removeAttribute('hidden');
+          p.removeAttribute('role');
+          p.removeAttribute('tabindex');
+          p.removeAttribute('aria-labelledby');
+        });
+      }
+
+      function apply() {
+        if (mq.matches) enableTabMode();
+        else disableTabMode();
+      }
+
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { if (mq.matches) selectTab(i, false); });
       });
+
+      tablist.addEventListener('keydown', function (e) {
+        if (!mq.matches) return;
+        var idx = currentIndex();
+        var next = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (idx + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (idx - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = tabs.length - 1;
+        if (next !== null) { e.preventDefault(); selectTab(next, true); }
+      });
+
+      apply();
+      mq.addEventListener('change', apply);
     })();
   </script>
 </BaseLayout>

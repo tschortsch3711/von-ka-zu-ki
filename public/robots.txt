@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Absolute URL, weil robots.txt auf GitHub Pages am Domain-Root (user.github.io) geteilt wird.
+Sitemap: https://tschortsch3711.github.io/von-ka-zu-ki/sitemap-index.xml
