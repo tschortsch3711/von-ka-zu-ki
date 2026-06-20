@@ -22,7 +22,7 @@ const best = domain.bestExplainedTerms
 <BaseLayout title={domain.name} description={domain.tagline}>
   <article class="section container">
     <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
-      <a href={link('domaenen/')}>Domänenbrillen</a>
+      <a href={link('domaenen/')}>Perspektiven</a>
       <span aria-hidden="true"> › </span>
       <span aria-current="page">{domain.name}</span>
     </nav>
@@ -38,26 +38,26 @@ const best = domain.bestExplainedTerms
         <p class="muted">{domain.whyGood}</p>
       </section>
       <section class="card">
-        <h2>Wo die Brille hilft</h2>
+        <h2>Wo diese Perspektive hilft</h2>
         <p class="muted">{domain.helpfulWhen}</p>
       </section>
     </div>
 
     <section class="card lens-limit-block" style="margin-top:1rem">
-      <h2>Wo die Brille an Grenzen stößt</h2>
+      <h2>Wo diese Perspektive an Grenzen stößt</h2>
       <p class="muted">{domain.limits}</p>
     </section>
 
     {domain.id === 'automotive' && (
       <section style="margin-top:2.5rem">
-        <h2>Die Auto-Brille als Showcase</h2>
-        <p class="muted">Bekannte Auto-Begriffe, übersetzt in KI-Begriffe – eine Brille von dreien.</p>
+        <h2>Die Automotive-Perspektive als Showcase</h2>
+        <p class="muted">Bekannte Auto-Begriffe, übersetzt in KI-Begriffe – eine Perspektive von vieren.</p>
         <div style="margin-top:1rem"><AutomotiveDiagram /></div>
       </section>
     )}
 
     <section style="margin-top:2.5rem">
-      <h2>Besonders gut über diese Brille erklärbar</h2>
+      <h2>Besonders gut aus dieser Perspektive erklärbar</h2>
       <div class="grid grid--2" style="margin-top:1rem">
         {best.map((t) => (
           <a class="card best-term" href={termHref(t.slug)}>

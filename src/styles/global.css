@@ -152,7 +152,23 @@ code {
   align-items: center;
 }
 .brand:hover { text-decoration: none; }
-.brand-svg { display: block; }
+.brand-mark {
+  position: relative;
+  display: inline-block;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.brand-ka {
+  display: inline-block;
+  animation: brandKAFade 4s ease-in-out infinite;
+}
+.brand-ki {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: brandKIFade 4s ease-in-out infinite;
+}
 
 @keyframes brandKAFade {
   0%, 30%   { opacity: 1; }
@@ -164,8 +180,6 @@ code {
   45%, 70%  { opacity: 1; }
   85%, 100% { opacity: 0; }
 }
-.brand-ka { animation: brandKAFade 4s ease-in-out infinite; }
-.brand-ki { animation: brandKIFade 4s ease-in-out infinite; }
 .site-nav {
   display: flex;
   gap: 0.35rem;
@@ -298,6 +312,7 @@ main { min-height: 60vh; }
 @media (min-width: 640px) { .lens-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .lens-card {
+  position: relative;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -452,6 +467,25 @@ figcaption { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.8rem; te
   background: var(--accent-soft);
   border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
 }
+.lens-card--best::after {
+  content: '●';
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  line-height: 1;
+  pointer-events: none;
+}
+.lens-legend {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+}
+.lens-legend__dot { color: var(--accent); }
 
 .lens-tab--best {
   position: relative;
@@ -493,6 +527,34 @@ figcaption { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.8rem; te
 }
 .lernbogen-cta p { margin: 0 0 0.8rem; color: var(--text); font-size: 0.97rem; }
 .lernbogen-cta a.btn { display: inline-flex; }
+
+.split-btn {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1.5px solid var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  max-width: 100%;
+}
+.split-btn__text {
+  padding: 0.45em 0.9em;
+  background: var(--bg-elevated);
+  color: var(--text);
+  flex: 1;
+}
+.split-btn__arrow {
+  padding: 0.45em 0.9em;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+.split-btn:hover .split-btn__text { background: var(--accent-soft); }
+.split-btn:hover { text-decoration: none; }
 
 /* Lens tabs (nur auf Mobile; ab 640px ausgeblendet) */
 .lens-tabs {

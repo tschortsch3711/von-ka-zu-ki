@@ -25,7 +25,10 @@ export default function SearchBox({ terms, domains }: Props) {
   const [lens, setLens] = useState('');
   const [difficulty, setDifficulty] = useState('');
   const [relevance, setRelevance] = useState('');
-  const [sort, setSort] = useState<'alpha' | 'learn'>('alpha');
+  const [sort, setSort] = useState<'alpha' | 'learn'>(() => {
+    if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('sort') === 'learn') return 'learn';
+    return 'alpha';
+  });
 
   const categories = useMemo(
     () => Array.from(new Set(terms.map((t) => t.category))),
@@ -108,8 +111,8 @@ export default function SearchBox({ terms, domains }: Props) {
           ))}
         </select>
 
-        <select value={lens} onChange={(e) => setLens(e.target.value)} aria-label="Domänenbrille">
-          <option value="">Alle Brillen</option>
+        <select value={lens} onChange={(e) => setLens(e.target.value)} aria-label="Perspektive">
+          <option value="">Alle Perspektiven</option>
           {domains.map((d) => (
             <option key={d.key} value={d.key}>{d.icon} {d.name}</option>
           ))}
@@ -177,7 +180,7 @@ export default function SearchBox({ terms, domains }: Props) {
               <div className="search-card__meta">
                 <span className={`badge badge--${t.difficulty}`}>{difficultyLabel[t.difficulty] ?? t.difficulty}</span>
                 <span className="badge">Enterprise: {relevanceLabel[t.enterpriseRelevance]}</span>
-                <span className="search-card__lenses" aria-label="Verfügbare Brillen">
+                <span className="search-card__lenses" aria-label="Verfügbare Perspektiven">
                   {Object.keys(t.domainAnalogies).map((k) => (
                     <span key={k} title={k} className={isBestLens(t.id, t.slug, k) ? 'lens-best' : ''}>{domainIcons[k] ?? '•'}</span>
                   ))}

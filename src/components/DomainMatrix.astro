@@ -1,5 +1,5 @@
 ---
-// Domänenbrillen-Matrix: welche Begriffe sich über welche Brille besonders gut erklären.
+// Perspektiven-Matrix: welche Begriffe sich über welche Perspektive besonders gut erklären.
 // Datengetrieben: ein Haken, wenn der Begriff in domain.bestExplainedTerms steht.
 import glossary from '../data/glossary.json';
 import domains from '../data/domains.json';
@@ -13,16 +13,21 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
 ---
 <figure class="diagram-figure">
   <table class="matrix">
-    <caption class="sr-caption">Abb. 4 — Domänenbrillen-Matrix: Begriffe und die besonders gut passenden Brillen</caption>
+    <caption class="sr-caption">Abb. 4 — Perspektiven-Matrix: Begriffe und die besonders gut passenden Perspektiven</caption>
     <thead>
       <tr>
         <th scope="col">Begriff</th>
-        {lenses.map((d) => <th scope="col"><span aria-hidden="true">{d.icon}</span><span class="th-label">{d.name}</span></th>)}
+        {lenses.map((d) => (
+          <th scope="col" class="matrix-col-head">
+            <span class="th-icon" aria-hidden="true">{d.icon}</span>
+            <span class="th-label">{d.name}</span>
+          </th>
+        ))}
       </tr>
     </thead>
     <tbody>
       {terms.map((term) => (
-        <tr>
+        <tr data-href={termHref(term.slug)}>
           <th scope="row"><a href={termHref(term.slug)}>{term.term}</a></th>
           {lenses.map((d) => (
             <td class={isBest(term, d) ? 'on' : 'off'}>
@@ -34,17 +39,30 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
       ))}
     </tbody>
   </table>
-  <figcaption>Abb. 4 — Ein gefüllter Punkt markiert eine besonders tragfähige Brille. Jeder Begriff lässt sich über alle Brillen erklären.</figcaption>
+  <figcaption>Abb. 4 — Ein gefüllter Punkt markiert eine besonders tragfähige Perspektive. Jeder Begriff lässt sich über alle Perspektiven erklären.</figcaption>
 </figure>
+
+<script is:inline>
+  document.querySelectorAll('.matrix tbody tr[data-href]').forEach(function (row) {
+    row.addEventListener('click', function (e) {
+      if (!e.target.closest('a')) window.location.href = row.dataset.href;
+    });
+  });
+</script>
 
 <style>
   .matrix { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
   .matrix caption.sr-caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .matrix th, .matrix td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); text-align: left; }
   .matrix thead th { font-size: 0.85rem; color: var(--text-muted); vertical-align: bottom; }
+  .matrix-col-head { text-align: center !important; }
+  .matrix-col-head .th-icon { display: block; font-size: 1.4rem; margin-bottom: 0.25rem; }
   .matrix thead th .th-label { display: block; font-weight: 600; }
   .matrix tbody th { font-weight: 600; }
   .matrix tbody th a { color: var(--text); }
+  .matrix tbody tr { cursor: pointer; }
+  .matrix tbody tr:hover td,
+  .matrix tbody tr:hover th { background: var(--accent-soft); }
   .matrix td { text-align: center; font-size: 1.2rem; }
   .matrix td.on { color: var(--accent); }
   .matrix td.off { color: var(--text-muted); opacity: 0.5; }

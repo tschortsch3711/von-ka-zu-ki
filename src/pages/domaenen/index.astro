@@ -7,13 +7,12 @@ import type { Domain } from '../../data/types';
 
 const lenses = domains as Domain[];
 ---
-<BaseLayout title="Domänenbrillen" description="Dieselben KI-Begriffe, erklärt über Automotive, Public Sector, Healthcare und Finance & Banking.">
+<BaseLayout title="Perspektivwechsel" description="Dieselben KI-Begriffe aus vier Blickwinkeln: Automotive, Public Sector, Healthcare und Finance & Banking.">
   <section class="section container">
-    <h1>Domänenbrillen</h1>
+    <h1>Perspektivwechsel</h1>
     <p class="lead">
-      Eine Analogie ist eine Brille, durch die man dieselbe Sache betrachtet – nicht die Sache selbst.
-      Mehrere Brillen stehen zur Wahl. Jede beantwortet vier Leitfragen: warum sie geeignet ist, welche Begriffe
-      sich besonders gut erklären lassen, wo sie hilft und wo sie an Grenzen stößt.
+      Dieselbe Sache, vier Blickwinkel. Jede Perspektive beantwortet vier Leitfragen: warum sie geeignet ist,
+      welche Begriffe sich besonders gut erklären lassen, wo sie trägt und wo sie an Grenzen stößt.
     </p>
     <div class="grid grid--2" style="margin-top:2rem">
       {lenses.map((domain) => <DomainLensCard domain={domain} />)}
@@ -21,8 +20,8 @@ const lenses = domains as Domain[];
   </section>
 
   <section class="section container">
-    <h2>Welche Brille erklärt welchen Begriff besonders gut?</h2>
-    <p class="lead">Die Matrix zeigt, wo eine Brille besonders trägt. Kein Begriff ist auf eine Brille beschränkt.</p>
+    <h2>Welche Perspektive erklärt welchen Begriff besonders gut?</h2>
+    <p class="lead">Die Matrix zeigt, wo eine Perspektive besonders trägt. Kein Begriff ist auf eine Perspektive beschränkt.</p>
     <div style="margin-top:1.5rem"><DomainMatrix /></div>
   </section>
 </BaseLayout>

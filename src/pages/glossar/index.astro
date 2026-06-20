@@ -8,12 +8,12 @@ import type { GlossaryTerm, Domain } from '../../data/types';
 const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
 ---
-<BaseLayout title="Glossar" description="Alle KI-Begriffe mit fachlicher Definition und mehreren Domänenbrillen. Mit Volltextsuche und Filtern.">
+<BaseLayout title="Glossar" description="Mehr als nur Definitionen: Fachwissen, geklärte Missverständnisse und flexible Erklärwelten. Mit Volltextsuche und Filtern.">
   <section class="section container">
     <h1>Glossar</h1>
     <p class="lead">
-      Jeder Begriff: eine fachlich korrekte Definition, typische Missverständnisse und mehrere Erklärwelten.
-      Such per Volltext oder filtere nach Kategorie, Brille, Schwierigkeit und Enterprise-Relevanz.
+      Mehr als nur Definitionen: Jeder Begriff bietet dir Fachwissen, geklärte Missverständnisse und flexible Erklärwelten.
+      Suche direkt im Volltext oder filtere nach Kategorie, Perspektive, Schwierigkeit und Enterprise-Relevanz.
     </p>
     <div style="margin-top:1.8rem">
       <SearchBox client:load terms={terms} domains={lenses} />
@@ -21,7 +21,7 @@ const lenses = domains as Domain[];
     <noscript>
       <p class="muted" style="margin-top:1.5rem">
         Die interaktive Suche benötigt JavaScript. Eine vollständige Begriffsliste findest du dennoch über die
-        einzelnen Begriffsseiten und die Domänenbrillen.
+        einzelnen Begriffsseiten und die Perspektiven.
       </p>
     </noscript>
   </section>

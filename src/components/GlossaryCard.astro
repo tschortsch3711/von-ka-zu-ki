@@ -21,7 +21,7 @@ const lenses = Object.keys(term.domainAnalogies);
   <div class="glossary-card__meta">
     <span class={`badge badge--${term.difficulty}`}>{difficultyLabel[term.difficulty] ?? term.difficulty}</span>
     <span class="badge">Enterprise: {relevanceLabel[term.enterpriseRelevance] ?? term.enterpriseRelevance}</span>
-    <span class="glossary-card__lenses" aria-label="Verfügbare Domänenbrillen">
+    <span class="glossary-card__lenses" aria-label="Verfügbare Perspektiven">
       {lenses.map((l) => (
         <span title={l} class={domainBest[l] ? 'lens-best' : ''}>{domainIcons[l] ?? '•'}</span>
       ))}

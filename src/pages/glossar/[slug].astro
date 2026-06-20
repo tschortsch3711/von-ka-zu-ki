@@ -78,10 +78,10 @@ const isBest = (key: string) => bestByKey[key]?.has(term.id) || bestByKey[key]?.
     )}
 
     <section>
-      <h2>Domänenbrillen</h2>
-      <p class="muted">Dieselbe Sache, über bekannte Domänen erklärt. Jede Analogie hat eine ehrliche Grenze.</p>
+      <h2>Perspektiven</h2>
+      <p class="muted">Dieselbe Sache, aus bekannten Blickwinkeln erklärt. Jede Analogie hat eine ehrliche Grenze.</p>
 
-      <div class="lens-tabs" role="tablist" aria-label="Domänenbrille wählen" id="lens-tabs">
+      <div class="lens-tabs" role="tablist" aria-label="Perspektive wählen" id="lens-tabs">
         {analogyEntries.map(([key], i) => {
           const d = byKey[key];
           return (
@@ -119,6 +119,12 @@ const isBest = (key: string) => bestByKey[key]?.has(term.id) || bestByKey[key]?.
           );
         })}
       </div>
+      {analogyEntries.some(([key]) => isBest(key)) && (
+        <p class="lens-legend">
+          <span class="lens-legend__dot" aria-hidden="true">●</span>
+          Blauer Hintergrund und Punkt markieren die Perspektive, die diesen Begriff besonders anschaulich erklärt.
+        </p>
+      )}
     </section>
 
     {related.length > 0 && (

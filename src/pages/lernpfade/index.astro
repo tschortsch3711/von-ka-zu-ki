@@ -9,10 +9,8 @@ const lernpfade = paths as LearningPath[];
 <BaseLayout title="Lernpfade" description="Drei geführte Lernpfade für Führungskräfte, IT-Profis und Einsteiger – je zehn Begriffe in sinnvoller Reihenfolge.">
   <section class="section container">
     <h1>Lernpfade</h1>
-    <p class="lead">
-      Du weißt, wie du tickst – wähl den Pfad, der dazu passt. Jeder führt durch zehn
-      sorgfältig ausgewählte Begriffe in aufbauender Reihenfolge.
-    </p>
+    <p class="lead">Du weißt, wie du tickst – wähl den Pfad, der dazu passt.</p>
+    <p class="lead">Jeder führt durch zehn sorgfältig ausgewählte Begriffe in aufbauender Reihenfolge.</p>
 
     <div class="grid grid--3" style="margin-top:1.8rem">
       {lernpfade.filter(p => !p.isMetaCard).map((p) => (
@@ -33,7 +31,10 @@ const lernpfade = paths as LearningPath[];
           <div style="flex:1;min-width:200px">
             <h2 style="margin:0 0 0.4rem;font-size:1.15rem">{p.name}</h2>
             <p class="muted" style="margin:0 0 0.8rem">{p.description}</p>
-            <a class="btn" href={link('glossar/')}>Zum Glossar mit Lernbogen-Sortierung →</a>
+            <a class="split-btn" href={link('glossar/') + '?sort=learn'}>
+              <span class="split-btn__text">Zum Glossar</span>
+              <span class="split-btn__arrow">Lernbogen →</span>
+            </a>
           </div>
         </div>
       ))}
