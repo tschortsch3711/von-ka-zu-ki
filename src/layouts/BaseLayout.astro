@@ -142,6 +142,34 @@ const nav = [
         document.querySelectorAll('#site-nav-links a').forEach(function (a) {
           a.addEventListener('click', closeBurger);
         });
+
+        // Burger-Breakpoint dynamisch per ResizeObserver — kein fester px-Wert
+        var burgNav = document.getElementById('site-nav-links');
+        var burgBrand = document.querySelector('.brand');
+        var burgTheme = document.getElementById('theme-toggle');
+        var burgCont = siteHeader && siteHeader.querySelector('.container');
+        var navNaturalW = burgNav ? burgNav.scrollWidth : 0;
+
+        function checkBurger() {
+          if (!burgCont || !burgBrand || !burgTheme || !burgNav) return;
+          if (!siteHeader.classList.contains('burger-mode')) {
+            navNaturalW = burgNav.scrollWidth;
+          }
+          var needed = burgBrand.offsetWidth + navNaturalW + burgTheme.offsetWidth + 48;
+          if (needed > burgCont.clientWidth) {
+            if (!siteHeader.classList.contains('burger-mode')) {
+              siteHeader.classList.add('burger-mode');
+              closeBurger();
+            }
+          } else {
+            siteHeader.classList.remove('burger-mode');
+          }
+        }
+
+        checkBurger();
+        if (window.ResizeObserver && burgCont) {
+          new ResizeObserver(checkBurger).observe(burgCont);
+        }
       })();
     </script>
   </body>

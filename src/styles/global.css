@@ -230,27 +230,26 @@ code {
 }
 .nav-burger:hover { background: var(--border); }
 
-@media (max-width: 423px) {
-  .brand { flex: 1; }
-  .nav-burger { display: inline-flex; }
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--bg-elevated);
-    border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    flex-direction: column;
-    padding: 0.5rem 1.1rem 0.75rem;
-    gap: 0.15rem;
-    z-index: 49;
-    margin-left: 0;
-  }
-  .site-header[data-nav-open] .site-nav { display: flex; }
-  .site-nav a { padding: 0.55rem 0.65rem; width: 100%; }
+/* Burger-Modus: class wird per ResizeObserver in JS gesetzt, kein px-Breakpoint */
+.site-header.burger-mode .brand { flex: 1; }
+.site-header.burger-mode .nav-burger { display: inline-flex; }
+.site-header.burger-mode .site-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  flex-direction: column;
+  padding: 0.5rem 1.1rem 0.75rem;
+  gap: 0.15rem;
+  z-index: 49;
+  margin-left: 0;
 }
+.site-header.burger-mode[data-nav-open] .site-nav { display: flex; }
+.site-header.burger-mode .site-nav a { padding: 0.55rem 0.65rem; width: 100%; }
 
 /* ---------- Footer ---------- */
 .site-footer {
