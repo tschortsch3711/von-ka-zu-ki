@@ -238,13 +238,15 @@ main { min-height: 60vh; }
   color: var(--text-muted);
   border: 1px solid var(--border);
 }
-.glossary-card__head,
-.search-card__head { flex-wrap: wrap; }
+.glossary-card__head .badge,
+.search-card__head .badge { flex-shrink: 0; white-space: nowrap; }
 .badge--accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
 .badge--high { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
 .badge--basic { background: var(--badge-basic-bg); color: var(--badge-basic-text); border-color: transparent; }
 .badge--intermediate { background: var(--badge-intermediate-bg); color: var(--badge-intermediate-text); border-color: transparent; }
 .badge--advanced { background: var(--badge-advanced-bg); color: var(--badge-advanced-text); border-color: transparent; }
+.glossary-card__head h3,
+.search-card__head h3 { flex: 1; min-width: 0; }
 
 /* ---------- Buttons ---------- */
 .btn {
