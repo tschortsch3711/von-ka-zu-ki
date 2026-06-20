@@ -7,7 +7,7 @@ export interface Props {
   description?: string;
 }
 
-const { title, description = 'Ein universelles, analogiebasiertes KI-Glossar mit mehreren Perspektiven.' } = Astro.props;
+const { title, description = 'Ein universelles, analogiebasiertes KI-Glossar mit Perspektive.' } = Astro.props;
 
 // base benoetigt fuer isActive-Pruefung (Pfad-Vergleich ohne Base-Praefix)
 const base = import.meta.env.BASE_URL;
@@ -63,14 +63,17 @@ const nav = [
             <span class="brand-ki">K.I.</span>
           </span>
         </a>
-        <nav class="site-nav" aria-label="Hauptnavigation">
+        <nav class="site-nav" id="site-nav-links" aria-label="Hauptnavigation">
           {nav.map((item) => (
             <a href={item.href} aria-current={isActive(item.href.replace(base, '')) ? 'page' : undefined}>{item.label}</a>
           ))}
-          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Hell-/Dunkelmodus umschalten" title="Hell-/Dunkelmodus umschalten">
-            <span aria-hidden="true" id="theme-icon">🌙</span>
-          </button>
         </nav>
+        <button class="nav-burger" type="button" id="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav-links">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Hell-/Dunkelmodus umschalten" title="Hell-/Dunkelmodus umschalten">
+          <span aria-hidden="true" id="theme-icon">🌙</span>
+        </button>
       </div>
     </header>
 
@@ -107,6 +110,38 @@ const nav = [
             sync();
           });
         }
+
+        var burger = document.getElementById('nav-burger');
+        var siteHeader = document.querySelector('.site-header');
+        function closeBurger() {
+          if (siteHeader) siteHeader.removeAttribute('data-nav-open');
+          if (burger) {
+            burger.setAttribute('aria-expanded', 'false');
+            burger.setAttribute('aria-label', 'Menü öffnen');
+            burger.querySelector('span').textContent = '☰';
+          }
+        }
+        if (burger && siteHeader) {
+          burger.addEventListener('click', function () {
+            if (siteHeader.hasAttribute('data-nav-open')) {
+              closeBurger();
+            } else {
+              siteHeader.setAttribute('data-nav-open', '');
+              burger.setAttribute('aria-expanded', 'true');
+              burger.setAttribute('aria-label', 'Menü schließen');
+              burger.querySelector('span').textContent = '✕';
+            }
+          });
+        }
+        document.addEventListener('click', function (e) {
+          if (siteHeader && siteHeader.hasAttribute('data-nav-open') && !siteHeader.contains(e.target)) closeBurger();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeBurger();
+        });
+        document.querySelectorAll('#site-nav-links a').forEach(function (a) {
+          a.addEventListener('click', closeBurger);
+        });
       })();
     </script>
   </body>
