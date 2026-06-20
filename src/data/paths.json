@@ -1,0 +1,76 @@
+[
+  {
+    "id": "management",
+    "slug": "management",
+    "name": "Lernpfad für Führungskräfte",
+    "icon": "🎯",
+    "targetAudience": "Führungskräfte & Entscheider",
+    "description": "Verstehen, was KI leisten kann – und was nicht. Zehn Schlüsselbegriffe für fundierte Entscheidungen zu Kosten, Risiken und Einsatzszenarien.",
+    "termOrder": [
+      "ki",
+      "llm",
+      "hallucination",
+      "prompt",
+      "token",
+      "agent",
+      "rag",
+      "ai-governance",
+      "guardrails",
+      "compliance-ai-act"
+    ],
+    "lernbogenCTA": "Lust, noch tiefer einzusteigen? Diese Auswahl war erst der Anfang – im Glossar warten noch zahlreiche weitere Begriffe darauf, von dir entdeckt zu werden. Wenn du die Sortierung „Lernbogen“ wählst, führt dich der Pfad ganz entspannt nach aufsteigendem Schwierigkeitsgrad vom Einstieg bis zur echten Vertiefung."
+  },
+  {
+    "id": "it-profis",
+    "slug": "it-profis",
+    "name": "Lernpfad für IT-Profis",
+    "icon": "💻",
+    "targetAudience": "IT-Profis & Entwickler",
+    "description": "Von Architektur bis Betrieb: Zehn technische Kernkonzepte für Entwicklerinnen und Entwickler, die KI-Systeme bauen, integrieren oder warten.",
+    "termOrder": [
+      "machine-learning",
+      "foundation-model",
+      "training-finetuning",
+      "inference",
+      "embeddings",
+      "tool-calling",
+      "mcp",
+      "prompt-injection",
+      "orchestration",
+      "observability"
+    ],
+    "lernbogenCTA": "Neugierig geworden? Mit diesen Begriffen hast du das Fundament gelegt, doch das Glossar hält noch viele weitere bereit. Schalte einfach auf die Sortierung „Lernbogen“ um: So siehst du alle Begriffe logisch aufgebaut nach Schwierigkeitsgrad – für einen fließenden Übergang vom Einstieg zur Vertiefung."
+  },
+  {
+    "id": "einsteiger",
+    "slug": "einsteiger",
+    "name": "Lernpfad für Einsteiger",
+    "icon": "🌱",
+    "targetAudience": "Privatpersonen & Einsteiger",
+    "description": "Ein sanfter Einstieg in die Welt der KI. Zehn grundlegende Begriffe – ohne Vorkenntnisse, dafür mit vielen Analogien aus dem Alltag.",
+    "termOrder": [
+      "ki",
+      "machine-learning",
+      "llm",
+      "inference",
+      "token",
+      "context-window",
+      "prompt",
+      "hallucination",
+      "foundation-model",
+      "agent"
+    ],
+    "lernbogenCTA": "Das war erst der Anfang! Neben diesen Begriffen warten im Glossar noch weitere Erklärungen auf dich. Unser Tipp: Wähle die Sortierung „Lernbogen“. Damit ordnest du alle Begriffe nach aufsteigendem Schwierigkeitsgrad und gelangst ganz intuitiv vom Einstieg zur Vertiefung."
+  },
+  {
+    "id": "lernbogen",
+    "slug": "lernbogen",
+    "name": "Selbstgesteuert lernen",
+    "icon": "🔁",
+    "targetAudience": "Alle",
+    "description": "Der Lernbogen im Glossar sortiert alle 36 Begriffe nach Schwierigkeitsgrad. Starte bei „Einstieg“ und arbeite dich vor – ohne feste Reihenfolge, in deinem Tempo.",
+    "termOrder": [],
+    "lernbogenCTA": null,
+    "isMetaCard": true
+  }
+]

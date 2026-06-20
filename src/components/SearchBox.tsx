@@ -35,6 +35,12 @@ export default function SearchBox({ terms, domains }: Props) {
     () => Object.fromEntries(domains.map((d) => [d.key, d.icon])),
     [domains],
   );
+  const domainBestSets = useMemo(
+    () => Object.fromEntries(domains.map((d) => [d.key, new Set(d.bestExplainedTerms)])),
+    [domains],
+  );
+  const isBestLens = (termId: string, termSlug: string, key: string) =>
+    domainBestSets[key]?.has(termId) || domainBestSets[key]?.has(termSlug);
 
   const fuse = useMemo(
     () =>
@@ -173,7 +179,7 @@ export default function SearchBox({ terms, domains }: Props) {
                 <span className="badge">Enterprise: {relevanceLabel[t.enterpriseRelevance]}</span>
                 <span className="search-card__lenses" aria-label="Verfügbare Brillen">
                   {Object.keys(t.domainAnalogies).map((k) => (
-                    <span key={k} title={k}>{domainIcons[k] ?? '•'}</span>
+                    <span key={k} title={k} className={isBestLens(t.id, t.slug, k) ? 'lens-best' : ''}>{domainIcons[k] ?? '•'}</span>
                   ))}
                 </span>
               </div>

@@ -12,6 +12,8 @@ import { link } from '../lib/paths';
 const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
 const domainIcons = Object.fromEntries(lenses.map((d) => [d.key, d.icon]));
+const getDomainBest = (termId: string, termSlug: string): Record<string, boolean> =>
+  Object.fromEntries(lenses.map((d) => [d.key, d.bestExplainedTerms.includes(termId) || d.bestExplainedTerms.includes(termSlug)]));
 
 // 3 Einstiegsbegriffe wechseln pro Build, abgeleitet aus dem Build-Datum (keine echte Tagesrotation ohne geplanten Rebuild)
 const buildDate = new Date();
@@ -28,8 +30,8 @@ const featured = [
   <Hero />
 
   <section class="section container">
-    <h2>Drei Wege hinein</h2>
-    <p class="lead">Such dir einen Einstieg, der zu deiner Denkweise passt.</p>
+    <h2>Wo willst du einsteigen?</h2>
+    <p class="lead">Du musst nicht vorne anfangen. Nimm den Weg, der sich richtig anfühlt.</p>
     <div class="grid grid--3" style="margin-top:1.5rem">
       <a class="card path-card" href={link('glossar/')}>
         <h3>📚 Glossar durchsuchen</h3>
@@ -39,9 +41,9 @@ const featured = [
         <h3>🔭 Domänenbrillen ansehen</h3>
         <p class="muted">Dieselben Begriffe, erklärt über Automotive, Public Sector, Healthcare und Finance & Banking.</p>
       </a>
-      <a class="card path-card" href={link('#oekosystem')}>
-        <h3>🗺️ KI-Ökosystem verstehen</h3>
-        <p class="muted">Wie Nutzer, Modelle, Tools, APIs, Rechenzentren und Governance zusammenspielen.</p>
+      <a class="card path-card" href={link('lernpfade/')}>
+        <h3>🎓 Lernpfade entdecken</h3>
+        <p class="muted">Drei geführte Pfade für Management, IT und Einsteiger – je zehn Begriffe in sinnvoller Reihenfolge.</p>
       </a>
     </div>
   </section>
@@ -49,7 +51,7 @@ const featured = [
   <section class="section container">
     <h2>Begriffe zum Reinschnuppern</h2>
     <div class="grid grid--3" style="margin-top:1.5rem">
-      {featured.map((term) => <GlossaryCard term={term} domainIcons={domainIcons} />)}
+      {featured.map((term) => <GlossaryCard term={term} domainIcons={domainIcons} domainBest={getDomainBest(term.id, term.slug)} />)}
     </div>
     <p style="margin-top:1.2rem"><a class="btn" href={link('glossar/')}>Alle Begriffe ansehen →</a></p>
   </section>

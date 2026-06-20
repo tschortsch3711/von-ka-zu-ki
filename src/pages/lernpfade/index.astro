@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import paths from '../../data/paths.json';
+import type { LearningPath } from '../../data/types';
+import { link, lernpfadHref } from '../../lib/paths';
+
+const lernpfade = paths as LearningPath[];
+---
+<BaseLayout title="Lernpfade" description="Drei geführte Lernpfade für Führungskräfte, IT-Profis und Einsteiger – je zehn Begriffe in sinnvoller Reihenfolge.">
+  <section class="section container">
+    <h1>Lernpfade</h1>
+    <p class="lead">
+      Du weißt, wie du tickst – wähl den Pfad, der dazu passt. Jeder führt durch zehn
+      sorgfältig ausgewählte Begriffe in aufbauender Reihenfolge.
+    </p>
+
+    <div class="grid grid--3" style="margin-top:1.8rem">
+      {lernpfade.filter(p => !p.isMetaCard).map((p) => (
+        <a class="card path-card" href={lernpfadHref(p.slug)}>
+          <div class="path-card__icon">{p.icon}</div>
+          <h2 class="path-card__title">{p.name}</h2>
+          <p class="path-card__audience badge">{p.targetAudience}</p>
+          <p class="muted">{p.description}</p>
+          <span class="path-card__cta">Pfad starten →</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="meta-card" style="margin-top:2rem">
+      {lernpfade.filter(p => p.isMetaCard).map((p) => (
+        <div class="card" style="display:flex;align-items:flex-start;gap:1.2rem;flex-wrap:wrap">
+          <span style="font-size:2rem">{p.icon}</span>
+          <div style="flex:1;min-width:200px">
+            <h2 style="margin:0 0 0.4rem;font-size:1.15rem">{p.name}</h2>
+            <p class="muted" style="margin:0 0 0.8rem">{p.description}</p>
+            <a class="btn" href={link('glossar/')}>Zum Glossar mit Lernbogen-Sortierung →</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .path-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--text);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .path-card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
+  .path-card__icon { font-size: 2rem; line-height: 1; }
+  .path-card__title { margin: 0; font-size: 1.1rem; }
+  .path-card__audience { align-self: flex-start; text-transform: none; letter-spacing: 0; font-size: 0.75rem; }
+  .path-card .muted { margin: 0; flex: 1; }
+  .path-card__cta { color: var(--accent); font-size: 0.9rem; font-weight: 600; margin-top: 0.4rem; }
+</style>

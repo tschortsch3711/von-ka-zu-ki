@@ -23,8 +23,13 @@ interface Domain {
   bestExplainedTerms: string[];
 }
 
+interface LearningPath {
+  id: string; slug: string; name: string; termOrder: string[]; isMetaCard?: boolean;
+}
+
 const glossary: GlossaryTerm[] = JSON.parse(readFileSync(join(root, 'src/data/glossary.json'), 'utf-8'));
 const domains: Domain[] = JSON.parse(readFileSync(join(root, 'src/data/domains.json'), 'utf-8'));
+const paths: LearningPath[] = JSON.parse(readFileSync(join(root, 'src/data/paths.json'), 'utf-8'));
 
 let errors = 0;
 const fail = (msg: string) => { console.error(`  ✗ ${msg}`); errors++; };
@@ -79,12 +84,28 @@ for (const domain of domains) {
   }
 }
 
+for (const path of paths) {
+  if (path.isMetaCard) continue;
+  const ctx = `[path:${path.id}]`;
+  if (!path.id || !path.slug || !path.name) fail(`${ctx} Pflichtfeld fehlt (id/slug/name)`);
+  if (!Array.isArray(path.termOrder) || path.termOrder.length === 0) {
+    fail(`${ctx} termOrder ist leer oder kein Array`);
+  }
+  for (const ref of path.termOrder ?? []) {
+    if (!termIds.has(ref) && !termSlugs.has(ref)) {
+      fail(`${ctx} termOrder enthält unbekannte ID/Slug: '${ref}'`);
+    }
+  }
+}
+
 const termCount = glossary.length;
 const lensCount = domainKeys.length;
+const pathCount = paths.filter((p) => !p.isMetaCard).length;
 
 if (errors === 0) {
   console.log(`VALID: ${termCount} Begriffe, ${lensCount} Brillen je mit limits, relatedTerms konsistent`);
   console.log(`       ${termCount * lensCount} Analogien geprüft (${domainKeys.join(', ')})`);
+  console.log(`       ${pathCount} Lernpfade mit gültigen termOrder-Referenzen`);
 } else {
   console.error(`\nFEHLER: ${errors} Problem(e) gefunden.`);
   throw new Error(`Validierung fehlgeschlagen (${errors} Fehler)`);

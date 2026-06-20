@@ -42,3 +42,15 @@ export interface Domain {
   helpfulWhen: string;
   limits: string;
 }
+
+export interface LearningPath {
+  id: string;
+  slug: string;
+  name: string;
+  icon: string;
+  targetAudience: string;
+  description: string;
+  termOrder: string[];
+  lernbogenCTA: string | null;
+  isMetaCard?: boolean;
+}

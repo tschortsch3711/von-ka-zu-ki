@@ -24,7 +24,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const nav = [
   { href: link('glossar/'), label: 'Glossar' },
   { href: link('domaenen/'), label: 'Domänenbrillen' },
-  { href: link('roadmap/'), label: 'Roadmap' },
+  { href: link('lernpfade/'), label: 'Lernpfade' },
 ];
 ---
 
@@ -57,7 +57,12 @@ const nav = [
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href={link('')}>Von K.A. zu K.I.</a>
+        <a class="brand" href={link('')} aria-label="Von K.A. zu K.I. – Startseite">
+          <svg class="brand-svg" viewBox="0 0 74 30" height="28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <text class="brand-ka" x="2" y="23" font-family="system-ui,-apple-system,sans-serif" font-size="24" font-weight="700" fill="currentColor">K.A.</text>
+            <text class="brand-ki" x="2" y="23" font-family="system-ui,-apple-system,sans-serif" font-size="24" font-weight="700" fill="currentColor">K.I.</text>
+          </svg>
+        </a>
         <nav class="site-nav" aria-label="Hauptnavigation">
           {nav.map((item) => (
             <a href={item.href} aria-current={isActive(item.href.replace(base, '')) ? 'page' : undefined}>{item.label}</a>

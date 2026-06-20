@@ -1,5 +1,4 @@
 ---
-import { link } from '../lib/paths';
 ---
 <section class="hero">
   <div class="container">
@@ -7,14 +6,8 @@ import { link } from '../lib/paths';
     <h1 class="hero__title">Von K.A. <span aria-hidden="true">🤷‍♂️❓</span> zu K.I. <span aria-hidden="true">💡❗</span></h1>
     <p class="hero__subtitle">Ein universelles, analogiebasiertes KI-Glossar mit Domänenbrillen.</p>
     <p class="lead hero__lead">
-      Ein Begriff, eine fachlich korrekte Definition, mehrere Erklärwelten. Wir machen zentrale
-      KI-Begriffe über bekannte Domänen greifbar: Automotive, Public Sector, Healthcare und Finance & Banking.
+      Täglich finden neue KI-Ausdrücke Einzug in unseren Sprachgebrauch. Da bloße Definitionen jedoch selten vermitteln, was sich hinter einem Begriff verbirgt, schließt dieses Glossar genau diese Lücke: Wir verknüpfen das fachliche Fundament mit Analogien aus der realen Welt, um neue Theorie durch bewährte Praxisbeispiele greifbar zu machen.
     </p>
-    <div class="hero__cta">
-      <a class="btn btn--primary" href={link('glossar/')}>Glossar durchsuchen</a>
-      <a class="btn" href={link('domaenen/')}>Domänenbrillen ansehen</a>
-      <a class="btn" href={link('#oekosystem')}>KI-Ökosystem verstehen</a>
-    </div>
   </div>
 </section>
 
@@ -36,6 +29,5 @@ import { link } from '../lib/paths';
   }
   .hero__title { margin: 0 0 0.6rem; }
   .hero__subtitle { font-size: clamp(1.05rem, 2.5vw, 1.35rem); font-weight: 600; margin: 0 0 1rem; color: var(--text); }
-  .hero__lead { margin: 0 0 1.8rem; }
-  .hero__cta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .hero__lead { margin: 0; }
 </style>

@@ -26,6 +26,9 @@ const related = term.relatedTerms
   .filter((t): t is GlossaryTerm => Boolean(t));
 
 const analogyEntries = Object.entries(term.domainAnalogies);
+
+const bestByKey = Object.fromEntries(lenses.map((d) => [d.key, new Set(d.bestExplainedTerms)]));
+const isBest = (key: string) => bestByKey[key]?.has(term.id) || bestByKey[key]?.has(term.slug);
 ---
 <BaseLayout title={term.term} description={term.shortDefinition}>
   <article class="section container term">
@@ -83,13 +86,14 @@ const analogyEntries = Object.entries(term.domainAnalogies);
           const d = byKey[key];
           return (
             <button
-              class="lens-tab"
+              class:list={['lens-tab', isBest(key) ? 'lens-tab--best' : '']}
               role="tab"
               aria-selected={i === 0 ? 'true' : 'false'}
               aria-controls={`lens-panel-${key}`}
               id={`lens-tab-${key}`}
               type="button"
             >
+              {isBest(key) && <span class="best-dot" aria-hidden="true">●</span>}
               <span aria-hidden="true">{d?.icon ?? '🔭'}</span> {d?.name ?? key}
             </button>
           );
@@ -101,7 +105,7 @@ const analogyEntries = Object.entries(term.domainAnalogies);
           const d = byKey[key];
           return (
             <div
-              class="lens-card"
+              class:list={['lens-card', isBest(key) ? 'lens-card--best' : '']}
               role="tabpanel"
               id={`lens-panel-${key}`}
               aria-labelledby={`lens-tab-${key}`}

@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import paths from '../../data/paths.json';
+import glossary from '../../data/glossary.json';
+import type { LearningPath, GlossaryTerm } from '../../data/types';
+import { link, termHref, lernpfadHref } from '../../lib/paths';
+
+const lernpfade = paths as LearningPath[];
+
+export function getStaticPaths() {
+  return (paths as LearningPath[])
+    .filter((p) => !p.isMetaCard)
+    .map((p) => ({ params: { slug: p.slug }, props: { path: p } }));
+}
+
+const { path } = Astro.props as { path: LearningPath };
+const allTerms = glossary as GlossaryTerm[];
+
+const orderedTerms = path.termOrder
+  .map((id) => allTerms.find((t) => t.id === id))
+  .filter((t): t is GlossaryTerm => Boolean(t));
+
+const difficultyLabel: Record<string, string> = { basic: 'Einstieg', intermediate: 'Aufbau', advanced: 'Vertiefung' };
+
+// Vorheriger / nächster Pfad
+const realPaths = lernpfade.filter((p) => !p.isMetaCard);
+const currentIdx = realPaths.findIndex((p) => p.slug === path.slug);
+const prevPath = currentIdx > 0 ? realPaths[currentIdx - 1] : null;
+const nextPath = currentIdx < realPaths.length - 1 ? realPaths[currentIdx + 1] : null;
+---
+<BaseLayout title={path.name} description={path.description}>
+  <article class="section container">
+    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+      <a href={link('lernpfade/')}>Lernpfade</a>
+      <span aria-hidden="true"> › </span>
+      <span aria-current="page">{path.name}</span>
+    </nav>
+
+    <header style="margin-bottom:2rem">
+      <div style="font-size:2.5rem;line-height:1;margin-bottom:0.6rem">{path.icon}</div>
+      <h1 style="margin:0 0 0.5rem">{path.name}</h1>
+      <span class="badge" style="text-transform:none;letter-spacing:0;font-size:0.8rem">{path.targetAudience}</span>
+      <p class="lead" style="margin-top:0.8rem">{path.description}</p>
+    </header>
+
+    <section>
+      <h2 style="margin-bottom:1rem">Die {orderedTerms.length} Begriffe auf diesem Pfad</h2>
+      <div class="path-steps">
+        {orderedTerms.map((term, i) => (
+          <a class="path-step" href={termHref(term.slug)}>
+            <span class="path-step__num">{String(i + 1).padStart(2, '0')}</span>
+            <div class="path-step__body">
+              <h3>{term.term}</h3>
+              <p>{term.shortDefinition}</p>
+            </div>
+            <span class={`badge badge--${term.difficulty}`} style="white-space:nowrap;align-self:start">
+              {difficultyLabel[term.difficulty] ?? term.difficulty}
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {path.lernbogenCTA && (
+      <div class="lernbogen-cta">
+        <p>{path.lernbogenCTA}</p>
+        <a class="btn" href={link('glossar/')}>Zum Glossar mit Lernbogen-Sortierung →</a>
+      </div>
+    )}
+
+    <nav class="path-nav" aria-label="Weitere Pfade">
+      {prevPath && (
+        <a href={lernpfadHref(prevPath.slug)} class="path-nav__link path-nav__link--prev">
+          ← {prevPath.name}
+        </a>
+      )}
+      {nextPath && (
+        <a href={lernpfadHref(nextPath.slug)} class="path-nav__link path-nav__link--next">
+          {nextPath.name} →
+        </a>
+      )}
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  .path-steps { }
+  .path-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.1s ease;
+    border-radius: 4px;
+    margin: 0 -0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .path-step:last-of-type { border-bottom: none; }
+  .path-step:hover { background: var(--bg-subtle); text-decoration: none; }
+  .path-step__num {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 2rem;
+    padding-top: 0.2rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .path-step__body { flex: 1; }
+  .path-step__body h3 { margin: 0 0 0.2rem; font-size: 1rem; font-weight: 600; }
+  .path-step__body p { margin: 0; color: var(--text-muted); font-size: 0.9rem; }
+
+  .path-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .path-nav__link { color: var(--text-muted); font-size: 0.9rem; }
+  .path-nav__link:hover { color: var(--accent); }
+  .path-nav__link--next { margin-left: auto; }
+</style>

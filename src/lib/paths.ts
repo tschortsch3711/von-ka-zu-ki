@@ -13,3 +13,7 @@ export function termHref(slug: string): string {
 export function domainHref(slug: string): string {
   return link(`domaenen/${slug}/`);
 }
+
+export function lernpfadHref(slug: string): string {
+  return link(`lernpfade/${slug}/`);
+}
