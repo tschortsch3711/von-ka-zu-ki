@@ -92,7 +92,7 @@
         "analogy": "Ein erfahrener Oberarzt, der aus tausenden gesehenen Patientenfaellen ein Gespuer entwickelt hat, statt nur eine Leitlinie Punkt fuer Punkt abzuarbeiten.",
         "explanation": "Ein frischer Assistenzarzt arbeitet am ersten Tag streng nach Leitlinie: bei diesen Beschwerden jene Untersuchung, bei jenem Befund jenes Vorgehen. Ein langjaehriger Oberarzt dagegen hat tausende echte Faelle in Visite und Sprechstunde erlebt und erkennt am Muster oft schon, in welche Richtung es geht, selbst wenn der Patient so nicht im Lehrbuch steht. Genauso wird ein Machine-Learning-System nicht mit festen Regeln programmiert, sondern lernt aus vielen Beispielfaellen die wiederkehrenden Muster und uebertraegt sie auf neue Patienten, die es noch nie gesehen hat. Je mehr unterschiedliche Faelle es kennengelernt hat, desto sicherer faellt seine Einschaetzung bei einem ganz neuen Fall aus.",
         "limits": "Der Oberarzt prueft sein Bauchgefuehl an Befund und Leitlinie und merkt, wenn ein Muster im Einzelfall nicht passt; ein Modell hinterfragt seine eigenen Muster nicht und uebernimmt eine Schieflage in den Beispieldaten genauso treu wie das Richtige.",
-        "quality": 0.45
+        "quality": 0.58
       },
       "finance": {
         "analogy": "Ein erfahrener Bankberater, der aus tausenden früheren Kundengesprächen ein Gespür entwickelt hat, statt stur ein Vorschriftenheft Punkt für Punkt abzuarbeiten.",
@@ -150,7 +150,7 @@
         "analogy": "Die erfahrene Oberärztin, die nach unzähligen Visiten fast jeden Befund-Satz treffsicher zu Ende sprechen kann.",
         "explanation": "Über Jahre hat diese Ärztin tausende Patientengespräche und Befunde gehört: Beginnt jemand auf der Visite einen Satz wie \"Der Patient klagt seit drei Tagen über...\", ergänzt sie wie von selbst die Worte, die in solchen Fällen am wahrscheinlichsten folgen. Genau so arbeitet ein LLM: Es hat aus riesigen Textmengen gelernt und schreibt einen Text weiter, indem es immer das vermutlich passendste nächste Wort anhängt. Aus diesem schlichten Weiterschreiben entstehen die Fähigkeiten zu erklären, zusammenzufassen oder zu übersetzen.",
         "limits": "Die Ärztin versteht aus Erfahrung wirklich, was hinter den Worten steckt, während das LLM nur die wahrscheinlichste Wortfolge bildet, ohne den Inhalt zu erfassen. Deshalb kann es einen Befund flüssig und überzeugend zu Ende formulieren und dabei trotzdem fachlich danebenliegen.",
-        "quality": 0.55
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Der erfahrene Bankberater am Schalter, der nach Jahren voller Kundengespräche fast jeden Satz treffsicher zu Ende sprechen kann.",
@@ -203,7 +203,7 @@
         "analogy": "Die breite Grundausbildung im Verwaltungslehrgang, bevor jemand einem Fachamt zugeteilt wird",
         "explanation": "Wie ein frisch ausgebildeter Verwaltungsnachwuchs erst eine breite Grundausbildung durchläuft – Aktenführung, Behördengang, das Lesen von Dienstvorschriften – und damit überall im Amt einsetzbar ist, ist ein Foundation Model breit vortrainiert und auf keine einzelne Aufgabe festgelegt. Dieselbe Grundkraft kann das Amt anschließend an den Posteingang, in die Antragsprüfung oder an den Bescheid-Schalter setzen, statt für jede Stelle eine eigene Kraft von Grund auf auszubilden. Die kurze Einweisung am konkreten Arbeitsplatz – eine Dienstanweisung, Zugriff auf die passende Registratur oder eine gezielte Nachschulung – entspricht dem Anpassen des Basismodells per Prompt, Datenanbindung oder Fine-Tuning.",
         "limits": "Der Vergleich hinkt, weil ein Sachbearbeiter nach der Einweisung selbst dazulernt und für seine Bescheide verantwortlich ist, während das Basismodell unverändert bleibt, das passende Verhalten erst durch die Einarbeitung obendrauf entsteht und kein Modell Verantwortung trägt. Zudem lässt sich der Lehrplan eines Lehrgangs vollständig nachlesen, während beim Basismodell kaum auflistbar ist, was es gelernt hat und wo seine blinden Flecken liegen.",
-        "quality": 0.44
+        "quality": 0.58
       },
       "healthcare": {
         "analogy": "Der breit ausgebildete Assistenzarzt, aus dem durch Spezialisierung jeder Facharzt werden kann",
@@ -260,13 +260,13 @@
         "analogy": "Der ausgelernte Sachbearbeiter, der jetzt Antrag für Antrag bearbeitet",
         "explanation": "Die Ausbildung am Amt ist abgeschlossen (das Training) - jetzt sitzt der Sachbearbeiter am Schreibtisch und bearbeitet einen konkreten Antrag aus dem Posteingang, genau wie das fertige Modell eine einzelne Eingabe verarbeitet und eine Ausgabe erzeugt. Er wendet dabei nur sein erlerntes Wissen und die Dienstvorschrift an, ohne sein Können neu zu erlernen, so wie bei der Inferenz keine Parameter mehr verändert werden. Jeder bearbeitete Fall kostet Arbeitszeit am Schreibtisch, so wie jede Modellantwort Rechenzeit und damit Geld kostet. Das Bearbeiten der Akten ist der laufende Amtsbetrieb, nicht die einmalige Ausbildung davor.",
         "limits": "Ein Sachbearbeiter sammelt mit jedem Fall Erfahrung und merkt meist, wenn ihm die Zuständigkeit oder das Wissen fehlt; das Modell bleibt bei reiner Inferenz unverändert und kann auf dieselbe Eingabe unterschiedlich sowie selbstsicher falsch antworten.",
-        "quality": 0.41
+        "quality": 0.7
       },
       "healthcare": {
         "analogy": "Die fertig ausgebildete Ärztin stellt in der Sprechstunde für einen einzelnen Patienten eine Diagnose.",
         "explanation": "Inferenz ist der Moment, in dem ein bereits fertig trainiertes Modell eine einzelne Eingabe bearbeitet, so wie eine ausgebildete Ärztin in der Sprechstunde einen konkreten Patienten anschaut und ihm eine Diagnose nennt. Ihre Ausbildung ist abgeschlossen; sie wendet das Gelernte jetzt nur noch auf den Fall an, der gerade vor ihr sitzt, und lernt dabei nichts dauerhaft Neues hinzu. Jede Sprechstunde kostet ihre Arbeitszeit, so wie jede einzelne Modellantwort Rechenzeit und damit Geld kostet. Wichtig ist die Trennung: Das Behandeln in der Sprechstunde ist der laufende Betrieb, nicht die einmalige Ausbildung davor.",
         "limits": "Eine gute Ärztin merkt meist, wenn ein Fall ihr Wissen übersteigt, und holt dann eine Zweitmeinung ein; das Modell kann auf dieselbe Eingabe unterschiedlich antworten und auch dann selbstsicher klingen, wenn die Antwort falsch ist. Außerdem sammelt eine Ärztin über viele Sprechstunden Erfahrung, während sich das Modell bei reiner Inferenz nicht verändert.",
-        "quality": 0.57
+        "quality": 0.7
       },
       "finance": {
         "analogy": "Der fertig ausgebildete Mitarbeiter am Bankschalter beantwortet eine einzelne Kundenfrage.",
@@ -376,13 +376,13 @@
         "analogy": "Die einzelnen Einträge, in die das Amt jeden Antrag vor der Bearbeitung zerlegt und Stück für Stück abarbeitet.",
         "explanation": "Bevor ein Sachbearbeiter einen Antrag bearbeitet, trägt er ihn in lauter kleine, gleichförmige Einträge in die Akte ein und arbeitet sich dann Eintrag für Eintrag durch. Genauso zerlegt ein Sprachmodell jeden Text vorab in kleine Einheiten, die Tokens, und verarbeitet ihn Token für Token. Wie viel Arbeit anfällt, richtet sich nicht danach, wie lang die einzelnen Wörter sind, sondern danach, wie viele dieser Einträge zusammenkommen. Und wie ein Amt seinen Aufwand pro Eintrag berechnet, bemisst das Modell Kosten und zulässige Länge nach der Zahl der Tokens, nicht nach Buchstaben oder Wörtern.",
         "limits": "In einer Akte folgt ein Eintrag sauber dem nächsten, und der Sachbearbeiter sieht jederzeit, wie viele es sind; die Grenze zwischen zwei Tokens verläuft dagegen oft mitten im Wort und ist für Laien nicht sichtbar. Auch lässt sich die genaue Zahl der Tokens eines Textes meist erst beim Verarbeiten sicher feststellen, während man Akteneinträge vorher abzählen kann.",
-        "quality": 0.4
+        "quality": 0.46
       },
       "healthcare": {
         "analogy": "Die kleinen Textbausteine, in die ein diktierter Befund zerlegt und Stück für Stück in die Krankenakte übertragen wird.",
         "explanation": "Wenn ein Arzt einen Befund ins Diktiergerät spricht, landet er nicht als ein Stück in der Akte, sondern wird in viele kleine Textbausteine zerlegt und Baustein für Baustein eingetragen. Genauso zerlegt ein Sprachmodell jeden Satz in lauter kleine Einheiten, die Tokens, und arbeitet sich Token für Token durch den Text. Wie viel eine Akte umfasst, zählt man dabei nicht nach ganzen Wörtern, sondern nach diesen Bausteinen; ebenso bestimmt die Zahl der Tokens, wie lang ein Text gilt und was seine Verarbeitung kostet. Ein ausführlicher Befund verbraucht so viele Tokens, wie ein langes Diktat Textbausteine ergibt.",
         "limits": "Beim Diktat folgen die Bausteine meist sauber den gesprochenen Wörtern, während ein Token mal ein ganzes kurzes Wort, mal nur eine Silbe umfasst und sogar mitten im Wort enden kann. Und anders als ein fertig getipptes Diktat, das man nachzählen kann, zeigt sich die genaue Tokenzahl eines Textes meist erst beim Verarbeiten.",
-        "quality": 0.22
+        "quality": 0.45
       },
       "finance": {
         "analogy": "Die einzelnen Münzen, in die ein Geldbetrag zerlegt und mit denen er an der Kasse abgezählt wird.",
@@ -439,7 +439,7 @@
         "analogy": "Die Befundmappe, die zur Visite ans Bett mitgenommen wird: nur was hineinpasst, zählt für diese eine Beurteilung – ist die Mappe voll, muss für jedes neue Blatt ein altes heraus.",
         "explanation": "Zur Visite nimmt der Arzt nur die Befunde mit, die in die mitgebrachte Mappe passen, und beurteilt den Patienten allein anhand dieser Blätter; ein Laborwert, der noch im Stationszimmer liegt, fließt nicht in die Einschätzung ein. Genauso ist das Kontextfenster die feste Menge an Text, die das Modell für eine einzige Anfrage gleichzeitig vor sich hat. Wichtig: Die Frage und die entstehende Antwort teilen sich dieselbe Mappe – je länger die Beurteilung wird, desto weniger Platz bleibt für die Befunde. Was nicht mehr hineinpasst, bleibt schlicht unberücksichtigt.",
         "limits": "Der Arzt weiß, dass weitere Befunde existieren, und kann sie gezielt nachfordern; das Modell merkt nicht, dass etwas fehlt, und füllt die Lücke notfalls mit plausibel klingenden, aber erfundenen Angaben. Und während sich ein Behandlungsteam über Tage an den Patienten erinnert, bezieht sich die Mappe immer nur auf diese eine Visite – sie ist kein über die Zeit mitlaufendes Gedächtnis.",
-        "quality": 0.62
+        "quality": 0.68
       },
       "finance": {
         "analogy": "Der Schreibtisch des Bankberaters: nur die Unterlagen, die gleichzeitig daraufpassen, fließen ins Gespräch ein – ist der Tisch voll, muss für jedes neue Blatt ein altes weg.",
@@ -497,7 +497,7 @@
         "analogy": "Das Gespräch in der Sprechstunde, in dem man dem Arzt seine Beschwerde, sein Anliegen und seine Vorgeschichte schildert",
         "explanation": "Wer in die Sprechstunde kommt, sagt drei Dinge: was er hat (die Beschwerde), was er möchte (eine Krankschreibung, eine Diagnose, einen Rat) und was vorher schon war (frühere Beschwerden, Medikamente, Befunde). Genau das ist ein Prompt - die Eingabe, in der Anweisung, Frage und Kontext zusammenkommen und die Antwort steuern. Je klarer und vollständiger man schildert, desto treffender fällt die Einschätzung aus; lässt man Wichtiges weg oder beschreibt vage, antwortet das Modell entsprechend ungenau.",
         "limits": "Ein Arzt merkt, wenn eine wichtige Angabe fehlt, und fragt im Gespräch gezielt nach - das Modell dagegen füllt Lücken still mit Vermutungen, ohne zu sagen, dass etwas fehlte. Zudem kann der Arzt selbst untersuchen oder tasten, während das Modell nur das verarbeiten kann, was im Prompt geschrieben steht.",
-        "quality": 0.4
+        "quality": 0.55
       },
       "finance": {
         "analogy": "Das ausgefüllte Formular, das man am Bankschalter abgibt, damit der Berater genau weiss, was man will",
@@ -555,7 +555,7 @@
         "analogy": "Ein Assistenzarzt, der bei der Visite eine Diagnose völlig souverän vorträgt – obwohl in der Krankenakte gar kein Befund dazu steht.",
         "explanation": "Stellen Sie sich vor, ein junger Arzt nennt am Krankenbett flüssig und ohne Zögern einen genauen Befund, samt Werten und einem passenden Medikament. Es klingt so sicher und fachkundig wie eine echte Diagnose – nur stehen weder das Laborergebnis noch das Röntgenbild dazu wirklich in der Akte; er hat sie sich im Redefluss zusammengereimt. Genau so entsteht eine Halluzination: Das Modell formuliert eine Aussage überzeugend und plausibel, ohne sie aus einer geprüften Quelle zu haben. Der sichere Ton sagt nichts darüber, ob es stimmt – flüssig vorgetragen und richtig sind zwei verschiedene Dinge.",
         "limits": "Ein echter Assistenzarzt spürt meist, wann er nur rät, und kann in der Akte nachschlagen oder beim Oberarzt eine Zweitmeinung einholen; das Modell merkt selbst nicht, dass es gerade etwas erfindet, und hat keine solche Akte zum Nachsehen. Wie oft das passiert, hängt zudem stark von Frage und Modell ab und liegt nicht an einem einzelnen unaufmerksamen Arzt.",
-        "quality": 0.47
+        "quality": 0.57
       },
       "finance": {
         "analogy": "Ein Bankberater, der Ihnen eine Kontonummer ohne Zögern auswendig nennt – und sie in Wahrheit frei erfunden hat.",
@@ -606,7 +606,7 @@
         "analogy": "Ein Sachbearbeiter, der einen Antrag nicht nur abstempelt, sondern aufsteht, die fehlende Akte aus der Registratur holt, sie prüft und den Vorgang selbst bis zum fertigen Bescheid durchbringt.",
         "explanation": "Ein gewöhnliches Programm gibt nur eine Auskunft am Schalter, etwa \"dafür brauchen Sie Formular A\" - so wie ein Beamter, der bloß einen Hinweis nennt und den Antrag liegen lässt. Ein KI-Agent dagegen verfolgt das Ziel \"Vorgang ist erledigt\": Er überlegt die nötigen Schritte, holt sich die passende Akte aus der Registratur, füllt das richtige Antragsformular aus und prüft nach jedem Schritt, ob er dem fertigen Bescheid nähergekommen ist oder nachbessern muss. Genauso zerlegt ein Agent eine Aufgabe in Teilschritte, greift selbstständig zu den passenden Werkzeugen, bewertet seine Zwischenergebnisse und arbeitet so lange weiter, bis das Ziel erreicht ist, statt nur eine einzelne Antwort abzuliefern.",
         "limits": "Ein Sachbearbeiter versteht, was der Bürger wirklich braucht, und merkt von selbst, wenn ein Vorgang aus dem Ruder läuft; ein KI-Agent kann das Ziel falsch auffassen oder sich in einem Aktenlauf verrennen und braucht weiterhin Aufsicht. Die Verantwortung für einen Bescheid bleibt zudem immer bei den Menschen im Amt, nie beim Agenten selbst.",
-        "quality": 0.33
+        "quality": 0.58
       },
       "healthcare": {
         "analogy": "Ein Assistenzarzt, der einen Fall selbst bis zur fertigen Empfehlung treibt – mit Zugriff auf Akte, Labor und Leitlinie.",
@@ -667,7 +667,7 @@
         "analogy": "Die Sachbearbeiterin schätzt eine Angabe nicht aus dem Kopf, sondern fragt mitten in der Bearbeitung beim zuständigen Register nach und arbeitet mit der Auskunft weiter.",
         "explanation": "Eine gute Sachbearbeiterin rät bei einem Antrag nicht aus dem Gedächtnis: Wenn sie ein genaues Datum oder einen Eintrag braucht, fordert sie ihn gezielt beim zuständigen Register oder aus der passenden Akte an, bekommt die amtliche Auskunft zurück und schreibt sie in den Bescheid. Genau das tut ein Modell beim Tool Calling: Es merkt selbst, wann sein eigenes Wissen nicht reicht, ruft das passende Werkzeug auf, etwa eine Suche oder eine Datenbankabfrage, und baut dessen Ergebnis in seine Antwort ein. Die Sachbearbeiterin entscheidet, wann sie nachfragt, ist aber nicht selbst das Register.",
         "limits": "Die Sachbearbeiterin kennt ihre Zuständigkeiten und weiß meist sicher, welche Stelle welche Auskunft gibt; ein Modell dagegen kann das falsche Register anfragen oder falsche Angaben eintragen, ohne dass der Fehler sofort auffällt. Außerdem fragt der Mensch bewusst nach, während das Modell den Werkzeug-Aufruf nur aus erlernten Mustern erzeugt, ohne im menschlichen Sinn zu verstehen, was es tut.",
-        "quality": 0.3
+        "quality": 0.56
       },
       "healthcare": {
         "analogy": "Der Assistenzarzt merkt mitten im Patientengespräch, dass er nur raten würde, und fordert gezielt einen Laborwert oder ein Röntgenbild an, statt eine Zahl aus dem Bauch zu nennen.",
@@ -723,13 +723,13 @@
         "analogy": "Das genormte Antragsformular, das an jedem Amtsschalter gilt: Ein Formular passt überall, egal welche Fachstelle dahintersteht.",
         "explanation": "Stellen Sie sich ein einziges, einheitliches Antragsformular vor, das jede Behörde im Land akzeptiert - ob Bürgeramt, Bauamt oder Sozialamt. Niemand muss für jede Stelle ein eigenes Formular erfinden, weil alle dieselbe genormte Form und denselben Aktenlauf nutzen. Genauso ist MCP ein einheitlicher Standard-Anschluss, über den ein KI-Programm ganz verschiedene Werkzeuge und Datenquellen anspricht. Statt für jede Verbindung eine Sonderlösung zu bauen, reichen alle ihr Anliegen über dasselbe genormte Formular ein - das spart Arbeit, und einmal eingerichtete Verbindungen lassen sich wiederverwenden.",
         "limits": "Beim Formular ist mit dem richtigen Vordruck nur der Posteingang geregelt - ob die zuständige Stelle den Antrag dann sauber bearbeitet oder einen fehlerhaften Bescheid ausstellt, ist eine andere Frage, und genauso kann ein Werkzeug über MCP zwar andocken und trotzdem unpassend oder falsch antworten. Außerdem regelt das genormte Formular nur das Einreichen; wer welchen Antrag stellen darf und welche Daten dabei geschützt werden, bleibt eine getrennte Frage von Zuständigkeit und Datenschutz, die der Standard allein nicht beantwortet.",
-        "quality": 0.26
+        "quality": 0.48
       },
       "healthcare": {
         "analogy": "Der einheitliche Überweisungsschein, den jede Abteilung und jedes Labor im Krankenhaus akzeptiert.",
         "explanation": "Ein Assistenzarzt schickt seine Anfragen - ans Labor, zum Röntgen, an einen Facharzt - immer auf demselben standardisierten Überweisungsschein, und jede Stelle versteht ihn sofort, ohne dass man sich für jede Abteilung eine eigene Sonderabsprache ausdenken muss. Genauso ist MCP ein einheitlicher Anschluss, über den ein KI-Modell verschiedene Werkzeuge und Datenquellen anspricht. Statt für jede Verbindung eine eigene Sonderlösung zu bauen, läuft alles über dasselbe genormte Formular - das spart Aufwand, und einmal eingerichtete Werkzeuge lassen sich immer wieder neu verwenden.",
         "limits": "Der einheitliche Schein regelt nur, dass die Anfrage überall ankommt und verstanden wird - ob das Labor dann ein richtiges oder ein fehlerhaftes Ergebnis zurückschickt, sagt das Formular nicht. Auch wer welche Anfrage stellen darf und wie die Patientendaten dabei geschützt werden, bleibt eine getrennte Frage, die der Standard allein nicht beantwortet.",
-        "quality": 0.42
+        "quality": 0.52
       },
       "finance": {
         "analogy": "Der genormte EC-Karten-Schlitz am Geldautomaten: Jede Karte passt hinein, egal von welcher Bank sie kommt.",
@@ -787,7 +787,7 @@
         "analogy": "Ein Assistenzarzt, der vor jeder Empfehlung erst die Akte dieses Patienten und die aktuelle Leitlinie aufschlaegt",
         "explanation": "Statt aus dem Gedaechtnis zu raten, holt der Arzt zu genau dieser Frage zuerst die passenden Unterlagen heraus - die Krankenakte des Patienten und das einschlaegige Kapitel der gueltigen Leitlinie - und legt beides aufgeschlagen vor sich, bevor er etwas sagt. Genauso sucht RAG zu jeder Frage zuerst die passenden Textstellen aus eigenen Dokumenten und gibt sie dem Modell zusammen mit der Frage mit. Die Antwort stuetzt sich dann auf diese herausgesuchten, aktuellen Quellen statt allein auf das Training - und der Arzt kann sagen, in welchem Befund und in welcher Leitlinie es steht.",
         "limits": "Greift der Arzt zum falschen Befund, ist die Leitlinie veraltet oder findet er die richtige Stelle nicht, hilft alles Nachschlagen nichts - die Empfehlung ist nur so gut wie die herausgesuchten Unterlagen. Anders als ein echter Arzt prueft die KI zudem nicht selbst, ob ein vorgelegtes Blatt glaubwuerdig ist, sondern nimmt es so, wie es gefunden wurde.",
-        "quality": 0.49
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Ein Bankberater, der vor seiner Empfehlung nicht aus dem Kopf urteilt, sondern erst die passende Kundenmappe aus dem Aktenschrank holt und nachschlägt.",
@@ -840,13 +840,13 @@
         "analogy": "Die Registratur, die jede Akte nicht nach Aktenzeichen, sondern nach ihrem Anliegen einsortiert, sodass thematisch verwandte Vorgänge im selben Regalbereich nebeneinanderliegen.",
         "explanation": "Stellen Sie sich eine Amts-Registratur vor, in der die Akten nicht nach Eingangsdatum oder Aktenzeichen abgelegt sind, sondern nach dem, worum es inhaltlich geht: Alle Vorgänge rund um eine Baugenehmigung stehen dicht beieinander, die Vorgänge zum Wohngeld an anderer Stelle, die Gewerbeanmeldungen wieder woanders. Genau das tun Embeddings mit Texten: Jeder Text bekommt eine Art Ablageort in einem Zahlenraum, und zwar so, dass inhaltlich ähnliche Texte nah beieinander landen. Wer einen Vorgang sucht, muss dann nicht das exakte Stichwort des Antrags kennen, sondern greift in den richtigen Regalbereich und findet das Verwandte gleich daneben — gesucht wird also über inhaltliche Nähe statt über wörtliche Übereinstimmung.",
         "limits": "In der echten Registratur ordnet ein Sachbearbeiter die Akten nach nachvollziehbaren Sachgebieten ein, die jeder benennen kann; bei Embeddings entscheiden viele berechnete Zahlen über die Nähe, und warum zwei Texte als verwandt gelten, lässt sich oft nicht in einem klaren Stichwort sagen. Außerdem hat ein Regal nur wenige Richtungen zum Einsortieren, während der Zahlenraum der Embeddings weit mehr Ordnungsrichtungen nutzt, als man sich räumlich vorstellen kann.",
-        "quality": 0.42
+        "quality": 0.58
       },
       "healthcare": {
         "analogy": "Eine Wand voller Patientenakten, die nicht alphabetisch, sondern nach Krankheitsbild einsortiert sind – ähnliche Fälle hängen direkt nebeneinander.",
         "explanation": "Jede Akte bekommt an dieser Wand einen Platz, der sich allein nach dem Inhalt richtet: Fälle mit ähnlichem Beschwerdebild landen dicht beieinander, ganz andere Fälle weit entfernt. Genau das tun Embeddings mit Texten – sie geben jedem Text eine Platzangabe in einem Zahlenraum, so dass bedeutungsähnliche Texte nah zusammenliegen. Wer einen vergleichbaren Fall sucht, muss dann nicht den genauen Patientennamen kennen, sondern greift in den richtigen Wandbereich und findet alle verwandten Fälle gleich daneben. So beruht das Finden auf inhaltlicher Nähe statt auf dem exakt passenden Stichwort.",
         "limits": "Bei der Aktenwand kann eine Ärztin benennen, warum zwei Fälle nebeneinander hängen; bei Embeddings entscheiden viele berechnete Zahlen über die Nähe, und der Grund lässt sich oft nicht in einem klaren Stichwort sagen. Außerdem hat eine Wand nur wenige Richtungen, während der Zahlenraum weit mehr Dimensionen nutzt, als man sich räumlich vorstellen kann.",
-        "quality": 0.3
+        "quality": 0.56
       },
       "finance": {
         "analogy": "Das nach Themen sortierte Aktenarchiv der Bankfiliale, in dem ähnliche Vorgänge im selben Regalbereich nah beieinanderliegen.",
@@ -897,7 +897,7 @@
         "analogy": "Die Dienstvorschrift eines Amtes: Sie legt fest, welcher Sachbearbeiter welchen Antrag bearbeiten darf, ab wann die Amtsleitung mitzeichnen muss und wer am Ende prüft, ob alles seine Ordnung hat.",
         "explanation": "In einem Amt entscheidet nicht jeder Sachbearbeiter für sich allein, wie ein Fall behandelt wird. Eine Dienstvorschrift regelt die Zuständigkeiten, schreibt vor, ab welcher Tragweite die Amtsleitung gegenzeichnet, und verlangt zu jedem Vorgang einen Aktenvermerk, damit später nachvollziehbar bleibt, wer was warum entschieden hat. Genauso legt AI Governance fest, welche KI-Anwendungen erlaubt sind, wer ihren Einsatz freigeben muss, wer die Verantwortung trägt und wie Risiken vorab eingeschätzt und die Ergebnisse hinterher von einer Aufsicht kontrolliert werden. Es geht nicht um die KI-Technik selbst, sondern um die Regeln, Rollen und Aktenläufe drumherum.",
         "limits": "Eine Dienstvorschrift im Amt ist über Jahre gewachsen und betrifft eingespielte, gut bekannte Vorgänge; bei KI sind die Risiken neuer und schwerer abzuschätzen, und die passenden Regeln und Zuständigkeiten müssen vielerorts erst noch geschaffen werden.",
-        "quality": 0.55
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Die Hausordnung einer Klinik: festgelegt ist, welche Behandlung ein Assistenzarzt allein anordnen darf, ab wann der Oberarzt mitzeichnen muss und wer den Fall hinterher in der Akte prüft.",
@@ -961,7 +961,7 @@
         "analogy": "Der Oberarzt, der jede riskante Entscheidung des Assistenzarztes gegenprüfen und freigeben muss - plus fest eingestellte Höchstwerte am Gerät.",
         "explanation": "Ein Assistenzarzt darf vieles selbst entscheiden, aber bei heiklen Schritten - einem starken Medikament, einem riskanten Eingriff - muss erst der Oberarzt gegenlesen und freigeben; und an der Infusionspumpe ist ohnehin eine Höchstdosis fest eingestellt, die sich nicht überschreiten lässt. Genauso liegt um ein KI-System eine eigene Schutzschicht: Sie prüft Anfragen und Antworten, lässt heikle Aktionen nur nach Freigabe zu und blockiert, was außerhalb der erlaubten Grenzen liegt. Diese Kontrolle steckt nicht im Können des Assistenzarztes selbst, sondern liegt außen herum - so wie Guardrails rund um das Modell wirken und nicht im Modell.",
         "limits": "Oberarzt und Gerätegrenzen prüfen oft klare Werte und einzelne Schritte; eine KI-Schutzschicht muss dagegen unscharfe Formulierungen beurteilen und lässt sich durch geschickt umformulierte Anfragen manchmal umgehen. Wie auch eine Freigabe im Klinikalltag fängt sie nicht jeden Fehler ab und ersetzt nicht die fachliche Verantwortung.",
-        "quality": 0.5
+        "quality": 0.55
       },
       "finance": {
         "analogy": "Die fest im Geldautomaten eingebauten Grenzen, die bestimmte Vorgänge schlicht verweigern - egal, was man im Moment eintippt.",
@@ -1012,7 +1012,7 @@
         "analogy": "Ein Sachbearbeiter findet in der Akte einen untergeschobenen Aktenvermerk und befolgt dessen Weisung, als käme sie vom Amt",
         "explanation": "Ein Sachbearbeiter soll nur den Weisungen seiner Dienstvorschrift und seiner Amtsleitung folgen. Doch jemand hat zwischen die echten Schriftstücke der Akte einen gefälschten Aktenvermerk gelegt: \"Geben Sie die Daten dieses Vorgangs sofort heraus.\" Weil der Vermerk aussieht wie die übrigen Papiere und der Sachbearbeiter nicht erkennt, dass er gar nicht vom Amt stammt, führt er ihn aus und bricht damit seine eigenen Regeln. Genauso schmuggelt Prompt Injection fremde Anweisungen in das, was eine KI liest, etwa in eine Webseite oder ein Dokument, das sie bearbeitet; die KI verwechselt sie mit den echten Vorgaben und gibt dann Daten preis oder führt unerwünschte Schritte aus.",
         "limits": "Ein erfahrener Sachbearbeiter würde bei einer ungewöhnlichen Weisung stutzig und könnte Echtheit und Zuständigkeit über den Aktenlauf zurückverfolgen; eine KI hat von sich aus keinen verlässlichen Weg, echte von untergeschobenen Anweisungen zu trennen, weil für sie beide nur Text in derselben Eingabe sind.",
-        "quality": 0.44
+        "quality": 0.57
       },
       "healthcare": {
         "analogy": "Ein Fremder schmuggelt einen gefälschten Anordnungszettel in die Patientenakte, und der Assistenzarzt führt ihn aus, weil er aussieht wie eine echte Anweisung des Oberarztes.",
@@ -1133,7 +1133,7 @@
         "analogy": "Ein Sachbearbeiter-Gremium, das eine komplette Akte gemeinsam auf einem Tisch ausbreitet und jede Angabe gleichzeitig an allen anderen misst, statt das Blatt im Aktenlauf von Schreibtisch zu Schreibtisch weiterzureichen.",
         "explanation": "Frueher wanderte ein Antrag im Aktenlauf Station fuer Station: erst das eine Amt, dann das naechste, und jeder Sachbearbeiter sah nur seinen Teil. Im Gremium dagegen liegt das ganze Antragsformular fuer alle zugleich offen, und jede Angabe wird im Licht aller anderen gewichtet: ein Einkommen wiegt anders neben der Miete, der bestehenden Rate und der Haushaltsgroesse. Genauso nimmt der Transformer alle Teile der Eingabe gleichzeitig und berechnet fuer jedes Token, wie stark es mit jedem anderen zusammenhaengt; die Bedeutung entsteht aus diesem gemeinsamen Abwaegen, nicht aus der Reihenfolge des Posteingangs. Und weil alles parallel statt nacheinander geprueft wird, laesst sich das Verfahren schnell auf grosse Mengen anwenden.",
         "limits": "Ein Gremium kann fuer jedes Gewicht einen nachvollziehbaren Grund im Aktenvermerk festhalten, waehrend der Transformer sehr viele Teile ueber erlernte Zahlenwerte verknuepft, die sich nicht einzeln in Worte fassen lassen. Ausserdem schaetzt im Bild jeder Sachbearbeiter den anderen gleich ein, waehrend das Modell gerichtet gewichtet: Wort A kann sich stark auf Wort B beziehen, ohne dass das umgekehrt ebenso gilt.",
-        "quality": 0.46
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Ein Tumorboard, an dem alle Ärztinnen und Ärzte gleichzeitig die komplette Krankenakte vor sich haben und jeden Befund daran messen, wie er zu allen anderen passt.",
@@ -1195,13 +1195,13 @@
         "analogy": "Ein Sachbearbeiter, der einen kniffligen Antrag nicht sofort abstempelt, sondern erst Schritt für Schritt Aktenvermerke in die Akte schreibt",
         "explanation": "Statt am Schalter gleich Ja oder Nein zu sagen, arbeitet der Sachbearbeiter den Fall der Reihe nach durch: erst prüft er die eingereichten Unterlagen, dann die einzelnen Voraussetzungen, dann die Folgen, und hält jeden Zwischenschritt als Aktenvermerk fest, bevor er entscheidet. Genauso erzeugt ein Reasoning Model vor der eigentlichen Antwort erst eine Kette sichtbarer Zwischenschritte und wendet dafür spürbar mehr Bearbeitungszeit auf. Dieser gründlichere Aktenlauf kostet einen Moment länger, führt bei verschachtelten Anträgen mit mehreren Bedingungen aber öfter zur richtigen Entscheidung.",
         "limits": "Die Aktenvermerke des Sachbearbeiters lassen sich nachprüfen und müssen am Ende zur Entscheidung passen; die Zwischenschritte des Modells sind nur eine plausibel klingende Erzählung und müssen nicht der Weg sein, auf dem es intern wirklich zur Antwort kam. Und ein langer, sauber geführter Aktenlauf ist keine Garantie: Auch er kann am Ende beim falschen Ergebnis landen.",
-        "quality": 0.42
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Ein Arzt, der bei einem unklaren Fall erst laut und Schritt für Schritt durch die Krankenakte geht, statt sofort eine Diagnose hinzuwerfen",
         "explanation": "Statt sofort eine Verdachtsdiagnose zu nennen, arbeitet sich der Arzt hörbar durch den Fall: erst das Patientengespräch, dann die Laborwerte, dann das Röntgenbild, und benennt nach jedem Schritt, was das für die nächste Überlegung bedeutet. Dieses laute Durchgehen kostet in der Sprechstunde spürbar mehr Zeit, führt bei verzwickten Fällen mit mehreren möglichen Ursachen aber öfter zur richtigen Antwort. Genauso erzeugt ein Reasoning Model vor der eigentlichen Antwort erst eine Kette sichtbarer Zwischenschritte und wendet dafür mehr Rechenzeit auf, und trifft bei mehrstufigen Aufgaben dadurch häufiger ins Schwarze.",
         "limits": "Das laute Mitdenken des Arztes stützt sich am Ende auf echte Messwerte und eine prüfbare Leitlinie; die Zwischenschritte des Modells sind nur eine plausibel klingende Textfolge und müssen weder geprüft sein noch dem tatsächlichen internen Weg zur Antwort entsprechen. Und ein langer, sauber wirkender Gedankengang kann trotzdem zum falschen Ergebnis führen.",
-        "quality": 0.55
+        "quality": 0.68
       },
       "finance": {
         "analogy": "Ein Bankberater, der Ihren Kreditantrag fürs Auto nicht sofort zusagt, sondern erst Schritt für Schritt einen Notizzettel mit Zwischenüberlegungen füllt.",
@@ -1319,7 +1319,7 @@
         "analogy": "Ein erfahrener Sachbearbeiter gibt einer neuen Kraft eine Handreichung mit, in der nicht nur der Bescheid steht, sondern auch sein Gespür dafür, wie eindeutig oder knapp jeder Fall liegt.",
         "explanation": "Ein altgedienter Beamter schreibt für die Sachbearbeitung am Schalter eine knappe Handreichung. Darin steht nicht nur, ob ein Antrag bewilligt oder abgelehnt wird, sondern auch, wie klar oder knapp ein Fall jeweils liegt und worauf bei Zweifeln zu achten ist. Genau diese abgestuften Einschätzungen sind beim KI-Begriff entscheidend: Das schlanke Schüler-Modell lernt vom großen Lehrer-Modell nicht bloß die fertigen Bescheide, sondern dessen feine Sicherheitsabstufungen. So bearbeitet die neue Kraft die Standardfälle bald ähnlich treffsicher wie der Profi, aber schneller und mit weniger Aufwand.",
         "limits": "Atypische Anträge, die echtes Hintergrundwissen und Abwägung verlangen, sprengen die Handreichung und brauchen weiterhin den erfahrenen Sachbearbeiter. Und anders als ein Mensch kann die neue Kraft nichts von sich aus dazulernen, was nicht in der Handreichung steht.",
-        "quality": 0.45
+        "quality": 0.55
       },
       "healthcare": {
         "analogy": "Eine erfahrene Fachärztin lernt einen Assistenzarzt so an, dass er ihre Fälle bald allein und schneller beurteilt.",
@@ -1381,7 +1381,7 @@
         "analogy": "Wie eine Registratur, die in den längst fertigen Akten alle Zahlen nur noch gerundet führt, statt jeden Wert auf die Stelle genau.",
         "explanation": "Die Akten sind angelegt und der Sachverhalt steht fest - so wie ein Modell sein Wissen bereits gelernt hat. Die Registratur ändert nichts an den Vorgängen selbst, sie schreibt die Werte nur gröber auf: Gerundete Beträge brauchen weniger Platz im Regal und sind schneller durchzusehen. Genauso lässt die Quantisierung das gelernte Wissen unangetastet und speichert nur die feststehenden Werte in gröberen Stufen, sodass das Modell in weniger Speicher passt und schneller arbeitet.",
         "limits": "Die Registratur rundet Zahlen in überschaubar vielen Akten, das Modell dagegen Millionen Werte zugleich, sodass sich die kleinen Ungenauigkeiten aufsummieren und die Ergebnisse bei zu grobem Runden spürbar leiden können. Und während im Amt klar ist, welche Beträge man bedenkenlos runden darf, lässt sich beim Modell vorab kaum sagen, welche Werte fein bleiben müssen.",
-        "quality": 0.42
+        "quality": 0.5
       },
       "healthcare": {
         "analogy": "Wie ein Fieberthermometer, das die Temperatur nur noch in halben Grad-Schritten anzeigt statt auf eine Nachkommastelle genau.",
@@ -1511,7 +1511,7 @@
         "analogy": "Ein einzelnes Laborgerät: eine eilige Probe sofort allein durchlaufen lassen oder warten, bis ein voller Probenträger zusammen analysiert wird.",
         "explanation": "Lässt das Labor eine dringende Probe sofort einzeln laufen, kommt dieser eine Befund schnell zurück (Latenz), doch das Gerät ist dabei kaum ausgelastet. Wartet es stattdessen, bis ein ganzer Probenträger voll ist, und analysiert alle gemeinsam in einem Lauf, schafft es viel mehr Proben am Tag (Durchsatz) - genau das ist das Bündeln (Batching). Beides zugleich gelingt am selben Gerät nicht: Wer auf den schnellen Einzelbefund optimiert, opfert Stückzahl; wer den Träger füllt, lässt die früh eingelegte Probe länger warten.",
         "limits": "Im Labor entscheidet die medizinische Dringlichkeit, welche Probe vorgezogen wird, beim KI-Batching dagegen rein die technische Auslastung ohne inhaltliche Bewertung. Zudem laufen die Proben im Gerät meist nacheinander, während gebündelte KI-Anfragen tatsächlich in einem gemeinsamen Rechenschritt verarbeitet werden.",
-        "quality": 0.36
+        "quality": 0.5
       },
       "finance": {
         "analogy": "Der eine Schalter in der Bankfiliale am Monatsanfang: Entweder ein Kunde wird blitzschnell bedient, oder es kommen möglichst viele pro Stunde durch - beides zugleich gelingt am selben Schalter selten.",
@@ -1634,7 +1634,7 @@
         "analogy": "Das feste Terminkontingent einer Arztpraxis: pro Tag werden nur so viele Sprechstunden-Termine vergeben, wie die Praxis bewältigen kann.",
         "explanation": "Wie die Praxis pro Tag nur eine begrenzte Zahl an Terminen ausgibt, damit Ärzte und Personal nicht überlaufen werden, lässt ein Rate Limit nur eine bestimmte Zahl an Anfragen pro Zeitfenster auf die gemeinsam genutzte Rechenkapazität. Beide deckeln rein die Menge pro Zeit: Sind die Termine des Tages vergeben, bekommt man keinen mehr, egal wie oft man anruft. Wer abgewiesen wird, muss warten, bis das nächste Zeitfenster wieder freie Termine hat. Die Grenze schützt nicht den einzelnen Patienten, sondern hält die Praxis für alle funktionsfähig.",
         "limits": "Das Bild trifft die reine Mengen-Drosselung gut, vereinfacht aber: Eine Praxis zählt nur die Zahl der Termine, während ein Rate Limit oft gleichzeitig zwei Dinge misst, nämlich die Zahl der Anfragen und deren Umfang. Außerdem darf man nach einer Abweisung meist schon nach Sekunden oder Minuten erneut anfragen, nicht erst am nächsten Tag.",
-        "quality": 0.4
+        "quality": 0.58
       },
       "finance": {
         "analogy": "Das Tageslimit am Geldautomaten: Ab einer bestimmten Summe je Zeitfenster gibt der Automat einfach nichts mehr heraus.",
@@ -1696,7 +1696,7 @@
         "analogy": "Ein Befundarchiv, das eine geschilderte Krankengeschichte nicht nach Patientennummer, sondern nach inhaltlicher Ähnlichkeit blitzschnell mit den nächstgelegenen früheren Fällen abgleicht.",
         "explanation": "Wenn ein Patient in der Sprechstunde seine Beschwerden schildert, braucht der Arzt nicht die Akte mit genau diesem Namen, sondern frühere Fälle mit einer ähnlichen Lage. Ein solches Archiv legt jede Krankenakte nicht nach Aktennummer, sondern nach ihrem Inhalt ab und holt in Sekunden die inhaltlich nächstgelegenen Fälle hervor, auch aus Millionen von Akten. Genauso speichert eine Vektordatenbank Inhalte als inhaltliche Steckbriefe und liefert per Ähnlichkeitssuche die nächstgelegenen Einträge zu einer Anfrage, statt auf ein exakt passendes Stichwort zu warten. So legt sie einer KI bei großen Datenmengen die passenden Hintergrundunterlagen überhaupt erst rechtzeitig auf den Tisch.",
         "limits": "Das Archiv findet die inhaltlich ähnlichsten Fälle, aber Ähnlichkeit ist nicht dasselbe wie Richtigkeit: Der nächstgelegene Fall kann auf den ersten Blick passen und im Entscheidenden trotzdem danebenliegen. Und eine Akte, die fehlerhaft oder gar nicht eingeordnet abgelegt wurde, taucht auch bei bester Suche nicht auf.",
-        "quality": 0.54
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Ein Bankarchiv, das auf Zuruf nicht nach Aktenzeichen, sondern nach inhaltlicher Ähnlichkeit blitzschnell die Beratungsfälle heraussucht, die dem aktuellen am nächsten kommen.",
@@ -1752,7 +1752,7 @@
         "analogy": "Der Sachbearbeiter, der für den aktuellen Vorgang nur sein Schreibtisch-Gedächtnis nutzt und alles Dauerhafte aus der Bürgerakte in der Registratur holt.",
         "explanation": "Was auf dem Schreibtisch liegt, hat der Sachbearbeiter beim aktuellen Behördengang im Kopf – doch sobald der Bürger das Amt verlässt, ist dieses kurze Erinnern weg; genauso hält der Agent die laufende Anfrage nur flüchtig im Kontextfenster. Damit etwas erhalten bleibt, wird es bewusst in die Akte geschrieben und beim nächsten Antrag wieder aus der Registratur hervorgeholt – so wie der Agent dauerhaften Kontext gezielt aus einem externen Speicher zurückholt. Entscheidend ist: Der Sachbearbeiter selbst behält nichts; das Gedächtnis steckt allein in der Akte und im Archiv ringsherum, nicht im Kopf – ebenso wie das Sprachmodell selbst nichts speichert.",
         "limits": "Eine Akte ist geordnet abgeheftet, und der Sachbearbeiter findet einen Vorgang anhand des klaren Aktenzeichens wieder, während der KI-Speicher Einträge meist ungeordnet sammelt und beim Abrufen nur nach ungefährer Ähnlichkeit sucht – so bleibt manchmal unklar, ob ein gefundener Eintrag überhaupt noch stimmt. Zudem lässt sich ein Blatt aus der Akte gezielt herausnehmen, während einmal abgelegte KI-Erinnerungen schwerer sauber zu entfernen sind.",
-        "quality": 0.5
+        "quality": 0.58
       },
       "healthcare": {
         "analogy": "Der Assistenzarzt, der im Sprechzimmer alles aus dem Kopf hat – aber vor jedem neuen Patienten erst die Krankenakte aus dem Archiv holt.",
@@ -1820,7 +1820,7 @@
         "analogy": "Ein Assistenzarzt, der sich die Akte einer Patientin so fest einprägt, dass ihre Details plötzlich im Bericht der nächsten Patientin auftauchen.",
         "explanation": "Stellen Sie sich vor, der Assistenzarzt hat die Krankengeschichte und Adresse einer Patientin so gut auswendig gelernt, dass er sie versehentlich in den Befund der nächsten Patientin hineinschreibt - Angaben, die unter die Schweigepflicht fallen und nur diese eine Patientin etwas angehen. Genauso gibt ein Modell manchmal auswendig gelernte Trainingsdaten fast wortgleich in einer Antwort wieder, sodass vertrauliche Inhalte bei jemandem landen, der sie nie hätte sehen dürfen. Es gibt aber noch eine zweite Spielart: Wenn dieser Arzt seine Facharztprüfung an genau den Fällen ablegt, die er schon während der Ausbildung im Detail durchgearbeitet hat, schneidet er glänzend ab - aber die Note zeigt nur, dass er die Fälle kennt, nicht ob er wirklich gut diagnostiziert. Ebenso wirkt ein Modell scheinbar stark, wenn seine Testfälle schon im Training steckten, und der gemessene Wert ist dann geschönt und nicht aussagekräftig.",
         "limits": "Das Bild vom verrutschten Aktendetail passt gut zum ungewollten Austreten vertraulicher Inhalte, unterschätzt aber, dass beim Modell oft nur verstreute, schwer nachverfolgbare Fragmente durchsickern und nicht ganze Akten. Beim vorab bekannten Prüfungsfall verrät das Modell zudem kein Geheimnis - hier ist allein der Leistungswert künstlich geschönt.",
-        "quality": 0.42
+        "quality": 0.54
       },
       "finance": {
         "analogy": "Ein vertraulicher Kontostand, der versehentlich auf dem Kassenbon der nächsten Kundin mitgedruckt wird.",
@@ -1876,7 +1876,7 @@
         "analogy": "Eine Amtsleitung, die einen eingehenden Antrag in Teilfragen zerlegt, jede ans zuständige Fachamt schickt und deren Aktenvermerke am Ende zu einem Bescheid zusammenführt.",
         "explanation": "Statt dass eine einzelne Sachbearbeiterin den ganzen Antrag allein durcharbeitet, teilt die Amtsleitung ihn auf: Ein Amt prüft das Einkommen, ein anderes die Wohnsituation, ein drittes holt alte Unterlagen aus der Registratur. Jede Stelle bearbeitet nur ihren Ausschnitt mit den eigenen Akten und Vorschriften, manche gleichzeitig, manche nacheinander, und schickt ihre Stellungnahme zurück. Genauso zerlegt bei der Orchestrierung ein planender KI-Agent eine grosse Aufgabe in kleine Schritte, leitet jeden an den passenden Spezial-Agenten weiter und fügt deren Teilantworten zum fertigen Ergebnis zusammen. Entscheidend ist dann nicht mehr, wie clever eine Einzelne ist, sondern wie gut die Amtsleitung aufteilt, weiterleitet und am Schluss alles korrekt zum Bescheid zusammensetzt.",
         "limits": "Im Amt sind die Zuständigkeiten fest geregelt und der Aktenlauf bleibt nachvollziehbar protokolliert, während der KI-Planer die Helfer erst zur Laufzeit je nach Aufgabe beauftragt und dabei oft schwer durchschaubar bleibt. Und während ein Amt einen Rechenfehler im Aktenvermerk meist noch bemerkt, kann im KI-Verbund der Fehler eines einzelnen Helfers unbemerkt durch die ganze Kette wandern und im zusammengeführten Ergebnis landen.",
-        "quality": 0.47
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Ein Oberarzt nimmt einen komplizierten Fall auseinander, schickt jede offene Frage an die passende Stelle - Labor, Röntgen, Facharzt - und fügt die Befunde zu einem Behandlungsplan zusammen.",
@@ -1943,7 +1943,7 @@
         "analogy": "Der Unterschied zwischen einem Diagnosetest, der in einer großen Studie geglänzt hat, und demselben Test, der erst an den eigenen Patienten in der Klinik beweisen muss, dass er wirklich trifft.",
         "explanation": "Ein neuer Test wird in einer Studie an vielen Patienten geprüft und liefert eine vergleichbare Trefferquote — so wie ein Benchmark ein Modell allgemein und vergleichbar bewertet. Bevor die Klinik sich darauf verlässt, prüft sie ihn aber an den eigenen Patienten nach: Das ist die eigene Eval, die zeigt, ob er bei der konkreten Aufgabe taugt. Damit das ehrlich bleibt, legt man vorher fest, was als Treffer zählt, und vergleicht jedes Ergebnis gegen eine gesicherte Diagnose. Wird das Verfahren geändert, prüft man neu nach — und nimmt dafür frische Patientenfälle, nicht dieselben, an denen der Test schon eingestellt wurde.",
         "limits": "Das Bild hinkt darin, dass eine in einer Patientengruppe gemessene Trefferquote sich nicht von selbst auf eine andere überträgt, in der eine Krankheit viel häufiger oder seltener vorkommt. Außerdem prüft so ein Test immer nur die Fälle, die jemand vorher ausgesucht hat — die unzähligen ungewöhnlichen Patienten des echten Alltags deckt er nie vollständig ab.",
-        "quality": 0.5
+        "quality": 0.62
       },
       "finance": {
         "analogy": "Die wiederkehrende Prüfung einer Bankberaterin: Sie löst immer wieder dieselben vorbereiteten Beispielgespräche, und jede Antwort wird an einer festen Checkliste mit klarer Punktzahl gemessen.",
@@ -1999,7 +1999,7 @@
         "analogy": "Die mitlaufende Akte, in der jede Station eines Vorgangs mit Datum, Kürzel und Aktenvermerk festgehalten wird.",
         "explanation": "In einer ordentlich geführten Akte ist lückenlos vermerkt, was mit einem Antrag geschah: wann er im Posteingang landete, welche Sachbearbeiter ihn bearbeiteten, welche Rückfragen und Stellungnahmen dazwischenlagen und welcher Bescheid am Ende hinausging. Genauso hält Observability fest, was ein KI-System im Betrieb wirklich getan hat: welche Anfrage hineinging, welche Zwischenschritte und Hilfsmittel es nutzte und welche Antwort herauskam. Stimmt am Ende etwas nicht, geht man die vermerkten Stationen durch und findet die Stelle, an der es schieflief, statt nur auf das fragwürdige Endergebnis zu starren.",
         "limits": "Ein Aktenvermerk belegt sauber, dass und durch wen ein Schritt erledigt wurde, sagt aber nicht von selbst, ob die getroffene Entscheidung inhaltlich richtig war. Ob eine KI-Antwort wirklich taugt, muss zusätzlich beurteilt werden und lässt sich nicht wie ein Bearbeitungsstempel schlicht ablesen.",
-        "quality": 0.33
+        "quality": 0.52
       },
       "healthcare": {
         "analogy": "Der Patientenmonitor am Intensivbett zusammen mit der lückenlosen Verlaufskurve in der Krankenakte.",
@@ -2067,7 +2067,7 @@
         "analogy": "Die Krankenakte, in der jeder Eintrag mit Datum, Uhrzeit und Namen des Behandlers fest verbucht ist und in der man nachträglich nichts mehr wegradieren oder herausreißen kann.",
         "explanation": "Stell dir eine Patientenakte vor, in der jede Diagnose, jedes Medikament und jeder Befund mit Zeitpunkt und dem Namen des verantwortlichen Arztes festgehalten wird – und die so geführt ist, dass niemand heimlich eine Seite herausnehmen oder einen alten Eintrag überschreiben kann. Genau das leistet ein Audit Trail bei einem KI-System: Er hält fest, welche Eingabe das System bekam, welche Antwort es gab und wer wann etwas an den Einstellungen oder der Modellversion geändert hat – und zwar so, dass spätere Manipulationen auffallen würden. Fragt später jemand eine Empfehlung an, kann man Schritt für Schritt nachlesen, auf welcher Grundlage sie zustande kam, statt sich auf Erinnerungen zu verlassen. Entscheidend ist dabei nicht, wie viel notiert wird, sondern dass das Notierte vollständig und unverändert bleibt.",
         "limits": "In der Akte verantwortet ein namentlich benannter Arzt jeden Eintrag, während sich bei automatisierten KI-Entscheidungen kaum auf eine konkrete Person zurückführen lässt, wer die Empfehlung zu verantworten hat. Außerdem belegt die lückenlose Akte nur, dass und wie eine Entscheidung festgehalten wurde – nicht, ob sie inhaltlich richtig war.",
-        "quality": 0.57
+        "quality": 0.62
       },
       "finance": {
         "analogy": "Das fälschungssichere Kassenbuch, in dem mit Datum und Namen steht, wer wann welchen Betrag eingetragen hat – und in dem man nichts mehr wegradieren oder herausreißen kann.",
@@ -2123,7 +2123,7 @@
         "analogy": "Ein Amt, das jeden Antrag erst nach Gefährlichkeit einsortiert und dann unterschiedlich streng behandelt – von kurzer Anzeige über volle Genehmigung mit dicker Akte bis zum klaren Nein.",
         "explanation": "Am Schalter landet nicht jeder Antrag im selben Verfahren: Harmloses wird mit einer kurzen Anzeige durchgewunken, für Heikles verlangt der Sachbearbeiter eine vollständige Akte mit Nachweisen, laufenden Vermerken und einem Menschen, der draufschaut, bevor der Bescheid ergeht – und das Gefährlichste lehnt das Amt rundheraus ab, dafür gibt es gar kein Genehmigungsverfahren. Genauso sortiert der AI Act jedes KI-System nach seinem Schadenspotenzial in eine von vier Stufen ein und knüpft daran abgestufte Pflichten: minimales Risiko bleibt fast frei, Hochrisiko-Systeme brauchen Dokumentation, menschliche Aufsicht und eine Prüfung vor dem Einsatz, und unannehmbare Anwendungen sind verboten. Und wie das Amt sowohl den, der etwas baut, als auch den, der es später betreibt, in die Pflicht nimmt, gelten die Auflagen für Anbieter wie Betreiber des Systems.",
         "limits": "Anders als ein einzelnes Amt, das einmal einen Bescheid ausstellt und die Sache abhakt, verlangt der AI Act, dass ein riskantes System über seine ganze Laufzeit weiter überwacht wird. Außerdem ersetzt er kein anderes Recht: Seine Auflagen gelten EU-weit zusätzlich zu Vorgaben wie dem Datenschutz, so als müsste derselbe Antrag gleich mehrere Aufsichtsstellen zufriedenstellen.",
-        "quality": 0.55
+        "quality": 0.6
       },
       "healthcare": {
         "analogy": "Die Risikoklassen für Medizinprodukte, vom Pflaster bis zum Herzschrittmacher.",
