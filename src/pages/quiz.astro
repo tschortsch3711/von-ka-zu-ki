@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import glossary from '../data/glossary.json';
+import type { GlossaryTerm } from '../data/types';
+import { termHref } from '../lib/paths';
+
+// Schlanker Datensatz fuer das clientseitige Quiz (kein Backend, alles statisch erzeugt).
+const quizData = (glossary as GlossaryTerm[]).map((t) => ({
+  term: t.term,
+  def: t.shortDefinition,
+  difficulty: t.difficulty,
+  category: t.category,
+  misconception: t.misconceptions && t.misconceptions.length > 0 ? t.misconceptions[0] : null,
+  href: termHref(t.slug),
+}));
+---
+<BaseLayout
+  title="Wissenstest"
+  description="Teste dein KI-Wissen: Begriffe erraten oder Mythos von Wahrheit unterscheiden – in drei Schwierigkeitsstufen."
+>
+  <section class="section container quiz">
+    <h1>Wissenstest</h1>
+    <p class="lead">Wie gut kennst du die KI-Begriffe? Wähl eine Quiz-Art und eine Stufe – die Fragen werden bei jedem Start neu zusammengestellt.</p>
+
+    <!-- Setup -->
+    <div id="quiz-setup" class="card quiz-setup">
+      <fieldset class="quiz-fieldset">
+        <legend>Quiz-Art</legend>
+        <label class="quiz-opt"><input type="radio" name="mode" value="mc" checked /> <span><strong>Begriff erraten</strong><br /><span class="muted">Beschreibung lesen, passenden Begriff wählen.</span></span></label>
+        <label class="quiz-opt"><input type="radio" name="mode" value="tf" /> <span><strong>Mythos oder Wahrheit</strong><br /><span class="muted">Stimmt die gezeigte Definition – oder ist sie ein Mythos?</span></span></label>
+      </fieldset>
+      <fieldset class="quiz-fieldset">
+        <legend>Schwierigkeit</legend>
+        <label class="quiz-opt quiz-opt--inline"><input type="radio" name="level" value="all" checked /> Gemischt</label>
+        <label class="quiz-opt quiz-opt--inline"><input type="radio" name="level" value="basic" /> Einstieg</label>
+        <label class="quiz-opt quiz-opt--inline"><input type="radio" name="level" value="intermediate" /> Aufbau</label>
+        <label class="quiz-opt quiz-opt--inline"><input type="radio" name="level" value="advanced" /> Vertiefung</label>
+      </fieldset>
+      <button class="btn btn--primary" id="quiz-start" type="button">Quiz starten →</button>
+    </div>
+
+    <!-- Spiel -->
+    <div id="quiz-play" hidden>
+      <div class="quiz-bar">
+        <span id="quiz-step" class="quiz-bar__step"></span>
+        <span id="quiz-score" class="badge badge--accent"></span>
+      </div>
+      <div class="card quiz-question">
+        <p class="quiz-prompt" id="quiz-prompt"></p>
+        <div class="quiz-options" id="quiz-options"></div>
+        <div class="quiz-feedback" id="quiz-feedback" hidden></div>
+        <button class="btn btn--primary quiz-next" id="quiz-next" type="button" hidden>Weiter →</button>
+      </div>
+    </div>
+
+    <!-- Ergebnis -->
+    <div id="quiz-result" class="card quiz-result" hidden>
+      <h2 id="quiz-result-title"></h2>
+      <p id="quiz-result-text" class="lead"></p>
+      <button class="btn btn--primary" id="quiz-restart" type="button">Neues Quiz</button>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ quizData }}>
+    (function () {
+      var LEVEL_LABEL = { basic: 'Einstieg', intermediate: 'Aufbau', advanced: 'Vertiefung' };
+      var QUIZ_LEN = 8;
+
+      var elSetup = document.getElementById('quiz-setup');
+      var elPlay = document.getElementById('quiz-play');
+      var elResult = document.getElementById('quiz-result');
+      var elStep = document.getElementById('quiz-step');
+      var elScore = document.getElementById('quiz-score');
+      var elPrompt = document.getElementById('quiz-prompt');
+      var elOptions = document.getElementById('quiz-options');
+      var elFeedback = document.getElementById('quiz-feedback');
+      var elNext = document.getElementById('quiz-next');
+      var elResTitle = document.getElementById('quiz-result-title');
+      var elResText = document.getElementById('quiz-result-text');
+
+      var questions = [];
+      var idx = 0;
+      var score = 0;
+      var answered = false;
+
+      function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+        }
+        return a;
+      }
+
+      function buildQuestions(mode, level) {
+        var pool = level === 'all' ? quizData : quizData.filter(function (t) { return t.difficulty === level; });
+        if (pool.length === 0) pool = quizData;
+        var distractorSource = pool.length >= 4 ? pool : quizData;
+        var subjects = shuffle(pool).slice(0, Math.min(QUIZ_LEN, pool.length));
+
+        return subjects.map(function (s) {
+          if (mode === 'mc') {
+            var others = shuffle(distractorSource.filter(function (t) { return t.term !== s.term; })).slice(0, 3);
+            var options = shuffle([s].concat(others)).map(function (t) { return t.term; });
+            return { type: 'mc', prompt: s.def, correct: s.term, options: options, href: s.href, misconception: s.misconception };
+          }
+          // tf: Aussage "«term» bedeutet: «def»" — zufaellig echte oder fremde Definition
+          var isTrue = Math.random() < 0.5;
+          var shownDef = s.def;
+          if (!isTrue) {
+            var pickPool = distractorSource.filter(function (t) { return t.term !== s.term && t.def !== s.def; });
+            if (pickPool.length === 0) { isTrue = true; }
+            else { shownDef = shuffle(pickPool)[0].def; }
+          }
+          return {
+            type: 'tf', namedTerm: s.term, realDef: s.def, shownDef: shownDef,
+            isTrue: isTrue, href: s.href, misconception: s.misconception,
+          };
+        });
+      }
+
+      function render() {
+        answered = false;
+        var q = questions[idx];
+        elStep.textContent = 'Frage ' + (idx + 1) + ' von ' + questions.length;
+        elScore.textContent = score + ' richtig';
+        elFeedback.hidden = true;
+        elFeedback.innerHTML = '';
+        elNext.hidden = true;
+        elOptions.innerHTML = '';
+
+        if (q.type === 'mc') {
+          elPrompt.innerHTML = 'Welcher Begriff passt zu dieser Beschreibung?<br><em>„' + q.prompt + '“</em>';
+          q.options.forEach(function (opt) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'quiz-choice';
+            b.textContent = opt;
+            b.addEventListener('click', function () { answerMC(b, opt, q); });
+            elOptions.appendChild(b);
+          });
+        } else {
+          elPrompt.innerHTML = '„<strong>' + q.namedTerm + '</strong>“ bedeutet:<br><em>„' + q.shownDef + '“</em><br>Stimmt das?';
+          [['Stimmt', true], ['Mythos', false]].forEach(function (pair) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'quiz-choice quiz-choice--tf';
+            b.textContent = pair[0];
+            b.addEventListener('click', function () { answerTF(b, pair[1], q); });
+            elOptions.appendChild(b);
+          });
+        }
+      }
+
+      function lockOptions() {
+        var btns = elOptions.querySelectorAll('button');
+        for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
+      }
+
+      function showFeedback(ok, html) {
+        elFeedback.className = 'quiz-feedback ' + (ok ? 'quiz-feedback--ok' : 'quiz-feedback--no');
+        elFeedback.innerHTML = html;
+        elFeedback.hidden = false;
+        elNext.hidden = false;
+        elNext.textContent = idx + 1 < questions.length ? 'Weiter →' : 'Auswertung →';
+        elNext.focus();
+      }
+
+      function answerMC(btn, choice, q) {
+        if (answered) return;
+        answered = true;
+        var ok = choice === q.correct;
+        lockOptions();
+        btn.classList.add(ok ? 'is-correct' : 'is-wrong');
+        if (!ok) {
+          var all = elOptions.querySelectorAll('button');
+          for (var i = 0; i < all.length; i++) if (all[i].textContent === q.correct) all[i].classList.add('is-correct');
+        }
+        if (ok) score++;
+        var fb = ok ? '✓ Richtig.' : '✗ Richtig wäre <strong>' + q.correct + '</strong>.';
+        fb += ' <a href="' + q.href + '">Mehr zu „' + q.correct + '“ →</a>';
+        if (q.misconception) fb += '<br><span class="quiz-note">Häufiger Irrtum: ' + q.misconception + '</span>';
+        showFeedback(ok, fb);
+      }
+
+      function answerTF(btn, choice, q) {
+        if (answered) return;
+        answered = true;
+        var ok = choice === q.isTrue;
+        lockOptions();
+        btn.classList.add(ok ? 'is-correct' : 'is-wrong');
+        if (ok) score++;
+        var fb = ok ? '✓ Richtig erkannt.' : '✗ Leider falsch.';
+        if (q.isTrue) {
+          fb += ' Die Definition stimmt.';
+        } else {
+          fb += ' „<strong>' + q.namedTerm + '</strong>“ bedeutet eigentlich: ' + q.realDef;
+        }
+        fb += ' <a href="' + q.href + '">Mehr zu „' + q.namedTerm + '“ →</a>';
+        if (q.misconception) fb += '<br><span class="quiz-note">Häufiger Irrtum: ' + q.misconception + '</span>';
+        showFeedback(ok, fb);
+      }
+
+      function finish() {
+        elPlay.hidden = true;
+        elResult.hidden = false;
+        var pct = Math.round((score / questions.length) * 100);
+        elResTitle.textContent = score + ' von ' + questions.length + ' richtig (' + pct + '%)';
+        var msg;
+        if (pct === 100) msg = 'Perfekt! Du hast die Begriffe sicher drauf.';
+        else if (pct >= 75) msg = 'Stark – das sitzt schon richtig gut.';
+        else if (pct >= 50) msg = 'Solide Basis. Schau dir die offenen Begriffe im Glossar nochmal an.';
+        else msg = 'Ein guter Anfang. Mit den Lernpfaden und dem Glossar wird das schnell mehr.';
+        elResText.textContent = msg;
+        elResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      elNext.addEventListener('click', function () {
+        idx++;
+        if (idx < questions.length) render();
+        else finish();
+      });
+
+      function start() {
+        var mode = (document.querySelector('input[name="mode"]:checked') || {}).value || 'mc';
+        var level = (document.querySelector('input[name="level"]:checked') || {}).value || 'all';
+        questions = buildQuestions(mode, level);
+        idx = 0; score = 0;
+        elSetup.hidden = true;
+        elResult.hidden = true;
+        elPlay.hidden = false;
+        render();
+      }
+
+      document.getElementById('quiz-start').addEventListener('click', start);
+      document.getElementById('quiz-restart').addEventListener('click', function () {
+        elResult.hidden = true;
+        elSetup.hidden = false;
+        elSetup.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    })();
+  </script>
+
+  <style>
+    .quiz-setup { display: flex; flex-direction: column; gap: 1.3rem; margin-top: 1.5rem; }
+    .quiz-fieldset { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem 1.1rem; margin: 0; }
+    .quiz-fieldset legend { font-weight: 700; padding: 0 0.4rem; }
+    .quiz-opt { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.4rem 0; cursor: pointer; }
+    .quiz-opt input { margin-top: 0.25rem; }
+    .quiz-opt--inline { display: inline-flex; align-items: center; margin-right: 1.2rem; }
+
+    .quiz-bar { display: flex; justify-content: space-between; align-items: center; margin: 1.5rem 0 0.8rem; }
+    .quiz-bar__step { color: var(--text-muted); font-size: 0.95rem; }
+    .quiz-question { display: flex; flex-direction: column; gap: 1rem; }
+    .quiz-prompt { font-size: 1.1rem; margin: 0; line-height: 1.5; }
+    .quiz-options { display: grid; gap: 0.6rem; grid-template-columns: 1fr; }
+    @media (min-width: 560px) { .quiz-options { grid-template-columns: 1fr 1fr; } }
+
+    .quiz-choice {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-elevated);
+      color: var(--text);
+      font: inherit;
+      cursor: pointer;
+      transition: border-color 0.12s ease, background 0.12s ease;
+    }
+    .quiz-choice:hover:not(:disabled) { border-color: var(--accent); }
+    .quiz-choice:disabled { cursor: default; opacity: 0.85; }
+    .quiz-choice.is-correct { border-color: var(--badge-basic-text); background: var(--badge-basic-bg); color: var(--badge-basic-text); }
+    .quiz-choice.is-wrong { border-color: var(--badge-advanced-text); background: var(--badge-advanced-bg); color: var(--badge-advanced-text); }
+    .quiz-choice--tf { text-align: center; font-weight: 600; }
+
+    .quiz-feedback { padding: 0.8rem 1rem; border-radius: var(--radius-sm); font-size: 0.97rem; line-height: 1.5; }
+    .quiz-feedback--ok { background: var(--badge-basic-bg); color: var(--badge-basic-text); }
+    .quiz-feedback--no { background: var(--warning-soft); border: 1px solid var(--warning-border); }
+    .quiz-feedback a { font-weight: 600; }
+    .quiz-note { color: var(--text-muted); font-size: 0.9rem; }
+    .quiz-next { align-self: flex-start; }
+
+    .quiz-result { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+    .quiz-result .lead { margin: 0; }
+  </style>
+</BaseLayout>

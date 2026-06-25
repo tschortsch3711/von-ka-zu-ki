@@ -10,10 +10,13 @@ const lenses = domains as Domain[];
 <BaseLayout title="Perspektivwechsel" description="Dieselben KI-Begriffe aus vier Blickwinkeln: Automotive, Public Sector, Healthcare und Finance & Banking.">
   <section class="section container">
     <h1>Perspektivwechsel</h1>
-    <p class="lead">
-      Dieselbe Sache, vier Blickwinkel. Jede Perspektive beantwortet vier Leitfragen: warum sie geeignet ist,
-      welche Begriffe sich besonders gut erklären lassen, wo sie trägt und wo sie an Grenzen stößt.
-    </p>
+    <p class="lead">Dieselbe Sache, verschiedene Blickwinkel. Jede Perspektive beantwortet dieselben Leitfragen:</p>
+    <ul class="lead leitfragen">
+      <li>Warum eignet sie sich als Analogie?</li>
+      <li>Wofür ist sie hilfreich – und wo trägt sie?</li>
+      <li>Welche Begriffe lassen sich besonders gut darüber erklären?</li>
+      <li>Wo stößt sie an ihre Grenzen?</li>
+    </ul>
     <div class="grid grid--2" style="margin-top:2rem">
       {lenses.map((domain) => <DomainLensCard domain={domain} />)}
     </div>
@@ -24,4 +27,9 @@ const lenses = domains as Domain[];
     <p class="lead">Die Matrix zeigt, wo eine Perspektive besonders trägt. Kein Begriff ist auf eine Perspektive beschränkt.</p>
     <div style="margin-top:1.5rem"><DomainMatrix /></div>
   </section>
+
+  <style>
+    .leitfragen { margin: 0.6rem 0 0; padding-left: 1.3rem; }
+    .leitfragen li { margin-bottom: 0.3rem; }
+  </style>
 </BaseLayout>

@@ -38,15 +38,15 @@ const featured = [
     <div class="grid grid--3" style="margin-top:1.5rem">
       <a class="card path-card" href={link('glossar/')}>
         <h3>📚 Glossar durchsuchen</h3>
-        <p class="muted">Alle Begriffe mit Definition, Missverständnissen und mehreren Perspektiven. Volltextsuche und Filter.</p>
+        <p class="muted">Alle Begriffe mit Definition, typischen Missverständnissen und mehreren Perspektiven – durchsuchbar per Volltextsuche und Filter.</p>
       </a>
       <a class="card path-card" href={link('domaenen/')}>
         <h3>🔭 Perspektiven wechseln</h3>
-        <p class="muted">Dieselben Begriffe aus vier Blickwinkeln: Automotive, Public Sector, Healthcare und Finance & Banking.</p>
+        <p class="muted">Dieselben Begriffe aus wechselnden Berufsperspektiven – je nach Branche erklärt sich ein Konzept ganz anders.</p>
       </a>
       <a class="card path-card" href={link('lernpfade/')}>
         <h3>🎓 Lernpfade entdecken</h3>
-        <p class="muted">Drei geführte Pfade für Management, IT und Einsteiger – je zehn Begriffe in sinnvoller Reihenfolge.</p>
+        <p class="muted">Geführte Pfade für Management, IT und Einsteiger – Schlüsselbegriffe in sinnvoller, aufbauender Reihenfolge.</p>
       </a>
     </div>
   </section>
@@ -60,8 +60,8 @@ const featured = [
   </section>
 
   <section class="section container">
-    <h2>Mehrere Perspektiven, ein Begriff</h2>
-    <p class="lead">Eine Analogie ist eine Perspektive, nicht die Realität. Jede hat eine ehrliche Grenze.</p>
+    <h2>Derselbe Begriff, ein neuer Blickwinkel</h2>
+    <p class="lead">Aus welcher Berufswelt du auch kommst – hier triffst du KI-Begriffe in deiner eigenen Sprache wieder.</p>
     <div class="grid grid--2" style="margin-top:1.5rem">
       {lenses.map((domain) => <DomainLensCard domain={domain} />)}
     </div>

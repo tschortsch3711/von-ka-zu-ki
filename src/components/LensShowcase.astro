@@ -1,0 +1,47 @@
+---
+// Generischer Showcase: ordnet bekannte Begriffe einer Berufswelt KI-Begriffen zu.
+// Daten kommen aus domains.json -> domain.showcase, damit jede Perspektive denselben Aufbau hat.
+import type { ShowcaseMapping } from '../data/types';
+
+export interface Props {
+  mappings: ShowcaseMapping[];
+  domainName: string;
+}
+const { mappings, domainName } = Astro.props;
+---
+<figure class="diagram-figure">
+  <div class="auto-grid" role="img" aria-label={`${domainName}-Perspektive: Zuordnung bekannter Begriffe zu KI-Begriffen`}>
+    {mappings.map((m) => (
+      <div class="auto-cell">
+        <span class="auto-icon" aria-hidden="true">{m.icon}</span>
+        <span class="auto-from">{m.from}</span>
+        <span class="auto-arrow" aria-hidden="true">→</span>
+        <span class="auto-to">{m.to}</span>
+      </div>
+    ))}
+  </div>
+  <figcaption>Bekannte Begriffe aus dieser Welt, übersetzt in KI-Begriffe – eine Perspektive, nicht das ganze Bild.</figcaption>
+</figure>
+
+<style>
+  .auto-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 560px) { .auto-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 860px) { .auto-grid { grid-template-columns: repeat(3, 1fr); } }
+  .auto-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0.85rem;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .auto-icon { font-size: 1.4rem; }
+  .auto-from { font-weight: 600; }
+  .auto-arrow { color: var(--text-muted); }
+  .auto-to { color: var(--accent); font-weight: 600; margin-left: auto; text-align: right; }
+</style>

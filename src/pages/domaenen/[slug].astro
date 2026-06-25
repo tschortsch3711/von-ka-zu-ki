@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AutomotiveDiagram from '../../components/AutomotiveDiagram.astro';
+import LensShowcase from '../../components/LensShowcase.astro';
 import glossary from '../../data/glossary.json';
 import domains from '../../data/domains.json';
 import type { GlossaryTerm, Domain } from '../../data/types';
@@ -43,16 +43,11 @@ const best = domain.bestExplainedTerms
       </section>
     </div>
 
-    <section class="card lens-limit-block" style="margin-top:1rem">
-      <h2>Wo diese Perspektive an Grenzen stößt</h2>
-      <p class="muted">{domain.limits}</p>
-    </section>
-
-    {domain.id === 'automotive' && (
+    {domain.showcase && domain.showcase.length > 0 && (
       <section style="margin-top:2.5rem">
-        <h2>Die Automotive-Perspektive als Showcase</h2>
-        <p class="muted">Bekannte Auto-Begriffe, übersetzt in KI-Begriffe – eine Perspektive von vieren.</p>
-        <div style="margin-top:1rem"><AutomotiveDiagram /></div>
+        <h2>Diese Perspektive als Showcase</h2>
+        <p class="muted">Bekannte Begriffe aus dieser Welt, übersetzt in KI-Begriffe.</p>
+        <div style="margin-top:1rem"><LensShowcase mappings={domain.showcase} domainName={domain.name} /></div>
       </section>
     )}
 
@@ -69,6 +64,11 @@ const best = domain.bestExplainedTerms
           </a>
         ))}
       </div>
+    </section>
+
+    <section class="card lens-limit-block" style="margin-top:2.5rem">
+      <h2>Wo diese Perspektive an Grenzen stößt</h2>
+      <p class="muted">{domain.limits}</p>
     </section>
   </article>
 

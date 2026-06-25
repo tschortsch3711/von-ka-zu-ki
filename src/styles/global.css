@@ -142,8 +142,8 @@ code {
   display: flex;
   align-items: center;
   gap: 1rem;
-  min-height: 60px;
-  flex-wrap: wrap;
+  height: 60px;          /* fest: Umbruch darf die Nav-Höhe nicht verändern */
+  flex-wrap: nowrap;
 }
 .brand {
   color: var(--text);
@@ -152,40 +152,22 @@ code {
   align-items: center;
 }
 .brand:hover { text-decoration: none; }
-.brand-mark {
-  position: relative;
-  display: inline-block;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1;
+/* Kreuzwort-Logo: SVG-Raster, K/I und Punkte in senkrechter Flucht */
+.brand-svg {
+  height: 2.3rem;
+  width: auto;
+  display: block;
 }
-.brand-ka {
-  display: inline-block;
-  animation: brandKAFade 4s ease-in-out infinite;
-}
-.brand-ki {
-  position: absolute;
-  left: 0;
-  top: 0;
-  animation: brandKIFade 4s ease-in-out infinite;
-}
-
-@keyframes brandKAFade {
-  0%, 30%   { opacity: 1; }
-  45%, 70%  { opacity: 0; }
-  85%, 100% { opacity: 1; }
-}
-@keyframes brandKIFade {
-  0%, 30%   { opacity: 0; }
-  45%, 70%  { opacity: 1; }
-  85%, 100% { opacity: 0; }
+.brand-svg text {
+  font-family: var(--font-sans);
 }
 .site-nav {
   display: flex;
   gap: 0.35rem;
   align-items: center;
   margin-left: auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 .site-nav a {
   color: var(--text-muted);
@@ -200,21 +182,6 @@ code {
   background: var(--bg-subtle);
   text-decoration: none;
 }
-.theme-toggle {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  color: var(--text);
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-size: 1.05rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.theme-toggle:hover { background: var(--border); }
-
 .nav-burger {
   display: none;
   background: var(--bg-subtle);
@@ -266,7 +233,41 @@ code {
   align-items: center;
 }
 .site-footer a { color: var(--text-muted); }
-.site-footer nav { display: flex; gap: 1rem; flex-wrap: wrap; margin-left: auto; }
+.site-footer nav { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-left: auto; }
+
+/* Icon-Links/Buttons im Footer (GitHub, Theme-Switch) */
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.footer-icon:hover {
+  color: var(--text);
+  background: var(--bg-subtle);
+  border-color: var(--border);
+  text-decoration: none;
+}
+.footer-icon svg { display: block; }
+
+/* Theme-Switch spiegelt den aktiven Modus -> dient zugleich als Statusanzeige.
+   Hell: Mond (= zu Dunkel wechseln). Dunkel: Sonne (= zu Hell wechseln). */
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+
+/* Mobile: Footer-Inhalte zweizeilig und mittig zentriert */
+@media (max-width: 640px) {
+  .site-footer .container { flex-direction: column; text-align: center; gap: 0.8rem; }
+  .site-footer nav { margin-left: 0; justify-content: center; }
+}
 
 main { min-height: 60vh; }
 
