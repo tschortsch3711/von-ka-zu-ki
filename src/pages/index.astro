@@ -14,16 +14,20 @@ const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
 const realPaths = (paths as LearningPath[]).filter((p) => !p.isMetaCard);
 
-// 3 Einstiegsbegriffe wechseln pro Build, abgeleitet aus dem Build-Datum (keine echte Tagesrotation ohne geplanten Rebuild)
+// Je ein Begriff pro Schwierigkeitsgrad (Einstieg/Aufbau/Vertiefung), pro Build rotierend
+// (abgeleitet aus dem Build-Datum; keine echte Tagesrotation ohne geplanten Rebuild).
 const buildDate = new Date();
 const yearStart = new Date(buildDate.getFullYear(), 0, 1);
 const dayOfYear = Math.floor((buildDate.getTime() - yearStart.getTime()) / (1000 * 60 * 60 * 24));
-const startIdx = dayOfYear % terms.length;
+const pickByDifficulty = (level: GlossaryTerm['difficulty'], offset: number): GlossaryTerm | null => {
+  const pool = terms.filter((t) => t.difficulty === level);
+  return pool.length ? pool[(dayOfYear + offset) % pool.length] : null;
+};
 const featured = [
-  terms[startIdx % terms.length],
-  terms[(startIdx + 1) % terms.length],
-  terms[(startIdx + 2) % terms.length],
-];
+  pickByDifficulty('basic', 0),
+  pickByDifficulty('intermediate', 1),
+  pickByDifficulty('advanced', 2),
+].filter((t): t is GlossaryTerm => Boolean(t));
 ---
 <BaseLayout
   title="Von K.A. zu K.I."
