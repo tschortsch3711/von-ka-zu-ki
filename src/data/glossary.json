@@ -39,10 +39,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Das gesamte Risikomanagement-Framework einer Bank, nicht ein einzelnes Risikomodell",
-        "explanation": "So wie das Risikomanagement-Framework einer Bank Kreditrisikomodelle, Marktrisikosysteme, Compliance-Filter und interne Kontrollen unter einem Dach bündelt, ist KI der Oberbegriff für viele verschiedene Verfahren – von Scoring-Algorithmen bis zu Sprachmodellen. Ebenso wie das Framework je nach Risikoart unterschiedliche Methoden einsetzt, bedient sich KI je nach Aufgabe unterschiedlicher Ansätze. Für Regulatoren wie die BaFin ist das Gesamtframework genehmigungspflichtig, nicht nur einzelne Modelle.",
-        "limits": "Ein Risikomanagement-Framework unterliegt klaren regulatorischen Vorgaben (Basel III/IV, SR 11-7) und hat definierte Verantwortlichkeiten; KI-Systeme hingegen unterliegen noch uneinheitlicher Regulierung und tragen keine rechtliche Eigenverantwortung.",
-        "quality": 0.09
+        "analogy": "Die Bankfiliale als Ganzes, die viele Aufgaben übernimmt, für die man früher einen erfahrenen Menschen am Schalter brauchte.",
+        "explanation": "Eine Filiale ist nicht eine einzelne Tätigkeit, sondern ein Sammelbegriff für alles, was dort an menschlichem Urteil zusammenkommt: beraten, einen Kreditantrag prüfen, über eine Auszahlung entscheiden. Früher saß für jede dieser Aufgaben ein erfahrener Mensch am Schalter. Genauso ist KI der Oberbegriff für Systeme, die solche eigentlich menschlichen Aufgaben übernehmen: wahrnehmen, verstehen, schlussfolgern, entscheiden. Und wie die Filiale je nach Anliegen andere Leute und Abläufe einsetzt, steckt auch hinter dem Wort KI nicht ein Verfahren, sondern viele verschiedene, je nach Aufgabe.",
+        "limits": "Eine Bankfiliale wird von Menschen geführt, die ihre Entscheidungen erklären und dafür geradestehen; ein KI-System bündelt zwar ähnliche Aufgaben, kann aber oft nicht nachvollziehbar begründen, warum es so entschieden hat, und trägt keine eigene Verantwortung dafür.",
+        "quality": 0.82
       }
     },
     "relatedTerms": [
@@ -95,10 +95,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Ein IRB-Kreditrisikomodell, das PD-Schätzungen aus historischen Ausfalldaten ableitet statt aus fest kodierten Expertenregeln",
-        "explanation": "Wie beim Internal Ratings-Based Approach die Bank aus Tausenden historischer Kreditakten Muster zu Ausfallwahrscheinlichkeiten ableitet und auf neue Kreditnehmer überträgt, lernt ein ML-Modell aus Beispieldaten statt aus manuell programmierten Regeln. Das Modell verbessert seine Schätzungen, wenn es mit mehr Daten gespeist wird – ähnlich wie ein IRB-Modell durch erweitertes Datenfundament an Trennschärfe gewinnt. Für Backtesting und Validierung gelten analoge Anforderungen: Beide müssen zeigen, dass die gelernten Muster auf neue, ungesehene Daten übertragbar sind.",
-        "limits": "Ein IRB-Modell liefert aufsichtsrechtlich prüfbare, erklärbare Treiber für jede PD-Schätzung; viele ML-Verfahren sind Black Boxes, die das Vier-Augen-Prinzip und den Audit-Trail im Sinne von SR 11-7 erschweren.",
-        "quality": 0.08
+        "analogy": "Ein erfahrener Bankberater, der aus tausenden früheren Kundengesprächen ein Gespür entwickelt hat, statt stur ein Vorschriftenheft Punkt für Punkt abzuarbeiten.",
+        "explanation": "Ein frischer Berater bekommt am ersten Tag ein dickes Handbuch mit festen Regeln: bei diesem Einkommen so viel Kredit, bei jenem Sparziel jenes Konto. Ein langjähriger Berater dagegen hat tausende echte Fälle erlebt und erkennt am Muster sofort, was zu einer Familie passt, die fürs erste Auto spart – auch wenn ihr Fall im Handbuch so gar nicht vorkommt. Genauso wird ein Machine-Learning-System nicht mit festen Regeln programmiert, sondern lernt aus vielen Beispielen die wiederkehrenden Muster und überträgt sie auf neue Kunden, die es noch nie gesehen hat. Je mehr unterschiedliche Fälle es kennengelernt hat, desto sicherer trifft es seine Einschätzung bei einem ganz neuen Fall.",
+        "limits": "Der Berater kann im Filialgespräch erklären, warum er so rät; ein Machine-Learning-System nennt oft kein nachvollziehbares \"Warum\", sondern liefert nur sein Muster. Und hat es nur einseitige Beispiele gesehen, übernimmt es deren Schieflage genauso treu wie das Gute.",
+        "quality": 0.85
       }
     },
     "relatedTerms": [
@@ -153,10 +153,10 @@
         "quality": 0.64
       },
       "finance": {
-        "analogy": "Ein statistisches Scoringmodell, das aus Millionen Kreditakten Muster lernt und für neue Anfragen Wahrscheinlichkeiten formuliert – ohne die wirtschaftlichen Gründe dahinter zu kennen",
-        "explanation": "Ein LLM funktioniert wie ein hochdimensionales Scoring-System, das nicht Ausfallwahrscheinlichkeiten, sondern wahrscheinliche Wortfolgen aus riesigen Textmengen ableitet. So wie ein Kreditscoring-Modell keine kausalen Zusammenhänge kennt, sondern statistische Korrelationen nutzt, generiert das LLM Antworten, die plausibel klingen, ohne ein echtes Verständnis des Inhalts zu haben. Für Compliance-Beauftragte bedeutet das: Die Ausgabe kann regulatorisch korrekt klingen, ohne es zu sein.",
-        "limits": "Ein Kreditscoring-Modell liefert eine einzige, reproduzierbare Ausgabe mit definierten Konfidenzintervallen und ist vollständig dokumentierbar; ein LLM erzeugt bei gleicher Eingabe unterschiedliche Antworten und kann Fakten überzeugend falsch darstellen – was Audit-Trail-Anforderungen fundamental widerspricht.",
-        "quality": 0.1
+        "analogy": "Der erfahrene Bankberater am Schalter, der nach Jahren voller Kundengespräche fast jeden Satz treffsicher zu Ende sprechen kann.",
+        "explanation": "So ein Berater hat über die Jahre unzählige Filialgespräche gehört: übers Sparen, über einen Kredit fürs Auto, über Fragen zum Kontoauszug. Beginnt ein Kunde einen Satz, ergänzt der Berater wie von selbst die Worte, die in solchen Gesprächen am wahrscheinlichsten als Nächstes kommen. Genau so arbeitet ein LLM: Es hat aus riesigen Textmengen gelernt und setzt einen Text fort, indem es immer das vermutlich passendste nächste Wort anhängt. Aus diesem schlichten Weiterschreiben entstehen die Fähigkeiten zu erklären, zusammenzufassen oder zu übersetzen.",
+        "limits": "Der Berater versteht aus Erfahrung wirklich, worum es bei einem Kredit geht, während das LLM nur die wahrscheinlichste Wortfolge bildet, ohne den Inhalt zu erfassen. Deshalb kann es einen Satz flüssig und überzeugend zu Ende bringen und dabei trotzdem inhaltlich danebenliegen.",
+        "quality": 0.82
       }
     },
     "relatedTerms": [
@@ -212,10 +212,10 @@
         "quality": 0.94
       },
       "finance": {
-        "analogy": "Eine generische Risikodatenplattform mit vorverarbeiteten Marktdaten, auf der verschiedene Fachbereiche ihre spezifischen Risikomodelle aufsetzen",
-        "explanation": "Wie eine zentrale Datenplattform (z.B. für Bloomberg- oder Reuters-Feeds) einmalig aufgebaut und dann von Kreditrisiko, Marktrisiko und Compliance gleichermaßen genutzt wird, stellt ein Foundation Model breit vortrainierte Sprachkompetenz bereit, auf der sich spezialisierte Anwendungen per Fine-Tuning aufbauen lassen. Die Plattform selbst ist generisch; der Mehrwert entsteht erst durch die fachspezifische Anpassung für Backtesting, AML-Screening oder Regulierungsreporting. Modell-Governance-Anforderungen gelten für die gesamte Kette, nicht nur für das nachgelagerte Fachmodell.",
-        "limits": "Eine Risikodatenplattform ist versioniert, auditierbar und hat definierte Datenqualitätsstandards; die Fähigkeiten und Grenzen eines Foundation Model sind schwer vollständig zu inventarisieren, was die Modellvalidierung nach SR 11-7 erheblich erschwert.",
-        "quality": 0.09
+        "analogy": "Der frisch ausgelernte Bankazubi, den die Filiale je nach Bedarf an den Schalter, in die Kreditberatung oder an den Geldautomaten-Service setzt",
+        "explanation": "Ein Basismodell ist wie eine Nachwuchskraft mit breiter Grundausbildung: Sie kennt Konten, Überweisungen, EC-Karten und das Filialgeschäft allgemein, ist aber noch auf keine einzelne Aufgabe festgelegt. Deshalb kann die Bank denselben Neuling für ganz verschiedene Stellen einarbeiten, statt für Kasse, Kreditberatung und Kundenschalter je eine eigene Person von Grund auf auszubilden. Die kurze Einarbeitung am konkreten Arbeitsplatz entspricht dem Anpassen des Basismodells an eine bestimmte Anwendung, etwa durch Vorgaben im Gespräch oder gezieltes Nachschulen.",
+        "limits": "Das Bild hinkt, weil ein menschlicher Berufseinsteiger bei jeder neuen Aufgabe selbst dazulernt, während das Basismodell unverändert bleibt und das passende Verhalten erst durch die jeweilige Einarbeitung obendrauf entsteht. Zudem ist die Grundausbildung eines Azubis überschaubar und prüfbar, während sich beim Basismodell kaum vollständig auflisten lässt, was es gelernt hat und wo seine blinden Flecken liegen.",
+        "quality": 0.78
       }
     },
     "relatedTerms": [
@@ -269,10 +269,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Die Echtzeit-Bonitätsprüfung eines Kreditantrags durch ein fertig validiertes und genehmigtes Scoringmodell im Produktivbetrieb",
-        "explanation": "Inferenz ist der operative Betrieb: Das Modell ist trainiert, validiert und durch das Model Risk Management abgenommen – jetzt wird es auf jeden eingehenden Antrag angewendet, so wie ein produktives Kreditscoring-System rund um die Uhr Anfragen bewertet. Jede einzelne Bewertung (Inferenz) verursacht Rechenkosten und produziert einen revisionssicheren Output, ändert aber das Modell selbst nicht. Für den Regulator ist der Produktivbetrieb der relevante Kontrollpunkt: Hier greifen Monitoring, Schwellenwertprüfungen und Eskalationsregeln.",
-        "limits": "Ein Kreditscoring-System im Produktivbetrieb liefert deterministisch dieselbe Ausgabe für dieselbe Eingabe und ist vollständig nachvollziehbar; LLM-Inferenz ist probabilistisch und kann bei identischen Eingaben variieren, was Reproduzierbarkeit für Audit-Zwecke einschränkt.",
-        "quality": 0.08
+        "analogy": "Der fertig ausgebildete Mitarbeiter am Bankschalter beantwortet eine einzelne Kundenfrage.",
+        "explanation": "Inferenz ist der Moment, in dem ein bereits fertig trainiertes Modell eine konkrete Frage bearbeitet und beantwortet, so wie ein ausgebildeter Mitarbeiter am Bankschalter eine einzelne Kundenfrage beantwortet. Seine Ausbildung (das Training) ist abgeschlossen; jetzt wendet er das Gelernte nur noch auf den Fall an, der gerade vor ihm liegt, und lernt dabei nichts Neues hinzu. Jede beantwortete Frage kostet seine Arbeitszeit, so wie jede einzelne Modellantwort Rechenzeit und damit Geld kostet. Wichtig ist die Trennung: Das Beantworten am Schalter ist der laufende Betrieb, nicht die einmalige Ausbildung davor.",
+        "limits": "Ein erfahrener Mitarbeiter gibt zur selben Frage meist dieselbe Auskunft und merkt in der Regel, wenn er etwas nicht weiss; das Modell kann auf identische Eingaben unterschiedlich antworten und auch dann selbstsicher klingen, wenn die Antwort falsch ist.",
+        "quality": 0.79
       }
     },
     "relatedTerms": [
@@ -328,10 +328,10 @@
         "quality": 0.95
       },
       "finance": {
-        "analogy": "Erstentwicklung eines IRB-Risikomodells (Training) und anschließende Rekalibrierung auf ein neues Marktsegment oder Portfolio (Fine-Tuning)",
-        "explanation": "Wie eine Bank zunächst ein internes Kreditrisikomodell auf dem Gesamtportfolio entwickelt und dann für ein neues Kundensegment – etwa Mittelstandskredite – auf Basis segmentspezifischer Daten neu kalibriert, ohne das Modell vollständig neu zu entwickeln, nutzt Fine-Tuning das vorhandene Basismodell als Ausgangspunkt. Für beide Phasen gelten separate Validierungsanforderungen, und Veränderungen am Modell müssen dokumentiert und aufsichtsrechtlich bewertet werden. Das Backtesting prüft jeweils, ob die Anpassung die Trennschärfe verbessert hat.",
-        "limits": "Eine Modellrekalibrierung im IRB-Kontext erfolgt nach klar definierten statistischen Verfahren mit nachvollziehbaren Qualitätskennzahlen; Fine-Tuning eines KI-Modells kann schwer quantifizierbare Nebenwirkungen auf andere Fähigkeiten des Modells haben, die im Validierungsprozess nur aufwändig vollständig erfasst werden.",
-        "quality": 0.08
+        "analogy": "Die mehrjährige Bankausbildung gegenüber der kurzen Einarbeitung an einem neuen Filialschalter.",
+        "explanation": "Wer in einer Bank am Schalter arbeiten will, durchläuft zuerst eine jahrelange Grundausbildung: Aus unzähligen Beispielen lernt der Auszubildende von Grund auf, wie Konten, Überweisungen und Kundengespräche funktionieren – das ist das Training, der aufwendige Aufbau des gesamten Könnens aus sehr viel Material. Wechselt dieselbe, bereits fertig ausgebildete Person später in eine andere Filiale, genügt eine kurze Einarbeitung in die örtlichen Besonderheiten – das ist die Feinanpassung: Eine schon Könnende wird mit wenig zusätzlichem Material gezielt auf eine neue Aufgabe umgeschult, statt die ganze Ausbildung zu wiederholen. In beiden Fällen verändert sich das Können der Person tatsächlich – anders als beim bloßen Nachschlagen im Handbuch, das nichts Gelerntes ergänzt.",
+        "limits": "Eine Bankausbildung dauert für jeden Menschen ähnlich lange, während das Training eines KI-Modells je nach Datenmenge stark unterschiedlich ausfällt. Außerdem kann eine kurze Einarbeitung beim Menschen nichts vom bereits Gelernten löschen; bei der Feinanpassung kann die gezielte Anpassung dagegen unbeabsichtigt frühere Fähigkeiten des Modells verschlechtern.",
+        "quality": 0.8
       }
     },
     "relatedTerms": [
@@ -385,10 +385,10 @@
         "quality": 0.58
       },
       "finance": {
-        "analogy": "Die Transaktionsstückelung im Zahlungsverkehr: jede Nachricht wird in kleinste verarbeitbare Einheiten zerlegt, die Volumen und Kosten bestimmen",
-        "explanation": "So wie im SWIFT-Zahlungsverkehr Nachrichten in standardisierte Felder und Zeichen zerlegt werden und das Volumen die Verarbeitungskosten treibt, zerlegt ein Sprachmodell jeden Text in Tokens, deren Anzahl direkt Rechenzeit und API-Kosten bestimmt. Für CFOs und IT-Beschaffung bedeutet das: Tokenkontingente sind das Budget-Äquivalent der Transaktionsvolumina – sie müssen geplant, überwacht und bei Bedarf gedeckelt werden. Langatmige Prompts und umfangreiche Dokumente treiben den Token-Verbrauch ebenso wie hohe Transaktionsvolumina die Abwicklungskosten.",
-        "limits": "Transaktionsvolumina sind exakt zählbar und ex ante planbar; Tokenverbrauch hängt von Sprache, Formulierung und Sonderzeichen ab und ist ohne Vorabkalkulation schwer budgetierbar – das erschwert die Kostentransparenz in der internen Leistungsverrechnung.",
-        "quality": 0.09
+        "analogy": "Die einzelnen Münzen, in die ein Geldbetrag zerlegt und mit denen er an der Kasse abgezählt wird.",
+        "explanation": "Ein Betrag von zehn Euro besteht nicht aus dem Wort \"zehn\", sondern aus vielen einzelnen Münzen, und an der Kasse wird Münze für Münze abgezählt. Genauso zerlegt ein Sprachmodell jeden Satz in lauter kleine Einheiten, die Tokens, und arbeitet sich Token für Token durch den Text. Wie viele Münzen man hinlegen muss, hängt nicht von der Länge des Wortes \"zehn\" ab, sondern vom Betrag; ebenso bestimmt die Zahl der Tokens, nicht die Zahl der Buchstaben, wie lang ein Text ist und was seine Verarbeitung kostet. Ein langer Brief verbraucht so viele Tokens, wie ein großer Einkauf Münzen kostet.",
+        "limits": "Münzen gibt es nur in festen, gleichen Werten, während Tokens unterschiedlich groß sind: mal ist ein ganzes kurzes Wort ein Token, mal nur eine Silbe. Und anders als Kleingeld, das man vorher abzählen kann, lässt sich die genaue Tokenzahl eines Textes meist erst beim Verarbeiten sicher feststellen.",
+        "quality": 0.73
       }
     },
     "relatedTerms": [
@@ -442,10 +442,10 @@
         "quality": 0.63
       },
       "finance": {
-        "analogy": "Die Unterlagen, die einem Kreditkomitee zur Sitzung vorliegen: nur was auf dem Tisch liegt, fließt in die Entscheidung ein",
-        "explanation": "Ein Kreditkomitee entscheidet ausschließlich auf Basis der vorgelegten Kreditakte, Bonitätsunterlagen und Risikoberichte – fehlt ein Dokument, bleibt es unberücksichtigt, egal wie relevant es wäre. Ebenso verarbeitet ein Sprachmodell nur, was im Kontextfenster enthalten ist: fehlen Vertragsbedingungen, frühere Korrespondenz oder regulatorische Vorgaben, fließen sie nicht in die Antwort ein. Für Compliance-Zwecke bedeutet das: Der vollständige Informationsstand muss aktiv in den Prompt eingebracht werden, analog zur vollständigen Vorlage aller relevanten Unterlagen im Komitee.",
-        "limits": "Ein Kreditkomitee kann fehlende Unterlagen anfordern und die Entscheidung vertagen; ein Modell ergänzt fehlende Informationen im Zweifel mit plausibel klingenden, aber nicht belegten Annahmen – ohne dies transparent zu machen.",
-        "quality": 0.38
+        "analogy": "Der Schreibtisch des Bankberaters: nur die Unterlagen, die gleichzeitig daraufpassen, fließen ins Gespräch ein – ist der Tisch voll, muss für jedes neue Blatt ein altes weg.",
+        "explanation": "Im Filialgespräch breitet der Berater Ihren Kontoauszug, den Kreditantrag fürs Auto und Ihren Haushaltsplan vor sich aus und berücksichtigt nur, was in diesem Moment auf dem Tisch liegt; ein Beleg, der noch in der Tasche steckt, beeinflusst seinen Rat nicht. Genauso ist das Kontextfenster die feste Menge an Text, die das Modell für eine einzige Anfrage gleichzeitig vor sich hat – wichtig: Ihre Frage und die entstehende Antwort teilen sich denselben Tisch. Was nicht mehr daraufpasst, bleibt unberücksichtigt; und je mehr von der Antwort entsteht, desto weniger Platz bleibt für die Frage.",
+        "limits": "Der Berater weiß, dass weitere Unterlagen existieren, und kann sie gezielt nachfordern; das Modell merkt nicht, dass etwas fehlt, und füllt die Lücke notfalls mit plausibel klingenden, aber erfundenen Angaben. Anders als ein echter Schreibtisch, von dem ältere Blätter nach und nach verschwinden, bezieht sich das Fenster immer nur auf diese eine Anfrage – es ist kein über die Zeit mitlaufendes Gedächtnis.",
+        "quality": 0.83
       }
     },
     "relatedTerms": [
@@ -500,10 +500,10 @@
         "quality": 0.57
       },
       "finance": {
-        "analogy": "Der strukturierte Kreditantrag mit Fragestellung, Sachverhalt und Limit-Parametern, der die Analyse des Risikoteams steuert",
-        "explanation": "Wie ein präzise formulierter Kreditantrag mit klarer Fragestellung (Bonität, Sicherheiten, Laufzeit), vollständigem Sachverhalt und definierten Beurteilungsgrenzen eine zielgerichtete Risikoanalyse ermöglicht, steuert der Prompt die Qualität der Modellausgabe. Unvollständige oder mehrdeutige Prompts führen zu unbrauchbaren Antworten – ebenso wie ein lückenhafter Kreditantrag das Komitee zu Rückfragen zwingt oder zu einer Fehlbewertung führt. Für regulatorisch sensible Anwendungen (z.B. AML-Screening, Regulierungsreporting) müssen Prompt-Vorlagen standardisiert, versioniert und einem Review-Prozess unterzogen werden.",
-        "limits": "Ein Kreditantrag folgt einem normierten Schema mit Pflichtfeldern und löst bei Lücken definierte Eskalationsprozesse aus; ein Modell füllt unvollständige Prompts mit Vermutungen auf, ohne den Nutzer auf die Lücken hinzuweisen – was in regulierten Prozessen zu nicht erkennbaren Fehlentscheidungen führen kann.",
-        "quality": 0.33
+        "analogy": "Das ausgefüllte Formular, das man am Bankschalter abgibt, damit der Berater genau weiss, was man will",
+        "explanation": "Wer am Schalter eine Überweisung machen will, füllt ein Formular aus: Wohin soll das Geld, wie viel, von welchem Konto, mit welchem Verwendungszweck. Genau das ist ein Prompt - die Eingabe, in der Anliegen, Angaben und Frage zusammenstehen und die ganze Bearbeitung steuern. Je vollständiger und klarer man sie formuliert, desto eher bekommt man genau das Ergebnis, das man wollte; lässt man etwas weg oder schreibt unklar, fällt die Antwort entsprechend ungenau aus.",
+        "limits": "Auf einem Bankformular gibt es feste Pflichtfelder, und der Schalter fragt nach, wenn etwas fehlt - das Modell dagegen rät bei Lücken einfach eine Antwort zusammen, ohne zu sagen, dass Angaben gefehlt haben. Ausserdem akzeptiert ein Prompt freien Text in beliebiger Form, während ein Formular nur in vorgegebene Kästchen passt.",
+        "quality": 0.77
       }
     },
     "relatedTerms": [
@@ -558,10 +558,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Ein IRB-Modell, das eine solide Bonität ausgibt, obwohl die zugrunde liegenden Trainingsdaten systematisch fehlerhaft waren – und die Validierung dies nicht aufgedeckt hat.",
-        "explanation": "Wie ein intern entwickeltes Ratingmodell plausibel wirkende PD-Werte liefern kann, die auf korrumpierten Historien basieren, produziert ein Sprachmodell zuversichtlich formulierte Aussagen ohne Verankerung in korrekten Fakten. Der Output besteht die Plausibilitätsprüfung auf den ersten Blick, weil er formal konsistent klingt – genau wie ein Ratingergebnis, das alle Scorecards passiert, aber auf falschen Eingabedaten beruht.",
-        "limits": "Ein Ratingmodell lässt sich per Backtesting und Out-of-Sample-Validierung systematisch auf Kalibrierfehler prüfen; bei Sprachmodellen gibt es kein vergleichbares formales Verfahren, das Halluzinationen zuverlässig vor dem Einsatz identifiziert.",
-        "quality": 0.08
+        "analogy": "Ein Bankberater, der Ihnen eine Kontonummer ohne Zögern auswendig nennt – und sie in Wahrheit frei erfunden hat.",
+        "explanation": "Stellen Sie sich vor, Sie fragen am Bankschalter nach einer bestimmten Kontonummer, und der Berater antwortet sofort, flüssig und mit voller Überzeugung. Die Ziffern klingen genauso echt wie eine richtige Auskunft, sind aber in Wirklichkeit ausgedacht. Genau so entsteht eine Halluzination: Das Modell formuliert eine Aussage selbstsicher und plausibel, ohne sie aus einer geprüften Quelle zu haben. Der überzeugende Tonfall sagt nichts darüber aus, ob die Angabe stimmt – flüssig und richtig sind zwei verschiedene Dinge.",
+        "limits": "Ein echter Berater merkt meist, wann er nur rät, und könnte im Zweifel auf dem Bildschirm nachsehen; das Modell bemerkt selbst nicht, dass es gerade etwas erfindet, und hat keine solche Quelle zum Nachschlagen. Wie oft das passiert, hängt zudem stark von Frage und Modell ab und liegt nicht an einem einzelnen unaufmerksamen Mitarbeiter.",
+        "quality": 0.84
       }
     },
     "relatedTerms": [
@@ -615,10 +615,10 @@
         "quality": 0.62
       },
       "finance": {
-        "analogy": "Ein automatisierter Handelstisch, der Marktdaten auswertet, Orders über mehrere Systeme routet und dabei vorgegebene Risikolimits und Compliance-Regeln eigenständig überwacht.",
-        "explanation": "Wie ein algorithmischer Handelsprozess selbstständig Ziele verfolgt (z. B. Execution-Optimierung), auf verschiedene Tools zugreift (Orderbuch, Risikorechner, Meldestrecke) und bei Schwellenwertüberschreitung eskaliert, plant ein KI-Agent Zwischenschritte, ruft externe Funktionen auf und trifft innerhalb definierter Parameter autonome Entscheidungen. Die Parallele hilft, das Konzept von Autonomie, Toolnutzung und Zielorientierung greifbar zu machen.",
-        "limits": "Ein Handelssystem operiert auf vollständig formalisierten, maschinenlesbaren Regeln mit deterministischen Ausführungsgarantien; ein KI-Agent arbeitet probabilistisch, kann Ziele fehlinterpretieren und besitzt keine regulatorisch anerkannte Verantwortlichkeitsstruktur im Sinne von MiFID II oder SR 11-7.",
-        "quality": 0.08
+        "analogy": "Ein Bankberater, der eine Überweisung nicht nur ausrechnet, sondern aufsteht, das Formular holt, es ausfüllt und den ganzen Auftrag selbst zu Ende bringt.",
+        "explanation": "Ein gewöhnliches Programm gibt dir nur eine Auskunft, etwa \"diese Rechnung kostet 240 Euro\" – so wie ein Berater, der bloß eine Zahl nennt. Ein KI-Agent dagegen verhält sich wie ein Berater, der das Ziel \"Rechnung ist bezahlt\" verfolgt: Er überlegt die nötigen Schritte, holt sich den passenden Kontoauszug, nutzt das Überweisungsformular am Schalter und prüft nach jedem Schritt, ob er dem Ziel näher gekommen ist oder nachbessern muss. Genauso zerlegt ein Agent eine Aufgabe in Teilschritte, greift selbstständig zu den passenden Werkzeugen, bewertet seine Zwischenergebnisse und arbeitet so lange weiter, bis das Ziel erreicht ist, statt nur eine einzelne Antwort abzuliefern.",
+        "limits": "Ein Bankberater versteht, was du wirklich willst, und merkt von selbst, wenn etwas schiefläuft; ein KI-Agent kann das Ziel falsch auffassen oder sich verrennen und braucht weiterhin Kontrolle. Außerdem trägt ein Berater die Verantwortung für seine Handlungen – beim Agenten bleibt diese Verantwortung immer bei den Menschen, die ihn einsetzen.",
+        "quality": 0.82
       }
     },
     "relatedTerms": [
@@ -676,10 +676,10 @@
         "quality": 0.62
       },
       "finance": {
-        "analogy": "Das gezielte Absetzen einer API-Anfrage an ein Kernbankensystem, einen Marktdatenfeed oder ein Kreditregister – initiiert durch das Modell, nicht durch den Nutzer.",
-        "explanation": "Wie ein Risikocontrolling-System bei Bedarf automatisiert Bloomberg-Kurse, interne Limitdatenbanken oder externe Bonitätsdaten abruft, ruft ein Modell beim Tool Calling definierte Funktionen mit spezifischen Parametern auf, um aktuelle oder strukturierte Informationen zu beschaffen. Die Analogie macht deutlich, dass das Modell die Anfrage formuliert und abschickt, aber nicht selbst die Datenquelle ist.",
-        "limits": "Systemaufrufe im Bankbetrieb sind durch Berechtigungskonzepte, Audit-Trails und technische Kontrollen abgesichert; ein Modell, das Tools aufruft, kann falsche Parameter übergeben oder ungeeignete Funktionen wählen, ohne dass dies automatisch protokolliert oder gesperrt wird.",
-        "quality": 0.08
+        "analogy": "Der Bankberater greift mitten im Gespräch zum Taschenrechner oder ruft Ihren Kontostand am Bildschirm auf, statt die Zahl aus dem Kopf zu schätzen.",
+        "explanation": "Ein guter Berater redet nicht nur aus dem Gedächtnis: Wenn er Ihre Monatsrate fürs Autodarlehen genau ausrechnen oder Ihren aktuellen Kontostand wissen muss, tippt er die Zahlen in den Taschenrechner oder öffnet das Kontofenster und arbeitet mit dem Ergebnis weiter. Genau das tut ein Modell, wenn es Werkzeuge benutzt: Es merkt selbst, wann sein eigenes Wissen nicht reicht, ruft gezielt das passende Hilfsmittel auf, etwa einen Rechner oder eine Suche, und baut dessen Antwort in das Gespräch ein. Der Berater entscheidet, wann er zum Hilfsmittel greift, aber er ist nicht selbst der Taschenrechner oder das Kontosystem.",
+        "limits": "Der Berater weiß meist sicher, welcher Knopf was tut, und vertippt sich selten unbemerkt; ein Modell dagegen kann das falsche Werkzeug wählen oder falsche Zahlen eingeben, ohne dass dieser Fehler automatisch auffällt. Außerdem greift der Mensch bewusst zum Taschenrechner, während das Modell den Werkzeug-Aufruf nur anhand erlernter Muster erzeugt, ohne im menschlichen Sinn zu verstehen, was es tut.",
+        "quality": 0.8
       }
     },
     "relatedTerms": [
@@ -732,10 +732,10 @@
         "quality": 0.29
       },
       "finance": {
-        "analogy": "Eine standardisierte Finanzmarkt-Schnittstelle wie FIX oder ISO 20022 – ein einheitliches Protokoll, über das verschiedene Systeme Nachrichten und Daten austauschen, ohne für jede Verbindung ein eigenes Format zu entwickeln.",
-        "explanation": "Wie ISO 20022 Banken, Clearingstellen und Zentralbanken ein gemeinsames Nachrichtenformat gibt und so Interoperabilität ohne bilaterale Sonderlösungen ermöglicht, definiert MCP eine einheitliche Kommunikationsschicht zwischen KI-Modellen und externen Werkzeugen oder Datenquellen. Die Analogie veranschaulicht, warum ein offener Standard den Integrationsaufwand erheblich reduziert.",
-        "limits": "ISO 20022 regelt Nachrichtenformat und Semantik, nicht aber Datenschutz, Berechtigungen oder Haftung – ebenso definiert MCP nur die Verbindungsschicht; Zugriffskontrolle, Datensensitivität und regulatorische Compliance müssen separat adressiert werden.",
-        "quality": 0.08
+        "analogy": "Der genormte EC-Karten-Schlitz am Geldautomaten: Jede Karte passt hinein, egal von welcher Bank sie kommt.",
+        "explanation": "Ein Geldautomat hat einen einheitlichen Schlitz, in den jede EC-Karte passt - ganz gleich, ob sie von Ihrer Hausbank, einer Onlinebank oder einer ausländischen Bank stammt. Niemand muss für jede Karte einen eigenen Automaten bauen, weil alle dieselbe genormte Form und denselben Ablauf nutzen. Genauso ist MCP ein einheitlicher Standard-Anschluss, über den ein KI-Programm verschiedene Werkzeuge und Datenquellen ansteuert. Statt für jede einzelne Verbindung eine Sonderlösung zu bauen, docken alle über denselben genormten Anschluss an - das spart Aufwand, und einmal Gebautes lässt sich wiederverwenden.",
+        "limits": "Beim Geldautomaten passt eine Karte mechanisch entweder oder gar nicht; bei MCP kann ein Werkzeug zwar andocken und trotzdem unpassend antworten oder Fehler liefern. Außerdem regelt der genormte Schlitz nur das Einstecken - wer welche Karte benutzen darf und welche Daten dabei geschützt werden, ist eine getrennte Frage, die der Standard allein nicht beantwortet.",
+        "quality": 0.77
       }
     },
     "relatedTerms": [
@@ -790,10 +790,10 @@
         "quality": 0.64
       },
       "finance": {
-        "analogy": "Ein Kreditanalyst, der vor dem Votum nicht aus dem Gedächtnis urteilt, sondern gezielt aktuelle Jahresabschlüsse, Branchenreports und interne Ratinghistorien aus dem Dokumentenmanagementsystem zieht.",
-        "explanation": "Wie ein fundiertes Kreditvotum auf konkret herangezogenen, aktuellen Unterlagen basiert und nicht auf dem allgemeinen Erfahrungsschatz des Analysten, stützt RAG jede Antwort auf zur Laufzeit abgerufene Dokumente – das Modell generiert nicht aus dem Training heraus, sondern aus dem bereitgestellten Kontext. Das reduziert Halluzinationsrisiken analog zur Belegpflicht im Kreditprozess.",
-        "limits": "Ist die Dokumentenbasis veraltet, unvollständig oder falsch indexiert, produziert auch RAG fehlerhafte Ergebnisse – genau wie ein Kreditvotum auf Basis falscher Bilanzen; die Qualität der Retrieval-Schicht und der Quelldaten ist entscheidend und braucht eigene Governance.",
-        "quality": 0.58
+        "analogy": "Ein Bankberater, der vor seiner Empfehlung nicht aus dem Kopf urteilt, sondern erst die passende Kundenmappe aus dem Aktenschrank holt und nachschlägt.",
+        "explanation": "Statt nur aus der Erinnerung zu antworten, sucht der Berater zur jeweiligen Frage gezielt die richtigen Unterlagen heraus - den letzten Kontoauszug, den Kreditvertrag fürs Auto, die Notizen aus dem letzten Gespräch - und legt sie vor sich auf den Tisch, bevor er etwas sagt. Genauso arbeitet dieses Verfahren: Zu jeder Frage wird zuerst in einer Sammlung eigener Dokumente nach passenden Textstellen gesucht, und die gefundenen Stellen gibt man dem KI-Modell zusammen mit der Frage mit. Die Antwort stützt sich dann auf diese herausgesuchten, aktuellen Unterlagen statt allein auf das, was das Modell beim Training gelernt hat - und der Berater kann sagen, in welchem Papier es steht.",
+        "limits": "Liegt die falsche oder eine veraltete Mappe im Schrank, oder findet der Berater das richtige Blatt nicht, hilft alles Nachschlagen nichts: Die Antwort ist nur so gut wie die abgelegten Unterlagen und die Suche danach. Anders als ein echter Berater prüft die KI nicht selbst, ob ein vorgelegtes Papier glaubwürdig ist - sie nimmt es so, wie es gefunden wurde.",
+        "quality": 0.82
       }
     },
     "relatedTerms": [
@@ -849,10 +849,10 @@
         "quality": 0.3
       },
       "finance": {
-        "analogy": "Ein multidimensionaler Risiko-Fingerabdruck, der Kreditnehmer nach Merkmalen wie Branche, Laufzeitprofil und Ausfallhistorie in einem Merkmalsraum verortet – ähnliche Schuldner liegen nahe beieinander.",
-        "explanation": "Wie ein internes Ratingverfahren Unternehmen anhand vieldimensionaler Finanzkennzahlen in Risikoklassen gruppiert und dabei inhaltliche Nähe durch Ähnlichkeit im Merkmalsraum abbildet, überführen Embeddings Texte in numerische Vektoren, sodass semantisch verwandte Inhalte geometrisch nahe beieinander liegen. Das ermöglicht etwa die Suche nach ähnlichen Präzedenzfällen oder Vertragsklauseln ohne exakte Schlüsselwortübereinstimmung.",
-        "limits": "Risikoklassen basieren auf regulatorisch definierten, revisionssicheren Kriterien; warum zwei Textvektoren als ähnlich eingestuft werden, ist im Embedding-Raum oft nicht nachvollziehbar und erfüllt damit nicht die Anforderungen an Modell-Transparenz und Erklärbarkeit nach SR 11-7 oder dem EU AI Act.",
-        "quality": 0.08
+        "analogy": "Das nach Themen sortierte Aktenarchiv der Bankfiliale, in dem ähnliche Vorgänge im selben Regalbereich nah beieinanderliegen.",
+        "explanation": "Stellen Sie sich das Archiv einer Bankfiliale vor, in dem die Vorgänge nicht alphabetisch oder nach Datum abgelegt sind, sondern nach Inhalt: Alle Unterlagen rund um einen Autokredit stehen in einem Regal nah beieinander, die Sparvertraege in einem anderen, die Daueraufträge wieder woanders. Genau das tun Embeddings mit Texten: Sie geben jedem Text eine Art Platzangabe in einem Zahlenraum, und zwar so, dass inhaltlich ähnliche Texte dicht nebeneinander landen. Wer einen Vorgang sucht, muss dann nicht das exakte Stichwort kennen, sondern greift ins richtige Regalfach und findet alles Verwandte gleich daneben — die Suche beruht so auf inhaltlicher Nähe statt auf wörtlicher Übereinstimmung.",
+        "limits": "Im echten Archiv ordnet ein Mensch die Akten nach nachvollziehbaren Themen ein; bei Embeddings entscheiden viele berechnete Zahlen über die Nähe, und warum zwei Texte als ähnlich gelten, lässt sich oft nicht in einem klaren Stichwort benennen. Außerdem hat ein Regal nur wenige Richtungen, in die man einsortieren kann, während der Zahlenraum der Embeddings weit mehr Dimensionen nutzt, als man sich räumlich vorstellen kann.",
+        "quality": 0.74
       }
     },
     "relatedTerms": [
@@ -906,10 +906,10 @@
         "quality": 0.58
       },
       "finance": {
-        "analogy": "Model Risk Management nach SR 11-7: unabhängige Validierung, klare Ownership, lückenlose Dokumentation und ein Eskalationspfad für jedes produktiv eingesetzte Modell.",
-        "explanation": "Wie die Leitlinien des Fed-Rundschreibens SR 11-7 für quantitative Risikomodelle Entwicklung, Validierung, Genehmigung und laufendes Monitoring strukturieren, definiert AI Governance Rollen, Prüfpflichten und Kontrollprozesse für KI-Systeme. Die Analogie macht deutlich, dass es nicht um technische Einschränkungen allein geht, sondern um institutionelle Verantwortlichkeit über den gesamten Modelllebenszyklus.",
-        "limits": "SR 11-7 gilt für klar abgegrenzte quantitative Modelle mit definierten Inputs und statistisch prüfbaren Outputs; KI-Systeme – insbesondere Sprachmodelle – sind schwerer zu validieren, ihre Risiken sind breiter gestreut und die regulatorischen Standards für KI-Governance im Finanzsektor sind noch nicht konsolidiert.",
-        "quality": 0.08
+        "analogy": "Das interne Regelbuch einer Bankfiliale: festgelegt ist, wer einen Kredit bewilligen darf, ab welchem Betrag der Filialleiter mitzeichnen muss und wer die Entscheidung im Nachhinein kontrolliert.",
+        "explanation": "In einer Bank entscheidet nicht jeder Mitarbeiter allein, ob ein Autokredit durchgeht. Es gibt klare Zuständigkeiten, Genehmigungsstufen und eine zweite Person, die nachprüft, ob alles seine Ordnung hat. Genauso legt AI Governance fest, welche KI-Anwendungen erlaubt sind, wer ihren Einsatz freigeben muss, wer die Verantwortung trägt und wie Risiken vorab eingeschätzt und die Ergebnisse hinterher kontrolliert werden. Es geht dabei nicht um die Technik selbst, sondern um die Regeln, Rollen und Abläufe drumherum.",
+        "limits": "Das Regelbuch einer Bank ist über Jahre eingespielt und betrifft gut verstandene Vorgänge wie eine Kreditbewilligung; bei KI sind die Risiken neuer, schwerer abzuschätzen und die passenden Regeln werden vielerorts erst noch entwickelt.",
+        "quality": 0.76
       }
     },
     "relatedTerms": [
@@ -964,10 +964,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Plausibilitätsprüfungen, Limitsysteme und Eskalationsregeln, die verhindern, dass ein Risikomodell oder Handelssystem Entscheidungen außerhalb regulatorisch und intern genehmigter Parameter ausführt.",
-        "explanation": "Wie ein Handelssystem Orders automatisch sperrt, die Positionslimits oder VaR-Schwellen verletzen würden, und wie Kreditentscheidungssysteme bei überschrittenen Risikoparametern in die manuelle Prüfung eskalieren, begrenzen Guardrails das Verhalten eines KI-Systems auf vorab definierte, zulässige Ausgaben. Die Analogie verdeutlicht, dass Guardrails keine nachträgliche Absicherung sind, sondern in den Prozess eingebettete Kontrollpunkte.",
-        "limits": "Limitsysteme im Handel basieren auf präzise quantifizierten Schwellenwerten mit deterministischer Wirkung; KI-Guardrails arbeiten oft heuristisch oder modellbasiert und können durch unerwartete Formulierungen umgangen werden – ihre Wirksamkeit erfordert kontinuierliches Testen und ist schwerer formal zu zertifizieren.",
-        "quality": 0.35
+        "analogy": "Die fest im Geldautomaten eingebauten Grenzen, die bestimmte Vorgänge schlicht verweigern - egal, was man im Moment eintippt.",
+        "explanation": "Ein Geldautomat hat fest eingebaute Grenzen: Er zahlt pro Tag nur bis zu einem bestimmten Betrag aus, gibt keine krummen Centbeträge heraus und lehnt eine gesperrte Karte ab. Diese Regeln stecken im Gerät, nicht in der eigenen Entscheidung im Einzelfall - bittet man um etwas Unzulässiges, blockiert der Automat es einfach. Genauso umgeben feste Schutzgrenzen ein KI-System: Sie legen vorab fest, welche Anfragen und Antworten erlaubt sind, und filtern oder blockieren alles, was außerhalb dieser Grenzen liegt - unabhängig davon, was im konkreten Wunsch steht.",
+        "limits": "Die Regeln im Geldautomaten sind klare Zahlen und Ja/Nein-Prüfungen mit eindeutiger Wirkung; die Schutzgrenzen müssen dagegen oft unscharfe Inhalte und Formulierungen beurteilen und lassen sich durch geschickt umformulierte Anfragen manchmal umgehen, sodass sie nie ganz so verlässlich greifen wie ein fest verdrahteter Automat.",
+        "quality": 0.78
       }
     },
     "relatedTerms": [
@@ -1021,10 +1021,10 @@
         "quality": 0.58
       },
       "finance": {
-        "analogy": "Eine eingeschleuste, gefälschte Transaktionsanweisung in einem SWIFT-Nachrichtenstrom, die das System zu einer nicht autorisierten Ausführung veranlasst – analog zum Bangladesh-Bank-Hack 2016.",
-        "explanation": "Wie beim SWIFT-Betrugsfall manipulierte Nachrichten legitime Instruktionen imitierten und automatisierte Prozesse zu unautorisierten Überweisungen veranlassten, schleust Prompt Injection manipulierten Text in Modelleingaben ein, der das System dazu bringt, die ursprüngliche Aufgabe zu ignorieren und stattdessen fremde Anweisungen auszuführen. Die Analogie hilft, die Ernsthaftigkeit des Angriffsvektors und die Notwendigkeit von Input-Validierung greifbar zu machen.",
-        "limits": "SWIFT-Nachrichten durchlaufen mehrstufige kryptografische Authentifizierung und Autorisierungskontrollen; ein Sprachmodell kann legitime und eingeschleuste Anweisungen strukturell nicht unterscheiden, weil es keinen vergleichbaren Mechanismus zur Herkunftsverifikation von Text besitzt.",
-        "quality": 0.35
+        "analogy": "Ein Trickbetrüger schiebt der Bankangestellten am Schalter einen gefälschten Zettel unter, der sie zu einer eigentlich verbotenen Auszahlung verleitet.",
+        "explanation": "Die Angestellte soll nur die Anweisungen ihrer Bank befolgen. Doch zwischen den echten Papieren auf dem Tresen liegt ein untergeschobener Zettel: \"Zahlen Sie diesem Mann sofort das ganze Konto aus.\" Weil sie nicht erkennt, dass dieser Auftrag vom Betrüger und nicht von der Bank stammt, führt sie ihn aus und bricht damit ihre eigenen Regeln. Genauso schmuggelt Prompt Injection fremde Anweisungen in das, was ein KI-System liest, etwa in eine Webseite oder ein Dokument; das System verwechselt sie mit den echten Vorgaben und gibt dann Daten preis oder führt unerwünschte Aktionen aus.",
+        "limits": "Eine erfahrene Angestellte würde bei einer ungewöhnlichen Anweisung misstrauisch und könnte beim Filialleiter rückfragen; ein KI-System hat von sich aus keinen verlässlichen Weg, echte von untergeschobenen Anweisungen zu unterscheiden, weil für es beide nur Text in derselben Eingabe sind.",
+        "quality": 0.82
       }
     },
     "relatedTerms": [
@@ -1081,10 +1081,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Ein gestaffeltes Betrugserkennungssystem, in dem jede Stufe aus den Signalen der vorigen ein verdichtetes Risikomerkmal formt - von einzelnen Transaktionsattributen über Verhaltensmuster bis zum konsolidierten Betrugsscore.",
-        "explanation": "Wie ein mehrstufiges Anti-Fraud- oder Risikomodell zunächst Rohmerkmale je Transaktion erfasst, daraus auf einer höheren Ebene Verhaltens- und Beziehungsmuster ableitet und erst ganz oben ein aggregiertes Urteil bildet, lernt ein tiefes Netz seine Merkmalshierarchie selbst aus den Daten statt aus fest kodierten Expertenregeln. In der Bankpraxis ersetzt diese erlernte Merkmalsextraktion zunehmend handgepflegte Regelwerke und ermöglicht die Erkennung subtiler, nichtlinearer Muster - was zugleich die Anforderungen an Validierung und Dokumentation erhöht. Genau hier setzen das Model Risk Management nach SR 11-7 und die MaRisk an, da die erlernten Zwischenmerkmale aufsichtlich nachvollziehbar und unabhängig validiert sein müssen.",
-        "limits": "Die Analogie unterstellt klar benennbare Stufen wie in einem klassischen Risikomodell, doch die Zwischenrepräsentationen eines tiefen Netzes sind weder fachlich interpretierbar noch einzeln validierbar - was im regulierten Umfeld (etwa bei der Genehmigung interner Modelle nach dem IRB-Ansatz unter Basel) ein echtes Erklärbarkeits- und Abnahmeproblem schafft.",
-        "quality": 0.08
+        "analogy": "Eine Bank, in der Ihr Schuhkarton voller Kassenbons mehrere Bearbeitungsstufen durchläuft und jede Stufe das Ergebnis der vorigen zu etwas Zusammengefasstem verdichtet.",
+        "explanation": "Stellen Sie sich vor, Sie geben einen Schuhkarton mit allen Belegen eines Jahres bei der Bank ab. Am ersten Schalter wird jeder Bon nur erfasst: Datum, Betrag, Geschäft. Der nächste Schalter sieht nicht mehr die einzelnen Bons, sondern fasst sie zu Gruppen zusammen, etwa alle Tankstellen- oder Supermarktbelege; eine weitere Stufe bildet daraus übergeordnete Kategorien wie Auto, Wohnen, Lebensmittel, und am Ende steht ein einziges Urteil, wofür Ihr Geld vor allem draufgeht. Genauso schichtet Deep Learning viele Verarbeitungsebenen übereinander: Die unterste arbeitet an den Rohdaten, jede folgende fasst das Ergebnis der vorigen zu etwas Abstrakterem zusammen. Entscheidend ist, dass niemand der Bank vorgibt, welche Gruppen sie bilden soll - sie arbeitet diese Stufen selbst aus den Belegen heraus, statt feste Regeln vorgesetzt zu bekommen.",
+        "limits": "Im Bild lässt sich jeder Stufe ein klarer Name geben (Tankstelle, Auto, Wohnen), bei einem echten tiefen Netz sind die Zwischenschritte dagegen kaum benennbar und für Menschen schwer nachvollziehbar. Außerdem lernt die Bank im Bild nur aus diesem einen Karton, während ein Netz sein gestuftes Vorgehen erst aus sehr großen Mengen an Beispielen entwickelt.",
+        "quality": 0.77
       }
     },
     "relatedTerms": [
@@ -1142,10 +1142,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Ein Marktrisikomodell mit voller Korrelationsmatrix, das jede Position nicht für sich, sondern im Verhältnis zu allen anderen Positionen des Portfolios bewertet.",
-        "explanation": "Wie ein Value-at-Risk-Modell den Risikobeitrag einer Anleihe erst über ihre Korrelationen zu jeder anderen Position bestimmt, errechnet die Self-Attention für jedes Token ein Gewicht gegenüber allen übrigen Token. Beide bilden eine vollständige Beziehungsmatrix, in der nicht der Einzelwert, sondern das Zusammenspiel entscheidet. In der Bankpraxis ist diese Matrixlogik aus Marktrisikomodellen vertraut, deren Diversifikations- und Konzentrationseffekte unter den Basel-Vorgaben zum Handelsbuch (FRTB) berechnet und im Rahmen des Model Risk Management nach SR 11-7 validiert werden.",
-        "limits": "Eine Korrelationsmatrix beruht auf ökonomisch interpretierbaren, stabil schätzbaren Kennzahlen; die Attention-Gewichte sind hochdimensionale, kontextabhängige Lernparameter ohne direkte fachliche Deutung. Zudem ist die Korrelationsmatrix symmetrisch, während Attention gerichtet ist - Token A kann Token B anders gewichten als umgekehrt.",
-        "quality": 0.32
+        "analogy": "Eine Kreditrunde am runden Tisch, in der alle Berater gleichzeitig die ganze Akte vor sich haben und jede Angabe daran messen, wie sie zu allen anderen passt.",
+        "explanation": "Wenn die Bank über einen Autokredit entscheidet, geht nicht jeder Berater die Akte allein Zeile für Zeile durch. Alle sitzen zusammen, haben das gesamte Antragsblatt zugleich vor sich und gewichten jede Angabe im Licht aller anderen: Das Gehalt wirkt anders, wenn man es neben Miete, bestehender Rate und Familiengröße sieht. So arbeitet die Transformer-Architektur: Sie schaut nicht ein Wort nach dem anderen an, sondern nimmt alle Teile der Eingabe gleichzeitig und berechnet für jedes Teil, wie stark es mit jedem anderen zusammenhängt. Aus diesem gemeinsamen Abwägen entsteht das Verständnis des Ganzen, und weil alles parallel statt nacheinander geprüft wird, lässt sich das Verfahren sehr schnell auf große Mengen anwenden.",
+        "limits": "Eine Kreditrunde hat eine Handvoll Berater und nachvollziehbare Gründe für jedes Gewicht, während ein Transformer sehr viele Teile über erlernte Zahlenwerte verknüpft, die sich nicht einzeln in Worte fassen lassen. Außerdem schätzt im Bild jeder jeden gleich ein, während das Modell gerichtet gewichtet: Wort A kann sich stark auf Wort B beziehen, ohne dass das umgekehrt ebenso gilt.",
+        "quality": 0.75
       }
     },
     "relatedTerms": [
@@ -1204,10 +1204,10 @@
         "quality": 0.58
       },
       "finance": {
-        "analogy": "Ein strukturierter, dokumentierter Kreditentscheidungsprozess mit nachvollziehbaren Zwischenschritten – Bonitätsanalyse, Sicherheitenbewertung, Limitprüfung – statt einer Bauchentscheidung des Kreditsachbearbeiters",
-        "explanation": "Wie eine Bank bei größeren Engagements nicht aus dem Bauch entscheidet, sondern Cashflow-Analyse, Rating, Sicherheiten und Limitauslastung in einer dokumentierten Beschlussvorlage Schritt für Schritt abarbeitet, erzeugt ein Reasoning Model eine explizite Kette von Zwischenüberlegungen vor der Antwort. Im Rahmen des Model Risk Management nach SR 11-7 und der MaRisk ist gerade die Nachvollziehbarkeit des Entscheidungswegs ein Prüfkriterium, sodass eine dokumentierte Denkkette die Arbeit von Validierung und Revision unterstützen kann. Mehr Zwischenschritte ersetzen jedoch keine unabhängige Modellvalidierung.",
-        "limits": "Eine Kreditbeschlussvorlage bindet die handelnden Personen, ist auditfähig und folgt verbindlichen Vier-Augen- und Kompetenzregeln; die vom Modell ausgegebene Denkkette ist eine nachträglich plausible Textbegründung, die nicht zwingend dem tatsächlichen internen Rechenweg entspricht und daher für aufsichtsrechtliche Nachweiszwecke nur eingeschränkt belastbar ist.",
-        "quality": 0.32
+        "analogy": "Ein Bankberater, der Ihren Kreditantrag fürs Auto nicht sofort zusagt, sondern erst Schritt für Schritt einen Notizzettel mit Zwischenüberlegungen füllt.",
+        "explanation": "Statt sofort „Ja“ oder „Nein“ zu sagen, geht der Berater den Antrag laut durch: erst das Einkommen, dann die monatlichen Ausgaben, dann die Höhe der Rate, und notiert jeden Schritt. Diese sichtbaren Zwischenschritte kosten ihn mehr Zeit am Schreibtisch, führen bei verzwickten Anträgen mit mehreren Bedingungen aber öfter zur richtigen Entscheidung. Genauso erzeugt ein solches KI-Modell vor der eigentlichen Antwort erst eine Kette von Zwischenüberlegungen und wendet dafür spürbar mehr Rechenzeit auf. Bei mehrstufigen Aufgaben wie Rechnen oder Planen trifft es dadurch häufiger ins Schwarze.",
+        "limits": "Der vorgezeigte Notizzettel ist eine im Nachhinein plausibel klingende Begründung und muss nicht der tatsächliche Weg sein, auf dem das Modell intern zu seiner Antwort kam. Und mehr notierte Zwischenschritte sind keine Garantie: Auch ein langer, sauber aussehender Gedankengang kann am Ende zum falschen Ergebnis führen.",
+        "quality": 0.82
       }
     },
     "relatedTerms": [
@@ -1266,10 +1266,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Ein Equity-Analyst, der den Geschäftsbericht (Text), die Kurscharts (Bild) und die Audioaufzeichnung des Earnings Calls gemeinsam auswertet, um zu einem Anlagevotum zu gelangen.",
-        "explanation": "Wie der Analyst quantitative Bilanzdaten, die Tonalität des Managements im Call und das technische Chartbild zu einer einzigen Einschätzung verdichtet, führt das multimodale Modell diese Modalitäten in einer gemeinsamen Verarbeitung zusammen. In der Bankpraxis sind solche Quellen heute meist auf getrennte Systeme verteilt – Research-Datenbank, Marktdaten-Terminal, Transkriptions-Tool –, deren manuelle Zusammenführung der eigentliche Aufwand ist. Setzt eine Bank ein solches Modell in Research oder Anlageberatung ein, greifen die Modellvalidierung nach SR 11-7 und die Wohlverhaltenspflichten der MiFID II, da die Auswertung in eine Anlageentscheidung einfließt.",
-        "limits": "Der Analyst kann das Management direkt zurückrufen, Annahmen offenlegen und seine Einschätzung begründen, während das Modell aus den drei Modalitäten ein Muster ableitet, ohne kausale Begründung oder Haftung; zudem ist die Audio-Auswertung eines Calls keine belastbare Sentiment-Messung, sondern ein statistischer Näherungswert, der Ironie, Vorbehalte oder bewusste Kommunikationssteuerung systematisch verfehlen kann.",
-        "quality": 0.33
+        "analogy": "Ein Bankschalter, an dem Sie Bargeld, Scheck, Ausweis mit Foto und Unterschrift zusammen abgeben und der Mitarbeiter alles gemeinsam prüft.",
+        "explanation": "Am Schalter legen Sie nicht nur eine Sache hin, sondern mehrere ganz unterschiedliche auf einmal: Geldscheine, einen Scheck, Ihren Ausweis mit Foto und eine handschriftliche Unterschrift. Der Mitarbeiter zählt das Geld, liest die Zahl auf dem Scheck, vergleicht das Foto mit Ihrem Gesicht und prüft, ob die Unterschrift zur hinterlegten passt – und führt all das zu einer einzigen Entscheidung zusammen, statt jede Sache nur getrennt abzuhaken. So nimmt auch ein multimodales Modell verschiedene Eingabearten zugleich entgegen, etwa Text, Bild und Ton, und stellt Bezüge zwischen ihnen her, anstatt sie nur nacheinander einzeln zu betrachten.",
+        "limits": "Der Schaltermitarbeiter versteht wirklich, was Geld, Ausweis und Unterschrift bedeuten, und kann bei Zweifeln nachfragen; das Modell dagegen erkennt nur statistische Muster in den Daten und liefert keine echte Begründung. Außerdem behandelt der Schalter immer dieselben festen Belegarten, während ein multimodales Modell die Datenarten je nach Bauart unterschiedlich kombiniert und manche nur entgegennimmt, andere auch selbst erzeugt.",
+        "quality": 0.8
       }
     },
     "relatedTerms": [
@@ -1328,10 +1328,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Eine vereinfachte Scorecard, abgeleitet aus einem komplexen internen IRB-Risikomodell, für schnelle Kreditentscheidungen im Mengengeschäft am Point of Sale.",
-        "explanation": "So wie eine Bank aus einem aufwändigen, validierten IRB-Modell eine schlanke Punktbewertungs-Scorecard ableitet, die ein Berater in Sekunden anwenden kann, überträgt Distillation das Verhalten des großen Lehrer-Modells in ein kleines, schnelles Schüler-Modell. Die Scorecard reproduziert die Entscheidungslogik des Kernmodells näherungsweise und ist im Massengeschäft kostengünstig einsetzbar. Unter SR 11-7 und MaRisk (AT 4.3.5) bleibt jedoch auch das abgeleitete Modell ein eigenständig validierungs- und dokumentationspflichtiges Modell, dessen Abweichung vom Ursprungsmodell laufend überwacht werden muss.",
-        "limits": "Die vereinfachte Scorecard verliert die Trennschärfe des IRB-Modells bei atypischen Schuldnern und Randsegmenten; verlässt sich die Bank im Einzelfall blind auf sie, drohen systematisch falsche Bonitätseinstufungen, die das destillierte Modell nicht mehr auffängt.",
-        "quality": 0.36
+        "analogy": "Ein erfahrener Filialleiter lernt einen jungen Kollegen am Schalter so an, dass dieser die immer gleichen Kundenanliegen bald allein, schneller und mit weniger Aufwand erledigt.",
+        "explanation": "Der Filialleiter kennt unzählige Fälle und entscheidet sicher, braucht dafür aber viel Erfahrung. Beim Anlernen sagt er dem Neuen nicht nur \"richtig\" oder \"falsch\", sondern erklärt auch, warum ein Anliegen knapp und ein anderes klar zu beurteilen ist und worauf man bei Zweifelsfällen achtet. Genau das tut die Distillation: Ein kleines Schüler-Modell lernt vom großen Lehrer-Modell nicht bloß die Endergebnisse, sondern dessen abgestufte Einschätzungen mit. Dadurch entscheidet es ähnlich gut wie der große Lehrer, obwohl es schlanker ist und im Betrieb deutlich weniger kostet.",
+        "limits": "Ein Mensch lernt durch Verstehen und kann Neues von sich aus dazulernen; das Schüler-Modell ahmt nur das nach, was der Lehrer ihm zeigt, und bleibt bei sehr ungewöhnlichen Fällen meist etwas ungenauer als das große Vorbild.",
+        "quality": 0.77
       }
     },
     "relatedTerms": [
@@ -1390,10 +1390,10 @@
         "quality": 0.95
       },
       "finance": {
-        "analogy": "Wie das Mapping einer feinkörnigen PD-Schätzung auf eine grobe Masterskala mit wenigen Ratingklassen, statt die Ausfallwahrscheinlichkeit auf Basispunkte genau zu führen.",
-        "explanation": "In der Bankpraxis fasst eine Ratingmasterskala feine Ausfallwahrscheinlichkeiten in wenige Bonitätsstufen zusammen und vereinfacht so Reporting, Limitprüfung und Kapitalunterlegung - analog bildet Quantisierung feine Gewichtswerte auf ein grobes Raster ab und spart Speicher sowie Rechenzeit. Solange die Stufung weit von Entscheidungsschwellen entfernt liegt, bleibt der Effekt unkritisch. Im Modellrisikomanagement (etwa nach SR 11-7 bzw. unter MaRisk/BAIT) muss eine solche Vergröberung dokumentiert und ihr Einfluss durch Validierung und Backtesting belegt werden.",
-        "limits": "Genau an einer Klassengrenze - etwa zwischen zwei IRB-Ratingklassen oder an einem Limit - kann das Runden eine Entscheidung kippen, die mit feiner Auflösung anders ausgefallen wäre; anders als eine einzelne gerundete Kennzahl verteilt sich der Quantisierungsfehler zudem über alle Gewichte und kann sich kumulieren.",
-        "quality": 0.32
+        "analogy": "Wie wenn man sein Haushaltsbudget nur noch auf den nächsten Euro rundet, statt jeden Betrag centgenau zu führen - das Rechnen geht schneller und passt auf einen kleineren Notizzettel.",
+        "explanation": "Beim Haushaltsbudget bleiben die Einträge dieselben - Miete, Einkauf, Sparen -, aber statt 47,83 Euro notiert man einfach 48 Euro. Die gröberen Zahlen brauchen weniger Platz und lassen sich im Kopf flotter zusammenrechnen. Genauso speichert die Quantisierung die bereits gelernten Werte eines KI-Modells in gröberer Auflösung: Das Wissen des Modells bleibt erhalten, nur die feinen Nachkommastellen fallen weg - so passt das Modell in weniger Speicher und antwortet schneller.",
+        "limits": "Beim Budget rundet man wenige Beträge, im Modell aber Millionen von Werten gleichzeitig, sodass sich die kleinen Rundungsfehler aufsummieren und die Antworten bei zu grobem Runden spürbar ungenauer werden können. Und anders als beim Geld, wo ein Euro klar definiert ist, lässt sich vorab nicht so leicht sagen, welche Werte man bedenkenlos gröber speichern darf und welche besser fein bleiben.",
+        "quality": 0.78
       }
     },
     "relatedTerms": [
@@ -1452,10 +1452,10 @@
         "quality": 0.64
       },
       "finance": {
-        "analogy": "Beschleuniger und VRAM sind wie die co-lokalisierte Low-Latency-Infrastruktur eines Hochfrequenzhändlers direkt neben der Matching-Engine der Börse: Sie definiert, was technisch überhaupt machbar ist, bevor die Handelsstrategie zählt.",
-        "explanation": "Wie ein HFT-Desk seine Server per Co-Location im Rechenzentrum der Börse platziert und auf FPGAs sowie spezialisierte Hardware setzt, weil Mikrosekunden über die Profitabilität entscheiden, bestimmt die GPU/NPU-Ausstattung, ob ein Modell mit akzeptabler Latenz produktiv läuft. Der VRAM entspricht dabei der Speichertiefe, die die Hardware vorhalten kann: Reicht sie für das gewünschte Modell nicht aus, muss dieses quantisiert oder verkleinert werden. Diese physische Schranke lässt sich nicht durch besseren Code wegoptimieren und fließt unmittelbar in die Investitions- und Betriebskostenrechnung ein, etwa wenn der Betrieb großer Modelle als Auslagerung an einen Cloud-Anbieter (DORA-relevante IKT-Drittdienstleister) abgewogen wird.",
-        "limits": "Die Analogie versagt bei der Wirkungslogik: Ein zu geringer Co-Location-Vorsprung verlangsamt einen HFT-Desk nur graduell gegenüber Konkurrenten, während zu wenig VRAM keine graduelle Verlangsamung, sondern eine harte Ja/Nein-Grenze ist – das Modell lässt sich dann schlicht nicht laden.",
-        "quality": 0.08
+        "analogy": "Die Geldzählmaschine in der Bankfiliale samt ihrem Einwurffach: Das Fach bestimmt, wie dicke Bündel überhaupt hineinpassen, die Maschine, wie schnell gezählt wird.",
+        "explanation": "GPU und NPU sind wie die Zählmaschine am Bankschalter, die Scheine um ein Vielfaches schneller durchblättert, als eine Kassiererin sie von Hand zählen könnte. Der VRAM ist das Einwurffach dieser Maschine: Passt das Geldbündel komplett hinein, läuft das Zählen in einem Rutsch und zügig. Ist das Bündel zu dick fürs Fach, muss man es in kleinere Päckchen aufteilen oder Scheine weglassen, und alles dauert spürbar länger. Genauso entscheidet die Größe des VRAM, ob ein KI-Modell vollständig hineinpasst und flott antwortet oder umständlich zerlegt und langsam abgearbeitet werden muss.",
+        "limits": "Das Bild hinkt an einer Stelle: Ein zu kleines Fach lässt sich immer noch portionsweise füllen, während zu wenig VRAM ein Modell oft gar nicht erst lädt — dann ist es nicht nur langsamer, sondern schlicht nicht lauffähig. Auch zählt die echte Maschine bloß Scheine, während die Hardware komplexe Rechnungen ausführt und nicht nur Stückzahlen ermittelt.",
+        "quality": 0.74
       }
     },
     "relatedTerms": [
@@ -1514,10 +1514,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Die Orderausführungslatenz im Hochfrequenzhandel gegenüber dem Tagesdurchsatz der Wertpapierabwicklung im nächtlichen Batch-Settlement.",
-        "explanation": "Im Börsenhandel zählt für eine einzelne Order jede Mikrosekunde bis zur Ausführung (Latenz), weshalb Co-Location und direkter Marktzugang (DEA) genau diesem Ziel dienen - während das Back-Office im Batch-Settlement (etwa über T2S oder definierte Clearing-Zyklen) auf maximalen Tagesdurchsatz Zehntausender Transaktionen optimiert. Beide Welten teilen sich Infrastruktur, verfolgen aber gegensätzliche Optimierungsziele, und die Vorgaben sind teils reguliert, etwa die MiFID-II-Anforderungen an Uhrensynchronisation (RTS 25) und Best Execution. Genauso muss ein KI-Betrieb entscheiden, ob er auf schnelle Einzelantwort oder hohe aggregierte Verarbeitungsmenge auslegt.",
-        "limits": "Im Handel ist Latenz ein direkter Wettbewerbs- und Ertragsfaktor mit harter regulatorischer Messpflicht, während KI-Latenz primär Nutzererlebnis und Kosten betrifft; zudem sind Abwicklungszyklen rechtlich fixiert, das KI-Batchverhalten dagegen frei konfigurierbar.",
-        "quality": 0.08
+        "analogy": "Der eine Schalter in der Bankfiliale am Monatsanfang: Entweder ein Kunde wird blitzschnell bedient, oder es kommen möglichst viele pro Stunde durch - beides zugleich gelingt am selben Schalter selten.",
+        "explanation": "Wie schnell der Berater einen einzelnen Kunden fertig hat, ist die Bedienzeit - das entspricht der Reaktionszeit eines KI-Modells auf eine einzelne Anfrage. Wie viele Kunden die Filiale insgesamt pro Stunde schafft, entspricht der Gesamtmenge an Anfragen, die das Modell in einer Zeitspanne bewältigt. Am Monatsanfang, wenn der Andrang groß ist, kann der Berater mehrere Anliegen bündeln und gemeinsam abarbeiten; dann läuft die Schlange zwar zügiger ab (mehr Anfragen pro Zeit), aber der Einzelne wartet länger, bis er an die Reihe kommt (längere Reaktionszeit). Genau dieser Zielkonflikt steckt im KI-Begriff: ein Schalter, eine begrenzte Kapazität - wer auf die schnelle Einzelbedienung optimiert, opfert Stückzahl, und wer auf Masse optimiert, opfert das Tempo für den Einzelnen.",
+        "limits": "Ein menschlicher Berater wird müde und langsamer, ein KI-Modell arbeitet dagegen gleichmäßig und lässt sich gezielt auf \"schnell\" oder \"viel\" einstellen. Auch öffnet eine echte Bank bei Andrang einfach einen zweiten Schalter, während beim KI-Modell die verfügbare Rechenkapazität im Moment fest ist - und gerade deshalb der Konflikt erzwungen wird.",
+        "quality": 0.74
       }
     },
     "relatedTerms": [
@@ -1575,10 +1575,10 @@
         "quality": 0.62
       },
       "finance": {
-        "analogy": "Die Entscheidung zwischen einem bankeigenen Rechenzentrum und der Auslagerung der Inferenz an einen Cloud-Provider unter dem Auslagerungsmanagement nach BAIT und DORA.",
-        "explanation": "Wie eine Bank bei der Auslagerung wesentlicher IT-Dienstleistungen zwischen Eigenbetrieb, Auslagerung und Cloud-Bezug abwägt, entscheidet sie auch beim Hosting von KI-Inferenz – nur dass hier zusätzlich sensible Kunden- und Transaktionsdaten in fremde Hände gelangen können. BAIT und die EU-Verordnung DORA verlangen bei Cloud-Auslagerung ein vollständiges Informationsregister der vertraglichen Vereinbarungen, eine Risikoanalyse, vertragliche Audit- und Weisungsrechte sowie eine glaubhafte Ausstiegsstrategie gegen Anbieterabhängigkeit. Eine Konzentration kritischer Last bei einem einzigen Hyperscaler wird von der BaFin zunehmend als Konzentrationsrisiko bewertet.",
-        "limits": "Die Analogie zur klassischen IT-Auslagerung greift zu kurz, weil bei generativer KI nicht nur Rechenzeit, sondern oft auch der Prompt-Inhalt – also potenziell Geschäftsgeheimnisse oder Kundendaten – beim Anbieter landet und in dessen Logs oder Trainingsdaten einfließen könnte; die klassische Auslagerung etwa der Lohnbuchhaltung hat diese Daten-Leakage-Dimension nicht in dieser Schärfe.",
-        "quality": 0.07
+        "analogy": "Die Wahl, ob man Wertsachen im eigenen Tresor zu Hause verwahrt, ein Schliessfach bei der Bank mietet oder beides kombiniert.",
+        "explanation": "Wer Wertsachen sicher unterbringen will, hat drei Wege: Ein eigener Tresor im Haus gibt volle Kontrolle, kostet aber Anschaffung und Pflege; ein gemietetes Schliessfach in der Bankfiliale spart die Anschaffung und lässt sich jederzeit grösser buchen, dafür liegen die Sachen in fremdem Gebäude. Genauso läuft ein fertig trainiertes KI-Modell entweder auf eigener Hardware im Haus oder wird gegen Gebühr bei einem fremden Anbieter angemietet, der die Rechenarbeit übernimmt. Wer beides mischt - Alltägliches ins Schliessfach, Heikles in den eigenen Tresor -, fährt die hybride Variante. In allen Fällen ist es dieselbe Abwägung: eigener Ort mit voller Kontrolle und Kosten vorab gegen fremden Ort, der mitwächst, aber Daten und Verfügbarkeit in fremde Hände legt.",
+        "limits": "Im Schliessfach bleiben die Wertsachen unberührt liegen, während beim angemieteten Rechnen die übergebenen Daten tatsächlich verarbeitet werden und der Anbieter sie theoretisch mitlesen oder speichern könnte - das Bild des verschlossenen Fachs unterschätzt diese Einsicht. Zudem ist ein Schliessfach fix gebucht, während sich angemietete Rechenleistung je nach Bedarf von Moment zu Moment vergrössert und wieder schrumpft.",
+        "quality": 0.76
       }
     },
     "relatedTerms": [
@@ -1637,10 +1637,10 @@
         "quality": 0.28
       },
       "finance": {
-        "analogy": "Die Transaktionslimits und das Throttling im Zahlungsverkehr, etwa Tages- oder Minutenobergrenzen für SEPA-Überweisungen und Kartenzahlungen.",
-        "explanation": "Wie eine Bank die Zahl und das Volumen von Transaktionen pro Zeitfenster deckelt, um Clearing- und Settlement-Systeme vor Überlast und Konten vor Betrug zu schützen, begrenzt ein Rate Limit Anfragen und Tokens pro Minute. In der Bankpraxis greifen solche Drosselungen sowohl aus Kapazitätsgründen im Massenzahlungsverkehr als auch aus Sicht der Betrugsprävention, wo ungewöhnliche Frequenzen Fraud-Monitoring-Regeln auslösen. Eine Überschreitung führt zu Ablehnung oder Verzögerung der Order, die der aufrufende Prozess über Wiederholung oder Warteschlange auffangen muss.",
-        "limits": "Die Analogie versagt beim Auslöser: Ein Transaktionslimit kann gezielt eine einzelne verdächtige Zahlung blockieren, während ein API-Rate-Limit inhaltsblind allein die Frequenz misst und keine Risiko- oder Betrugsbewertung der einzelnen Anfrage vornimmt.",
-        "quality": 0.34
+        "analogy": "Das Tageslimit am Geldautomaten: Ab einer bestimmten Summe je Zeitfenster gibt der Automat einfach nichts mehr heraus.",
+        "explanation": "Die Bank legt fest, wie viel Bargeld man pro Tag abheben darf, etwa 1000 Euro; ist die Grenze erreicht, kommt bis zum nächsten Tag nichts mehr, egal wie oft man die Karte einsteckt. Genauso deckelt ein Rate Limit, wie viele Anfragen man pro Zeitfenster an eine KI schicken darf. Wer die Obergrenze überschreitet, bekommt keine Antwort mehr, sondern eine kurze Abweisung, und muss warten, bis sich das Zeitfenster zurücksetzt. Die Grenze schützt nicht den einzelnen Auftrag, sondern sorgt dafür, dass der gemeinsam genutzte Dienst nicht überlastet wird und für alle nutzbar bleibt.",
+        "limits": "Das Bild hinkt bei der zweiten Schranke: Am Automaten zählt nur der ausgezahlte Betrag, während ein Rate Limit oft gleichzeitig zwei Dinge misst, nämlich die Zahl der Anfragen und deren Umfang. Außerdem darf man nach einer Abweisung meist schon nach Sekunden oder Minuten erneut anfragen, nicht erst am nächsten Tag.",
+        "quality": 0.78
       }
     },
     "relatedTerms": [
@@ -1699,10 +1699,10 @@
         "quality": 0.58
       },
       "finance": {
-        "analogy": "Ein durchsuchbares Musterarchiv der Transaktionshistorie, in dem die Betrugs- und Geldwäscheerkennung zu einer verdächtigen Buchung die ähnlichsten je beobachteten Betrugs- und Normalmuster abruft.",
-        "explanation": "Statt eine Transaktion nur gegen starre Schwellenwerte zu prüfen, verortet das System sie als Vektor und sucht die nächstgelegenen historischen Muster, etwa typische Verschleierungssequenzen aus früheren Fällen. In der Bankpraxis ergänzt das die regelbasierten Limit- und Transaktionsmonitoring-Systeme und liefert dem Geldwäschebeauftragten Vergleichsfälle für die manuelle Bewertung. Anders als ein Scoring- oder Ratingmodell trifft die Datenbank selbst keine Entscheidung, sondern stellt nur die ähnlichsten Präzedenzfälle bereit.",
-        "limits": "Ähnlichkeit zu bekannten Mustern erkennt keine völlig neue Betrugsmasche und kann zugleich harmlose, aber ungewöhnliche Buchungen fälschlich neben Betrugsfälle einsortieren; für die Nachweis- und Dokumentationspflichten nach MaRisk und Geldwäschegesetz bleibt die nachvollziehbare Begründung eines Treffers entscheidend, die eine reine Ähnlichkeitsmetrik nicht liefert.",
-        "quality": 0.34
+        "analogy": "Ein Bankarchiv, das auf Zuruf nicht nach Aktenzeichen, sondern nach inhaltlicher Ähnlichkeit blitzschnell die Beratungsfälle heraussucht, die dem aktuellen am nächsten kommen.",
+        "explanation": "Wenn ein Kunde im Filialgespräch seine Situation schildert - junge Familie, Häuschen geplant, knappes Budget -, braucht der Berater nicht den Vorgang mit genau diesem Namen, sondern frühere Fälle mit einer ähnlichen Lage. Ein solches Archiv legt jeden Vorgang nicht nach Buchstaben, sondern nach seinem Inhalt ab und holt in Sekunden die inhaltlich nächstgelegenen Vorgänge hervor, auch aus Millionen von Akten. Genauso speichert ein solcher inhaltlich sortierter Datenspeicher Texte als inhaltliche Steckbriefe und liefert per Ähnlichkeitssuche die nächstgelegenen Einträge zu einer Anfrage, statt auf ein exaktes Stichwort zu warten. Er ist damit der schnelle Zugriff, der einer KI bei großen Datenmengen die passenden Hintergrundunterlagen überhaupt erst rechtzeitig auf den Tisch legt.",
+        "limits": "Das Archiv findet die inhaltlich ähnlichsten Vorgänge, aber Ähnlichkeit ist nicht dasselbe wie Richtigkeit: Der nächstgelegene Fall kann oberflächlich passen und im Entscheidenden trotzdem danebenliegen. Und ist ein Vorgang fehlerhaft oder gar nicht erst eingeordnet abgelegt worden, taucht er auch beim besten Zuruf nicht auf.",
+        "quality": 0.76
       }
     },
     "relatedTerms": [
@@ -1761,10 +1761,10 @@
         "quality": 0.95
       },
       "finance": {
-        "analogy": "Die über Jahre gepflegte CRM-Kundenakte, die ein Private-Banking-Berater vor jedem Termin bewusst heranzieht – gespeichert im System, nicht im Kopf des Beraters.",
-        "explanation": "Wie der Berater Risikoneigung, frühere Anlageentscheidungen und Gesprächsnotizen aus dem CRM abruft, statt sich auf sein Erinnern zu verlassen, kombiniert der Agent ein flüchtiges Kontextfenster mit einem persistenten Speicher, aus dem relevante Kundenhistorie zurückgeholt wird. In der Bankpraxis ist dieser Speicher zugleich regulierter Gegenstand: Die Geeignetheitsprüfung nach MiFID II setzt voraus, dass Kundenangaben dokumentiert und für spätere Beratungen nachvollziehbar wieder herangezogen werden, und unter der DSGVO greifen Zweckbindung, Aufbewahrungsfristen und das Recht auf Löschung.",
-        "limits": "Die CRM-Akte ist von Beratern kuratiert, attributiert und auditierbar versioniert, während ein Vektor-Memory Inhalte unstrukturiert ablegt und beim Abruf nach unscharfer Ähnlichkeit auswählt – wodurch unklar bleibt, ob ein Eintrag noch gültig ist und wer ihn wann erzeugt hat. Zudem lässt sich ein einzelner Datensatz in der CRM-Akte gezielt löschen, während Informationen, die einmal in Embeddings eingeflossen sind, deutlich schwerer rückstandsfrei zu entfernen sind.",
-        "quality": 0.34
+        "analogy": "Der Bankberater im Filialgespräch: Was Sie gerade sagen, behält er im Kopf; was dauerhaft wichtig ist, schreibt er in Ihre Kundenakte fürs nächste Mal.",
+        "explanation": "Wie der Berater im laufenden Gespräch alles im Kopf behält, hält auch der KI-Agent die Angaben der aktuellen Unterhaltung präsent – doch sobald das Gespräch endet, ist dieses flüchtige Erinnern verloren. Damit etwas erhalten bleibt, wird es bewusst in einen dauerhaften Notizspeicher außerhalb des Modells geschrieben, vergleichbar mit der Kundenakte, die der Berater beim nächsten Mal wieder hervorholt. Bei einer neuen Anfrage werden dann die passenden Einträge aus diesem Speicher herausgesucht und ins Gespräch zurückgeholt. Wichtig ist: Das Sprachmodell selbst merkt sich nichts; das Gedächtnis steckt allein in dem Speicher, der rundherum aufgebaut wird.",
+        "limits": "Eine Kundenakte wird vom Berater bewusst und geordnet gepflegt, sodass er weiß, wer wann was eingetragen hat; der Langzeitspeicher einer KI sammelt Notizen dagegen oft ungeordnet und sucht beim Abrufen nur nach ungefährer Ähnlichkeit, wodurch unklar bleiben kann, ob ein Eintrag noch stimmt. Zudem lässt sich ein Eintrag in der Akte gezielt streichen, während einmal abgelegte KI-Erinnerungen schwerer sauber zu entfernen sind.",
+        "quality": 0.8
       }
     },
     "relatedTerms": [
@@ -1823,10 +1823,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Ein Backtesting eines Handels- oder Risikomodells, in das versehentlich Zukunftsinformationen (Look-ahead-Bias) oder Out-of-Time-Daten einfliessen, sodass die Validierung eine Performance vorgaukelt, die out-of-sample nicht hält.",
-        "explanation": "Wie ein Backtest die Güte einer Trading- oder Scoring-Strategie systematisch überschätzt, sobald Daten aus dem Validierungs- oder Zukunftsfenster in die Kalibrierung sickern, sehen kontaminierte Modelle ihre Testfragen bereits im Training und liefern geschönte Benchmark-Werte ohne Aussagekraft für die echte Anwendung. In der Bankpraxis ist die saubere zeitliche und stichprobenmässige Trennung von Entwicklungs-, Test- und Out-of-Time-Stichproben fester Bestandteil der Modellvalidierung; unter Model Risk Management nach SR 11-7 und der MaRisk-Validierung muss eine unabhängige Instanz solche Leakage-Quellen gezielt aufdecken, bevor ein Modell (etwa für IRB-Ratings) freigegeben wird.",
-        "limits": "Die Backtesting-Analogie trifft präzise die Eval-Kontamination und den methodischen Validitätsverlust, deckt aber nicht die zweite Spielart ab - das datenschutzrechtliche Austreten auswendig gelernter, vertraulicher Mandanten- oder Personendaten in den Modellantworten.",
-        "quality": 0.08
+        "analogy": "Ein vertraulicher Kontostand, der versehentlich auf dem Kassenbon der nächsten Kundin mitgedruckt wird.",
+        "explanation": "Stellen Sie sich vor, der Bankberater hat sich Ihren Kontostand und Ihre Adresse so gut eingeprägt, dass er beim Gespräch mit der nächsten Kundin diese Details aus Versehen ausplaudert oder sie auf deren Beleg auftauchen - Angaben, die nur Sie etwas angehen. Genauso kann ein KI-Modell Teile seiner Trainingsdaten auswendig lernen und sie später fast wortgleich in einer Antwort wiedergeben, sodass vertrauliche Inhalte bei jemandem landen, der sie nie hätte sehen dürfen. Es gibt aber noch eine zweite Spielart: So, als hätte der Berater die Fragen einer Prüfung schon vorab gekannt, sieht ein Modell manchmal seine Testaufgaben bereits beim Lernen - und schneidet dann scheinbar glänzend ab, obwohl es die Aufgaben nur auswendig kennt. In beiden Fällen \"sickern\" Daten an eine Stelle durch, an die sie nicht gehören, und das passiert fast immer unbeabsichtigt.",
+        "limits": "Das Kassenbon-Bild trifft das ungewollte Austreten vertraulicher Inhalte gut, taugt aber kaum für die zweite Spielart: Beim vorab bekannten Prüfungsstoff verrät das Modell kein Geheimnis, sondern sein gemessener Leistungswert ist nur künstlich geschönt und damit wenig aussagekräftig.",
+        "quality": 0.74
       }
     },
     "relatedTerms": [
@@ -1885,10 +1885,10 @@
         "quality": 0.6
       },
       "finance": {
-        "analogy": "Ein Chief Investment Officer, der die spezialisierten Desks für Aktien, Fixed Income, FX und Risiko koordiniert und ihre Einschätzungen zu einer Allokationsentscheidung zusammenführt.",
-        "explanation": "Wie der CIO die Mandatsfrage in Teilaufträge an die einzelnen Trading- und Research-Desks zerlegt, deren Spezialeinschätzungen einholt und gewichtet zu einer Gesamtallokation verdichtet, delegiert der Orchestrator Teilaufgaben an Worker-Agenten und aggregiert deren Ausgaben. In regulierten Häusern ist diese Arbeitsteilung zusätzlich durch Chinese Walls und Limitsysteme strukturiert, und das Model Risk Management (in den USA nach SR 11-7, hierzulande über MaRisk/BAIT-Anforderungen) verlangt dokumentierte Verantwortung pro eingesetztem Modell.",
-        "limits": "Im Investmenthaus haftet der CIO persönlich und jeder Desk unterliegt dokumentierten Mandaten und Limiten, während im Agentensystem die Verantwortungskette über mehrere Modelle hinweg verschwimmt und sich Fehler eines Workers - anders als ein abgegrenztes Desk-Limit - unbemerkt durch die gesamte Kette fortpflanzen können.",
-        "quality": 0.33
+        "analogy": "Ein Filialleiter zerlegt einen Kreditantrag fürs Auto in Teilaufgaben und führt die Teilantworten am Ende zu einer Entscheidung zusammen.",
+        "explanation": "Statt dass eine einzelne Person den ganzen Antrag allein bearbeitet, koordiniert der Filialleiter mehrere Fachkräfte: Die Kasse prüft das Konto, eine Kollegin rechnet die Rate durch, das Schließfach-Archiv holt alte Unterlagen. Er teilt die Aufgabe auf, gibt jeden Teil an die passende Stelle weiter und führt die Ergebnisse am Schluss zusammen. Genauso zerlegt bei der Orchestrierung ein planender KI-Agent eine grosse Aufgabe in kleinere Schritte, verteilt sie an spezialisierte Helfer-Agenten mit je eigenen Werkzeugen und bündelt deren Teilantworten zur Gesamtlösung. Manche Stellen arbeiten gleichzeitig, andere nacheinander, und entscheidend ist nicht mehr, wie clever eine Einzelne ist, sondern wie gut der Filialleiter aufteilt, weiterleitet und am Ende alles korrekt zusammensetzt.",
+        "limits": "In der Filiale tragen am Ende Menschen die Verantwortung und merken meist, wenn eine Kollegin sich verrechnet hat; im KI-Verbund kann der Fehler eines einzelnen Helfers unbemerkt durch die ganze Kette wandern und in der zusammengeführten Antwort landen. Auch sind die KI-Helfer keine festen Personen mit klaren Zuständigkeiten, sondern werden je nach Aufgabe flexibel beauftragt.",
+        "quality": 0.77
       }
     },
     "relatedTerms": [
@@ -1946,10 +1946,10 @@
         "quality": 0.32
       },
       "finance": {
-        "analogy": "Das Out-of-Sample-Backtesting und die unabhängige Modellvalidierung eines Risiko- oder Handelsmodells, das gegen ungesehene Marktdaten getestet wird.",
-        "explanation": "In der Bankpraxis darf ein Scoring- oder VaR-Modell nicht nur auf den Daten glänzen, mit denen es entwickelt wurde; eine vom Entwicklungsteam unabhängige Validierung testet es strikt out-of-sample und über Stressperioden, bevor es freigegeben wird. SR 11-7 (Model Risk Management) und die MaRisk verlangen genau diese Trennung von Entwicklungs- und Testdaten sowie laufendes Backtesting, weil ein nur in-sample optimiertes Modell eine trügerische Performance ausweist. Ein Modell, das auf jeden historischen Tag perfekt passt, ist oft überangepasst und versagt im echten Markt – das Pendant zu einem überoptimierten Benchmark.",
-        "limits": "Selbst ein sauberes Out-of-Sample-Backtesting bleibt rückwärtsgewandt: Es misst gegen vergangene Marktregime und kann strukturelle Brüche oder bislang nie aufgetretene Stressszenarien nicht abbilden, weshalb es eine vorausschauende Stresstest- und Szenarioanalyse nie ersetzt.",
-        "quality": 0.08
+        "analogy": "Die wiederkehrende Prüfung einer Bankberaterin: Sie löst immer wieder dieselben vorbereiteten Beispielgespräche, und jede Antwort wird an einer festen Checkliste mit klarer Punktzahl gemessen.",
+        "explanation": "Eine Bank lässt eine Beraterin nicht einfach drauflosberaten, sondern legt ihr feste Beispielfälle vor: einen Kunden, der einen Autokredit will, eine Familie, die fürs Haus spart, jemanden mit Schulden. Für jeden Fall steht vorab fest, was eine gute Antwort ausmacht und wie viele Punkte es dafür gibt - genau so prüft man auch eine KI an festen Testfällen mit vorab festgelegter Bewertung. Eine allgemeine Prüfung, die alle Berater vieler Banken nach demselben Standard vergleichbar abfragt, entspricht einem solchen branchenweiten Vergleichstest; die eigenen Fälle aus dem echten Filialalltag sind die Prüfung, die nah an der späteren tatsächlichen Arbeit liegt. Wichtig ist, dass die Prüfungsfälle nicht dieselben sind, an denen die Beraterin geübt hat, und dass nach jeder größeren Umstellung neu geprüft wird - sonst kennt sie nur die Musterlösung auswendig.",
+        "limits": "Das Bild hinkt darin, dass eine Checkliste nur die Fälle abdeckt, die jemand vorher aufgeschrieben hat - sie sagt nichts über die unzähligen Kundensituationen, die später im echten Betrieb auftauchen. Außerdem suggeriert eine einzelne Prüfungsnote eine Eindeutigkeit, die eine KI-Antwort nicht immer hat, da dieselbe Frage je nach Lauf unterschiedlich beantwortet werden kann.",
+        "quality": 0.76
       }
     },
     "relatedTerms": [
@@ -2008,10 +2008,10 @@
         "quality": 0.95
       },
       "finance": {
-        "analogy": "Das laufende Transaktions- und Systemmonitoring mit Risiko- und Latenz-Dashboards im Bankbetrieb, das jederzeit nachvollziehbar macht, welche Buchungen und Systemaktionen tatsächlich stattgefunden haben.",
-        "explanation": "Wie eine Bank jede Buchung und jede Systemaktion fortlaufend gegen Limitsysteme und Schwellenwerte überwacht, auffällige Muster zur Prüfung eskaliert und dabei vollständige Betriebsprotokolle führt, verfolgt Observability die Aufrufe und Ausgaben eines KI-Systems über den gesamten Verarbeitungspfad. In beiden Fällen reicht die punktuelle Endkontrolle nicht: erst die lückenlose Laufzeit-Spur erlaubt es, einen fehlerhaften Schritt zu lokalisieren und gegenüber Aufsicht und interner Revision zu belegen. Die in MaRisk und BAIT geforderte laufende Überwachung produktiver Modelle und IT-Prozesse zielt genau auf diese fortlaufende Beobachtbarkeit im Betrieb.",
-        "limits": "Bei Buchungen und Limitverletzungen gibt es einen objektiv eingetretenen, prüfbaren Zustand; bei einem Sprachmodell fehlt diese harte Referenz, weil sich die inhaltliche Antwortqualität aus den reinen Betriebsspuren nicht ablesen lässt, sondern nur über aufwendige Bewertungsverfahren und Stichproben angenähert werden kann.",
-        "quality": 0.33
+        "analogy": "Der lückenlose Kontoauszug, der für jede einzelne Bewegung zeigt, was wann tatsächlich passiert ist.",
+        "explanation": "Ein Kontoauszug verrät nicht nur, wie viel Geld am Ende übrig ist, sondern listet jede Buchung einzeln auf: welcher Betrag, an welchem Tag, an wen, ausgelöst durch Karte, Überweisung oder Dauerauftrag. Stimmt die Summe am Monatsende nicht, gehst du die Zeilen durch und findest die eine Abbuchung, die schiefgelaufen ist. Genauso hält Observability bei einem KI-System fest, was im laufenden Betrieb wirklich geschehen ist: welche Anfrage hineinging, welche Zwischenschritte und Hilfsmittel das System nutzte und welche Antwort herauskam. Erst diese durchgehende Spur macht nachvollziehbar, an welcher Stelle ein Fehler entstand, statt nur das zweifelhafte Endergebnis vor sich zu haben.",
+        "limits": "Beim Kontoauszug ist jede Zeile eine harte, eindeutig richtige oder falsche Buchung; bei einem KI-System belegt die Aufzeichnung zwar, was passiert ist, sagt aber nicht von selbst, ob die inhaltliche Antwort auch gut war. Ob eine ausgegebene Antwort taugt, muss zusätzlich bewertet werden und lässt sich nicht wie ein Betrag schlicht ablesen.",
+        "quality": 0.78
       }
     },
     "relatedTerms": [
@@ -2070,10 +2070,10 @@
         "quality": 0.94
       },
       "finance": {
-        "analogy": "Die revisionssichere Belegkette des Rechnungswesens nach GoBD, in der ein Wirtschaftsprüfer jeden Beleg lückenlos und unveränderbar bis zur Buchung im Hauptbuch zurückverfolgen kann.",
-        "explanation": "Wie die Buchführung nach GoBD jede Buchung unveränderbar, vollständig und zeitgerecht festhalten muss, damit der Beleg-zu-Buchung-Pfad jederzeit rekonstruierbar bleibt, dokumentiert der Audit Trail jede KI-Modellentscheidung samt Eingabe, Modellversion und Freigabestand. Unter MaRisk und den Grundsätzen des Model Risk Management muss eine Bank für jedes produktiv eingesetzte Modell belegen können, wer es validiert, freigegeben, geändert oder überstimmt hat – etwa wenn ein Kreditvotum manuell vom Scoring-Ergebnis abweicht. Im Prüfungs- oder Aufsichtsfall (BaFin, Wirtschaftsprüfer) ist der Trail das primäre Beweismittel.",
-        "limits": "Eine Buchung ist ein eindeutiger, abgeschlossener Vorgang mit klarer Belegkette, während eine probabilistische Modellentscheidung von Trainingsdaten, Schwellenwerten und Kontextfenster abhängt, die sich nur schwer in eine einzige revisionssichere Belegkette gießen lassen. Zudem deckt GoBD-Konformität nur die buchhalterische Nachweispflicht ab, nicht die fachliche Validität oder Diskriminierungsfreiheit der KI-Entscheidung selbst.",
-        "quality": 0.34
+        "analogy": "Das fälschungssichere Kassenbuch, in dem mit Datum und Namen steht, wer wann welchen Betrag eingetragen hat – und in dem man nichts mehr wegradieren oder herausreißen kann.",
+        "explanation": "Stell dir ein Kassenbuch vor, in dem jeder Eintrag mit Datum, Uhrzeit und Namen festgehalten wird und das so fest gebunden ist, dass niemand heimlich eine Seite herausreißen oder eine alte Zahl überschreiben kann. Genau das leistet ein lückenloses Protokoll bei einem KI-System: Es hält fest, welche Eingabe hereinkam, welche Antwort das System gab und wer wann etwas an den Einstellungen geändert hat – und zwar so, dass spätere Manipulationen auffallen würden. Stellt später jemand eine Entscheidung in Frage, kann man Zeile für Zeile nachlesen, wie sie zustande kam, statt sich auf Erinnerungen zu verlassen. Entscheidend ist dabei nicht, wie viel notiert wird, sondern dass das Notierte vollständig und unverändert bleibt.",
+        "limits": "Ein Kassenbuch verzeichnet eindeutige Geldbeträge, während eine KI-Entscheidung aus vielen unscharfen Faktoren entsteht – das lückenlose Protokoll belegt also, dass und wie eine Entscheidung festgehalten wurde, aber nicht von selbst, ob sie inhaltlich richtig oder fair war.",
+        "quality": 0.78
       }
     },
     "relatedTerms": [
@@ -2132,10 +2132,10 @@
         "quality": 0.93
       },
       "finance": {
-        "analogy": "Die Einstufung eines KI-gestützten Kreditscorings als Hochrisiko-Anwendung, die parallel zu MaRisk und BAIT erfüllt werden muss.",
-        "explanation": "Der AI Act benennt KI zur Bonitätsbewertung natürlicher Personen in Anhang III ausdrücklich als Hochrisiko-System und verlangt Risikomanagement, Datengüte, menschliche Aufsicht und Konformitätsbewertung. In der Bankpraxis verzahnt sich das mit dem bestehenden Model Risk Management nach MaRisk und den IT-Anforderungen der BAIT, sodass ein Scoringmodell gleich mehreren, teils überlappenden Aufsichtsregimen genügen muss. Die menschliche Aufsicht des AI Act trifft dabei auf die ohnehin geforderte unabhängige Modellvalidierung.",
-        "limits": "Die Analogie zum vertrauten MaRisk-Validierungszyklus täuscht über Lücken hinweg: Der AI Act adressiert ausdrücklich auch den Betreiber und Grundrechtsrisiken wie Diskriminierung, die ein klassisches, rein auf Ausfallwahrscheinlichkeit fokussiertes Modellrisiko-Framework gar nicht abdeckt.",
-        "quality": 0.08
+        "analogy": "Wie die Bank ihre Auflagen nach der Kreditgröße abstuft: für einen kleinen Rahmen aufs Konto reicht ein kurzes Gespräch, für den Hauskredit gibt es die volle Prüfung mit Unterlagen und Nachweisen.",
+        "explanation": "Niemand muss für jeden Euro denselben Aufwand treiben: Beim kleinen Spielraum aufs Konto winkt die Bank fast formlos durch, beim Autokredit will sie ein paar Belege sehen, und beim Hauskredit prüft sie gründlich, lässt sich alles dokumentieren und schaut genau hin, bevor sie zusagt. Je größer das ist, was schiefgehen kann, desto strenger die Auflagen. Genauso sortiert der Regelrahmen für KI die Anwendungen danach ein, wie viel Schaden sie anrichten könnten, und knüpft daran abgestufte Pflichten: harmlose Anwendungen bleiben weitgehend frei, riskante Systeme müssen sauber dokumentiert, von Menschen beaufsichtigt und vor dem Einsatz geprüft werden, und das Gefährlichste ist ganz verboten.",
+        "limits": "Die Bank schaut bei ihren Auflagen vor allem darauf, ob sie ihr Geld zurückbekommt; der Regelrahmen für KI will dagegen auch Menschen vor Benachteiligung und Fehlentscheidungen schützen, also Dinge, die mit Rückzahlung nichts zu tun haben. Außerdem trifft die Pflicht nicht nur den, der die KI baut, sondern auch jeden, der sie einsetzt, während beim Kredit allein der Kreditnehmer die Unterlagen liefert.",
+        "quality": 0.77
       }
     },
     "relatedTerms": [

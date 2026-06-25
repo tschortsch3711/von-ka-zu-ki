@@ -69,20 +69,20 @@
     "name": "Finance & Banking",
     "key": "finance",
     "icon": "🏦",
-    "tagline": "KI als Kreditprüfer, Risikomodell und Compliance-Filter gedacht.",
-    "whyGood": "Finance-Fachleute denken in Risiko, Modell, Schwellenwert und Regulierung – genau die Konzepte, die KI-Systeme ebenfalls abbilden. Das macht Analogien präzise und konkret angreifbar.",
-    "helpfulWhen": "Wenn die Zielgruppe aus Bankern, Risikocontrollern, Compliance-Beauftragten oder Regulatoren besteht und Risikomodellierung sowie Regulierung bekannte Denkwelten sind.",
-    "limits": "Finance-Analogien suggerieren eine Präzision und Regulierbarkeit, die heutige KI-Systeme noch nicht vollständig erfüllen. Nicht jedes Modellverhalten lässt sich wie ein Kreditrisiko quantifizieren oder backtesten.",
+    "tagline": "KI als Bankberater, Kontoauszug und Geldautomat gedacht.",
+    "whyGood": "Fast jeder hat ein Konto, kennt das Beratungsgespräch in der Bankfiliale, hebt am Automaten Geld ab und überweist Rechnungen. Diese alltäglichen Bilder rund ums Geld lassen sich gut auf KI übertragen: Es gibt jemanden, der Aufgaben erledigt, Wissen, das nachgeschlagen wird, Regeln, die nicht überschritten werden dürfen, und eine Stelle, die alles kontrolliert.",
+    "helpfulWhen": "Hilfreich, wenn man KI über vertraute Geld-Situationen verstehen möchte: Wer übernimmt die Arbeit, woher kommen die Informationen, welche Regeln gelten und wer behält am Ende den Überblick. Man braucht dafür kein Fachwissen, nur die eigene Erfahrung mit Konto, Kredit und Bankfiliale.",
+    "limits": "Ein Bankberater haftet für seinen Rat und kann nachschlagen, wenn er etwas nicht weiß. Eine KI gibt nur wahrscheinliche Antworten, übernimmt keine Verantwortung und kann Dinge überzeugt behaupten, die gar nicht stimmen. Das vertraute Bild von Verlässlichkeit und Kontrolle in der Bank darf nicht über diese Unsicherheit hinwegtäuschen.",
     "showcase": [
-      { "icon": "🧑‍💼", "from": "Kreditprüfer", "to": "KI-Agent" },
-      { "icon": "🧮", "from": "Risikomodell / Scoring", "to": "Modell (LLM)" },
-      { "icon": "📊", "from": "Markt- / Kundendaten", "to": "RAG (Wissensabruf)" },
-      { "icon": "🧬", "from": "Kundenähnlichkeit", "to": "Embeddings" },
-      { "icon": "🚧", "from": "Compliance-Filter / Limits", "to": "Guardrails" },
-      { "icon": "🏛️", "from": "Aufsicht (BaFin) / Audit", "to": "AI Governance" },
-      { "icon": "🎭", "from": "Erfundene Kennzahl", "to": "Halluzination" },
-      { "icon": "🕵️", "from": "Social-Engineering-Antrag", "to": "Prompt Injection" },
-      { "icon": "🎓", "from": "Nachschulung am Hausportfolio", "to": "Training / Fine-Tuning" }
+      { "icon": "🧑‍💼", "from": "Bankberater im Filialgespräch", "to": "KI-Agent" },
+      { "icon": "📚", "from": "Erfahrung des Beraters", "to": "Modell (LLM)" },
+      { "icon": "🗂️", "from": "Blick in die Kontoauszüge", "to": "RAG (Wissensabruf)" },
+      { "icon": "🧬", "from": "Kunden mit ähnlichen Geldgewohnheiten", "to": "Embeddings" },
+      { "icon": "🚧", "from": "Tageslimit am Geldautomaten", "to": "Guardrails" },
+      { "icon": "✅", "from": "Filialleitung, die alles im Blick behält", "to": "AI Governance" },
+      { "icon": "🎭", "from": "Eine erfundene Zahl im Kontoauszug", "to": "Halluzination" },
+      { "icon": "🕵️", "from": "Anrufer, der sich als Bank ausgibt", "to": "Prompt Injection" },
+      { "icon": "🎓", "from": "Einarbeitung des neuen Beraters", "to": "Training / Fine-Tuning" }
     ]
   }
 ]
