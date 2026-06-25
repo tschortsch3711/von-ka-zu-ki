@@ -43,7 +43,7 @@ const scoreOf = (term: GlossaryTerm, d: Domain) => term.domainAnalogies[d.key]?.
       ))}
     </tbody>
   </table>
-  <figcaption>Abb. 4 — Mehr Sterne = anschaulicher aus Anwendersicht (★★★ sehr gut · ★★☆ gut · ★☆☆ okay). Ein „·" heißt: Analogie vorhanden, aber für Anwender kaum tragfähig.</figcaption>
+  <figcaption>Abb. 4 — Mehr Sterne = anschaulicher aus Anwendersicht (★★★ sehr gut · ★★ gut · ★ okay). Ein „·" heißt: Analogie vorhanden, aber für Anwender kaum tragfähig.</figcaption>
 </figure>
 
 <script is:inline>
@@ -69,9 +69,9 @@ const scoreOf = (term: GlossaryTerm, d: Domain) => term.domainAnalogies[d.key]?.
   .matrix tbody tr:hover td,
   .matrix tbody tr:hover th { background: var(--accent-soft); }
   .matrix td { text-align: center; font-size: 1rem; white-space: nowrap; letter-spacing: 0.05em; }
-  .matrix td.stars--3 { color: var(--accent); }
-  .matrix td.stars--2 { color: var(--accent); opacity: 0.8; }
-  .matrix td.stars--1 { color: var(--text-muted); }
+  .matrix td.stars--3,
+  .matrix td.stars--2,
+  .matrix td.stars--1 { color: var(--accent); }
   .matrix td.stars--0 { color: var(--text-muted); opacity: 0.45; font-size: 1.2rem; }
   /* .sr-only kommt global aus global.css */
 </style>

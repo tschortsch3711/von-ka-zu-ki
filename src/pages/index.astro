@@ -6,11 +6,13 @@ import DomainLensCard from '../components/DomainLensCard.astro';
 import EcosystemMap from '../components/EcosystemMap.astro';
 import glossary from '../data/glossary.json';
 import domains from '../data/domains.json';
-import type { GlossaryTerm, Domain } from '../data/types';
-import { link } from '../lib/paths';
+import paths from '../data/paths.json';
+import type { GlossaryTerm, Domain, LearningPath } from '../data/types';
+import { link, lernpfadHref } from '../lib/paths';
 
 const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
+const realPaths = (paths as LearningPath[]).filter((p) => !p.isMetaCard);
 
 // 3 Einstiegsbegriffe wechseln pro Build, abgeleitet aus dem Build-Datum (keine echte Tagesrotation ohne geplanten Rebuild)
 const buildDate = new Date();
@@ -50,6 +52,7 @@ const featured = [
 
   <section class="section container">
     <h2>Ausgewählte Begriffe</h2>
+    <p class="lead">Drei Begriffe zum Reinlesen – die Auswahl wechselt regelmäßig.</p>
     <div class="grid grid--3" style="margin-top:1.5rem">
       {featured.map((term) => <GlossaryCard term={term} domains={lenses} />)}
     </div>
@@ -62,6 +65,36 @@ const featured = [
     <div class="grid grid--2" style="margin-top:1.5rem">
       {lenses.map((domain) => <DomainLensCard domain={domain} />)}
     </div>
+  </section>
+
+  <section class="section container">
+    <h2>Geführte Lernpfade</h2>
+    <p class="lead">Lieber an der Hand genommen? Drei Pfade bündeln die wichtigsten Begriffe in sinnvoller, aufbauender Reihenfolge.</p>
+    <div class="grid grid--3" style="margin-top:1.5rem">
+      {realPaths.map((p) => (
+        <a class="card path-card" href={lernpfadHref(p.slug)}>
+          <h3><span aria-hidden="true">{p.icon}</span> {p.name}</h3>
+          <p class="muted">{p.description}</p>
+        </a>
+      ))}
+    </div>
+    <p style="margin-top:1.2rem"><a class="btn" href={link('lernpfade/')}>Alle Lernpfade ansehen →</a></p>
+  </section>
+
+  <section class="section container">
+    <h2>Wissenstests</h2>
+    <p class="lead">Sitzt das Gelernte? Prüf dich selbst – die Fragen werden bei jedem Start neu zusammengestellt.</p>
+    <div class="grid grid--2" style="margin-top:1.5rem">
+      <a class="card path-card" href={link('quiz/')}>
+        <h3><span aria-hidden="true">🧩</span> Begriff erraten</h3>
+        <p class="muted">Beschreibung lesen, den passenden Begriff aus vier Optionen wählen.</p>
+      </a>
+      <a class="card path-card" href={link('quiz/')}>
+        <h3><span aria-hidden="true">⚖️</span> Mythos oder Wahrheit</h3>
+        <p class="muted">Stimmt die gezeigte Definition – oder ist sie ein erfundener Mythos?</p>
+      </a>
+    </div>
+    <p style="margin-top:1.2rem"><a class="btn" href={link('quiz/')}>Wissenstest starten →</a></p>
   </section>
 
   <section id="oekosystem" class="section container">

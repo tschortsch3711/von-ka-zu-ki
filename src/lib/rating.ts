@@ -27,7 +27,8 @@ export function starLabel(score: number): string {
 export function starGlyphs(score: number): string {
   const n = scoreToStars(score);
   if (n === 0) return '·';
-  return '★'.repeat(n) + '☆'.repeat(3 - n);
+  // Nur die erhaltenen Sterne anzeigen (keine leeren ☆) – einheitlich eingefärbt im CSS.
+  return '★'.repeat(n);
 }
 
 interface ScoredKey { key: string; quality: number; }
