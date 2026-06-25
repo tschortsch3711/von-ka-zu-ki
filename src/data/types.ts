@@ -29,6 +29,13 @@ export interface GlossaryTerm {
   tags: string[];
 }
 
+/** Eine Showcase-Zeile: bekannter Begriff dieser Berufswelt -> KI-Begriff. */
+export interface ShowcaseMapping {
+  icon: string;
+  from: string;
+  to: string;
+}
+
 export interface Domain {
   id: string;
   slug: string;
@@ -41,6 +48,8 @@ export interface Domain {
   bestExplainedTerms: string[];
   helpfulWhen: string;
   limits: string;
+  /** Optionale Showcase-Zuordnung (bekannte Begriffe -> KI-Begriffe). */
+  showcase?: ShowcaseMapping[];
 }
 
 export interface LearningPath {

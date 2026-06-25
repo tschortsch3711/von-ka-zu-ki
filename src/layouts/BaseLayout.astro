@@ -32,6 +32,7 @@ const nav = [
   { href: link('glossar/'), label: 'Glossar' },
   { href: link('domaenen/'), label: 'Perspektiven' },
   { href: link('lernpfade/'), label: 'Lernpfade' },
+  { href: link('quiz/'), label: 'Quiz' },
 ];
 ---
 
@@ -70,10 +71,20 @@ const nav = [
     <header class="site-header">
       <div class="container">
         <a class="brand" href={link('')} aria-label="Von K.A. zu K.I. – Startseite">
-          <span class="brand-mark" aria-hidden="true">
-            <span class="brand-ka">K.A.</span>
-            <span class="brand-ki">K.I.</span>
-          </span>
+          <!-- Kreuzwort-Logo: SVG-Raster, K/I und Punkte in senkrechter Flucht -->
+          <svg class="brand-svg" viewBox="2 16 74 73" aria-hidden="true">
+            <text x="17.5" y="42" text-anchor="middle" font-size="32" font-weight="700" fill="currentColor">K</text>
+            <text x="34"   y="42" text-anchor="middle" font-size="32" font-weight="700" fill="currentColor">.</text>
+            <text x="50.5" y="42" text-anchor="middle" font-size="32" font-weight="700" fill="currentColor">A</text>
+            <text x="67"   y="42" text-anchor="middle" font-size="32" font-weight="700" fill="currentColor">.</text>
+            <text x="17.5" y="84" text-anchor="middle" font-size="32" font-weight="700" fill="currentColor">I</text>
+            <text x="34"   y="84" text-anchor="middle" font-size="32" font-weight="700" fill="currentColor">.</text>
+            <path d="M 50.5,48 A 16,16 0 0,1 36.5,72.3"
+                  fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+            <polyline points="38.5,68 34,72 38.5,76"
+                      fill="none" stroke="var(--accent)" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </a>
         <nav class="site-nav" id="site-nav-links" aria-label="Hauptnavigation">
           {nav.map((item) => (
@@ -82,9 +93,6 @@ const nav = [
         </nav>
         <button class="nav-burger" type="button" id="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav-links">
           <span aria-hidden="true">☰</span>
-        </button>
-        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Hell-/Dunkelmodus umschalten" title="Hell-/Dunkelmodus umschalten">
-          <span aria-hidden="true" id="theme-icon">🌙</span>
         </button>
       </div>
     </header>
@@ -99,27 +107,37 @@ const nav = [
         <nav aria-label="Rechtliches">
           <a href={link('impressum/')}>Impressum</a>
           <a href={link('datenschutz/')}>Datenschutz</a>
-          <a href="https://github.com/tschortsch3711/von-ka-zu-ki" rel="noopener">GitHub</a>
+          <a class="footer-icon" href="https://github.com/tschortsch3711/von-ka-zu-ki" target="_blank" rel="noopener" aria-label="GitHub-Repository (öffnet in neuem Tab)" title="GitHub">
+            <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+          </a>
+          <button class="footer-icon theme-toggle" type="button" id="theme-toggle" aria-label="Hell-/Dunkelmodus umschalten" title="Hell-/Dunkelmodus umschalten">
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
         </nav>
       </div>
     </footer>
 
     <script is:inline>
       (function () {
+        // Icon (Sonne/Mond) wird per CSS am data-theme gespiegelt; hier nur Theme umschalten + persistieren.
         var btn = document.getElementById('theme-toggle');
-        var icon = document.getElementById('theme-icon');
-        function sync() {
-          var t = document.documentElement.getAttribute('data-theme');
-          if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙';
-        }
-        sync();
         if (btn) {
           btn.addEventListener('click', function () {
             var cur = document.documentElement.getAttribute('data-theme');
             var next = cur === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', next);
             try { localStorage.setItem('vkzk-theme', next); } catch (e) {}
-            sync();
           });
         }
 
@@ -164,16 +182,16 @@ const nav = [
         // Burger-Breakpoint dynamisch per ResizeObserver — kein fester px-Wert
         var burgNav = document.getElementById('site-nav-links');
         var burgBrand = document.querySelector('.brand');
-        var burgTheme = document.getElementById('theme-toggle');
         var burgCont = siteHeader && siteHeader.querySelector('.container');
         var navNaturalW = burgNav ? burgNav.scrollWidth : 0;
 
         function checkBurger() {
-          if (!burgCont || !burgBrand || !burgTheme || !burgNav) return;
+          if (!burgCont || !burgBrand || !burgNav) return;
           if (!siteHeader.classList.contains('burger-mode')) {
             navNaturalW = burgNav.scrollWidth;
           }
-          var needed = burgBrand.offsetWidth + navNaturalW + burgTheme.offsetWidth + 48;
+          // Puffer deckt Brand→Nav-Abstand und Container-Padding ab (Theme-Button ist jetzt im Footer).
+          var needed = burgBrand.offsetWidth + navNaturalW + 56;
           if (needed > burgCont.clientWidth) {
             if (!siteHeader.classList.contains('burger-mode')) {
               siteHeader.classList.add('burger-mode');

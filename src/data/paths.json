@@ -5,7 +5,7 @@
     "name": "Lernpfad für Führungskräfte",
     "icon": "🎯",
     "targetAudience": "Führungskräfte & Entscheider",
-    "description": "Verstehen, was KI leisten kann – und was nicht. Zehn Schlüsselbegriffe für fundierte Entscheidungen zu Kosten, Risiken und Einsatzszenarien.",
+    "description": "Verstehen, was KI leisten kann – und was nicht. Die wichtigsten Begriffe für fundierte Entscheidungen zu Kosten, Risiken und Einsatzszenarien.",
     "termOrder": [
       "ki",
       "llm",
@@ -26,7 +26,7 @@
     "name": "Lernpfad für IT-Profis",
     "icon": "💻",
     "targetAudience": "IT-Profis & Entwickler",
-    "description": "Von Architektur bis Betrieb: Zehn technische Kernkonzepte für Entwicklerinnen und Entwickler, die KI-Systeme bauen, integrieren oder warten.",
+    "description": "Von Architektur bis Betrieb: Die zentralen technischen Konzepte für Entwicklerinnen und Entwickler, die KI-Systeme bauen, integrieren oder warten.",
     "termOrder": [
       "machine-learning",
       "foundation-model",
@@ -47,7 +47,7 @@
     "name": "Lernpfad für Einsteiger",
     "icon": "🌱",
     "targetAudience": "Privatpersonen & Einsteiger",
-    "description": "Ein sanfter Einstieg in die Welt der KI. Zehn grundlegende Begriffe – ohne Vorkenntnisse, dafür mit vielen Analogien aus dem Alltag.",
+    "description": "Ein sanfter Einstieg in die Welt der KI. Grundlegende Begriffe – ohne Vorkenntnisse, dafür mit vielen Analogien aus dem Alltag.",
     "termOrder": [
       "ki",
       "machine-learning",
@@ -68,7 +68,7 @@
     "name": "Selbstgesteuert lernen",
     "icon": "🔁",
     "targetAudience": "Alle",
-    "description": "Der Lernbogen im Glossar sortiert alle 36 Begriffe nach Schwierigkeitsgrad. Starte bei „Einstieg“ und arbeite dich vor – ohne feste Reihenfolge, in deinem Tempo.",
+    "description": "Der Lernbogen im Glossar sortiert alle Begriffe nach Schwierigkeitsgrad. Starte bei „Einstieg“ und arbeite dich vor – ohne feste Reihenfolge, in deinem Tempo.",
     "termOrder": [],
     "lernbogenCTA": null,
     "isMetaCard": true

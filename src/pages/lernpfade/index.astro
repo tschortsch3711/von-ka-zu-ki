@@ -6,11 +6,11 @@ import { link, lernpfadHref } from '../../lib/paths';
 
 const lernpfade = paths as LearningPath[];
 ---
-<BaseLayout title="Lernpfade" description="Drei geführte Lernpfade für Führungskräfte, IT-Profis und Einsteiger – je zehn Begriffe in sinnvoller Reihenfolge.">
+<BaseLayout title="Lernpfade" description="Geführte Lernpfade für Führungskräfte, IT-Profis und Einsteiger – die wichtigsten Begriffe in sinnvoller Reihenfolge.">
   <section class="section container">
     <h1>Lernpfade</h1>
     <p class="lead">Du weißt, wie du tickst – wähl den Pfad, der dazu passt.</p>
-    <p class="lead">Jeder führt durch zehn sorgfältig ausgewählte Begriffe in aufbauender Reihenfolge.</p>
+    <p class="lead">Jeder Pfad bündelt die Begriffe mit der höchsten Relevanz für seine Zielgruppe – in aufbauender Reihenfolge.</p>
 
     <div class="grid grid--3" style="margin-top:1.8rem">
       {lernpfade.filter(p => !p.isMetaCard).map((p) => (

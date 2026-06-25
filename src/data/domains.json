@@ -16,7 +16,18 @@
       "ai-governance"
     ],
     "helpfulWhen": "Hilfreich, um Rollen und Zusammenspiel im Gesamtsystem zu verstehen: Wer steuert (Agent/Fahrer), was leistet die Arbeit (Modell/Motor), was kostet Verbrauch (Token/Sprit), wer prüft (Governance/TÜV).",
-    "limits": "Ein Auto ist ein deterministisches mechanisches System. KI-Modelle arbeiten probabilistisch und können bei gleicher Eingabe unterschiedlich antworten. Die Metapher unterschätzt Unsicherheit, Halluzination und das Fehlen echten Verstehens."
+    "limits": "Ein Auto ist ein deterministisches mechanisches System. KI-Modelle arbeiten probabilistisch und können bei gleicher Eingabe unterschiedlich antworten. Die Metapher unterschätzt Unsicherheit, Halluzination und das Fehlen echten Verstehens.",
+    "showcase": [
+      { "icon": "🚗", "from": "Fahrzeug / Fahrer", "to": "KI-Agent" },
+      { "icon": "⚙️", "from": "Motor", "to": "Modell (LLM)" },
+      { "icon": "⛽", "from": "Sprit / Verbrauch", "to": "Tokens" },
+      { "icon": "💳", "from": "Tankkarte", "to": "API-Key" },
+      { "icon": "🛣️", "from": "Straße / Anschluss", "to": "API / MCP" },
+      { "icon": "🏭", "from": "Raffinerie", "to": "Rechenzentrum" },
+      { "icon": "🔧", "from": "Werkstatt", "to": "Training / Fine-Tuning" },
+      { "icon": "✅", "from": "TÜV", "to": "AI Governance" },
+      { "icon": "🗂️", "from": "Flottenmanager", "to": "Unternehmen" }
+    ]
   },
   {
     "id": "public-sector",
@@ -35,7 +46,17 @@
       "hallucination"
     ],
     "helpfulWhen": "Hilfreich bei Fragen von Verantwortung, Nachvollziehbarkeit, Aktenbezug und rechtssicherer Entscheidung. Macht deutlich, warum KI vorbereiten kann, die Letztverantwortung aber bei Menschen bleibt.",
-    "limits": "Verwaltung folgt festen Regeln und Rechtsnormen; ein KI-Modell kennt keine Rechtsverbindlichkeit, sondern erzeugt wahrscheinliche Texte. Die Analogie darf nicht den Eindruck erwecken, ein Modell träfe rechtlich gültige Entscheidungen."
+    "limits": "Verwaltung folgt festen Regeln und Rechtsnormen; ein KI-Modell kennt keine Rechtsverbindlichkeit, sondern erzeugt wahrscheinliche Texte. Die Analogie darf nicht den Eindruck erwecken, ein Modell träfe rechtlich gültige Entscheidungen.",
+    "showcase": [
+      { "icon": "👤", "from": "Sachbearbeiter", "to": "KI-Agent" },
+      { "icon": "🗄️", "from": "Aktenregistratur / Fachverfahren", "to": "RAG (Wissensabruf)" },
+      { "icon": "📐", "from": "Dienstvorschrift", "to": "Guardrails" },
+      { "icon": "✅", "from": "Aufsicht / Rechnungshof", "to": "AI Governance" },
+      { "icon": "✍️", "from": "Vorbereiteter Bescheid (ohne Rechtskraft)", "to": "KI-Output" },
+      { "icon": "⚠️", "from": "Manipulierte Eingabe", "to": "Prompt Injection" },
+      { "icon": "🎭", "from": "Erfundener Aktenvermerk", "to": "Halluzination" },
+      { "icon": "🧑‍⚖️", "from": "Amtsleitung", "to": "Mensch (Letztverantwortung)" }
+    ]
   },
   {
     "id": "healthcare",
@@ -54,7 +75,17 @@
       "ai-governance"
     ],
     "helpfulWhen": "Hilfreich, um das Spannungsfeld aus Unterstützung, Sicherheit und Verantwortung zu erklären, sowie warum Belege, Qualitätssicherung und menschliche Freigabe nötig sind.",
-    "limits": "Medizin verlangt Evidenz, Haftung und Sorgfalt. Eine KI liefert wahrscheinliche Aussagen ohne Garantie und ohne Verantwortungsübernahme. Die Analogie darf Vertrauen nicht über das tatsächliche Sicherheitsniveau hinaus suggerieren."
+    "limits": "Medizin verlangt Evidenz, Haftung und Sorgfalt. Eine KI liefert wahrscheinliche Aussagen ohne Garantie und ohne Verantwortungsübernahme. Die Analogie darf Vertrauen nicht über das tatsächliche Sicherheitsniveau hinaus suggerieren.",
+    "showcase": [
+      { "icon": "🩺", "from": "Assistenzarzt", "to": "KI-Agent" },
+      { "icon": "📚", "from": "Lehrbuchwissen", "to": "Modell (LLM)" },
+      { "icon": "🔬", "from": "Labor / Befundabruf", "to": "RAG (Wissensabruf)" },
+      { "icon": "🧬", "from": "Symptom-Mustererkennung", "to": "Embeddings" },
+      { "icon": "📋", "from": "Medizinische Leitlinie", "to": "Guardrails" },
+      { "icon": "⚕️", "from": "Ärztekammer / Qualitätssicherung", "to": "AI Governance" },
+      { "icon": "🎭", "from": "Erfundene Diagnose", "to": "Halluzination" },
+      { "icon": "🧑‍⚕️", "from": "Facharzt-Freigabe", "to": "Mensch (Letztentscheidung)" }
+    ]
   },
   {
     "id": "finance",
@@ -75,6 +106,17 @@
       "training-finetuning"
     ],
     "helpfulWhen": "Wenn die Zielgruppe aus Bankern, Risikocontrollern, Compliance-Beauftragten oder Regulatoren besteht und Risikomodellierung sowie Regulierung bekannte Denkwelten sind.",
-    "limits": "Finance-Analogien suggerieren eine Präzision und Regulierbarkeit, die heutige KI-Systeme noch nicht vollständig erfüllen. Nicht jedes Modellverhalten lässt sich wie ein Kreditrisiko quantifizieren oder backtesten."
+    "limits": "Finance-Analogien suggerieren eine Präzision und Regulierbarkeit, die heutige KI-Systeme noch nicht vollständig erfüllen. Nicht jedes Modellverhalten lässt sich wie ein Kreditrisiko quantifizieren oder backtesten.",
+    "showcase": [
+      { "icon": "🧑‍💼", "from": "Kreditprüfer", "to": "KI-Agent" },
+      { "icon": "🧮", "from": "Risikomodell / Scoring", "to": "Modell (LLM)" },
+      { "icon": "📊", "from": "Markt- / Kundendaten", "to": "RAG (Wissensabruf)" },
+      { "icon": "🧬", "from": "Kundenähnlichkeit", "to": "Embeddings" },
+      { "icon": "🚧", "from": "Compliance-Filter / Limits", "to": "Guardrails" },
+      { "icon": "🏛️", "from": "Aufsicht (BaFin) / Audit", "to": "AI Governance" },
+      { "icon": "🎭", "from": "Erfundene Kennzahl", "to": "Halluzination" },
+      { "icon": "🕵️", "from": "Social-Engineering-Antrag", "to": "Prompt Injection" },
+      { "icon": "🎓", "from": "Nachschulung am Hausportfolio", "to": "Training / Fine-Tuning" }
+    ]
   }
 ]
