@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Von K.A. zu K.I.">
-  <rect width="32" height="32" rx="6" fill="#1f6feb"/>
+  <rect width="32" height="32" rx="6" fill="#161b22"/>
   <svg x="1.5" y="1.5" width="29" height="29" viewBox="2 16 74 73">
     <text x="17.5" y="42" text-anchor="middle" font-size="32" font-weight="700"
           font-family="system-ui, sans-serif" fill="white">K</text>
@@ -14,9 +14,9 @@
     <text x="34"   y="84" text-anchor="middle" font-size="32" font-weight="700"
           font-family="system-ui, sans-serif" fill="white">.</text>
     <path d="M 63,48 A 17.5,17.5 0 0,1 44.5,72.6"
-          fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+          fill="none" stroke="#589bff" stroke-width="3.5" stroke-linecap="round"/>
     <polyline points="47.0,68.6 42,72 46.0,76.5"
-              fill="none" stroke="white" stroke-width="3.5"
+              fill="none" stroke="#589bff" stroke-width="3.5"
               stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
 </svg>
