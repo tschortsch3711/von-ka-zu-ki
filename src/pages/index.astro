@@ -113,11 +113,11 @@ const poolOf = (level: GlossaryTerm['difficulty']) => terms.filter((t) => t.diff
     <h2>Wissenstests</h2>
     <p class="lead">Sitzt das Gelernte? Prüf dich selbst – die Fragen werden bei jedem Start neu zusammengestellt.</p>
     <div class="grid grid--2" style="margin-top:1.5rem">
-      <a class="card path-card" href={link('quiz/')}>
+      <a class="card path-card" href={link('quiz/') + '?mode=mc'}>
         <h3><span aria-hidden="true">🧩</span> Begriff erraten</h3>
         <p class="muted">Beschreibung lesen, den passenden Begriff aus vier Optionen wählen.</p>
       </a>
-      <a class="card path-card" href={link('quiz/')}>
+      <a class="card path-card" href={link('quiz/') + '?mode=tf'}>
         <h3><span aria-hidden="true">⚖️</span> Mythos oder Wahrheit</h3>
         <p class="muted">Stimmt die gezeigte Definition – oder ist sie ein erfundener Mythos?</p>
       </a>

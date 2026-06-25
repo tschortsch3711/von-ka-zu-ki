@@ -238,6 +238,19 @@ const quizData = (glossary as GlossaryTerm[]).map((t) => ({
         elSetup.hidden = false;
         elSetup.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+
+      // URL-Parameter: ?mode=mc|tf und ?level=all|basic|intermediate|advanced
+      var params = new URLSearchParams(window.location.search);
+      var modeParam = params.get('mode');
+      var levelParam = params.get('level');
+      if (modeParam === 'mc' || modeParam === 'tf') {
+        var modeRadio = document.querySelector('input[name="mode"][value="' + modeParam + '"]');
+        if (modeRadio) modeRadio.checked = true;
+      }
+      if (levelParam && ['all', 'basic', 'intermediate', 'advanced'].indexOf(levelParam) !== -1) {
+        var levelRadio = document.querySelector('input[name="level"][value="' + levelParam + '"]');
+        if (levelRadio) levelRadio.checked = true;
+      }
     })();
   </script>
 
