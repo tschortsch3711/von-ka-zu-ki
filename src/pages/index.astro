@@ -14,20 +14,14 @@ const terms = glossary as GlossaryTerm[];
 const lenses = domains as Domain[];
 const realPaths = (paths as LearningPath[]).filter((p) => !p.isMetaCard);
 
-// Je ein Begriff pro Schwierigkeitsgrad (Einstieg/Aufbau/Vertiefung), pro Build rotierend
-// (abgeleitet aus dem Build-Datum; keine echte Tagesrotation ohne geplanten Rebuild).
-const buildDate = new Date();
-const yearStart = new Date(buildDate.getFullYear(), 0, 1);
-const dayOfYear = Math.floor((buildDate.getTime() - yearStart.getTime()) / (1000 * 60 * 60 * 24));
-const pickByDifficulty = (level: GlossaryTerm['difficulty'], offset: number): GlossaryTerm | null => {
-  const pool = terms.filter((t) => t.difficulty === level);
-  return pool.length ? pool[(dayOfYear + offset) % pool.length] : null;
-};
-const featured = [
-  pickByDifficulty('basic', 0),
-  pickByDifficulty('intermediate', 1),
-  pickByDifficulty('advanced', 2),
-].filter((t): t is GlossaryTerm => Boolean(t));
+// Ein Pool je Schwierigkeitsgrad (Einstieg/Aufbau/Vertiefung). Die konkrete Tagesauswahl
+// trifft das Inline-Skript unten clientseitig (Wechsel um UTC-Mitternacht, unabhängig vom Build).
+const featuredPools: { level: GlossaryTerm['difficulty']; offset: number }[] = [
+  { level: 'basic', offset: 0 },
+  { level: 'intermediate', offset: 1 },
+  { level: 'advanced', offset: 2 },
+];
+const poolOf = (level: GlossaryTerm['difficulty']) => terms.filter((t) => t.difficulty === level);
 ---
 <BaseLayout
   title="Von K.A. zu K.I."
@@ -57,9 +51,39 @@ const featured = [
   <section class="section container">
     <h2>Ausgewählte Begriffe</h2>
     <p class="lead">Frisch herausgegriffen: drei Begriffe für einen kurzen Moment Neugier.</p>
-    <div class="grid grid--3" style="margin-top:1.5rem">
-      {featured.map((term) => <GlossaryCard term={term} domains={lenses} />)}
+    <div class="grid grid--3 featured" style="margin-top:1.5rem">
+      {featuredPools.map(({ level, offset }) => {
+        const pool = poolOf(level);
+        return (
+          <div class="featured-slot" data-offset={offset} data-size={pool.length}>
+            {pool.map((term) => (
+              <div class="featured-card" hidden>
+                <GlossaryCard term={term} domains={lenses} />
+              </div>
+            ))}
+          </div>
+        );
+      })}
     </div>
+    <noscript>
+      <style>.featured-slot > .featured-card:first-child { display: block; }</style>
+    </noscript>
+    <script is:inline>
+      (function () {
+        // Tageswechsel um Mitternacht UTC, unabhängig vom Build-Zeitpunkt.
+        var day = Math.floor(Date.now() / 86400000);
+        document.querySelectorAll('.featured-slot').forEach(function (slot) {
+          var size = parseInt(slot.getAttribute('data-size') || '0', 10);
+          if (!size) return;
+          var offset = parseInt(slot.getAttribute('data-offset') || '0', 10);
+          var idx = (day + offset) % size;
+          slot.querySelectorAll('.featured-card').forEach(function (card, i) {
+            if (i === idx) card.removeAttribute('hidden');
+            else card.setAttribute('hidden', '');
+          });
+        });
+      })();
+    </script>
     <p style="margin-top:1.2rem"><a class="btn" href={link('glossar/')}>Alle Begriffe ansehen →</a></p>
   </section>
 
@@ -114,5 +138,8 @@ const featured = [
     .path-card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
     .path-card h3 { margin: 0 0 0.5rem; }
     .path-card p { margin: 0; }
+    /* Jeder Slot ist eine Grid-Zelle; sichtbar ist je genau eine Karte (Tagesauswahl per Skript). */
+    .featured-slot { height: 100%; }
+    .featured-card { height: 100%; }
   </style>
 </BaseLayout>
