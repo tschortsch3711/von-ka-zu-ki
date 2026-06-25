@@ -6,6 +6,7 @@ import glossary from '../../data/glossary.json';
 import domains from '../../data/domains.json';
 import type { GlossaryTerm, Domain } from '../../data/types';
 import { link, termHref } from '../../lib/paths';
+import { bestDomainKey } from '../../lib/rating';
 
 export function getStaticPaths() {
   const terms = glossary as GlossaryTerm[];
@@ -27,8 +28,9 @@ const related = term.relatedTerms
 
 const analogyEntries = Object.entries(term.domainAnalogies);
 
-const bestByKey = Object.fromEntries(lenses.map((d) => [d.key, new Set(d.bestExplainedTerms)]));
-const isBest = (key: string) => bestByKey[key]?.has(term.id) || bestByKey[key]?.has(term.slug);
+// Die stärkste Perspektive = höchster quality-Score dieses Begriffs (eindeutig, da Scores pro Begriff verschieden).
+const maxKey = bestDomainKey(term);
+const isBest = (key: string) => key === maxKey;
 
 // schema.org DefinedTerm: macht jede Begriffsseite für Suchmaschinen als Glossar-Eintrag erkennbar.
 const jsonLd = {
@@ -49,7 +51,7 @@ const jsonLd = {
 <BaseLayout title={term.term} description={term.shortDefinition}>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <article class="section container term">
-    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+    <nav class="breadcrumb" aria-label="Navigationspfad">
       <a href={link('glossar/')}>Glossar</a>
       <span aria-hidden="true"> › </span>
       <span aria-current="page">{term.term}</span>
@@ -131,7 +133,7 @@ const jsonLd = {
               <h3><span aria-hidden="true">{d?.icon ?? '🔭'}</span> {d?.name ?? key}</h3>
               <p><strong>{a.analogy}</strong></p>
               <p class="muted">{a.explanation}</p>
-              <p class="lens-limit"><strong>⚠ Wo die Analogie an Grenzen stößt</strong>{a.limits}</p>
+              <p class="lens-limit"><strong>⚠ Wo die Analogie an Grenzen stößt:</strong>{a.limits}</p>
             </div>
           );
         })}

@@ -5,6 +5,7 @@ import glossary from '../../data/glossary.json';
 import domains from '../../data/domains.json';
 import type { GlossaryTerm, Domain } from '../../data/types';
 import { link, termHref } from '../../lib/paths';
+import { bestTermsForDomain } from '../../lib/rating';
 
 export function getStaticPaths() {
   const lenses = domains as Domain[];
@@ -14,14 +15,12 @@ export function getStaticPaths() {
 const { domain } = Astro.props as { domain: Domain };
 const allTerms = glossary as GlossaryTerm[];
 
-// Begriffe, die laut Liste besonders gut über diese Brille erklärbar sind
-const best = domain.bestExplainedTerms
-  .map((id) => allTerms.find((t) => t.id === id || t.slug === id))
-  .filter((t): t is GlossaryTerm => Boolean(t));
+// Die 6 Begriffe mit dem höchsten quality-Score für diese Perspektive (Top-N je Domäne).
+const best = bestTermsForDomain(allTerms, domain.key, 6);
 ---
 <BaseLayout title={domain.name} description={domain.tagline}>
   <article class="section container">
-    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+    <nav class="breadcrumb" aria-label="Navigationspfad">
       <a href={link('domaenen/')}>Perspektiven</a>
       <span aria-hidden="true"> › </span>
       <span aria-current="page">{domain.name}</span>
@@ -45,8 +44,7 @@ const best = domain.bestExplainedTerms
 
     {domain.showcase && domain.showcase.length > 0 && (
       <section style="margin-top:2.5rem">
-        <h2>Diese Perspektive als Showcase</h2>
-        <p class="muted">Bekannte Begriffe aus dieser Welt, übersetzt in KI-Begriffe.</p>
+        <h2>Bekannte Begriffe aus dieser Welt</h2>
         <div style="margin-top:1rem"><LensShowcase mappings={domain.showcase} domainName={domain.name} /></div>
       </section>
     )}

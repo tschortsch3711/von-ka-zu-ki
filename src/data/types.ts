@@ -9,6 +9,12 @@ export interface DomainAnalogy {
   explanation: string;
   /** Pflichtfeld: Analogien lecken immer. Hier steht die ehrliche Grenze. */
   limits: string;
+  /**
+   * Verständlichkeit dieser Analogie aus Anwendersicht, 0–1.
+   * Quelle der Wahrheit für die Sterne-Darstellung (Schwellwerte in src/lib/rating.ts)
+   * sowie für Top-2-Icons (Karten) und Top-N (Domänen-Detailseiten).
+   */
+  quality: number;
 }
 
 export interface GlossaryTerm {
@@ -45,7 +51,6 @@ export interface Domain {
   icon: string;
   tagline: string;
   whyGood: string;
-  bestExplainedTerms: string[];
   helpfulWhen: string;
   limits: string;
   /** Optionale Showcase-Zuordnung (bekannte Begriffe -> KI-Begriffe). */

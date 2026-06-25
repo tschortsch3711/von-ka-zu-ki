@@ -1,16 +1,19 @@
 ---
-import type { GlossaryTerm } from '../data/types';
+import type { GlossaryTerm, Domain } from '../data/types';
 import { termHref } from '../lib/paths';
+import { topDomainKeys } from '../lib/rating';
 
 export interface Props {
   term: GlossaryTerm;
-  domainIcons?: Record<string, string>;
-  domainBest?: Record<string, boolean>;
+  domains?: Domain[];
 }
-const { term, domainIcons = {}, domainBest = {} } = Astro.props;
+const { term, domains = [] } = Astro.props;
 const relevanceLabel: Record<string, string> = { low: 'gering', medium: 'mittel', high: 'hoch' };
 const difficultyLabel: Record<string, string> = { basic: 'Einstieg', intermediate: 'Aufbau', advanced: 'Vertiefung' };
-const lenses = Object.keys(term.domainAnalogies);
+const iconOf = Object.fromEntries(domains.map((d) => [d.key, d.icon]));
+const nameOf = Object.fromEntries(domains.map((d) => [d.key, d.name]));
+// Nur die zwei stärksten Perspektiven (höchster quality-Score) – hält die Meta-Zeile schmal.
+const topKeys = topDomainKeys(term, 2);
 ---
 <a class="glossary-card" href={termHref(term.slug)}>
   <div class="glossary-card__head">
@@ -20,10 +23,10 @@ const lenses = Object.keys(term.domainAnalogies);
   <p class="glossary-card__def">{term.shortDefinition}</p>
   <div class="glossary-card__meta">
     <span class={`badge badge--${term.difficulty}`}>{difficultyLabel[term.difficulty] ?? term.difficulty}</span>
-    <span class="badge">Enterprise: {relevanceLabel[term.enterpriseRelevance] ?? term.enterpriseRelevance}</span>
-    <span class="glossary-card__lenses" aria-label="Verfügbare Perspektiven">
-      {lenses.map((l) => (
-        <span title={l} class={domainBest[l] ? 'lens-best' : ''}>{domainIcons[l] ?? '•'}</span>
+    <span class="badge">Enterprise-Relevanz: {relevanceLabel[term.enterpriseRelevance] ?? term.enterpriseRelevance}</span>
+    <span class="glossary-card__lenses" aria-label="Stärkste Perspektiven">
+      {topKeys.map((k) => (
+        <span title={nameOf[k] ?? k}>{iconOf[k] ?? '•'}</span>
       ))}
     </span>
   </div>

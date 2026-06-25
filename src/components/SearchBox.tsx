@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Fuse from 'fuse.js';
 import type { GlossaryTerm, Domain } from '../data/types';
 import { termHref } from '../lib/paths';
+import { topDomainKeys } from '../lib/rating';
 
 interface Props {
   terms: GlossaryTerm[];
@@ -37,12 +38,10 @@ export default function SearchBox({ terms, domains }: Props) {
     () => Object.fromEntries(domains.map((d) => [d.key, d.icon])),
     [domains],
   );
-  const domainBestSets = useMemo(
-    () => Object.fromEntries(domains.map((d) => [d.key, new Set(d.bestExplainedTerms)])),
+  const domainNames = useMemo(
+    () => Object.fromEntries(domains.map((d) => [d.key, d.name])),
     [domains],
   );
-  const isBestLens = (termId: string, termSlug: string, key: string) =>
-    domainBestSets[key]?.has(termId) || domainBestSets[key]?.has(termSlug);
 
   const fuse = useMemo(
     () =>
@@ -154,6 +153,7 @@ export default function SearchBox({ terms, domains }: Props) {
             className="sort-btn"
             aria-pressed={sort === 'learn'}
             onClick={() => setSort('learn')}
+            title="Nach Schwierigkeit sortiert: Einstieg → Aufbau → Vertiefung"
           >
             Lernbogen
           </button>
@@ -178,10 +178,10 @@ export default function SearchBox({ terms, domains }: Props) {
               <p className="search-card__def">{t.shortDefinition}</p>
               <div className="search-card__meta">
                 <span className={`badge badge--${t.difficulty}`}>{difficultyLabel[t.difficulty] ?? t.difficulty}</span>
-                <span className="badge">Enterprise: {relevanceLabel[t.enterpriseRelevance]}</span>
-                <span className="search-card__lenses" aria-label="Verfügbare Perspektiven">
-                  {Object.keys(t.domainAnalogies).map((k) => (
-                    <span key={k} title={k} className={isBestLens(t.id, t.slug, k) ? 'lens-best' : ''}>{domainIcons[k] ?? '•'}</span>
+                <span className="badge">Enterprise-Relevanz: {relevanceLabel[t.enterpriseRelevance]}</span>
+                <span className="search-card__lenses" aria-label="Stärkste Perspektiven">
+                  {topDomainKeys(t, 2).map((k) => (
+                    <span key={k} title={domainNames[k] ?? k}>{domainIcons[k] ?? '•'}</span>
                   ))}
                 </span>
               </div>

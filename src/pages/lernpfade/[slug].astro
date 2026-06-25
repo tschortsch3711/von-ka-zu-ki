@@ -30,7 +30,7 @@ const nextPath = currentIdx < realPaths.length - 1 ? realPaths[currentIdx + 1] :
 ---
 <BaseLayout title={path.name} description={path.description}>
   <article class="section container">
-    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+    <nav class="breadcrumb" aria-label="Navigationspfad">
       <a href={link('lernpfade/')}>Lernpfade</a>
       <span aria-hidden="true"> › </span>
       <span aria-current="page">{path.name}</span>
@@ -64,7 +64,7 @@ const nextPath = currentIdx < realPaths.length - 1 ? realPaths[currentIdx + 1] :
     {path.lernbogenCTA && (
       <div class="lernbogen-cta">
         <p>{path.lernbogenCTA}</p>
-        <a class="split-btn" href={link('glossar/') + '?sort=learn'}>
+        <a class="split-btn" href={link('glossar/') + '?sort=learn'} title="Nach Schwierigkeit sortiert: Einstieg → Aufbau → Vertiefung">
           <span class="split-btn__text">Zum Glossar</span>
           <span class="split-btn__arrow">Lernbogen →</span>
         </a>

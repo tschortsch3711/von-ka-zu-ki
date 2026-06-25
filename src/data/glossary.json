@@ -23,22 +23,26 @@
       "automotive": {
         "analogy": "Das gesamte Mobilitätssystem, nicht ein einzelnes Auto",
         "explanation": "KI ist der Oberbegriff wie Mobilität: Fahrzeuge, Fahrer, Straßen und Werkstätten gehören dazu. Einzelne KI-Verfahren sind konkrete Fahrzeuge in diesem System.",
-        "limits": "Mobilität ist physisch und gut verstanden; KI umfasst sehr unterschiedliche Verfahren, deren Verhalten nicht immer erklärbar ist."
+        "limits": "Mobilität ist physisch und gut verstanden; KI umfasst sehr unterschiedliche Verfahren, deren Verhalten nicht immer erklärbar ist.",
+        "quality": 0.55
       },
       "publicSector": {
         "analogy": "Die Verwaltung als Ganzes, nicht eine einzelne Behörde",
         "explanation": "Wie Verwaltung viele Ämter und Verfahren bündelt, bündelt KI viele Methoden für verschiedene Aufgaben.",
-        "limits": "Verwaltung folgt klaren Zuständigkeiten und Rechtsnormen; KI hat keine Zuständigkeit und kein Rechtsverständnis."
+        "limits": "Verwaltung folgt klaren Zuständigkeiten und Rechtsnormen; KI hat keine Zuständigkeit und kein Rechtsverständnis.",
+        "quality": 0.66
       },
       "healthcare": {
         "analogy": "Die Medizin als Fachgebiet, nicht ein einzelnes Gerät",
         "explanation": "Medizin reicht von Diagnostik bis Therapie; KI reicht von Mustererkennung bis Sprachverarbeitung. Beides sind Oberbegriffe für viele Werkzeuge.",
-        "limits": "Medizin hat Evidenz und Verantwortung als Fundament; KI liefert Wahrscheinlichkeiten ohne eigene Verantwortung."
+        "limits": "Medizin hat Evidenz und Verantwortung als Fundament; KI liefert Wahrscheinlichkeiten ohne eigene Verantwortung.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Das gesamte Risikomanagement-Framework einer Bank, nicht ein einzelnes Risikomodell",
         "explanation": "So wie das Risikomanagement-Framework einer Bank Kreditrisikomodelle, Marktrisikosysteme, Compliance-Filter und interne Kontrollen unter einem Dach bündelt, ist KI der Oberbegriff für viele verschiedene Verfahren – von Scoring-Algorithmen bis zu Sprachmodellen. Ebenso wie das Framework je nach Risikoart unterschiedliche Methoden einsetzt, bedient sich KI je nach Aufgabe unterschiedlicher Ansätze. Für Regulatoren wie die BaFin ist das Gesamtframework genehmigungspflichtig, nicht nur einzelne Modelle.",
-        "limits": "Ein Risikomanagement-Framework unterliegt klaren regulatorischen Vorgaben (Basel III/IV, SR 11-7) und hat definierte Verantwortlichkeiten; KI-Systeme hingegen unterliegen noch uneinheitlicher Regulierung und tragen keine rechtliche Eigenverantwortung."
+        "limits": "Ein Risikomanagement-Framework unterliegt klaren regulatorischen Vorgaben (Basel III/IV, SR 11-7) und hat definierte Verantwortlichkeiten; KI-Systeme hingegen unterliegen noch uneinheitlicher Regulierung und tragen keine rechtliche Eigenverantwortung.",
+        "quality": 0.09
       }
     },
     "relatedTerms": [
@@ -75,22 +79,26 @@
       "automotive": {
         "analogy": "Ein Fahrer, der durch viele gefahrene Kilometer Erfahrung sammelt",
         "explanation": "Statt jede Situation vorab als Regel zu lernen, verbessert sich der Fahrer durch viele Beispiele und überträgt Erfahrung auf neue Strecken.",
-        "limits": "Ein Mensch versteht Ursachen; ML erkennt Korrelationen und kann bei untypischen Situationen unzuverlässig werden."
+        "limits": "Ein Mensch versteht Ursachen; ML erkennt Korrelationen und kann bei untypischen Situationen unzuverlässig werden.",
+        "quality": 0.92
       },
       "publicSector": {
         "analogy": "Einarbeitung durch viele bearbeitete Fälle statt durch ein Regelhandbuch",
         "explanation": "Wie erfahrene Sachbearbeitung aus vielen Vorgängen ein Gespür entwickelt, lernt ML Muster aus vielen Beispielen.",
-        "limits": "Verwaltung muss Entscheidungen begründen; ML-Muster sind oft nicht direkt nachvollziehbar."
+        "limits": "Verwaltung muss Entscheidungen begründen; ML-Muster sind oft nicht direkt nachvollziehbar.",
+        "quality": 0.64
       },
       "healthcare": {
         "analogy": "Diagnostische Erfahrung aus vielen gesehenen Fällen",
         "explanation": "Wie Erfahrung aus vielen Patientenfällen das Erkennen typischer Muster schult, lernt ML aus großen Falldatenmengen.",
-        "limits": "Ärztliche Erfahrung wird durch Evidenz und Reflexion korrigiert; ein Modell prüft seine Muster nicht selbst auf Sinnhaftigkeit."
+        "limits": "Ärztliche Erfahrung wird durch Evidenz und Reflexion korrigiert; ein Modell prüft seine Muster nicht selbst auf Sinnhaftigkeit.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Ein IRB-Kreditrisikomodell, das PD-Schätzungen aus historischen Ausfalldaten ableitet statt aus fest kodierten Expertenregeln",
         "explanation": "Wie beim Internal Ratings-Based Approach die Bank aus Tausenden historischer Kreditakten Muster zu Ausfallwahrscheinlichkeiten ableitet und auf neue Kreditnehmer überträgt, lernt ein ML-Modell aus Beispieldaten statt aus manuell programmierten Regeln. Das Modell verbessert seine Schätzungen, wenn es mit mehr Daten gespeist wird – ähnlich wie ein IRB-Modell durch erweitertes Datenfundament an Trennschärfe gewinnt. Für Backtesting und Validierung gelten analoge Anforderungen: Beide müssen zeigen, dass die gelernten Muster auf neue, ungesehene Daten übertragbar sind.",
-        "limits": "Ein IRB-Modell liefert aufsichtsrechtlich prüfbare, erklärbare Treiber für jede PD-Schätzung; viele ML-Verfahren sind Black Boxes, die das Vier-Augen-Prinzip und den Audit-Trail im Sinne von SR 11-7 erschweren."
+        "limits": "Ein IRB-Modell liefert aufsichtsrechtlich prüfbare, erklärbare Treiber für jede PD-Schätzung; viele ML-Verfahren sind Black Boxes, die das Vier-Augen-Prinzip und den Audit-Trail im Sinne von SR 11-7 erschweren.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -129,22 +137,26 @@
       "automotive": {
         "analogy": "Der Motor des Fahrzeugs",
         "explanation": "Das Modell ist der Motor: Es leistet die eigentliche Arbeit und wandelt Eingaben in Ausgaben um. Ohne Fahrer, Straße und Ziel fährt es aber nirgendwohin.",
-        "limits": "Ein Motor liefert reproduzierbar dieselbe Leistung; ein LLM kann bei gleicher Eingabe unterschiedliche Antworten erzeugen und liegt manchmal überzeugend falsch."
+        "limits": "Ein Motor liefert reproduzierbar dieselbe Leistung; ein LLM kann bei gleicher Eingabe unterschiedliche Antworten erzeugen und liegt manchmal überzeugend falsch.",
+        "quality": 0.56
       },
       "publicSector": {
         "analogy": "Ein sehr belesener Sachbearbeiter ohne Aktenzugriff",
         "explanation": "Das Modell hat enorm viel gelesen und formuliert flüssig, kennt aber den konkreten Vorgang nicht, solange ihm die Akte nicht vorgelegt wird.",
-        "limits": "Anders als ein Sachbearbeiter haftet das Modell für nichts und prüft Fakten nicht eigenständig auf Rechtsverbindlichkeit."
+        "limits": "Anders als ein Sachbearbeiter haftet das Modell für nichts und prüft Fakten nicht eigenständig auf Rechtsverbindlichkeit.",
+        "quality": 0.94
       },
       "healthcare": {
         "analogy": "Ein Lehrbuch-Gedächtnis ohne Patientenakte",
         "explanation": "Das Modell kennt viel Allgemeinwissen aus dem Training, aber nicht den konkreten Patienten, solange ihm keine Befunde gegeben werden.",
-        "limits": "Lehrbuchwissen ohne aktuelle Evidenz kann veraltet oder falsch sein; medizinische Entscheidungen brauchen geprüfte Quellen und ärztliche Verantwortung."
+        "limits": "Lehrbuchwissen ohne aktuelle Evidenz kann veraltet oder falsch sein; medizinische Entscheidungen brauchen geprüfte Quellen und ärztliche Verantwortung.",
+        "quality": 0.64
       },
       "finance": {
         "analogy": "Ein statistisches Scoringmodell, das aus Millionen Kreditakten Muster lernt und für neue Anfragen Wahrscheinlichkeiten formuliert – ohne die wirtschaftlichen Gründe dahinter zu kennen",
         "explanation": "Ein LLM funktioniert wie ein hochdimensionales Scoring-System, das nicht Ausfallwahrscheinlichkeiten, sondern wahrscheinliche Wortfolgen aus riesigen Textmengen ableitet. So wie ein Kreditscoring-Modell keine kausalen Zusammenhänge kennt, sondern statistische Korrelationen nutzt, generiert das LLM Antworten, die plausibel klingen, ohne ein echtes Verständnis des Inhalts zu haben. Für Compliance-Beauftragte bedeutet das: Die Ausgabe kann regulatorisch korrekt klingen, ohne es zu sein.",
-        "limits": "Ein Kreditscoring-Modell liefert eine einzige, reproduzierbare Ausgabe mit definierten Konfidenzintervallen und ist vollständig dokumentierbar; ein LLM erzeugt bei gleicher Eingabe unterschiedliche Antworten und kann Fakten überzeugend falsch darstellen – was Audit-Trail-Anforderungen fundamental widerspricht."
+        "limits": "Ein Kreditscoring-Modell liefert eine einzige, reproduzierbare Ausgabe mit definierten Konfidenzintervallen und ist vollständig dokumentierbar; ein LLM erzeugt bei gleicher Eingabe unterschiedliche Antworten und kann Fakten überzeugend falsch darstellen – was Audit-Trail-Anforderungen fundamental widerspricht.",
+        "quality": 0.1
       }
     },
     "relatedTerms": [
@@ -184,22 +196,26 @@
       "automotive": {
         "analogy": "Eine Plattform-Architektur, auf der viele Modelle aufbauen",
         "explanation": "Wie eine gemeinsame Fahrzeugplattform für Kombi, SUV und Van genutzt wird, dient ein Foundation Model als Basis für viele Anwendungen.",
-        "limits": "Eine Fahrzeugplattform ist exakt spezifiziert; ein Foundation Model hat schwer abgrenzbare Fähigkeiten und Schwächen."
+        "limits": "Eine Fahrzeugplattform ist exakt spezifiziert; ein Foundation Model hat schwer abgrenzbare Fähigkeiten und Schwächen.",
+        "quality": 0.9
       },
       "publicSector": {
         "analogy": "Ein allgemein ausgebildeter Beamter vor der Fachverwendung",
         "explanation": "Breit ausgebildet und vielseitig einsetzbar, wird das Modell erst durch konkrete Einweisung (Prompt, Daten, Fine-Tuning) für einen Fachbereich nutzbar.",
-        "limits": "Menschen tragen nach Einweisung Verantwortung; ein Basismodell bleibt ein Werkzeug ohne Verantwortung."
+        "limits": "Menschen tragen nach Einweisung Verantwortung; ein Basismodell bleibt ein Werkzeug ohne Verantwortung.",
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Die breite medizinische Grundausbildung vor der Spezialisierung",
         "explanation": "Wie nach dem Studium eine Fachrichtung folgt, wird ein Foundation Model erst durch Anpassung für einen konkreten Einsatz geeignet.",
-        "limits": "Eine Facharztausbildung ist zertifiziert und geprüft; die Anpassung eines Modells garantiert keine geprüfte Qualität."
+        "limits": "Eine Facharztausbildung ist zertifiziert und geprüft; die Anpassung eines Modells garantiert keine geprüfte Qualität.",
+        "quality": 0.94
       },
       "finance": {
         "analogy": "Eine generische Risikodatenplattform mit vorverarbeiteten Marktdaten, auf der verschiedene Fachbereiche ihre spezifischen Risikomodelle aufsetzen",
         "explanation": "Wie eine zentrale Datenplattform (z.B. für Bloomberg- oder Reuters-Feeds) einmalig aufgebaut und dann von Kreditrisiko, Marktrisiko und Compliance gleichermaßen genutzt wird, stellt ein Foundation Model breit vortrainierte Sprachkompetenz bereit, auf der sich spezialisierte Anwendungen per Fine-Tuning aufbauen lassen. Die Plattform selbst ist generisch; der Mehrwert entsteht erst durch die fachspezifische Anpassung für Backtesting, AML-Screening oder Regulierungsreporting. Modell-Governance-Anforderungen gelten für die gesamte Kette, nicht nur für das nachgelagerte Fachmodell.",
-        "limits": "Eine Risikodatenplattform ist versioniert, auditierbar und hat definierte Datenqualitätsstandards; die Fähigkeiten und Grenzen eines Foundation Model sind schwer vollständig zu inventarisieren, was die Modellvalidierung nach SR 11-7 erheblich erschwert."
+        "limits": "Eine Risikodatenplattform ist versioniert, auditierbar und hat definierte Datenqualitätsstandards; die Fähigkeiten und Grenzen eines Foundation Model sind schwer vollständig zu inventarisieren, was die Modellvalidierung nach SR 11-7 erheblich erschwert.",
+        "quality": 0.09
       }
     },
     "relatedTerms": [
@@ -237,22 +253,26 @@
       "automotive": {
         "analogy": "Das Fahren selbst, nicht der Bau des Autos",
         "explanation": "Training ist die Konstruktion und Erprobung; Inferenz ist die alltägliche Fahrt, bei der das fertige Fahrzeug genutzt wird und Sprit verbraucht.",
-        "limits": "Beim Fahren verschleißt Material; bei der Inferenz verändert sich das Modell nicht, es entstehen nur Rechenkosten."
+        "limits": "Beim Fahren verschleißt Material; bei der Inferenz verändert sich das Modell nicht, es entstehen nur Rechenkosten.",
+        "quality": 0.95
       },
       "publicSector": {
         "analogy": "Die Bearbeitung eines konkreten Antrags nach abgeschlossener Ausbildung",
         "explanation": "Die Ausbildung (Training) ist vorbei; jetzt wird Fall für Fall bearbeitet, jede Bearbeitung kostet Zeit und Ressourcen.",
-        "limits": "Sachbearbeitung lernt aus neuen Fällen weiter; reine Inferenz verändert das Modell nicht."
+        "limits": "Sachbearbeitung lernt aus neuen Fällen weiter; reine Inferenz verändert das Modell nicht.",
+        "quality": 0.63
       },
       "healthcare": {
         "analogy": "Die einzelne Untersuchung mit einem fertig kalibrierten Gerät",
         "explanation": "Das Gerät ist kalibriert (trainiert); jede Untersuchung (Inferenz) liefert ein Ergebnis und verbraucht Ressourcen.",
-        "limits": "Geräte haben Messgenauigkeiten mit Toleranzen; Modellausgaben sind probabilistisch und brauchen Einordnung."
+        "limits": "Geräte haben Messgenauigkeiten mit Toleranzen; Modellausgaben sind probabilistisch und brauchen Einordnung.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Die Echtzeit-Bonitätsprüfung eines Kreditantrags durch ein fertig validiertes und genehmigtes Scoringmodell im Produktivbetrieb",
         "explanation": "Inferenz ist der operative Betrieb: Das Modell ist trainiert, validiert und durch das Model Risk Management abgenommen – jetzt wird es auf jeden eingehenden Antrag angewendet, so wie ein produktives Kreditscoring-System rund um die Uhr Anfragen bewertet. Jede einzelne Bewertung (Inferenz) verursacht Rechenkosten und produziert einen revisionssicheren Output, ändert aber das Modell selbst nicht. Für den Regulator ist der Produktivbetrieb der relevante Kontrollpunkt: Hier greifen Monitoring, Schwellenwertprüfungen und Eskalationsregeln.",
-        "limits": "Ein Kreditscoring-System im Produktivbetrieb liefert deterministisch dieselbe Ausgabe für dieselbe Eingabe und ist vollständig nachvollziehbar; LLM-Inferenz ist probabilistisch und kann bei identischen Eingaben variieren, was Reproduzierbarkeit für Audit-Zwecke einschränkt."
+        "limits": "Ein Kreditscoring-System im Produktivbetrieb liefert deterministisch dieselbe Ausgabe für dieselbe Eingabe und ist vollständig nachvollziehbar; LLM-Inferenz ist probabilistisch und kann bei identischen Eingaben variieren, was Reproduzierbarkeit für Audit-Zwecke einschränkt.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -292,22 +312,26 @@
       "automotive": {
         "analogy": "Konstruktion des Motors (Training) und Abstimmung auf eine Strecke (Fine-Tuning)",
         "explanation": "Erst wird der Motor gebaut, dann für einen bestimmten Einsatz feinabgestimmt, etwa Rennstrecke oder Gelände.",
-        "limits": "Eine Abstimmung ist messbar und reversibel; Fine-Tuning kann unerwünschte Nebenwirkungen auf andere Fähigkeiten haben."
+        "limits": "Eine Abstimmung ist messbar und reversibel; Fine-Tuning kann unerwünschte Nebenwirkungen auf andere Fähigkeiten haben.",
+        "quality": 0.58
       },
       "publicSector": {
         "analogy": "Grundausbildung (Training) und Fortbildung für ein Spezialgebiet (Fine-Tuning)",
         "explanation": "Nach der breiten Ausbildung schult eine gezielte Fortbildung auf einen Fachbereich, ohne alles neu zu lernen.",
-        "limits": "Menschen reflektieren Gelerntes; ein feinabgestimmtes Modell kann auch falsche Muster verstärken."
+        "limits": "Menschen reflektieren Gelerntes; ein feinabgestimmtes Modell kann auch falsche Muster verstärken.",
+        "quality": 0.92
       },
       "healthcare": {
         "analogy": "Medizinstudium (Training) und Facharztweiterbildung (Fine-Tuning)",
         "explanation": "Auf breitem Grundwissen baut eine spezialisierte Weiterbildung auf, die das vorhandene Können schärft.",
-        "limits": "Weiterbildung ist geprüft und zertifiziert; Fine-Tuning bietet keine Garantie für korrekte Spezialleistung."
+        "limits": "Weiterbildung ist geprüft und zertifiziert; Fine-Tuning bietet keine Garantie für korrekte Spezialleistung.",
+        "quality": 0.95
       },
       "finance": {
         "analogy": "Erstentwicklung eines IRB-Risikomodells (Training) und anschließende Rekalibrierung auf ein neues Marktsegment oder Portfolio (Fine-Tuning)",
         "explanation": "Wie eine Bank zunächst ein internes Kreditrisikomodell auf dem Gesamtportfolio entwickelt und dann für ein neues Kundensegment – etwa Mittelstandskredite – auf Basis segmentspezifischer Daten neu kalibriert, ohne das Modell vollständig neu zu entwickeln, nutzt Fine-Tuning das vorhandene Basismodell als Ausgangspunkt. Für beide Phasen gelten separate Validierungsanforderungen, und Veränderungen am Modell müssen dokumentiert und aufsichtsrechtlich bewertet werden. Das Backtesting prüft jeweils, ob die Anpassung die Trennschärfe verbessert hat.",
-        "limits": "Eine Modellrekalibrierung im IRB-Kontext erfolgt nach klar definierten statistischen Verfahren mit nachvollziehbaren Qualitätskennzahlen; Fine-Tuning eines KI-Modells kann schwer quantifizierbare Nebenwirkungen auf andere Fähigkeiten des Modells haben, die im Validierungsprozess nur aufwändig vollständig erfasst werden."
+        "limits": "Eine Modellrekalibrierung im IRB-Kontext erfolgt nach klar definierten statistischen Verfahren mit nachvollziehbaren Qualitätskennzahlen; Fine-Tuning eines KI-Modells kann schwer quantifizierbare Nebenwirkungen auf andere Fähigkeiten des Modells haben, die im Validierungsprozess nur aufwändig vollständig erfasst werden.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -345,22 +369,26 @@
       "automotive": {
         "analogy": "Der Verbrauchszähler bzw. der Sprit",
         "explanation": "Jede Fahrt verbraucht Treibstoff: Je länger Anfrage und Antwort, desto mehr Tokens werden verbraucht und desto höher die Kosten.",
-        "limits": "Spritverbrauch ist physikalisch fix pro Strecke; Tokenverbrauch hängt stark von Formulierung und Sprache ab und ist schwerer vorab exakt zu berechnen."
+        "limits": "Spritverbrauch ist physikalisch fix pro Strecke; Tokenverbrauch hängt stark von Formulierung und Sprache ab und ist schwerer vorab exakt zu berechnen.",
+        "quality": 0.94
       },
       "publicSector": {
         "analogy": "Gebühreneinheiten pro bearbeiteter Seite",
         "explanation": "Wie bei einer seitenbasierten Gebühr summiert sich der Aufwand mit jeder Seite Text, die ein- und ausgeht.",
-        "limits": "Seiten sind klar abgrenzbar; Tokengrenzen verlaufen mitten in Wörtern und sind für Laien nicht direkt sichtbar."
+        "limits": "Seiten sind klar abgrenzbar; Tokengrenzen verlaufen mitten in Wörtern und sind für Laien nicht direkt sichtbar.",
+        "quality": 0.64
       },
       "healthcare": {
         "analogy": "Minutentakt einer Sprechstunde",
         "explanation": "Jede zusätzliche Information kostet Zeit im Takt; ausführlichere Eingaben und Antworten verbrauchen mehr Budget.",
-        "limits": "Zeit ist linear erlebbar; Tokenkosten sind unsichtbar und werden leicht unterschätzt, bis das Kontextfenster voll ist."
+        "limits": "Zeit ist linear erlebbar; Tokenkosten sind unsichtbar und werden leicht unterschätzt, bis das Kontextfenster voll ist.",
+        "quality": 0.58
       },
       "finance": {
         "analogy": "Die Transaktionsstückelung im Zahlungsverkehr: jede Nachricht wird in kleinste verarbeitbare Einheiten zerlegt, die Volumen und Kosten bestimmen",
         "explanation": "So wie im SWIFT-Zahlungsverkehr Nachrichten in standardisierte Felder und Zeichen zerlegt werden und das Volumen die Verarbeitungskosten treibt, zerlegt ein Sprachmodell jeden Text in Tokens, deren Anzahl direkt Rechenzeit und API-Kosten bestimmt. Für CFOs und IT-Beschaffung bedeutet das: Tokenkontingente sind das Budget-Äquivalent der Transaktionsvolumina – sie müssen geplant, überwacht und bei Bedarf gedeckelt werden. Langatmige Prompts und umfangreiche Dokumente treiben den Token-Verbrauch ebenso wie hohe Transaktionsvolumina die Abwicklungskosten.",
-        "limits": "Transaktionsvolumina sind exakt zählbar und ex ante planbar; Tokenverbrauch hängt von Sprache, Formulierung und Sonderzeichen ab und ist ohne Vorabkalkulation schwer budgetierbar – das erschwert die Kostentransparenz in der internen Leistungsverrechnung."
+        "limits": "Transaktionsvolumina sind exakt zählbar und ex ante planbar; Tokenverbrauch hängt von Sprache, Formulierung und Sonderzeichen ab und ist ohne Vorabkalkulation schwer budgetierbar – das erschwert die Kostentransparenz in der internen Leistungsverrechnung.",
+        "quality": 0.09
       }
     },
     "relatedTerms": [
@@ -398,22 +426,26 @@
       "automotive": {
         "analogy": "Kofferraum und Armaturenbrett auf einer Fahrt",
         "explanation": "Nur was in Kofferraum und Sichtfeld passt, steht für diese Fahrt zur Verfügung. Mehr passt nicht hinein, egal wie wichtig es wäre.",
-        "limits": "Ein Kofferraum behält Inhalt über viele Fahrten; das Kontextfenster ist nach jeder Anfrage wieder leer."
+        "limits": "Ein Kofferraum behält Inhalt über viele Fahrten; das Kontextfenster ist nach jeder Anfrage wieder leer.",
+        "quality": 0.58
       },
       "publicSector": {
         "analogy": "Die Akten, die gerade auf dem Schreibtisch liegen",
         "explanation": "Entschieden wird nur auf Basis der vorliegenden Unterlagen. Was nicht auf dem Tisch liegt, fließt nicht ein.",
-        "limits": "Eine Behörde kann jederzeit Akten nachfordern; das Modell kennt nur, was im Fenster steht."
+        "limits": "Eine Behörde kann jederzeit Akten nachfordern; das Modell kennt nur, was im Fenster steht.",
+        "quality": 0.95
       },
       "healthcare": {
         "analogy": "Die Befunde, die zur Visite vorliegen",
         "explanation": "In die Beurteilung fließt nur ein, was zur Visite mitgebracht wurde. Fehlende Befunde fehlen schlicht.",
-        "limits": "Ein Behandlungsteam erinnert sich über Tage; das Kontextfenster hat kein Gedächtnis über die Anfrage hinaus."
+        "limits": "Ein Behandlungsteam erinnert sich über Tage; das Kontextfenster hat kein Gedächtnis über die Anfrage hinaus.",
+        "quality": 0.63
       },
       "finance": {
         "analogy": "Die Unterlagen, die einem Kreditkomitee zur Sitzung vorliegen: nur was auf dem Tisch liegt, fließt in die Entscheidung ein",
         "explanation": "Ein Kreditkomitee entscheidet ausschließlich auf Basis der vorgelegten Kreditakte, Bonitätsunterlagen und Risikoberichte – fehlt ein Dokument, bleibt es unberücksichtigt, egal wie relevant es wäre. Ebenso verarbeitet ein Sprachmodell nur, was im Kontextfenster enthalten ist: fehlen Vertragsbedingungen, frühere Korrespondenz oder regulatorische Vorgaben, fließen sie nicht in die Antwort ein. Für Compliance-Zwecke bedeutet das: Der vollständige Informationsstand muss aktiv in den Prompt eingebracht werden, analog zur vollständigen Vorlage aller relevanten Unterlagen im Komitee.",
-        "limits": "Ein Kreditkomitee kann fehlende Unterlagen anfordern und die Entscheidung vertagen; ein Modell ergänzt fehlende Informationen im Zweifel mit plausibel klingenden, aber nicht belegten Annahmen – ohne dies transparent zu machen."
+        "limits": "Ein Kreditkomitee kann fehlende Unterlagen anfordern und die Entscheidung vertagen; ein Modell ergänzt fehlende Informationen im Zweifel mit plausibel klingenden, aber nicht belegten Annahmen – ohne dies transparent zu machen.",
+        "quality": 0.38
       }
     },
     "relatedTerms": [
@@ -452,22 +484,26 @@
       "automotive": {
         "analogy": "Das Fahrziel und die Anweisungen an den Fahrer",
         "explanation": "Wie ein präziser Fahrauftrag mit Ziel, Route und Bedingungen die Fahrt bestimmt, steuert der Prompt die Antwort.",
-        "limits": "Ein Fahrer fragt bei Unklarheit nach; ein Modell rät oft einfach weiter, statt nachzuhaken."
+        "limits": "Ein Fahrer fragt bei Unklarheit nach; ein Modell rät oft einfach weiter, statt nachzuhaken.",
+        "quality": 0.6
       },
       "publicSector": {
         "analogy": "Der Bearbeitungsauftrag mit Sachverhalt und Fragestellung",
         "explanation": "Je klarer Sachverhalt und Auftrag formuliert sind, desto brauchbarer fällt die Bearbeitung aus.",
-        "limits": "Ein unklarer Auftrag führt bei Menschen zu Rückfragen, beim Modell oft zu plausibel klingenden Fehlannahmen."
+        "limits": "Ein unklarer Auftrag führt bei Menschen zu Rückfragen, beim Modell oft zu plausibel klingenden Fehlannahmen.",
+        "quality": 0.63
       },
       "healthcare": {
         "analogy": "Die Überweisung mit Fragestellung und Vorbefunden",
         "explanation": "Eine präzise Fragestellung mit relevanten Vorbefunden lenkt die Beurteilung in die richtige Richtung.",
-        "limits": "Fehlende Angaben fallen Fachpersonal auf; ein Modell ergänzt Lücken eher mit Vermutungen."
+        "limits": "Fehlende Angaben fallen Fachpersonal auf; ein Modell ergänzt Lücken eher mit Vermutungen.",
+        "quality": 0.57
       },
       "finance": {
         "analogy": "Der strukturierte Kreditantrag mit Fragestellung, Sachverhalt und Limit-Parametern, der die Analyse des Risikoteams steuert",
         "explanation": "Wie ein präzise formulierter Kreditantrag mit klarer Fragestellung (Bonität, Sicherheiten, Laufzeit), vollständigem Sachverhalt und definierten Beurteilungsgrenzen eine zielgerichtete Risikoanalyse ermöglicht, steuert der Prompt die Qualität der Modellausgabe. Unvollständige oder mehrdeutige Prompts führen zu unbrauchbaren Antworten – ebenso wie ein lückenhafter Kreditantrag das Komitee zu Rückfragen zwingt oder zu einer Fehlbewertung führt. Für regulatorisch sensible Anwendungen (z.B. AML-Screening, Regulierungsreporting) müssen Prompt-Vorlagen standardisiert, versioniert und einem Review-Prozess unterzogen werden.",
-        "limits": "Ein Kreditantrag folgt einem normierten Schema mit Pflichtfeldern und löst bei Lücken definierte Eskalationsprozesse aus; ein Modell füllt unvollständige Prompts mit Vermutungen auf, ohne den Nutzer auf die Lücken hinzuweisen – was in regulierten Prozessen zu nicht erkennbaren Fehlentscheidungen führen kann."
+        "limits": "Ein Kreditantrag folgt einem normierten Schema mit Pflichtfeldern und löst bei Lücken definierte Eskalationsprozesse aus; ein Modell füllt unvollständige Prompts mit Vermutungen auf, ohne den Nutzer auf die Lücken hinzuweisen – was in regulierten Prozessen zu nicht erkennbaren Fehlentscheidungen führen kann.",
+        "quality": 0.33
       }
     },
     "relatedTerms": [
@@ -506,22 +542,26 @@
       "automotive": {
         "analogy": "Ein Navi, das selbstbewusst eine Straße ansagt, die es nicht gibt",
         "explanation": "Die Ansage klingt souverän, führt aber ins Leere. Ohne Abgleich mit der Realität merkt man den Fehler erst spät.",
-        "limits": "Ein Navi-Fehler ist meist schnell sichtbar; eine Texthalluzination kann lange unentdeckt bleiben."
+        "limits": "Ein Navi-Fehler ist meist schnell sichtbar; eine Texthalluzination kann lange unentdeckt bleiben.",
+        "quality": 0.95
       },
       "publicSector": {
         "analogy": "Ein souverän vorgetragener, aber erfundener Aktenvermerk",
         "explanation": "Der Vermerk wirkt formal korrekt, beruht aber auf nicht existenten Tatsachen oder Paragraphen.",
-        "limits": "In der Verwaltung gibt es Belegpflicht und Aktenprüfung; ein Modell prüft seine eigenen Aussagen nicht."
+        "limits": "In der Verwaltung gibt es Belegpflicht und Aktenprüfung; ein Modell prüft seine eigenen Aussagen nicht.",
+        "quality": 0.63
       },
       "healthcare": {
         "analogy": "Eine überzeugend klingende, aber falsche Befundinterpretation",
         "explanation": "Die Aussage klingt fachkundig, ist aber nicht durch Befunde gedeckt und kann in die Irre führen.",
-        "limits": "Im Gesundheitswesen sind Halluzinationen besonders gefährlich; deshalb sind Quellenbindung und ärztliche Prüfung Pflicht."
+        "limits": "Im Gesundheitswesen sind Halluzinationen besonders gefährlich; deshalb sind Quellenbindung und ärztliche Prüfung Pflicht.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Ein IRB-Modell, das eine solide Bonität ausgibt, obwohl die zugrunde liegenden Trainingsdaten systematisch fehlerhaft waren – und die Validierung dies nicht aufgedeckt hat.",
         "explanation": "Wie ein intern entwickeltes Ratingmodell plausibel wirkende PD-Werte liefern kann, die auf korrumpierten Historien basieren, produziert ein Sprachmodell zuversichtlich formulierte Aussagen ohne Verankerung in korrekten Fakten. Der Output besteht die Plausibilitätsprüfung auf den ersten Blick, weil er formal konsistent klingt – genau wie ein Ratingergebnis, das alle Scorecards passiert, aber auf falschen Eingabedaten beruht.",
-        "limits": "Ein Ratingmodell lässt sich per Backtesting und Out-of-Sample-Validierung systematisch auf Kalibrierfehler prüfen; bei Sprachmodellen gibt es kein vergleichbares formales Verfahren, das Halluzinationen zuverlässig vor dem Einsatz identifiziert."
+        "limits": "Ein Ratingmodell lässt sich per Backtesting und Out-of-Sample-Validierung systematisch auf Kalibrierfehler prüfen; bei Sprachmodellen gibt es kein vergleichbares formales Verfahren, das Halluzinationen zuverlässig vor dem Einsatz identifiziert.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -559,22 +599,26 @@
       "automotive": {
         "analogy": "Fahrer oder Fahrzeug mit Assistenzsystem",
         "explanation": "Der Agent plant die Route, nutzt Werkzeuge und fährt Schritt für Schritt zum Ziel.",
-        "limits": "Ein echter KI-Agent versteht sein Ziel nicht wie ein Mensch, sondern arbeitet nach Modellwahrscheinlichkeiten, Kontext und Tools."
+        "limits": "Ein echter KI-Agent versteht sein Ziel nicht wie ein Mensch, sondern arbeitet nach Modellwahrscheinlichkeiten, Kontext und Tools.",
+        "quality": 0.34
       },
       "publicSector": {
         "analogy": "Sachbearbeitung mit Aktenzugriff und festen Zuständigkeiten",
         "explanation": "Der Agent kann Vorgänge vorbereiten, prüfen und strukturieren, muss aber innerhalb klarer Regeln arbeiten.",
-        "limits": "Rechtsverbindliche Entscheidungen benötigen Governance und menschliche Verantwortung."
+        "limits": "Rechtsverbindliche Entscheidungen benötigen Governance und menschliche Verantwortung.",
+        "quality": 0.3
       },
       "healthcare": {
         "analogy": "Assistenzarzt mit Zugriff auf Labor, Akte und Leitlinien",
         "explanation": "Er sammelt Informationen, schlägt Schritte vor und braucht bei kritischen Entscheidungen Freigabe.",
-        "limits": "Er ersetzt keine menschliche Verantwortung und keine ärztliche Letztentscheidung."
+        "limits": "Er ersetzt keine menschliche Verantwortung und keine ärztliche Letztentscheidung.",
+        "quality": 0.62
       },
       "finance": {
         "analogy": "Ein automatisierter Handelstisch, der Marktdaten auswertet, Orders über mehrere Systeme routet und dabei vorgegebene Risikolimits und Compliance-Regeln eigenständig überwacht.",
         "explanation": "Wie ein algorithmischer Handelsprozess selbstständig Ziele verfolgt (z. B. Execution-Optimierung), auf verschiedene Tools zugreift (Orderbuch, Risikorechner, Meldestrecke) und bei Schwellenwertüberschreitung eskaliert, plant ein KI-Agent Zwischenschritte, ruft externe Funktionen auf und trifft innerhalb definierter Parameter autonome Entscheidungen. Die Parallele hilft, das Konzept von Autonomie, Toolnutzung und Zielorientierung greifbar zu machen.",
-        "limits": "Ein Handelssystem operiert auf vollständig formalisierten, maschinenlesbaren Regeln mit deterministischen Ausführungsgarantien; ein KI-Agent arbeitet probabilistisch, kann Ziele fehlinterpretieren und besitzt keine regulatorisch anerkannte Verantwortlichkeitsstruktur im Sinne von MiFID II oder SR 11-7."
+        "limits": "Ein Handelssystem operiert auf vollständig formalisierten, maschinenlesbaren Regeln mit deterministischen Ausführungsgarantien; ein KI-Agent arbeitet probabilistisch, kann Ziele fehlinterpretieren und besitzt keine regulatorisch anerkannte Verantwortlichkeitsstruktur im Sinne von MiFID II oder SR 11-7.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -616,22 +660,26 @@
       "automotive": {
         "analogy": "Der Griff zu Bordwerkzeug und Anbaugeräten",
         "explanation": "Wie ein Fahrzeug je nach Aufgabe Werkzeuge oder Anbauten nutzt, ruft das Modell passende Funktionen für eine Teilaufgabe auf.",
-        "limits": "Ein Werkzeug greift mechanisch zuverlässig; ein Modell kann das falsche Werkzeug oder falsche Parameter wählen."
+        "limits": "Ein Werkzeug greift mechanisch zuverlässig; ein Modell kann das falsche Werkzeug oder falsche Parameter wählen.",
+        "quality": 0.6
       },
       "publicSector": {
         "analogy": "Der Zugriff auf Fachverfahren und Register",
         "explanation": "Wie Sachbearbeitung gezielt ein Fachverfahren oder Register abfragt, ruft das Modell definierte Funktionen für konkrete Daten ab.",
-        "limits": "Zugriffe sind rechtlich geregelt; ein Modell kennt diese Grenzen nicht von sich aus und braucht klare Einhegung."
+        "limits": "Zugriffe sind rechtlich geregelt; ein Modell kennt diese Grenzen nicht von sich aus und braucht klare Einhegung.",
+        "quality": 0.33
       },
       "healthcare": {
         "analogy": "Die gezielte Anforderung von Labor oder Bildgebung",
         "explanation": "Wie eine ärztliche Anforderung von Labor oder Bildgebung gezielt Informationen beschafft, ruft das Modell passende Werkzeuge auf.",
-        "limits": "Anforderungen folgen Indikation und Verantwortung; ein Modell kann Werkzeuge auch unnötig oder falsch einsetzen."
+        "limits": "Anforderungen folgen Indikation und Verantwortung; ein Modell kann Werkzeuge auch unnötig oder falsch einsetzen.",
+        "quality": 0.62
       },
       "finance": {
         "analogy": "Das gezielte Absetzen einer API-Anfrage an ein Kernbankensystem, einen Marktdatenfeed oder ein Kreditregister – initiiert durch das Modell, nicht durch den Nutzer.",
         "explanation": "Wie ein Risikocontrolling-System bei Bedarf automatisiert Bloomberg-Kurse, interne Limitdatenbanken oder externe Bonitätsdaten abruft, ruft ein Modell beim Tool Calling definierte Funktionen mit spezifischen Parametern auf, um aktuelle oder strukturierte Informationen zu beschaffen. Die Analogie macht deutlich, dass das Modell die Anfrage formuliert und abschickt, aber nicht selbst die Datenquelle ist.",
-        "limits": "Systemaufrufe im Bankbetrieb sind durch Berechtigungskonzepte, Audit-Trails und technische Kontrollen abgesichert; ein Modell, das Tools aufruft, kann falsche Parameter übergeben oder ungeeignete Funktionen wählen, ohne dass dies automatisch protokolliert oder gesperrt wird."
+        "limits": "Systemaufrufe im Bankbetrieb sind durch Berechtigungskonzepte, Audit-Trails und technische Kontrollen abgesichert; ein Modell, das Tools aufruft, kann falsche Parameter übergeben oder ungeeignete Funktionen wählen, ohne dass dies automatisch protokolliert oder gesperrt wird.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -668,22 +716,26 @@
       "automotive": {
         "analogy": "Eine genormte Anschlussbuchse, etwa der OBD-Stecker oder ein Ladestandard",
         "explanation": "Wie ein genormter Anschluss verschiedene Geräte ohne Sonderkabel verbindet, verbindet MCP Modelle und Werkzeuge über eine einheitliche Schnittstelle.",
-        "limits": "Eine Norm garantiert nur Anschlussfähigkeit, nicht die Qualität oder Sicherheit des angeschlossenen Geräts."
+        "limits": "Eine Norm garantiert nur Anschlussfähigkeit, nicht die Qualität oder Sicherheit des angeschlossenen Geräts.",
+        "quality": 0.93
       },
       "publicSector": {
         "analogy": "Eine standardisierte Schnittstelle zwischen Fachverfahren",
         "explanation": "Wie eine einheitliche Datenschnittstelle den Austausch zwischen Verfahren regelt, regelt MCP den Austausch zwischen Modell und Werkzeugen.",
-        "limits": "Standardisierte Schnittstellen brauchen weiterhin Berechtigungskonzepte und Datenschutz; der Standard ersetzt das nicht."
+        "limits": "Standardisierte Schnittstellen brauchen weiterhin Berechtigungskonzepte und Datenschutz; der Standard ersetzt das nicht.",
+        "quality": 0.32
       },
       "healthcare": {
         "analogy": "Ein Interoperabilitätsstandard wie ein einheitliches Datenformat zwischen Systemen",
         "explanation": "Wie ein gemeinsames Datenformat Befunde zwischen Systemen austauschbar macht, macht MCP Werkzeuge für Modelle einheitlich nutzbar.",
-        "limits": "Interoperabilität löst nicht automatisch Fragen von Datenschutz, Qualität und Verantwortung."
+        "limits": "Interoperabilität löst nicht automatisch Fragen von Datenschutz, Qualität und Verantwortung.",
+        "quality": 0.29
       },
       "finance": {
         "analogy": "Eine standardisierte Finanzmarkt-Schnittstelle wie FIX oder ISO 20022 – ein einheitliches Protokoll, über das verschiedene Systeme Nachrichten und Daten austauschen, ohne für jede Verbindung ein eigenes Format zu entwickeln.",
         "explanation": "Wie ISO 20022 Banken, Clearingstellen und Zentralbanken ein gemeinsames Nachrichtenformat gibt und so Interoperabilität ohne bilaterale Sonderlösungen ermöglicht, definiert MCP eine einheitliche Kommunikationsschicht zwischen KI-Modellen und externen Werkzeugen oder Datenquellen. Die Analogie veranschaulicht, warum ein offener Standard den Integrationsaufwand erheblich reduziert.",
-        "limits": "ISO 20022 regelt Nachrichtenformat und Semantik, nicht aber Datenschutz, Berechtigungen oder Haftung – ebenso definiert MCP nur die Verbindungsschicht; Zugriffskontrolle, Datensensitivität und regulatorische Compliance müssen separat adressiert werden."
+        "limits": "ISO 20022 regelt Nachrichtenformat und Semantik, nicht aber Datenschutz, Berechtigungen oder Haftung – ebenso definiert MCP nur die Verbindungsschicht; Zugriffskontrolle, Datensensitivität und regulatorische Compliance müssen separat adressiert werden.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -722,22 +774,26 @@
       "automotive": {
         "analogy": "Ein Beifahrer, der vor der Antwort im aktuellen Bordhandbuch nachschlägt",
         "explanation": "Statt aus dem Gedächtnis zu raten, schlägt das System erst in der passenden Quelle nach und antwortet dann belegt.",
-        "limits": "Ist das Handbuch veraltet oder falsch, hilft auch das Nachschlagen nicht; die Quelle muss stimmen."
+        "limits": "Ist das Handbuch veraltet oder falsch, hilft auch das Nachschlagen nicht; die Quelle muss stimmen.",
+        "quality": 0.96
       },
       "publicSector": {
         "analogy": "Erst die zuständige Akte ziehen, dann den Vorgang bearbeiten",
         "explanation": "Wie korrekte Sachbearbeitung erst die relevanten Unterlagen heranzieht, holt RAG erst die passenden Dokumente und antwortet darauf gestützt.",
-        "limits": "Falsche oder unvollständige Aktenlage führt auch hier zu falschen Ergebnissen; Aktualität und Vollständigkeit sind entscheidend."
+        "limits": "Falsche oder unvollständige Aktenlage führt auch hier zu falschen Ergebnissen; Aktualität und Vollständigkeit sind entscheidend.",
+        "quality": 0.94
       },
       "healthcare": {
         "analogy": "Vor der Empfehlung Leitlinie und Patientenakte konsultieren",
         "explanation": "Wie eine fundierte Empfehlung Leitlinien und konkrete Befunde heranzieht, stützt RAG die Antwort auf abgerufene Quellen.",
-        "limits": "Stimmen die herangezogenen Quellen nicht oder fehlen sie, kann die Empfehlung trotz Beleg falsch sein."
+        "limits": "Stimmen die herangezogenen Quellen nicht oder fehlen sie, kann die Empfehlung trotz Beleg falsch sein.",
+        "quality": 0.64
       },
       "finance": {
         "analogy": "Ein Kreditanalyst, der vor dem Votum nicht aus dem Gedächtnis urteilt, sondern gezielt aktuelle Jahresabschlüsse, Branchenreports und interne Ratinghistorien aus dem Dokumentenmanagementsystem zieht.",
         "explanation": "Wie ein fundiertes Kreditvotum auf konkret herangezogenen, aktuellen Unterlagen basiert und nicht auf dem allgemeinen Erfahrungsschatz des Analysten, stützt RAG jede Antwort auf zur Laufzeit abgerufene Dokumente – das Modell generiert nicht aus dem Training heraus, sondern aus dem bereitgestellten Kontext. Das reduziert Halluzinationsrisiken analog zur Belegpflicht im Kreditprozess.",
-        "limits": "Ist die Dokumentenbasis veraltet, unvollständig oder falsch indexiert, produziert auch RAG fehlerhafte Ergebnisse – genau wie ein Kreditvotum auf Basis falscher Bilanzen; die Qualität der Retrieval-Schicht und der Quelldaten ist entscheidend und braucht eigene Governance."
+        "limits": "Ist die Dokumentenbasis veraltet, unvollständig oder falsch indexiert, produziert auch RAG fehlerhafte Ergebnisse – genau wie ein Kreditvotum auf Basis falscher Bilanzen; die Qualität der Retrieval-Schicht und der Quelldaten ist entscheidend und braucht eigene Governance.",
+        "quality": 0.58
       }
     },
     "relatedTerms": [
@@ -777,22 +833,26 @@
       "automotive": {
         "analogy": "Eine Landkarte, auf der ähnliche Orte nah beieinander liegen",
         "explanation": "Wie nahe Orte auf einer Karte schnell erreichbar sind, liegen inhaltlich ähnliche Texte im Vektorraum nah beieinander.",
-        "limits": "Eine Karte bildet Entfernung exakt ab; Bedeutungs-Nähe ist eine Annäherung und kann täuschen."
+        "limits": "Eine Karte bildet Entfernung exakt ab; Bedeutungs-Nähe ist eine Annäherung und kann täuschen.",
+        "quality": 0.62
       },
       "publicSector": {
         "analogy": "Eine Verschlagwortung, die thematisch verwandte Vorgänge zusammenführt",
         "explanation": "Wie eine gute Sachgebietssystematik Verwandtes gruppiert, gruppieren Embeddings Texte nach Bedeutung.",
-        "limits": "Eine Systematik ist erklärbar; warum zwei Vektoren als ähnlich gelten, ist oft schwer nachvollziehbar."
+        "limits": "Eine Systematik ist erklärbar; warum zwei Vektoren als ähnlich gelten, ist oft schwer nachvollziehbar.",
+        "quality": 0.34
       },
       "healthcare": {
         "analogy": "Eine Symptomähnlichkeits-Sortierung von Fällen",
         "explanation": "Wie ähnliche Krankheitsbilder gedanklich zusammengefasst werden, fasst der Vektorraum bedeutungsähnliche Texte zusammen.",
-        "limits": "Oberflächliche Ähnlichkeit kann klinisch in die Irre führen; Nähe im Vektorraum ersetzt keine fachliche Bewertung."
+        "limits": "Oberflächliche Ähnlichkeit kann klinisch in die Irre führen; Nähe im Vektorraum ersetzt keine fachliche Bewertung.",
+        "quality": 0.3
       },
       "finance": {
         "analogy": "Ein multidimensionaler Risiko-Fingerabdruck, der Kreditnehmer nach Merkmalen wie Branche, Laufzeitprofil und Ausfallhistorie in einem Merkmalsraum verortet – ähnliche Schuldner liegen nahe beieinander.",
         "explanation": "Wie ein internes Ratingverfahren Unternehmen anhand vieldimensionaler Finanzkennzahlen in Risikoklassen gruppiert und dabei inhaltliche Nähe durch Ähnlichkeit im Merkmalsraum abbildet, überführen Embeddings Texte in numerische Vektoren, sodass semantisch verwandte Inhalte geometrisch nahe beieinander liegen. Das ermöglicht etwa die Suche nach ähnlichen Präzedenzfällen oder Vertragsklauseln ohne exakte Schlüsselwortübereinstimmung.",
-        "limits": "Risikoklassen basieren auf regulatorisch definierten, revisionssicheren Kriterien; warum zwei Textvektoren als ähnlich eingestuft werden, ist im Embedding-Raum oft nicht nachvollziehbar und erfüllt damit nicht die Anforderungen an Modell-Transparenz und Erklärbarkeit nach SR 11-7 oder dem EU AI Act."
+        "limits": "Risikoklassen basieren auf regulatorisch definierten, revisionssicheren Kriterien; warum zwei Textvektoren als ähnlich eingestuft werden, ist im Embedding-Raum oft nicht nachvollziehbar und erfüllt damit nicht die Anforderungen an Modell-Transparenz und Erklärbarkeit nach SR 11-7 oder dem EU AI Act.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -830,22 +890,26 @@
       "automotive": {
         "analogy": "TÜV, Zulassung und Verkehrsregeln zusammen",
         "explanation": "Wie TÜV, Zulassung und Verkehrsregeln den sicheren Betrieb von Fahrzeugen rahmen, rahmt Governance den sicheren Einsatz von KI.",
-        "limits": "Verkehrsregeln sind klar kodifiziert und etabliert; KI-Governance ist jünger, im Fluss und stark kontextabhängig."
+        "limits": "Verkehrsregeln sind klar kodifiziert und etabliert; KI-Governance ist jünger, im Fluss und stark kontextabhängig.",
+        "quality": 0.94
       },
       "publicSector": {
         "analogy": "Dienstanweisungen, Zuständigkeitsordnung und Aufsicht",
         "explanation": "Wie Verwaltungshandeln durch Dienstanweisungen, Zuständigkeiten und Aufsicht geregelt ist, regelt Governance den KI-Einsatz.",
-        "limits": "Verwaltungsregeln haben gewachsene Strukturen; KI-Governance muss vieles erst neu definieren."
+        "limits": "Verwaltungsregeln haben gewachsene Strukturen; KI-Governance muss vieles erst neu definieren.",
+        "quality": 0.63
       },
       "healthcare": {
         "analogy": "Qualitätsmanagement, Zulassung und ärztliche Verantwortung",
         "explanation": "Wie Qualitätsmanagement und Zulassungswege den sicheren Einsatz von Verfahren sichern, sichert Governance den verantwortbaren KI-Einsatz.",
-        "limits": "Medizinische Zulassung ist streng standardisiert; KI-Governance ist oft weniger formalisiert und entwickelt sich noch."
+        "limits": "Medizinische Zulassung ist streng standardisiert; KI-Governance ist oft weniger formalisiert und entwickelt sich noch.",
+        "quality": 0.58
       },
       "finance": {
         "analogy": "Model Risk Management nach SR 11-7: unabhängige Validierung, klare Ownership, lückenlose Dokumentation und ein Eskalationspfad für jedes produktiv eingesetzte Modell.",
         "explanation": "Wie die Leitlinien des Fed-Rundschreibens SR 11-7 für quantitative Risikomodelle Entwicklung, Validierung, Genehmigung und laufendes Monitoring strukturieren, definiert AI Governance Rollen, Prüfpflichten und Kontrollprozesse für KI-Systeme. Die Analogie macht deutlich, dass es nicht um technische Einschränkungen allein geht, sondern um institutionelle Verantwortlichkeit über den gesamten Modelllebenszyklus.",
-        "limits": "SR 11-7 gilt für klar abgegrenzte quantitative Modelle mit definierten Inputs und statistisch prüfbaren Outputs; KI-Systeme – insbesondere Sprachmodelle – sind schwerer zu validieren, ihre Risiken sind breiter gestreut und die regulatorischen Standards für KI-Governance im Finanzsektor sind noch nicht konsolidiert."
+        "limits": "SR 11-7 gilt für klar abgegrenzte quantitative Modelle mit definierten Inputs und statistisch prüfbaren Outputs; KI-Systeme – insbesondere Sprachmodelle – sind schwerer zu validieren, ihre Risiken sind breiter gestreut und die regulatorischen Standards für KI-Governance im Finanzsektor sind noch nicht konsolidiert.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -884,22 +948,26 @@
       "automotive": {
         "analogy": "Leitplanken, Spurhalteassistent und Geschwindigkeitsbegrenzer",
         "explanation": "Wie Leitplanken und Assistenzsysteme das Fahrzeug in sicheren Grenzen halten, halten Guardrails das KI-System in erlaubten Bahnen.",
-        "limits": "Leitplanken verhindern nicht jeden Unfall; Guardrails verhindern nicht jeden Fehler oder Missbrauch."
+        "limits": "Leitplanken verhindern nicht jeden Unfall; Guardrails verhindern nicht jeden Fehler oder Missbrauch.",
+        "quality": 0.95
       },
       "publicSector": {
         "analogy": "Pflichtprüfschritte und Vier-Augen-Prinzip im Verfahren",
         "explanation": "Wie verbindliche Prüfschritte und das Vier-Augen-Prinzip Fehler abfangen, fangen Guardrails problematische Ein- und Ausgaben ab.",
-        "limits": "Prüfschritte können umgangen oder fehlerhaft sein; Guardrails sind nur so gut wie ihre Definition."
+        "limits": "Prüfschritte können umgangen oder fehlerhaft sein; Guardrails sind nur so gut wie ihre Definition.",
+        "quality": 0.63
       },
       "healthcare": {
         "analogy": "Sicherheitschecks, Dosisgrenzen und Freigabeschritte",
         "explanation": "Wie Sicherheitschecks und Grenzwerte gefährliche Schritte verhindern, blockieren Guardrails riskante Aktionen des Systems.",
-        "limits": "Auch klinische Sicherheitschecks haben Lücken; Guardrails brauchen laufende Pflege und ersetzen keine Fachverantwortung."
+        "limits": "Auch klinische Sicherheitschecks haben Lücken; Guardrails brauchen laufende Pflege und ersetzen keine Fachverantwortung.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Plausibilitätsprüfungen, Limitsysteme und Eskalationsregeln, die verhindern, dass ein Risikomodell oder Handelssystem Entscheidungen außerhalb regulatorisch und intern genehmigter Parameter ausführt.",
         "explanation": "Wie ein Handelssystem Orders automatisch sperrt, die Positionslimits oder VaR-Schwellen verletzen würden, und wie Kreditentscheidungssysteme bei überschrittenen Risikoparametern in die manuelle Prüfung eskalieren, begrenzen Guardrails das Verhalten eines KI-Systems auf vorab definierte, zulässige Ausgaben. Die Analogie verdeutlicht, dass Guardrails keine nachträgliche Absicherung sind, sondern in den Prozess eingebettete Kontrollpunkte.",
-        "limits": "Limitsysteme im Handel basieren auf präzise quantifizierten Schwellenwerten mit deterministischer Wirkung; KI-Guardrails arbeiten oft heuristisch oder modellbasiert und können durch unerwartete Formulierungen umgangen werden – ihre Wirksamkeit erfordert kontinuierliches Testen und ist schwerer formal zu zertifizieren."
+        "limits": "Limitsysteme im Handel basieren auf präzise quantifizierten Schwellenwerten mit deterministischer Wirkung; KI-Guardrails arbeiten oft heuristisch oder modellbasiert und können durch unerwartete Formulierungen umgangen werden – ihre Wirksamkeit erfordert kontinuierliches Testen und ist schwerer formal zu zertifizieren.",
+        "quality": 0.35
       }
     },
     "relatedTerms": [
@@ -937,22 +1005,26 @@
       "automotive": {
         "analogy": "Ein gefälschtes Verkehrsschild, das den Fahrer in die Irre leitet",
         "explanation": "Wie ein manipuliertes Schild falsche Anweisungen vortäuscht, schleust Prompt Injection falsche Anweisungen in die Eingaben des Modells ein.",
-        "limits": "Ein Mensch erkennt grobe Manipulationen oft; ein Modell unterscheidet legitime und eingeschleuste Anweisungen schlechter."
+        "limits": "Ein Mensch erkennt grobe Manipulationen oft; ein Modell unterscheidet legitime und eingeschleuste Anweisungen schlechter.",
+        "quality": 0.94
       },
       "publicSector": {
         "analogy": "Ein untergeschobenes Schreiben mit gefälschter Weisung",
         "explanation": "Wie eine gefälschte Weisung in der Akte zu falschem Handeln verleiten kann, verleitet eingeschleuster Text das Modell zu unerwünschten Schritten.",
-        "limits": "Verwaltung hat Echtheits- und Zuständigkeitsprüfungen; ein Modell prüft Herkunft und Legitimität von Anweisungen kaum von selbst."
+        "limits": "Verwaltung hat Echtheits- und Zuständigkeitsprüfungen; ein Modell prüft Herkunft und Legitimität von Anweisungen kaum von selbst.",
+        "quality": 0.63
       },
       "healthcare": {
         "analogy": "Eine gefälschte Anweisung in der Patientenakte",
         "explanation": "Wie eine untergeschobene Anweisung gefährliche Schritte auslösen könnte, kann eingeschleuster Text ein System zu falschem Handeln bringen.",
-        "limits": "Im Gesundheitswesen gibt es strenge Verifikationsketten; ein Modell hat diese Prüfreflexe nicht eingebaut."
+        "limits": "Im Gesundheitswesen gibt es strenge Verifikationsketten; ein Modell hat diese Prüfreflexe nicht eingebaut.",
+        "quality": 0.58
       },
       "finance": {
         "analogy": "Eine eingeschleuste, gefälschte Transaktionsanweisung in einem SWIFT-Nachrichtenstrom, die das System zu einer nicht autorisierten Ausführung veranlasst – analog zum Bangladesh-Bank-Hack 2016.",
         "explanation": "Wie beim SWIFT-Betrugsfall manipulierte Nachrichten legitime Instruktionen imitierten und automatisierte Prozesse zu unautorisierten Überweisungen veranlassten, schleust Prompt Injection manipulierten Text in Modelleingaben ein, der das System dazu bringt, die ursprüngliche Aufgabe zu ignorieren und stattdessen fremde Anweisungen auszuführen. Die Analogie hilft, die Ernsthaftigkeit des Angriffsvektors und die Notwendigkeit von Input-Validierung greifbar zu machen.",
-        "limits": "SWIFT-Nachrichten durchlaufen mehrstufige kryptografische Authentifizierung und Autorisierungskontrollen; ein Sprachmodell kann legitime und eingeschleuste Anweisungen strukturell nicht unterscheiden, weil es keinen vergleichbaren Mechanismus zur Herkunftsverifikation von Text besitzt."
+        "limits": "SWIFT-Nachrichten durchlaufen mehrstufige kryptografische Authentifizierung und Autorisierungskontrollen; ein Sprachmodell kann legitime und eingeschleuste Anweisungen strukturell nicht unterscheiden, weil es keinen vergleichbaren Mechanismus zur Herkunftsverifikation von Text besitzt.",
+        "quality": 0.35
       }
     },
     "relatedTerms": [
@@ -993,22 +1065,26 @@
       "automotive": {
         "analogy": "Eine Bildverarbeitungskette in der Fertigung, die aus rohen Kamerapixeln zunächst Kanten, dann Bauteilkonturen und schließlich das komplette montierte Bauteil erkennt.",
         "explanation": "Wie eine erste Stufe in den Pixeln nur Helligkeitskanten findet, die nächste daraus Konturen einzelner Teile zusammensetzt und eine spätere ganze Baugruppen identifiziert, baut ein tiefes Netz Schicht für Schicht immer abstraktere Merkmale auf. Jede Ebene arbeitet ausschließlich mit den verdichteten Merkmalen der vorigen.",
-        "limits": "Im Werk legt ein Ingenieur jede Verarbeitungsstufe bewusst fest und kann sie einzeln justieren, während das Netz seine Zwischenmerkmale selbst und ohne nachvollziehbare Begründung bildet."
+        "limits": "Im Werk legt ein Ingenieur jede Verarbeitungsstufe bewusst fest und kann sie einzeln justieren, während das Netz seine Zwischenmerkmale selbst und ohne nachvollziehbare Begründung bildet.",
+        "quality": 0.58
       },
       "publicSector": {
         "analogy": "Ein mehrstufiger Aktenlauf, bei dem ein Antrag von Sachbearbeitung über Fachreferat bis Entscheidungsebene durch immer abstraktere Bewertungsstufen wandert.",
         "explanation": "Wie jede Verwaltungsebene die Vorlage der vorigen verdichtet und nur das Wesentliche nach oben gibt, extrahiert jede Netzschicht aus dem Output der vorigen die für die Entscheidung relevanten Muster. Am Ende steht ein Gesamturteil, das auf vielen Vorstufen aufbaut.",
-        "limits": "Im Amt ist jede Stufe mit dokumentierten Zuständigkeiten und Begründungspflicht hinterlegt; beim Netz bleiben die Zwischenstufen undurchsichtig und rechtlich nicht begründbar."
+        "limits": "Im Amt ist jede Stufe mit dokumentierten Zuständigkeiten und Begründungspflicht hinterlegt; beim Netz bleiben die Zwischenstufen undurchsichtig und rechtlich nicht begründbar.",
+        "quality": 0.93
       },
       "healthcare": {
         "analogy": "Eine gestufte Befundung, bei der ein Bild vom Screening über die Fachradiologie bis zum Tumorboard immer tiefer interpretiert wird.",
         "explanation": "Wie eine erste Sichtung Auffälligkeiten markiert, die Fachebene Strukturen einordnet und das Board die klinische Bedeutung bewertet, verarbeitet ein tiefes Netz ein Bild von Kanten über Formen bis zu diagnostisch relevanten Mustern. Jede Schicht baut auf der Abstraktion der vorigen auf.",
-        "limits": "Ärzte können ihre einzelnen Befundungsschritte begründen und gegenüber dem Patienten verantworten, das Netz liefert das Ergebnis ohne nachvollziehbare Zwischenbegründung."
+        "limits": "Ärzte können ihre einzelnen Befundungsschritte begründen und gegenüber dem Patienten verantworten, das Netz liefert das Ergebnis ohne nachvollziehbare Zwischenbegründung.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Ein gestaffeltes Betrugserkennungssystem, in dem jede Stufe aus den Signalen der vorigen ein verdichtetes Risikomerkmal formt - von einzelnen Transaktionsattributen über Verhaltensmuster bis zum konsolidierten Betrugsscore.",
         "explanation": "Wie ein mehrstufiges Anti-Fraud- oder Risikomodell zunächst Rohmerkmale je Transaktion erfasst, daraus auf einer höheren Ebene Verhaltens- und Beziehungsmuster ableitet und erst ganz oben ein aggregiertes Urteil bildet, lernt ein tiefes Netz seine Merkmalshierarchie selbst aus den Daten statt aus fest kodierten Expertenregeln. In der Bankpraxis ersetzt diese erlernte Merkmalsextraktion zunehmend handgepflegte Regelwerke und ermöglicht die Erkennung subtiler, nichtlinearer Muster - was zugleich die Anforderungen an Validierung und Dokumentation erhöht. Genau hier setzen das Model Risk Management nach SR 11-7 und die MaRisk an, da die erlernten Zwischenmerkmale aufsichtlich nachvollziehbar und unabhängig validiert sein müssen.",
-        "limits": "Die Analogie unterstellt klar benennbare Stufen wie in einem klassischen Risikomodell, doch die Zwischenrepräsentationen eines tiefen Netzes sind weder fachlich interpretierbar noch einzeln validierbar - was im regulierten Umfeld (etwa bei der Genehmigung interner Modelle nach dem IRB-Ansatz unter Basel) ein echtes Erklärbarkeits- und Abnahmeproblem schafft."
+        "limits": "Die Analogie unterstellt klar benennbare Stufen wie in einem klassischen Risikomodell, doch die Zwischenrepräsentationen eines tiefen Netzes sind weder fachlich interpretierbar noch einzeln validierbar - was im regulierten Umfeld (etwa bei der Genehmigung interner Modelle nach dem IRB-Ansatz unter Basel) ein echtes Erklärbarkeits- und Abnahmeproblem schafft.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -1050,22 +1126,26 @@
       "automotive": {
         "analogy": "Ein Verkehrsleitsystem, das jede Ampel einer Stadt nicht isoliert schaltet, sondern gleichzeitig im Verhältnis zum Zustand aller anderen Kreuzungen des Netzes gewichtet.",
         "explanation": "Wie das Leitsystem die Schaltung einer Kreuzung erst aus den Verkehrsflüssen des gesamten Netzes ableitet, gewichtet der Transformer jedes Token im Verhältnis zu allen anderen Token gleichzeitig. Die richtige Schaltung ergibt sich aus dem Zusammenspiel, nicht aus jeder Kreuzung für sich.",
-        "limits": "Das Verkehrsleitsystem verfolgt ein definiertes Optimierungsziel wie Stauvermeidung; der Transformer erkennt nur statistische Muster der Trainingsdaten ohne ein eigenes Ziel."
+        "limits": "Das Verkehrsleitsystem verfolgt ein definiertes Optimierungsziel wie Stauvermeidung; der Transformer erkennt nur statistische Muster der Trainingsdaten ohne ein eigenes Ziel.",
+        "quality": 0.62
       },
       "publicSector": {
         "analogy": "Eine ressortübergreifende Lagebesprechung, in der jede Behörde ihren Beitrag im Licht aller anderen Meldungen bewertet.",
         "explanation": "Wie eine gemeinsame Lagebesprechung jede einzelne Meldung erst im Zusammenhang mit allen anderen einordnet, gewichtet der Transformer jedes Token relativ zum gesamten Kontext. Die Bedeutung ergibt sich aus den Beziehungen, nicht aus der Reihenfolge des Eingangs.",
-        "limits": "Eine Lagebesprechung verfolgt ein bewusstes Ziel; der Transformer optimiert nur eine Rechenfunktion ohne eigenes Verständnis des Sachverhalts."
+        "limits": "Eine Lagebesprechung verfolgt ein bewusstes Ziel; der Transformer optimiert nur eine Rechenfunktion ohne eigenes Verständnis des Sachverhalts.",
+        "quality": 0.58
       },
       "healthcare": {
         "analogy": "Ein interdisziplinäres Tumorboard, das jeden Befund eines Patienten im Verhältnis zu allen anderen Befunden bewertet, bevor es ein Gesamturteil bildet.",
         "explanation": "Wie das Tumorboard Laborwerte, Bildgebung und Anamnese nicht isoliert, sondern in ihrer gegenseitigen Bedeutung wägt, gewichtet der Transformer jedes Token im Kontext aller anderen. Erst dieses Beziehungsgeflecht ergibt die Repräsentation.",
-        "limits": "Das Tumorboard trägt medizinische Verantwortung und kausales Fachwissen; der Transformer kennt nur Korrelationen, keine biologischen Ursachen."
+        "limits": "Das Tumorboard trägt medizinische Verantwortung und kausales Fachwissen; der Transformer kennt nur Korrelationen, keine biologischen Ursachen.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Ein Marktrisikomodell mit voller Korrelationsmatrix, das jede Position nicht für sich, sondern im Verhältnis zu allen anderen Positionen des Portfolios bewertet.",
         "explanation": "Wie ein Value-at-Risk-Modell den Risikobeitrag einer Anleihe erst über ihre Korrelationen zu jeder anderen Position bestimmt, errechnet die Self-Attention für jedes Token ein Gewicht gegenüber allen übrigen Token. Beide bilden eine vollständige Beziehungsmatrix, in der nicht der Einzelwert, sondern das Zusammenspiel entscheidet. In der Bankpraxis ist diese Matrixlogik aus Marktrisikomodellen vertraut, deren Diversifikations- und Konzentrationseffekte unter den Basel-Vorgaben zum Handelsbuch (FRTB) berechnet und im Rahmen des Model Risk Management nach SR 11-7 validiert werden.",
-        "limits": "Eine Korrelationsmatrix beruht auf ökonomisch interpretierbaren, stabil schätzbaren Kennzahlen; die Attention-Gewichte sind hochdimensionale, kontextabhängige Lernparameter ohne direkte fachliche Deutung. Zudem ist die Korrelationsmatrix symmetrisch, während Attention gerichtet ist - Token A kann Token B anders gewichten als umgekehrt."
+        "limits": "Eine Korrelationsmatrix beruht auf ökonomisch interpretierbaren, stabil schätzbaren Kennzahlen; die Attention-Gewichte sind hochdimensionale, kontextabhängige Lernparameter ohne direkte fachliche Deutung. Zudem ist die Korrelationsmatrix symmetrisch, während Attention gerichtet ist - Token A kann Token B anders gewichten als umgekehrt.",
+        "quality": 0.32
       }
     },
     "relatedTerms": [
@@ -1108,22 +1188,26 @@
       "automotive": {
         "analogy": "Ein Navigationssystem, das vor der Zielführung mehrere Routenvarianten durchrechnet, statt sofort loszufahren",
         "explanation": "Wie das Navi erst Stau, Maut und Streckenlänge gegeneinander abwägt, bevor es eine Route empfiehlt, durchläuft das Reasoning Model erst Zwischenüberlegungen, bevor es antwortet. Das kostet einen Moment mehr, führt bei verzweigten Strecken aber seltener in die Sackgasse.",
-        "limits": "Das Navi rechnet mit geprüften Kartendaten und festen Regeln; die Zwischenschritte des Modells können selbst fehlerhaft sein und trotzdem überzeugend wirken."
+        "limits": "Das Navi rechnet mit geprüften Kartendaten und festen Regeln; die Zwischenschritte des Modells können selbst fehlerhaft sein und trotzdem überzeugend wirken.",
+        "quality": 0.95
       },
       "publicSector": {
         "analogy": "Ein begründeter Bescheid mit dokumentierter Sachverhaltsprüfung statt einer bloßen Ja-Nein-Auskunft am Schalter",
         "explanation": "Wie eine Behörde bei einem komplexen Antrag erst Sachverhalt, Rechtsgrundlage und Abwägung schriftlich festhält und dann entscheidet, legt das Reasoning Model seine Zwischenschritte offen, bevor es zum Ergebnis kommt. Das macht den Weg zur Antwort nachvollziehbarer.",
-        "limits": "Ein behördlicher Begründungstext bindet rechtlich und ist überprüfbar; die Denkkette des Modells ist nur eine plausible Erzählung und keine Garantie, dass die Antwort tatsächlich so zustande kam."
+        "limits": "Ein behördlicher Begründungstext bindet rechtlich und ist überprüfbar; die Denkkette des Modells ist nur eine plausible Erzählung und keine Garantie, dass die Antwort tatsächlich so zustande kam.",
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Eine Differenzialdiagnose, bei der mögliche Ursachen schrittweise ausgeschlossen werden, statt sofort eine Verdachtsdiagnose zu nennen",
         "explanation": "Wie ein Arzt bei unklarem Befund systematisch Hypothesen aufstellt und nacheinander prüft, arbeitet das Reasoning Model die Aufgabe über mehrere Zwischenschritte ab, bevor es ein Ergebnis liefert. Das senkt bei mehrdeutigen Fällen das Risiko vorschneller Schlüsse.",
-        "limits": "Die ärztliche Differenzialdiagnose stützt sich auf Messwerte und Leitlinien; die Zwischenschritte des Modells erzeugen nur den Anschein methodischer Sicherheit, ohne sie tatsächlich zu prüfen."
+        "limits": "Die ärztliche Differenzialdiagnose stützt sich auf Messwerte und Leitlinien; die Zwischenschritte des Modells erzeugen nur den Anschein methodischer Sicherheit, ohne sie tatsächlich zu prüfen.",
+        "quality": 0.58
       },
       "finance": {
         "analogy": "Ein strukturierter, dokumentierter Kreditentscheidungsprozess mit nachvollziehbaren Zwischenschritten – Bonitätsanalyse, Sicherheitenbewertung, Limitprüfung – statt einer Bauchentscheidung des Kreditsachbearbeiters",
         "explanation": "Wie eine Bank bei größeren Engagements nicht aus dem Bauch entscheidet, sondern Cashflow-Analyse, Rating, Sicherheiten und Limitauslastung in einer dokumentierten Beschlussvorlage Schritt für Schritt abarbeitet, erzeugt ein Reasoning Model eine explizite Kette von Zwischenüberlegungen vor der Antwort. Im Rahmen des Model Risk Management nach SR 11-7 und der MaRisk ist gerade die Nachvollziehbarkeit des Entscheidungswegs ein Prüfkriterium, sodass eine dokumentierte Denkkette die Arbeit von Validierung und Revision unterstützen kann. Mehr Zwischenschritte ersetzen jedoch keine unabhängige Modellvalidierung.",
-        "limits": "Eine Kreditbeschlussvorlage bindet die handelnden Personen, ist auditfähig und folgt verbindlichen Vier-Augen- und Kompetenzregeln; die vom Modell ausgegebene Denkkette ist eine nachträglich plausible Textbegründung, die nicht zwingend dem tatsächlichen internen Rechenweg entspricht und daher für aufsichtsrechtliche Nachweiszwecke nur eingeschränkt belastbar ist."
+        "limits": "Eine Kreditbeschlussvorlage bindet die handelnden Personen, ist auditfähig und folgt verbindlichen Vier-Augen- und Kompetenzregeln; die vom Modell ausgegebene Denkkette ist eine nachträglich plausible Textbegründung, die nicht zwingend dem tatsächlichen internen Rechenweg entspricht und daher für aufsichtsrechtliche Nachweiszwecke nur eingeschränkt belastbar ist.",
+        "quality": 0.32
       }
     },
     "relatedTerms": [
@@ -1166,22 +1250,26 @@
       "automotive": {
         "analogy": "Ein Sensorfusions-Steuergerät, das Kamera, Radar und Ultraschall zu einem gemeinsamen Umfeldmodell verschmilzt.",
         "explanation": "Wie das Steuergerät Bilddaten, Abstandsechos und Geschwindigkeitswerte in einem einzigen Lagebild zusammenführt, verarbeitet das multimodale Modell Text, Bild und Audio gemeinsam. Die Aussagekraft entsteht erst aus der Kombination der Quellen.",
-        "limits": "Die Sensorfusion ist auf physikalisch klar definierte Messgrößen geeicht, während das Modell auf statistisch gelernten Mustern beruht und keine kalibrierte Wahrheit über die Welt besitzt."
+        "limits": "Die Sensorfusion ist auf physikalisch klar definierte Messgrößen geeicht, während das Modell auf statistisch gelernten Mustern beruht und keine kalibrierte Wahrheit über die Welt besitzt.",
+        "quality": 0.56
       },
       "publicSector": {
         "analogy": "Ein Sachbearbeiter, der einen Antrag gleichzeitig anhand des Formulars, eines beigefügten Lichtbilds und eines Scans der Urkunde prüft.",
         "explanation": "Wie der Sachbearbeiter Text, Foto und Dokument zusammen würdigt, statt jede Unterlage isoliert zu betrachten, wertet das Modell verschiedene Modalitäten in einem Vorgang aus. Der Gesamteindruck ergibt sich aus dem Zusammenspiel.",
-        "limits": "Der Sachbearbeiter kann bei Zweifeln gezielt nachfragen oder einen Augenschein anordnen, während das Modell nur mit dem ihm vorgelegten Material arbeitet."
+        "limits": "Der Sachbearbeiter kann bei Zweifeln gezielt nachfragen oder einen Augenschein anordnen, während das Modell nur mit dem ihm vorgelegten Material arbeitet.",
+        "quality": 0.94
       },
       "healthcare": {
         "analogy": "Ein Tumorboard, das Befundtext, Radiologiebilder und Laborwerte eines Patienten gemeinsam beurteilt.",
         "explanation": "Wie das interdisziplinäre Board Bild, Schrift und Messwerte zu einer Einschätzung verbindet, integriert das multimodale Modell verschiedene Datenarten in eine gemeinsame Bewertung. Erst die Zusammenschau ergibt das vollständige Bild.",
-        "limits": "Das Board trägt klinische Verantwortung und kann Bildbefunde am Patienten verifizieren, während das Modell Bildmuster nur erkennt, ohne sie diagnostisch abzusichern."
+        "limits": "Das Board trägt klinische Verantwortung und kann Bildbefunde am Patienten verifizieren, während das Modell Bildmuster nur erkennt, ohne sie diagnostisch abzusichern.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Ein Equity-Analyst, der den Geschäftsbericht (Text), die Kurscharts (Bild) und die Audioaufzeichnung des Earnings Calls gemeinsam auswertet, um zu einem Anlagevotum zu gelangen.",
         "explanation": "Wie der Analyst quantitative Bilanzdaten, die Tonalität des Managements im Call und das technische Chartbild zu einer einzigen Einschätzung verdichtet, führt das multimodale Modell diese Modalitäten in einer gemeinsamen Verarbeitung zusammen. In der Bankpraxis sind solche Quellen heute meist auf getrennte Systeme verteilt – Research-Datenbank, Marktdaten-Terminal, Transkriptions-Tool –, deren manuelle Zusammenführung der eigentliche Aufwand ist. Setzt eine Bank ein solches Modell in Research oder Anlageberatung ein, greifen die Modellvalidierung nach SR 11-7 und die Wohlverhaltenspflichten der MiFID II, da die Auswertung in eine Anlageentscheidung einfließt.",
-        "limits": "Der Analyst kann das Management direkt zurückrufen, Annahmen offenlegen und seine Einschätzung begründen, während das Modell aus den drei Modalitäten ein Muster ableitet, ohne kausale Begründung oder Haftung; zudem ist die Audio-Auswertung eines Calls keine belastbare Sentiment-Messung, sondern ein statistischer Näherungswert, der Ironie, Vorbehalte oder bewusste Kommunikationssteuerung systematisch verfehlen kann."
+        "limits": "Der Analyst kann das Management direkt zurückrufen, Annahmen offenlegen und seine Einschätzung begründen, während das Modell aus den drei Modalitäten ein Muster ableitet, ohne kausale Begründung oder Haftung; zudem ist die Audio-Auswertung eines Calls keine belastbare Sentiment-Messung, sondern ein statistischer Näherungswert, der Ironie, Vorbehalte oder bewusste Kommunikationssteuerung systematisch verfehlen kann.",
+        "quality": 0.33
       }
     },
     "relatedTerms": [
@@ -1224,22 +1312,26 @@
       "automotive": {
         "analogy": "Ein erfahrener Fahrlehrer, der sein Können an einen Fahrschüler weitergibt.",
         "explanation": "Wie der Fahrlehrer nicht nur 'richtig oder falsch' sagt, sondern sein abgestuftes Urteil zu einer Situation mitgibt, überträgt das Lehrer-Modell seine fein abgestuften Einschätzungen auf das Schüler-Modell. Der Schüler fährt am Ende selbstständig, mit weniger Erfahrung, aber ähnlichem Stil.",
-        "limits": "Der Fahrschüler kann in seltenen Extremsituationen scheitern, die der Lehrer noch souverän gemeistert hätte."
+        "limits": "Der Fahrschüler kann in seltenen Extremsituationen scheitern, die der Lehrer noch souverän gemeistert hätte.",
+        "quality": 0.93
       },
       "publicSector": {
         "analogy": "Eine eingedampfte Bearbeitungshilfe, die das Wissen eines erfahrenen Sachbearbeiters für die Sachbearbeitung am Schalter bündelt.",
         "explanation": "Wie ein erfahrener Beamter sein Fachwissen in eine knappe Handreichung gießt, mit der auch neue Kräfte Standardfälle zügig bearbeiten, überträgt das Lehrer-Modell sein Verhalten in ein schlankes Schüler-Modell. Der Routinebetrieb wird schneller und ressourcenschonender.",
-        "limits": "Atypische Anträge, die fundiertes Hintergrundwissen erfordern, übersteigen die Handreichung und brauchen weiterhin den erfahrenen Fachmann."
+        "limits": "Atypische Anträge, die fundiertes Hintergrundwissen erfordern, übersteigen die Handreichung und brauchen weiterhin den erfahrenen Fachmann.",
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Ein klinischer Kurzleitfaden für die Triage, abgeleitet aus dem Urteil erfahrener Fachärzte.",
         "explanation": "Wie ein knapper Triage-Leitfaden das abgewogene Urteil von Spezialisten in eine schnell anwendbare Form bringt, destilliert das Schüler-Modell das Verhalten des großen Lehrer-Modells in eine kompakte, rasch einsatzfähige Variante. So lassen sich Standardentscheidungen zügig und auf einfacher Infrastruktur treffen.",
-        "limits": "Bei seltenen oder mehrdeutigen Krankheitsbildern fehlt dem Leitfaden die Tiefe, die nur die volle fachärztliche Expertise liefert."
+        "limits": "Bei seltenen oder mehrdeutigen Krankheitsbildern fehlt dem Leitfaden die Tiefe, die nur die volle fachärztliche Expertise liefert.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Eine vereinfachte Scorecard, abgeleitet aus einem komplexen internen IRB-Risikomodell, für schnelle Kreditentscheidungen im Mengengeschäft am Point of Sale.",
         "explanation": "So wie eine Bank aus einem aufwändigen, validierten IRB-Modell eine schlanke Punktbewertungs-Scorecard ableitet, die ein Berater in Sekunden anwenden kann, überträgt Distillation das Verhalten des großen Lehrer-Modells in ein kleines, schnelles Schüler-Modell. Die Scorecard reproduziert die Entscheidungslogik des Kernmodells näherungsweise und ist im Massengeschäft kostengünstig einsetzbar. Unter SR 11-7 und MaRisk (AT 4.3.5) bleibt jedoch auch das abgeleitete Modell ein eigenständig validierungs- und dokumentationspflichtiges Modell, dessen Abweichung vom Ursprungsmodell laufend überwacht werden muss.",
-        "limits": "Die vereinfachte Scorecard verliert die Trennschärfe des IRB-Modells bei atypischen Schuldnern und Randsegmenten; verlässt sich die Bank im Einzelfall blind auf sie, drohen systematisch falsche Bonitätseinstufungen, die das destillierte Modell nicht mehr auffängt."
+        "limits": "Die vereinfachte Scorecard verliert die Trennschärfe des IRB-Modells bei atypischen Schuldnern und Randsegmenten; verlässt sich die Bank im Einzelfall blind auf sie, drohen systematisch falsche Bonitätseinstufungen, die das destillierte Modell nicht mehr auffängt.",
+        "quality": 0.36
       }
     },
     "relatedTerms": [
@@ -1282,22 +1374,26 @@
       "automotive": {
         "analogy": "Wie ein Tacho, der nur noch in Fünf-km/h-Schritten statt exakt anzeigt.",
         "explanation": "Wie ein gröber skalierter Tacho weniger Feinheit darstellt, dafür aber schneller und einfacher abzulesen ist, speichert ein quantisiertes Modell seine Werte in gröberen Stufen und arbeitet dadurch ressourcenschonender.",
-        "limits": "Ein Tacho rundet nur die Anzeige, während Quantisierung die intern verrechneten Werte selbst vergröbert und sich der Rundungsfehler über Milliarden Gewichte fortpflanzt."
+        "limits": "Ein Tacho rundet nur die Anzeige, während Quantisierung die intern verrechneten Werte selbst vergröbert und sich der Rundungsfehler über Milliarden Gewichte fortpflanzt.",
+        "quality": 0.92
       },
       "publicSector": {
         "analogy": "Wie eine Einkommenserfassung, die nur noch in groben Gehaltsstufen statt auf den Euro genau erhebt.",
         "explanation": "Wie eine Behörde mit gröberen Einkommensklassen Anträge schneller und mit weniger Aufwand bearbeitet, verarbeitet ein quantisiertes Modell gröber gespeicherte Werte und spart so Rechenressourcen.",
-        "limits": "Bei Antragstellern nahe einer Einkommensgrenze kann die Einstufung kippen - ein Detailverlust, der bei reinen Statistikzwecken folgenlos bliebe."
+        "limits": "Bei Antragstellern nahe einer Einkommensgrenze kann die Einstufung kippen - ein Detailverlust, der bei reinen Statistikzwecken folgenlos bliebe.",
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Wie ein Fieberthermometer, das nur noch in halben Grad-Schritten statt auf eine Nachkommastelle genau misst.",
         "explanation": "Wie ein gröber auflösendes Thermometer für die meisten Verlaufskontrollen ausreicht und einfacher abzulesen ist, kommt ein quantisiertes Modell mit gröberen Werten aus und benötigt weniger Speicher.",
-        "limits": "Bei einer kritischen Temperaturschwelle kann die fehlende Nachkommastelle eine relevante Veränderung verschleiern, die ein präzises Gerät noch erfasst hätte."
+        "limits": "Bei einer kritischen Temperaturschwelle kann die fehlende Nachkommastelle eine relevante Veränderung verschleiern, die ein präzises Gerät noch erfasst hätte.",
+        "quality": 0.95
       },
       "finance": {
         "analogy": "Wie das Mapping einer feinkörnigen PD-Schätzung auf eine grobe Masterskala mit wenigen Ratingklassen, statt die Ausfallwahrscheinlichkeit auf Basispunkte genau zu führen.",
         "explanation": "In der Bankpraxis fasst eine Ratingmasterskala feine Ausfallwahrscheinlichkeiten in wenige Bonitätsstufen zusammen und vereinfacht so Reporting, Limitprüfung und Kapitalunterlegung - analog bildet Quantisierung feine Gewichtswerte auf ein grobes Raster ab und spart Speicher sowie Rechenzeit. Solange die Stufung weit von Entscheidungsschwellen entfernt liegt, bleibt der Effekt unkritisch. Im Modellrisikomanagement (etwa nach SR 11-7 bzw. unter MaRisk/BAIT) muss eine solche Vergröberung dokumentiert und ihr Einfluss durch Validierung und Backtesting belegt werden.",
-        "limits": "Genau an einer Klassengrenze - etwa zwischen zwei IRB-Ratingklassen oder an einem Limit - kann das Runden eine Entscheidung kippen, die mit feiner Auflösung anders ausgefallen wäre; anders als eine einzelne gerundete Kennzahl verteilt sich der Quantisierungsfehler zudem über alle Gewichte und kann sich kumulieren."
+        "limits": "Genau an einer Klassengrenze - etwa zwischen zwei IRB-Ratingklassen oder an einem Limit - kann das Runden eine Entscheidung kippen, die mit feiner Auflösung anders ausgefallen wäre; anders als eine einzelne gerundete Kennzahl verteilt sich der Quantisierungsfehler zudem über alle Gewichte und kann sich kumulieren.",
+        "quality": 0.32
       }
     },
     "relatedTerms": [
@@ -1340,22 +1436,26 @@
       "automotive": {
         "analogy": "Eine GPU ist wie ein Fließband mit hunderten Arbeitern, die identische Handgriffe gleichzeitig ausführen, während die CPU ein einzelner Allround-Mechaniker ist.",
         "explanation": "Wie ein Fließband tausende gleichartige Schweißpunkte parallel setzt, rechnet die GPU tausende Matrixoperationen gleichzeitig; der VRAM ist das Materiallager direkt an der Linie, dessen Größe bestimmt, wie umfangreich das gefertigte Modell sein darf.",
-        "limits": "Anders als ein Fließband, das immer nur die gerade bearbeitete Karosserie braucht, muss die GPU das gesamte Modell vollständig im VRAM vorhalten, nicht nur das aktuell berechnete Teil."
+        "limits": "Anders als ein Fließband, das immer nur die gerade bearbeitete Karosserie braucht, muss die GPU das gesamte Modell vollständig im VRAM vorhalten, nicht nur das aktuell berechnete Teil.",
+        "quality": 0.58
       },
       "publicSector": {
         "analogy": "Eine NPU ist wie ein Großraumbüro voller Sachbearbeiter, die einen Aktenstapel gleichzeitig statt nacheinander abarbeiten.",
         "explanation": "Wie eine Behörde Anträge schneller bescheidet, wenn hunderte Sachbearbeiter parallel prüfen, beschleunigt die GPU/NPU die Rechnung durch Parallelität; der VRAM ist der Schreibtischplatz, der begrenzt, wie viele Akten gleichzeitig offen liegen können.",
-        "limits": "Mehr Schreibtischplatz beschleunigt die einzelne Bearbeitung nicht, er erlaubt nur, einen umfangreicheren Vorgang überhaupt komplett auszubreiten."
+        "limits": "Mehr Schreibtischplatz beschleunigt die einzelne Bearbeitung nicht, er erlaubt nur, einen umfangreicheren Vorgang überhaupt komplett auszubreiten.",
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Eine GPU ist wie ein Labor mit hunderten parallel laufenden Analysegeräten statt eines einzelnen, das Probe für Probe abarbeitet.",
         "explanation": "Wie ein Großlabor tausende Blutproben gleichzeitig auswertet, verarbeitet die GPU tausende Rechenoperationen parallel; der VRAM ist der Probenkühlschrank am Gerät, dessen Größe bestimmt, wie umfangreich der gleichzeitig vorgehaltene Datensatz sein darf.",
-        "limits": "Ein größerer Kühlschrank lässt die einzelne Analyse nicht schneller laufen, er ermöglicht nur, einen größeren Probenumfang gleichzeitig vorzuhalten."
+        "limits": "Ein größerer Kühlschrank lässt die einzelne Analyse nicht schneller laufen, er ermöglicht nur, einen größeren Probenumfang gleichzeitig vorzuhalten.",
+        "quality": 0.64
       },
       "finance": {
         "analogy": "Beschleuniger und VRAM sind wie die co-lokalisierte Low-Latency-Infrastruktur eines Hochfrequenzhändlers direkt neben der Matching-Engine der Börse: Sie definiert, was technisch überhaupt machbar ist, bevor die Handelsstrategie zählt.",
         "explanation": "Wie ein HFT-Desk seine Server per Co-Location im Rechenzentrum der Börse platziert und auf FPGAs sowie spezialisierte Hardware setzt, weil Mikrosekunden über die Profitabilität entscheiden, bestimmt die GPU/NPU-Ausstattung, ob ein Modell mit akzeptabler Latenz produktiv läuft. Der VRAM entspricht dabei der Speichertiefe, die die Hardware vorhalten kann: Reicht sie für das gewünschte Modell nicht aus, muss dieses quantisiert oder verkleinert werden. Diese physische Schranke lässt sich nicht durch besseren Code wegoptimieren und fließt unmittelbar in die Investitions- und Betriebskostenrechnung ein, etwa wenn der Betrieb großer Modelle als Auslagerung an einen Cloud-Anbieter (DORA-relevante IKT-Drittdienstleister) abgewogen wird.",
-        "limits": "Die Analogie versagt bei der Wirkungslogik: Ein zu geringer Co-Location-Vorsprung verlangsamt einen HFT-Desk nur graduell gegenüber Konkurrenten, während zu wenig VRAM keine graduelle Verlangsamung, sondern eine harte Ja/Nein-Grenze ist – das Modell lässt sich dann schlicht nicht laden."
+        "limits": "Die Analogie versagt bei der Wirkungslogik: Ein zu geringer Co-Location-Vorsprung verlangsamt einen HFT-Desk nur graduell gegenüber Konkurrenten, während zu wenig VRAM keine graduelle Verlangsamung, sondern eine harte Ja/Nein-Grenze ist – das Modell lässt sich dann schlicht nicht laden.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -1398,22 +1498,26 @@
       "automotive": {
         "analogy": "Die Beschleunigung eines einzelnen Autos von 0 auf 100 km/h gegenüber der Zahl der Fahrzeuge, die eine Autobahnspur pro Stunde durchschleust.",
         "explanation": "Wie ein einzelnes Auto möglichst schnell anfahren soll (Latenz), während die Spur insgesamt möglichst viele Fahrzeuge pro Stunde durchlassen soll (Durchsatz), optimiert auch ein KI-System entweder die Einzelreaktion oder die Gesamtmenge. Dichter Verkehr erhöht den Durchsatz der Spur, verlangsamt aber jedes einzelne Auto.",
-        "limits": "Anders als Autos, die nacheinander dieselbe Spur befahren, werden gebatchte Anfragen tatsächlich gemeinsam in einem Rechenschritt verarbeitet, nicht nur hintereinander gereiht."
+        "limits": "Anders als Autos, die nacheinander dieselbe Spur befahren, werden gebatchte Anfragen tatsächlich gemeinsam in einem Rechenschritt verarbeitet, nicht nur hintereinander gereiht.",
+        "quality": 0.95
       },
       "publicSector": {
         "analogy": "Die Wartezeit am einzelnen Bürgeramt-Schalter gegenüber der Zahl aller an einem Tag bearbeiteten Anträge.",
         "explanation": "Wie eine Behörde abwägt, ob ein einzelner Bürger schnell drankommt (Latenz) oder ob über den Tag möglichst viele Vorgänge erledigt werden (Durchsatz), muss auch ein KI-Dienst zwischen schneller Einzelantwort und hoher Gesamtkapazität wählen. Das Bündeln gleichartiger Anträge erhöht die Tagesmenge, lässt den Einzelnen aber länger warten.",
-        "limits": "Eine Behörde kann bei Andrang spontan zusätzliche Schalter öffnen, während die KI-Rechenkapazität (GPUs) kurzfristig fest begrenzt und nicht beliebig erweiterbar ist."
+        "limits": "Eine Behörde kann bei Andrang spontan zusätzliche Schalter öffnen, während die KI-Rechenkapazität (GPUs) kurzfristig fest begrenzt und nicht beliebig erweiterbar ist.",
+        "quality": 0.93
       },
       "healthcare": {
         "analogy": "Die Reaktionszeit der Notaufnahme für einen kritischen Fall gegenüber dem Tagesdurchsatz eines Routine-Labors mit Sammelläufen.",
         "explanation": "Wie eine Notaufnahme einen Einzelfall sofort versorgt (Latenz), während ein Labor Proben in Sammelläufen analysiert, um die Tagesmenge zu maximieren (Durchsatz), trennt auch ein KI-System zwischen Sofort- und Mengenbetrieb. Sammelläufe nutzen die Analysegeräte besser aus, verzögern aber das einzelne Ergebnis.",
-        "limits": "In der Medizin entscheidet die klinische Dringlichkeit über die Priorität, beim KI-Batching dagegen rein die technische Auslastungsoptimierung ohne inhaltliche Triage."
+        "limits": "In der Medizin entscheidet die klinische Dringlichkeit über die Priorität, beim KI-Batching dagegen rein die technische Auslastungsoptimierung ohne inhaltliche Triage.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Die Orderausführungslatenz im Hochfrequenzhandel gegenüber dem Tagesdurchsatz der Wertpapierabwicklung im nächtlichen Batch-Settlement.",
         "explanation": "Im Börsenhandel zählt für eine einzelne Order jede Mikrosekunde bis zur Ausführung (Latenz), weshalb Co-Location und direkter Marktzugang (DEA) genau diesem Ziel dienen - während das Back-Office im Batch-Settlement (etwa über T2S oder definierte Clearing-Zyklen) auf maximalen Tagesdurchsatz Zehntausender Transaktionen optimiert. Beide Welten teilen sich Infrastruktur, verfolgen aber gegensätzliche Optimierungsziele, und die Vorgaben sind teils reguliert, etwa die MiFID-II-Anforderungen an Uhrensynchronisation (RTS 25) und Best Execution. Genauso muss ein KI-Betrieb entscheiden, ob er auf schnelle Einzelantwort oder hohe aggregierte Verarbeitungsmenge auslegt.",
-        "limits": "Im Handel ist Latenz ein direkter Wettbewerbs- und Ertragsfaktor mit harter regulatorischer Messpflicht, während KI-Latenz primär Nutzererlebnis und Kosten betrifft; zudem sind Abwicklungszyklen rechtlich fixiert, das KI-Batchverhalten dagegen frei konfigurierbar."
+        "limits": "Im Handel ist Latenz ein direkter Wettbewerbs- und Ertragsfaktor mit harter regulatorischer Messpflicht, während KI-Latenz primär Nutzererlebnis und Kosten betrifft; zudem sind Abwicklungszyklen rechtlich fixiert, das KI-Batchverhalten dagegen frei konfigurierbar.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -1455,22 +1559,26 @@
       "automotive": {
         "analogy": "Eigener Fuhrpark mit Werkshalle versus ein Mietwagen-Abo nach Bedarf.",
         "explanation": "Wie ein Spediteur zwischen eigenen LKW samt Werkstatt und einem flexiblen Mietmodell wählt, entscheidet ein Betrieb zwischen eigenen GPUs und gemieteter Cloud-Rechenleistung. Der eigene Fuhrpark lohnt bei voller Auslastung, das Mietmodell bei schwankendem Bedarf.",
-        "limits": "Ein Mietwagen fährt überall gleich; bei einer Cloud-API verlassen zusätzlich die transportierten Daten das eigene Gelände, was beim LKW so nicht passiert."
+        "limits": "Ein Mietwagen fährt überall gleich; bei einer Cloud-API verlassen zusätzlich die transportierten Daten das eigene Gelände, was beim LKW so nicht passiert.",
+        "quality": 0.94
       },
       "publicSector": {
         "analogy": "Ein behördeneigenes Rechenzentrum versus ein zentral betriebener Dienst eines staatlichen IT-Dienstleisters wie dem ITZBund.",
         "explanation": "Wie eine Behörde abwägt, ob sie Fachverfahren selbst betreibt oder an einen staatlichen Dienstleister auslagert, wägt sie bei KI zwischen eigener Hardware und externem Inference-Dienst ab. Beides muss die Anforderungen an die Verarbeitung sensibler Bürgerdaten erfüllen.",
-        "limits": "Ein staatlicher Dienstleister bleibt an Recht und Weisung gebunden; ein kommerzieller Cloud-Anbieter unterliegt unter Umständen ausländischem Zugriffsrecht wie dem US CLOUD Act."
+        "limits": "Ein staatlicher Dienstleister bleibt an Recht und Weisung gebunden; ein kommerzieller Cloud-Anbieter unterliegt unter Umständen ausländischem Zugriffsrecht wie dem US CLOUD Act.",
+        "quality": 0.33
       },
       "healthcare": {
         "analogy": "Ein hauseigenes Klinik-MRT versus ein externes Befundungszentrum, an das Aufnahmen verschickt werden.",
         "explanation": "Wie ein Krankenhaus entscheidet, ob es teure Bildgebung selbst vorhält oder Befunde an ein spezialisiertes Zentrum auslagert, wählt es bei KI zwischen eigener Rechenkapazität und externem Dienst. Das eigene Gerät kostet auch im Stillstand, das externe verschickt Patientendaten.",
-        "limits": "Beim externen Befundungszentrum verlassen identifizierbare Patientendaten das Haus und erfordern einen Auftragsverarbeitungsvertrag; eine lokale GPU verarbeitet sie im geschützten Kliniknetz."
+        "limits": "Beim externen Befundungszentrum verlassen identifizierbare Patientendaten das Haus und erfordern einen Auftragsverarbeitungsvertrag; eine lokale GPU verarbeitet sie im geschützten Kliniknetz.",
+        "quality": 0.62
       },
       "finance": {
         "analogy": "Die Entscheidung zwischen einem bankeigenen Rechenzentrum und der Auslagerung der Inferenz an einen Cloud-Provider unter dem Auslagerungsmanagement nach BAIT und DORA.",
         "explanation": "Wie eine Bank bei der Auslagerung wesentlicher IT-Dienstleistungen zwischen Eigenbetrieb, Auslagerung und Cloud-Bezug abwägt, entscheidet sie auch beim Hosting von KI-Inferenz – nur dass hier zusätzlich sensible Kunden- und Transaktionsdaten in fremde Hände gelangen können. BAIT und die EU-Verordnung DORA verlangen bei Cloud-Auslagerung ein vollständiges Informationsregister der vertraglichen Vereinbarungen, eine Risikoanalyse, vertragliche Audit- und Weisungsrechte sowie eine glaubhafte Ausstiegsstrategie gegen Anbieterabhängigkeit. Eine Konzentration kritischer Last bei einem einzigen Hyperscaler wird von der BaFin zunehmend als Konzentrationsrisiko bewertet.",
-        "limits": "Die Analogie zur klassischen IT-Auslagerung greift zu kurz, weil bei generativer KI nicht nur Rechenzeit, sondern oft auch der Prompt-Inhalt – also potenziell Geschäftsgeheimnisse oder Kundendaten – beim Anbieter landet und in dessen Logs oder Trainingsdaten einfließen könnte; die klassische Auslagerung etwa der Lohnbuchhaltung hat diese Daten-Leakage-Dimension nicht in dieser Schärfe."
+        "limits": "Die Analogie zur klassischen IT-Auslagerung greift zu kurz, weil bei generativer KI nicht nur Rechenzeit, sondern oft auch der Prompt-Inhalt – also potenziell Geschäftsgeheimnisse oder Kundendaten – beim Anbieter landet und in dessen Logs oder Trainingsdaten einfließen könnte; die klassische Auslagerung etwa der Lohnbuchhaltung hat diese Daten-Leakage-Dimension nicht in dieser Schärfe.",
+        "quality": 0.07
       }
     },
     "relatedTerms": [
@@ -1513,22 +1621,26 @@
       "automotive": {
         "analogy": "Eine Zuflussdosierampel an der Autobahnauffahrt, die Fahrzeuge im Sekundentakt einzeln auf die Spur lässt.",
         "explanation": "Wie die Dosierampel verhindert, dass zu viele Autos gleichzeitig auffahren und die Hauptbahn ins Stocken bringen, lässt das Rate Limit nur eine bestimmte Zahl an Anfragen pro Zeit auf die Inferenz-Infrastruktur. Beide regeln nicht das Ziel, sondern nur das Zuflusstempo.",
-        "limits": "Anders als die Ampel, die den Verkehr nur kurz verzögert, kann ein hartes Rate Limit Anfragen vollständig abweisen statt sie nur zu staffeln."
+        "limits": "Anders als die Ampel, die den Verkehr nur kurz verzögert, kann ein hartes Rate Limit Anfragen vollständig abweisen statt sie nur zu staffeln.",
+        "quality": 0.94
       },
       "publicSector": {
         "analogy": "Das Nummernziehen und Aufrufsystem in einem Bürgeramt mit begrenzten Schaltern.",
         "explanation": "Wie das Amt pro Stunde nur so viele Wartenummern aufruft, wie Sachbearbeiter abfertigen können, lässt das Rate Limit nur so viele Anfragen zu, wie die Infrastruktur fair bedienen kann. Beide schützen vor Überlauf, indem sie den Zugang takten statt ihn ganz zu sperren.",
-        "limits": "Im Bürgeramt bleibt die gezogene Nummer gültig, während eine abgewiesene API-Anfrage oft verfällt und aktiv erneut gesendet werden muss."
+        "limits": "Im Bürgeramt bleibt die gezogene Nummer gültig, während eine abgewiesene API-Anfrage oft verfällt und aktiv erneut gesendet werden muss.",
+        "quality": 0.92
       },
       "healthcare": {
         "analogy": "Die Triage in einer Notaufnahme, die den Patientenzustrom auf die verfügbaren Behandlungskapazitäten verteilt.",
         "explanation": "Wie die Triage steuert, wie viele Fälle gleichzeitig in die begrenzten Behandlungsräume gelangen, regelt das Rate Limit den Zustrom an Anfragen zur knappen Rechenkapazität. Beide stellen Systemstabilität über die sofortige Bedienung jedes Einzelnen.",
-        "limits": "Die Triage bewertet die Dringlichkeit inhaltlich, während ein Rate Limit rein mengenmäßig drosselt und keine Anfrage als wichtiger einstuft."
+        "limits": "Die Triage bewertet die Dringlichkeit inhaltlich, während ein Rate Limit rein mengenmäßig drosselt und keine Anfrage als wichtiger einstuft.",
+        "quality": 0.28
       },
       "finance": {
         "analogy": "Die Transaktionslimits und das Throttling im Zahlungsverkehr, etwa Tages- oder Minutenobergrenzen für SEPA-Überweisungen und Kartenzahlungen.",
         "explanation": "Wie eine Bank die Zahl und das Volumen von Transaktionen pro Zeitfenster deckelt, um Clearing- und Settlement-Systeme vor Überlast und Konten vor Betrug zu schützen, begrenzt ein Rate Limit Anfragen und Tokens pro Minute. In der Bankpraxis greifen solche Drosselungen sowohl aus Kapazitätsgründen im Massenzahlungsverkehr als auch aus Sicht der Betrugsprävention, wo ungewöhnliche Frequenzen Fraud-Monitoring-Regeln auslösen. Eine Überschreitung führt zu Ablehnung oder Verzögerung der Order, die der aufrufende Prozess über Wiederholung oder Warteschlange auffangen muss.",
-        "limits": "Die Analogie versagt beim Auslöser: Ein Transaktionslimit kann gezielt eine einzelne verdächtige Zahlung blockieren, während ein API-Rate-Limit inhaltsblind allein die Frequenz misst und keine Risiko- oder Betrugsbewertung der einzelnen Anfrage vornimmt."
+        "limits": "Die Analogie versagt beim Auslöser: Ein Transaktionslimit kann gezielt eine einzelne verdächtige Zahlung blockieren, während ein API-Rate-Limit inhaltsblind allein die Frequenz misst und keine Risiko- oder Betrugsbewertung der einzelnen Anfrage vornimmt.",
+        "quality": 0.34
       }
     },
     "relatedTerms": [
@@ -1571,22 +1683,26 @@
       "automotive": {
         "analogy": "Ein Werkstatt-Diagnosesystem, das ein unbekanntes Fehlerbild mit den ähnlichsten je dokumentierten Schadensfällen abgleicht.",
         "explanation": "Wie das System nicht nach einer exakten Fehlernummer, sondern nach dem ähnlichsten Symptommuster aus tausenden Reparaturhistorien sucht, findet die KI zu einer Anfrage die inhaltlich nächstgelegenen gespeicherten Fälle. So lassen sich auch unscharf beschriebene Probleme einer wahrscheinlichen Ursache zuordnen.",
-        "limits": "Der ähnlichste dokumentierte Fall kann eine ganz andere Ursache haben, wenn zwei verschiedene Defekte zufällig dasselbe Symptombild erzeugen."
+        "limits": "Der ähnlichste dokumentierte Fall kann eine ganz andere Ursache haben, wenn zwei verschiedene Defekte zufällig dasselbe Symptombild erzeugen.",
+        "quality": 0.62
       },
       "publicSector": {
         "analogy": "Ein Aktenarchiv, das zu einem neuen Bürgerantrag automatisch thematisch verwandte Altfälle heraussucht, statt nur nach Aktenzeichen zu blättern.",
         "explanation": "Wie eine Sachbearbeiterin zu einem Antrag inhaltlich vergleichbare Präzedenzfälle findet, ordnet die KI eine Anfrage den ähnlichsten archivierten Vorgängen zu. Das beschleunigt das Auffinden einschlägiger Vorgänge auch ohne passendes Schlagwort.",
-        "limits": "Thematische Nähe ersetzt keine rechtliche Einschlägigkeit; ein ähnlich klingender Altfall kann rechtlich völlig anders gelagert sein."
+        "limits": "Thematische Nähe ersetzt keine rechtliche Einschlägigkeit; ein ähnlich klingender Altfall kann rechtlich völlig anders gelagert sein.",
+        "quality": 0.6
       },
       "healthcare": {
         "analogy": "Ein Befundarchiv, das zu einem neuen Röntgenbild die visuell ähnlichsten dokumentierten Aufnahmen vergangener Patienten anzeigt.",
         "explanation": "Wie ein Radiologe ein aktuelles Bild mit gespeicherten Vergleichsfällen abgleicht, findet die KI die ähnlichsten archivierten Befunde im Vektorraum. Das unterstützt die Einordnung seltener oder uneindeutiger Muster.",
-        "limits": "Visuelle Ähnlichkeit ist keine Diagnose; zwei optisch nahe Befunde können klinisch entgegengesetzte Bedeutung haben."
+        "limits": "Visuelle Ähnlichkeit ist keine Diagnose; zwei optisch nahe Befunde können klinisch entgegengesetzte Bedeutung haben.",
+        "quality": 0.58
       },
       "finance": {
         "analogy": "Ein durchsuchbares Musterarchiv der Transaktionshistorie, in dem die Betrugs- und Geldwäscheerkennung zu einer verdächtigen Buchung die ähnlichsten je beobachteten Betrugs- und Normalmuster abruft.",
         "explanation": "Statt eine Transaktion nur gegen starre Schwellenwerte zu prüfen, verortet das System sie als Vektor und sucht die nächstgelegenen historischen Muster, etwa typische Verschleierungssequenzen aus früheren Fällen. In der Bankpraxis ergänzt das die regelbasierten Limit- und Transaktionsmonitoring-Systeme und liefert dem Geldwäschebeauftragten Vergleichsfälle für die manuelle Bewertung. Anders als ein Scoring- oder Ratingmodell trifft die Datenbank selbst keine Entscheidung, sondern stellt nur die ähnlichsten Präzedenzfälle bereit.",
-        "limits": "Ähnlichkeit zu bekannten Mustern erkennt keine völlig neue Betrugsmasche und kann zugleich harmlose, aber ungewöhnliche Buchungen fälschlich neben Betrugsfälle einsortieren; für die Nachweis- und Dokumentationspflichten nach MaRisk und Geldwäschegesetz bleibt die nachvollziehbare Begründung eines Treffers entscheidend, die eine reine Ähnlichkeitsmetrik nicht liefert."
+        "limits": "Ähnlichkeit zu bekannten Mustern erkennt keine völlig neue Betrugsmasche und kann zugleich harmlose, aber ungewöhnliche Buchungen fälschlich neben Betrugsfälle einsortieren; für die Nachweis- und Dokumentationspflichten nach MaRisk und Geldwäschegesetz bleibt die nachvollziehbare Begründung eines Treffers entscheidend, die eine reine Ähnlichkeitsmetrik nicht liefert.",
+        "quality": 0.34
       }
     },
     "relatedTerms": [
@@ -1629,22 +1745,26 @@
       "automotive": {
         "analogy": "Das Fahrtenbuch eines Dienstwagens, das Routen und Tankstopps über viele Fahrten hinweg festhält.",
         "explanation": "Wie das Fahrtenbuch frühere Fahrten dauerhaft dokumentiert, während das Armaturenbrett nur die aktuelle Fahrt zeigt, trennt der Agent ein flüchtiges Kurzzeitgedächtnis vom persistenten Langzeitspeicher.",
-        "limits": "Ein Fahrtenbuch wird nur sequenziell beschrieben und linear gelesen, während Agent-Memory gezielt nach Ähnlichkeit durchsucht und selektiv zurückgespielt wird."
+        "limits": "Ein Fahrtenbuch wird nur sequenziell beschrieben und linear gelesen, während Agent-Memory gezielt nach Ähnlichkeit durchsucht und selektiv zurückgespielt wird.",
+        "quality": 0.3
       },
       "publicSector": {
         "analogy": "Die Verwaltungsakte eines Bürgers, die bei jedem neuen Antrag aus der Registratur hervorgeholt wird.",
         "explanation": "Wie der Sachbearbeiter die Akte aktiv aus dem Archiv zieht, statt sich an den Vorgang zu erinnern, ruft der Agent benötigten Kontext bewusst aus einem externen Speicher ab.",
-        "limits": "Eine Akte unterliegt klaren gesetzlichen Aufbewahrungs- und Löschfristen, während ein KI-Speicher solche Regeln erst durch zusätzliche Governance erhält."
+        "limits": "Eine Akte unterliegt klaren gesetzlichen Aufbewahrungs- und Löschfristen, während ein KI-Speicher solche Regeln erst durch zusätzliche Governance erhält.",
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Die Patientenakte, die ein Arzt vor jedem Termin durchsieht, statt sich Diagnosen aus dem Kopf zu vergegenwärtigen.",
         "explanation": "Wie die Akte Anamnese und Verläufe dauerhaft sichert und das Gedächtnis des Arztes nur für das aktuelle Gespräch reicht, ergänzt der externe Speicher das vergessliche Modell um eine belastbare Historie.",
-        "limits": "Eine Patientenakte ist kuratiert und ärztlich verantwortet, während Agent-Memory unbemerkt fehlerhafte oder veraltete Einträge fortschreiben kann."
+        "limits": "Eine Patientenakte ist kuratiert und ärztlich verantwortet, während Agent-Memory unbemerkt fehlerhafte oder veraltete Einträge fortschreiben kann.",
+        "quality": 0.95
       },
       "finance": {
         "analogy": "Die über Jahre gepflegte CRM-Kundenakte, die ein Private-Banking-Berater vor jedem Termin bewusst heranzieht – gespeichert im System, nicht im Kopf des Beraters.",
         "explanation": "Wie der Berater Risikoneigung, frühere Anlageentscheidungen und Gesprächsnotizen aus dem CRM abruft, statt sich auf sein Erinnern zu verlassen, kombiniert der Agent ein flüchtiges Kontextfenster mit einem persistenten Speicher, aus dem relevante Kundenhistorie zurückgeholt wird. In der Bankpraxis ist dieser Speicher zugleich regulierter Gegenstand: Die Geeignetheitsprüfung nach MiFID II setzt voraus, dass Kundenangaben dokumentiert und für spätere Beratungen nachvollziehbar wieder herangezogen werden, und unter der DSGVO greifen Zweckbindung, Aufbewahrungsfristen und das Recht auf Löschung.",
-        "limits": "Die CRM-Akte ist von Beratern kuratiert, attributiert und auditierbar versioniert, während ein Vektor-Memory Inhalte unstrukturiert ablegt und beim Abruf nach unscharfer Ähnlichkeit auswählt – wodurch unklar bleibt, ob ein Eintrag noch gültig ist und wer ihn wann erzeugt hat. Zudem lässt sich ein einzelner Datensatz in der CRM-Akte gezielt löschen, während Informationen, die einmal in Embeddings eingeflossen sind, deutlich schwerer rückstandsfrei zu entfernen sind."
+        "limits": "Die CRM-Akte ist von Beratern kuratiert, attributiert und auditierbar versioniert, während ein Vektor-Memory Inhalte unstrukturiert ablegt und beim Abruf nach unscharfer Ähnlichkeit auswählt – wodurch unklar bleibt, ob ein Eintrag noch gültig ist und wer ihn wann erzeugt hat. Zudem lässt sich ein einzelner Datensatz in der CRM-Akte gezielt löschen, während Informationen, die einmal in Embeddings eingeflossen sind, deutlich schwerer rückstandsfrei zu entfernen sind.",
+        "quality": 0.34
       }
     },
     "relatedTerms": [
@@ -1687,22 +1807,26 @@
       "automotive": {
         "analogy": "Ein Prüfstand-Test, bei dem das Auto die exakte Teststrecke schon vorab abgefahren ist.",
         "explanation": "Wie ein Fahrzeug, das genau auf den Abgaszyklus optimiert wurde, auf dem es später geprüft wird, liefert ein kontaminiertes Modell glänzende Testwerte, die im echten Verkehr nicht halten. Zugleich kann es interne Konstruktionsdaten ausplaudern, die es nie hätte preisgeben dürfen.",
-        "limits": "Anders als beim Abgasskandal steckt hinter Data Leakage selten Betrugsabsicht, sondern meist eine unsaubere Trennung der Datensätze."
+        "limits": "Anders als beim Abgasskandal steckt hinter Data Leakage selten Betrugsabsicht, sondern meist eine unsaubere Trennung der Datensätze.",
+        "quality": 0.95
       },
       "publicSector": {
         "analogy": "Eine Prüfung, bei der die Klausurfragen vorab an einzelne Prüflinge durchgesickert sind.",
         "explanation": "Wie eine Abschlussprüfung wertlos wird, sobald die Aufgaben vorher bekannt waren, verliert ein Benchmark seine Aussagekraft, wenn die Testfragen im Training enthalten waren. Parallel können vertrauliche Verwaltungsdaten ungewollt aus den Modellantworten austreten.",
-        "limits": "Die Prüfungs-Analogie erklärt nur die Eval-Kontamination, nicht das datenschutzrechtliche Austreten sensibler Bürgerdaten."
+        "limits": "Die Prüfungs-Analogie erklärt nur die Eval-Kontamination, nicht das datenschutzrechtliche Austreten sensibler Bürgerdaten.",
+        "quality": 0.94
       },
       "healthcare": {
         "analogy": "Ein Patientenakten-Schnipsel, der aus einer Studienauswertung in einen fremden Befundbericht rutscht.",
         "explanation": "Wie ein versehentlich übernommener Patientendatensatz die Schweigepflicht verletzt, kann ein Modell auswendig gelernte Klinikdaten in seinen Antworten preisgeben. Und wie eine Diagnostik-Studie wertlos wird, wenn die Validierungsfälle schon im Trainingskollektiv steckten, verfälscht Eval-Kontamination die gemessene Modellgüte.",
-        "limits": "Die Akten-Analogie unterschätzt, dass Memorization auch verstreute, schwer nachverfolgbare Fragmente betrifft, nicht nur ganze Dokumente."
+        "limits": "Die Akten-Analogie unterschätzt, dass Memorization auch verstreute, schwer nachverfolgbare Fragmente betrifft, nicht nur ganze Dokumente.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Ein Backtesting eines Handels- oder Risikomodells, in das versehentlich Zukunftsinformationen (Look-ahead-Bias) oder Out-of-Time-Daten einfliessen, sodass die Validierung eine Performance vorgaukelt, die out-of-sample nicht hält.",
         "explanation": "Wie ein Backtest die Güte einer Trading- oder Scoring-Strategie systematisch überschätzt, sobald Daten aus dem Validierungs- oder Zukunftsfenster in die Kalibrierung sickern, sehen kontaminierte Modelle ihre Testfragen bereits im Training und liefern geschönte Benchmark-Werte ohne Aussagekraft für die echte Anwendung. In der Bankpraxis ist die saubere zeitliche und stichprobenmässige Trennung von Entwicklungs-, Test- und Out-of-Time-Stichproben fester Bestandteil der Modellvalidierung; unter Model Risk Management nach SR 11-7 und der MaRisk-Validierung muss eine unabhängige Instanz solche Leakage-Quellen gezielt aufdecken, bevor ein Modell (etwa für IRB-Ratings) freigegeben wird.",
-        "limits": "Die Backtesting-Analogie trifft präzise die Eval-Kontamination und den methodischen Validitätsverlust, deckt aber nicht die zweite Spielart ab - das datenschutzrechtliche Austreten auswendig gelernter, vertraulicher Mandanten- oder Personendaten in den Modellantworten."
+        "limits": "Die Backtesting-Analogie trifft präzise die Eval-Kontamination und den methodischen Validitätsverlust, deckt aber nicht die zweite Spielart ab - das datenschutzrechtliche Austreten auswendig gelernter, vertraulicher Mandanten- oder Personendaten in den Modellantworten.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -1745,22 +1869,26 @@
       "automotive": {
         "analogy": "Ein Boxenstopp-Team, in dem ein Crew-Chief die Spezialisten für Reifen, Tank und Frontflügel synchron dirigiert.",
         "explanation": "Wie der Crew-Chief jeden Handgriff zuteilt und die Einzelarbeiten zu einem reibungslosen Stopp zusammenführt, zerlegt der Orchestrator die Aufgabe und koordiniert die spezialisierten Agenten. Das Ergebnis hängt am Timing der Übergaben, nicht nur am Können der Einzelnen.",
-        "limits": "Ein Boxenstopp folgt einem festen, geprobten Ablauf, während KI-Agenten auf unvorhergesehene Zwischenergebnisse dynamisch neu planen müssen."
+        "limits": "Ein Boxenstopp folgt einem festen, geprobten Ablauf, während KI-Agenten auf unvorhergesehene Zwischenergebnisse dynamisch neu planen müssen.",
+        "quality": 0.95
       },
       "publicSector": {
         "analogy": "Eine behördenübergreifende Task Force, in der eine Koordinationsstelle Teilaufträge an Fachämter vergibt und deren Zuarbeiten in einen Beschluss zusammenführt.",
         "explanation": "Wie die Koordinationsstelle Zuständigkeiten verteilt und die Stellungnahmen der Fachämter bündelt, delegiert der Orchestrator Teilaufgaben und aggregiert die Ergebnisse. Jede Stelle bearbeitet nur ihren Ausschnitt.",
-        "limits": "Behördliche Zuständigkeiten sind rechtlich fest verankert, während die Aufgabenverteilung im Agentensystem zur Laufzeit flexibel und teils intransparent erfolgt."
+        "limits": "Behördliche Zuständigkeiten sind rechtlich fest verankert, während die Aufgabenverteilung im Agentensystem zur Laufzeit flexibel und teils intransparent erfolgt.",
+        "quality": 0.58
       },
       "healthcare": {
         "analogy": "Ein klinisches Tumorboard, in dem ein leitender Onkologe die Befunde von Radiologie, Pathologie und Chirurgie einholt und zu einer Therapieentscheidung verdichtet.",
         "explanation": "Wie der leitende Arzt gezielt die jeweiligen Fachdisziplinen befragt und ihre Einschätzungen zu einem Behandlungsplan zusammenführt, routet der Orchestrator Teilfragen an spezialisierte Agenten und synthetisiert deren Antworten.",
-        "limits": "Im Tumorboard tragen approbierte Fachärzte persönliche Verantwortung, während ein Orchestrator Ergebnisse zusammenführt, ohne dass eine instanzübergreifende Haftung oder fachliche Plausibilitätsprüfung garantiert ist."
+        "limits": "Im Tumorboard tragen approbierte Fachärzte persönliche Verantwortung, während ein Orchestrator Ergebnisse zusammenführt, ohne dass eine instanzübergreifende Haftung oder fachliche Plausibilitätsprüfung garantiert ist.",
+        "quality": 0.6
       },
       "finance": {
         "analogy": "Ein Chief Investment Officer, der die spezialisierten Desks für Aktien, Fixed Income, FX und Risiko koordiniert und ihre Einschätzungen zu einer Allokationsentscheidung zusammenführt.",
         "explanation": "Wie der CIO die Mandatsfrage in Teilaufträge an die einzelnen Trading- und Research-Desks zerlegt, deren Spezialeinschätzungen einholt und gewichtet zu einer Gesamtallokation verdichtet, delegiert der Orchestrator Teilaufgaben an Worker-Agenten und aggregiert deren Ausgaben. In regulierten Häusern ist diese Arbeitsteilung zusätzlich durch Chinese Walls und Limitsysteme strukturiert, und das Model Risk Management (in den USA nach SR 11-7, hierzulande über MaRisk/BAIT-Anforderungen) verlangt dokumentierte Verantwortung pro eingesetztem Modell.",
-        "limits": "Im Investmenthaus haftet der CIO persönlich und jeder Desk unterliegt dokumentierten Mandaten und Limiten, während im Agentensystem die Verantwortungskette über mehrere Modelle hinweg verschwimmt und sich Fehler eines Workers - anders als ein abgegrenztes Desk-Limit - unbemerkt durch die gesamte Kette fortpflanzen können."
+        "limits": "Im Investmenthaus haftet der CIO persönlich und jeder Desk unterliegt dokumentierten Mandaten und Limiten, während im Agentensystem die Verantwortungskette über mehrere Modelle hinweg verschwimmt und sich Fehler eines Workers - anders als ein abgegrenztes Desk-Limit - unbemerkt durch die gesamte Kette fortpflanzen können.",
+        "quality": 0.33
       }
     },
     "relatedTerms": [
@@ -1802,22 +1930,26 @@
       "automotive": {
         "analogy": "Der Unterschied zwischen einem genormten WLTP-Prüfstandszyklus und einer echten Testfahrt auf der eigenen Pendelstrecke.",
         "explanation": "Wie der Prüfstand vergleichbare Laborwerte für alle Fahrzeuge liefert, die reale Strecke aber den tatsächlichen Verbrauch zeigt, misst ein Benchmark allgemein und eine eigene Eval die Eignung für den konkreten Einsatz. Beides braucht klar definierte Messbedingungen.",
-        "limits": "Die eigene Testfahrt ist nur so aussagekräftig wie die Strecke repräsentativ ist – ein einmal gemessener Verbrauch sagt nichts über Winterbetrieb oder volle Beladung."
+        "limits": "Die eigene Testfahrt ist nur so aussagekräftig wie die Strecke repräsentativ ist – ein einmal gemessener Verbrauch sagt nichts über Winterbetrieb oder volle Beladung.",
+        "quality": 0.6
       },
       "publicSector": {
         "analogy": "Der Unterschied zwischen einer bundesweiten PISA-Vergleichsstudie und einer Klassenarbeit, die exakt den behandelten Lehrstoff abprüft.",
         "explanation": "Wie PISA Schulsysteme vergleichbar misst, die Klassenarbeit aber prüft, ob der konkrete Stoff sitzt, vergleicht ein Benchmark breit und eine eigene Eval die tatsächliche Aufgabe der Behörde. Die Metrik muss vorab feststehen.",
-        "limits": "Wenn die Prüfungsaufgaben vorab durchsickern, misst der Test nur das Auswendiglernen, nicht das Können – analog zur Datenkontamination bei Benchmarks."
+        "limits": "Wenn die Prüfungsaufgaben vorab durchsickern, misst der Test nur das Auswendiglernen, nicht das Können – analog zur Datenkontamination bei Benchmarks.",
+        "quality": 0.94
       },
       "healthcare": {
         "analogy": "Der Unterschied zwischen der in einer Zulassungsstudie ermittelten Sensitivität/Spezifität eines diagnostischen Tests und seiner Trefferquote in der eigenen Patientenpopulation.",
         "explanation": "Wie ein Diagnosetest in der Studie unter Idealbedingungen glänzt, aber an der realen Klinik neu validiert werden muss, prüft ein Benchmark allgemein und eine eigene Eval die Leistung am konkreten Patientengut. Gemessen wird gegen einen verlässlichen Goldstandard.",
-        "limits": "Eine in einer Population gemessene Trefferquote überträgt sich nicht automatisch auf eine andere mit abweichender Krankheitshäufigkeit – der positive Vorhersagewert kippt mit der Prävalenz."
+        "limits": "Eine in einer Population gemessene Trefferquote überträgt sich nicht automatisch auf eine andere mit abweichender Krankheitshäufigkeit – der positive Vorhersagewert kippt mit der Prävalenz.",
+        "quality": 0.32
       },
       "finance": {
         "analogy": "Das Out-of-Sample-Backtesting und die unabhängige Modellvalidierung eines Risiko- oder Handelsmodells, das gegen ungesehene Marktdaten getestet wird.",
         "explanation": "In der Bankpraxis darf ein Scoring- oder VaR-Modell nicht nur auf den Daten glänzen, mit denen es entwickelt wurde; eine vom Entwicklungsteam unabhängige Validierung testet es strikt out-of-sample und über Stressperioden, bevor es freigegeben wird. SR 11-7 (Model Risk Management) und die MaRisk verlangen genau diese Trennung von Entwicklungs- und Testdaten sowie laufendes Backtesting, weil ein nur in-sample optimiertes Modell eine trügerische Performance ausweist. Ein Modell, das auf jeden historischen Tag perfekt passt, ist oft überangepasst und versagt im echten Markt – das Pendant zu einem überoptimierten Benchmark.",
-        "limits": "Selbst ein sauberes Out-of-Sample-Backtesting bleibt rückwärtsgewandt: Es misst gegen vergangene Marktregime und kann strukturelle Brüche oder bislang nie aufgetretene Stressszenarien nicht abbilden, weshalb es eine vorausschauende Stresstest- und Szenarioanalyse nie ersetzt."
+        "limits": "Selbst ein sauberes Out-of-Sample-Backtesting bleibt rückwärtsgewandt: Es misst gegen vergangene Marktregime und kann strukturelle Brüche oder bislang nie aufgetretene Stressszenarien nicht abbilden, weshalb es eine vorausschauende Stresstest- und Szenarioanalyse nie ersetzt.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [
@@ -1860,22 +1992,26 @@
       "automotive": {
         "analogy": "Der Fahrtenschreiber zusammen mit dem auslesbaren Fehlerspeicher eines modernen Fahrzeugs.",
         "explanation": "Wie ein Fahrtenschreiber lückenlos festhält, was bei welchem Tempo und welchem Bremsmanöver geschah, zeichnet Observability jeden Schritt eines KI-Systems auf. So lässt sich nach einem Vorfall rekonstruieren, was wirklich passiert ist, statt zu raten.",
-        "limits": "Der Fehlerspeicher meldet klar definierte Defektcodes; bei einem Sprachmodell gibt es kein eindeutiges Signal dafür, dass eine inhaltlich falsche Antwort ein Fehler war."
+        "limits": "Der Fehlerspeicher meldet klar definierte Defektcodes; bei einem Sprachmodell gibt es kein eindeutiges Signal dafür, dass eine inhaltlich falsche Antwort ein Fehler war.",
+        "quality": 0.92
       },
       "publicSector": {
         "analogy": "Ein Echtzeit-Lagebild im Lagezentrum, das eingehende Vorgänge laufend beobachtet und bei Auffälligkeiten Alarm auslöst.",
         "explanation": "Wie ein Lagezentrum nicht nur im Nachhinein dokumentiert, sondern den aktuellen Stand vieler Vorgänge fortlaufend überwacht und Abweichungen meldet, beobachtet Observability den KI-Betrieb live und macht Auffälligkeiten sichtbar. Beides erlaubt es, einzugreifen, solange noch Handlungsspielraum besteht.",
-        "limits": "Im Lagezentrum entscheiden geschulte Menschen, was eine Auffälligkeit bedeutet; Observability erzeugt eine Flut maschineller Spuren, aus denen das Wesentliche erst herausgefiltert werden muss, ohne dass ein klarer Schwellenwert für eine falsche Antwort existiert."
+        "limits": "Im Lagezentrum entscheiden geschulte Menschen, was eine Auffälligkeit bedeutet; Observability erzeugt eine Flut maschineller Spuren, aus denen das Wesentliche erst herausgefiltert werden muss, ohne dass ein klarer Schwellenwert für eine falsche Antwort existiert.",
+        "quality": 0.3
       },
       "healthcare": {
         "analogy": "Die Vitalparameter-Überwachung am Patientenmonitor auf der Intensivstation.",
         "explanation": "Wie ein Patientenmonitor laufend Herzfrequenz, Sauerstoffsättigung und Blutdruck erfasst und bei Abweichungen Alarm schlägt, beobachtet Observability die Kennzahlen eines KI-Systems und meldet auffällige Verschiebungen. So werden Probleme erkannt, solange noch Zeit zum Eingreifen bleibt.",
-        "limits": "Vitalwerte haben medizinisch etablierte Normbereiche; für die inhaltliche Güte einer Modellantwort gibt es keinen vergleichbar objektiven Grenzwert."
+        "limits": "Vitalwerte haben medizinisch etablierte Normbereiche; für die inhaltliche Güte einer Modellantwort gibt es keinen vergleichbar objektiven Grenzwert.",
+        "quality": 0.95
       },
       "finance": {
         "analogy": "Das laufende Transaktions- und Systemmonitoring mit Risiko- und Latenz-Dashboards im Bankbetrieb, das jederzeit nachvollziehbar macht, welche Buchungen und Systemaktionen tatsächlich stattgefunden haben.",
         "explanation": "Wie eine Bank jede Buchung und jede Systemaktion fortlaufend gegen Limitsysteme und Schwellenwerte überwacht, auffällige Muster zur Prüfung eskaliert und dabei vollständige Betriebsprotokolle führt, verfolgt Observability die Aufrufe und Ausgaben eines KI-Systems über den gesamten Verarbeitungspfad. In beiden Fällen reicht die punktuelle Endkontrolle nicht: erst die lückenlose Laufzeit-Spur erlaubt es, einen fehlerhaften Schritt zu lokalisieren und gegenüber Aufsicht und interner Revision zu belegen. Die in MaRisk und BAIT geforderte laufende Überwachung produktiver Modelle und IT-Prozesse zielt genau auf diese fortlaufende Beobachtbarkeit im Betrieb.",
-        "limits": "Bei Buchungen und Limitverletzungen gibt es einen objektiv eingetretenen, prüfbaren Zustand; bei einem Sprachmodell fehlt diese harte Referenz, weil sich die inhaltliche Antwortqualität aus den reinen Betriebsspuren nicht ablesen lässt, sondern nur über aufwendige Bewertungsverfahren und Stichproben angenähert werden kann."
+        "limits": "Bei Buchungen und Limitverletzungen gibt es einen objektiv eingetretenen, prüfbaren Zustand; bei einem Sprachmodell fehlt diese harte Referenz, weil sich die inhaltliche Antwortqualität aus den reinen Betriebsspuren nicht ablesen lässt, sondern nur über aufwendige Bewertungsverfahren und Stichproben angenähert werden kann.",
+        "quality": 0.33
       }
     },
     "relatedTerms": [
@@ -1918,22 +2054,26 @@
       "automotive": {
         "analogy": "Der manipulationssichere digitale Fahrtenschreiber (Tachograph) im Lkw, dessen Aufzeichnung bei einer Kontrolle vorgelegt werden muss.",
         "explanation": "Wie der Tachograph Lenk- und Ruhezeiten fälschungssicher festhält, damit sie später überprüfbar sind, zeichnet der Audit Trail jede Aktion am KI-System revisionssicher auf. Beide dienen dem Nachweis gegenüber einer Kontrollinstanz, nicht dem Fahren bzw. dem laufenden Betrieb selbst.",
-        "limits": "Der Tachograph erfasst nur wenige standardisierte Größen, während ein KI-Audit-Trail heterogene Eingaben, Modellversionen und Entscheidungspfade zusammenführen und konsistent verketten muss."
+        "limits": "Der Tachograph erfasst nur wenige standardisierte Größen, während ein KI-Audit-Trail heterogene Eingaben, Modellversionen und Entscheidungspfade zusammenführen und konsistent verketten muss.",
+        "quality": 0.6
       },
       "publicSector": {
         "analogy": "Die fortlaufend nummerierte, unveränderbare Aktenführung in einer Behörde mit Eingangsstempel und Zeichnungsvermerk.",
         "explanation": "Wie eine ordnungsgemäße Verwaltungsakte jeden Bearbeitungsschritt und jede Zeichnung nachvollziehbar dokumentiert, hält der Audit Trail fest, wer wann welche Entscheidung im KI-System ausgelöst hat. Beides muss einer späteren Rechts- oder Rechnungsprüfung standhalten.",
-        "limits": "Eine Papierakte ist statisch und überschaubar, während ein KI-System tausende automatisierte Entscheidungen pro Sekunde erzeugt, die maschinell lückenlos und ohne nachträgliche Lücken erfasst werden müssen."
+        "limits": "Eine Papierakte ist statisch und überschaubar, während ein KI-System tausende automatisierte Entscheidungen pro Sekunde erzeugt, die maschinell lückenlos und ohne nachträgliche Lücken erfasst werden müssen.",
+        "quality": 0.62
       },
       "healthcare": {
         "analogy": "Die fälschungssichere Patientenakte, in der jeder Eintrag mit Zeitstempel und Behandler versehen und nicht nachträglich gelöscht werden kann.",
         "explanation": "Wie eine Krankenakte jede Diagnose und Medikation samt verantwortlicher Person dokumentiert und so die Behandlung im Haftungsfall belegbar macht, weist der Audit Trail nach, auf welcher Grundlage ein KI-System zu einer Empfehlung kam. Der Zweck ist Nachweisbarkeit, nicht die laufende Versorgung.",
-        "limits": "In der Akte verantwortet ein namentlich benannter Arzt jeden Eintrag, während sich bei automatisierten KI-Entscheidungen die Zurechnung der Verantwortung auf eine konkrete Person nur schwer dokumentieren lässt."
+        "limits": "In der Akte verantwortet ein namentlich benannter Arzt jeden Eintrag, während sich bei automatisierten KI-Entscheidungen die Zurechnung der Verantwortung auf eine konkrete Person nur schwer dokumentieren lässt.",
+        "quality": 0.94
       },
       "finance": {
         "analogy": "Die revisionssichere Belegkette des Rechnungswesens nach GoBD, in der ein Wirtschaftsprüfer jeden Beleg lückenlos und unveränderbar bis zur Buchung im Hauptbuch zurückverfolgen kann.",
         "explanation": "Wie die Buchführung nach GoBD jede Buchung unveränderbar, vollständig und zeitgerecht festhalten muss, damit der Beleg-zu-Buchung-Pfad jederzeit rekonstruierbar bleibt, dokumentiert der Audit Trail jede KI-Modellentscheidung samt Eingabe, Modellversion und Freigabestand. Unter MaRisk und den Grundsätzen des Model Risk Management muss eine Bank für jedes produktiv eingesetzte Modell belegen können, wer es validiert, freigegeben, geändert oder überstimmt hat – etwa wenn ein Kreditvotum manuell vom Scoring-Ergebnis abweicht. Im Prüfungs- oder Aufsichtsfall (BaFin, Wirtschaftsprüfer) ist der Trail das primäre Beweismittel.",
-        "limits": "Eine Buchung ist ein eindeutiger, abgeschlossener Vorgang mit klarer Belegkette, während eine probabilistische Modellentscheidung von Trainingsdaten, Schwellenwerten und Kontextfenster abhängt, die sich nur schwer in eine einzige revisionssichere Belegkette gießen lassen. Zudem deckt GoBD-Konformität nur die buchhalterische Nachweispflicht ab, nicht die fachliche Validität oder Diskriminierungsfreiheit der KI-Entscheidung selbst."
+        "limits": "Eine Buchung ist ein eindeutiger, abgeschlossener Vorgang mit klarer Belegkette, während eine probabilistische Modellentscheidung von Trainingsdaten, Schwellenwerten und Kontextfenster abhängt, die sich nur schwer in eine einzige revisionssichere Belegkette gießen lassen. Zudem deckt GoBD-Konformität nur die buchhalterische Nachweispflicht ab, nicht die fachliche Validität oder Diskriminierungsfreiheit der KI-Entscheidung selbst.",
+        "quality": 0.34
       }
     },
     "relatedTerms": [
@@ -1976,22 +2116,26 @@
       "automotive": {
         "analogy": "Die Typgenehmigung, die je nach Fahrzeugklasse unterschiedlich strenge Auflagen verlangt.",
         "explanation": "Wie ein Lkw andere Prüf- und Dokumentationsauflagen erfüllen muss als ein E-Bike, ordnet der AI Act jedem System nach seinem Gefährdungspotenzial einen eigenen Pflichtenkatalog zu.",
-        "limits": "Anders als bei der einmaligen Typgenehmigung verlangt der AI Act fortlaufendes Monitoring über den gesamten Lebenszyklus des Systems."
+        "limits": "Anders als bei der einmaligen Typgenehmigung verlangt der AI Act fortlaufendes Monitoring über den gesamten Lebenszyklus des Systems.",
+        "quality": 0.95
       },
       "publicSector": {
         "analogy": "Eine behördliche Genehmigungspflicht, die nach Eingriffstiefe zwischen Anzeige, Erlaubnis und Verbot abstuft.",
         "explanation": "Wie das Baurecht je nach Vorhaben von der bloßen Anzeige bis zur vollen Genehmigung staffelt, knüpft der AI Act die Anforderungen an die Risikoklasse des KI-Systems.",
-        "limits": "Im Gegensatz zu einer rein nationalen Genehmigung wirkt der AI Act EU-weit harmonisiert und überlagert sich mit anderem Recht wie der DSGVO."
+        "limits": "Im Gegensatz zu einer rein nationalen Genehmigung wirkt der AI Act EU-weit harmonisiert und überlagert sich mit anderem Recht wie der DSGVO.",
+        "quality": 0.6
       },
       "healthcare": {
         "analogy": "Die Risikoklassifizierung von Medizinprodukten von Klasse I bis III.",
         "explanation": "Wie ein Pflaster (Klasse I) viel geringere Nachweispflichten hat als ein Herzschrittmacher (Klasse III), bestimmt beim AI Act die Risikoklasse, wie streng ein KI-System dokumentiert und überwacht werden muss.",
-        "limits": "Die Medizinprodukte-Analogie greift zu kurz, weil der AI Act auch verbotene Praktiken kennt, für die es gar keine zulassungsfähige Klasse gibt."
+        "limits": "Die Medizinprodukte-Analogie greift zu kurz, weil der AI Act auch verbotene Praktiken kennt, für die es gar keine zulassungsfähige Klasse gibt.",
+        "quality": 0.93
       },
       "finance": {
         "analogy": "Die Einstufung eines KI-gestützten Kreditscorings als Hochrisiko-Anwendung, die parallel zu MaRisk und BAIT erfüllt werden muss.",
         "explanation": "Der AI Act benennt KI zur Bonitätsbewertung natürlicher Personen in Anhang III ausdrücklich als Hochrisiko-System und verlangt Risikomanagement, Datengüte, menschliche Aufsicht und Konformitätsbewertung. In der Bankpraxis verzahnt sich das mit dem bestehenden Model Risk Management nach MaRisk und den IT-Anforderungen der BAIT, sodass ein Scoringmodell gleich mehreren, teils überlappenden Aufsichtsregimen genügen muss. Die menschliche Aufsicht des AI Act trifft dabei auf die ohnehin geforderte unabhängige Modellvalidierung.",
-        "limits": "Die Analogie zum vertrauten MaRisk-Validierungszyklus täuscht über Lücken hinweg: Der AI Act adressiert ausdrücklich auch den Betreiber und Grundrechtsrisiken wie Diskriminierung, die ein klassisches, rein auf Ausfallwahrscheinlichkeit fokussiertes Modellrisiko-Framework gar nicht abdeckt."
+        "limits": "Die Analogie zum vertrauten MaRisk-Validierungszyklus täuscht über Lücken hinweg: Der AI Act adressiert ausdrücklich auch den Betreiber und Grundrechtsrisiken wie Diskriminierung, die ein klassisches, rein auf Ausfallwahrscheinlichkeit fokussiertes Modellrisiko-Framework gar nicht abdeckt.",
+        "quality": 0.08
       }
     },
     "relatedTerms": [

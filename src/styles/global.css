@@ -362,6 +362,8 @@ main { min-height: 60vh; }
   margin-top: auto;
   background: var(--warning-soft);
   border: 1px solid var(--warning-border);
+  /* Linker Akzent: hebt die ehrliche Analogie-Grenze auf Begriffsseiten deutlicher hervor (C2). */
+  border-left: 3px solid var(--warning-border);
   border-radius: var(--radius-sm);
   padding: 0.6rem 0.75rem;
   font-size: 0.9rem;
@@ -488,17 +490,6 @@ figcaption { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.8rem; te
 .search-card__lenses { margin-left: auto; font-size: 1.05rem; letter-spacing: 0.08em; }
 
 /* ---------- Domänen-Marker ---------- */
-.lens-best { position: relative; display: inline-block; }
-.lens-best::after {
-  content: '●';
-  position: absolute;
-  top: -3px;
-  right: -5px;
-  font-size: 0.45rem;
-  line-height: 1;
-  color: var(--accent);
-}
-
 .lens-card--best {
   background: var(--accent-soft);
   border-color: color-mix(in srgb, var(--accent) 35%, var(--border));

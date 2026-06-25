@@ -7,14 +7,6 @@
     "icon": "🚗",
     "tagline": "KI als Fahrzeug, Motor, Tankkarte und TÜV gedacht.",
     "whyGood": "Fast jeder hat eine intuitive Vorstellung davon, wie ein Auto funktioniert: Es gibt einen Motor, der Energie verbraucht, einen Fahrer mit einem Ziel, Straßen und Anschlüsse, Werkstätten und einen TÜV. Diese Rollen lassen sich erstaunlich präzise auf das KI-Ökosystem übertragen und machen abstrakte Begriffe greifbar.",
-    "bestExplainedTerms": [
-      "agent",
-      "foundation-model",
-      "token",
-      "context-window",
-      "mcp",
-      "ai-governance"
-    ],
     "helpfulWhen": "Hilfreich, um Rollen und Zusammenspiel im Gesamtsystem zu verstehen: Wer steuert (Agent/Fahrer), was leistet die Arbeit (Modell/Motor), was kostet Verbrauch (Token/Sprit), wer prüft (Governance/TÜV).",
     "limits": "Ein Auto ist ein deterministisches mechanisches System. KI-Modelle arbeiten probabilistisch und können bei gleicher Eingabe unterschiedlich antworten. Die Metapher unterschätzt Unsicherheit, Halluzination und das Fehlen echten Verstehens.",
     "showcase": [
@@ -37,14 +29,6 @@
     "icon": "🏛️",
     "tagline": "KI als Sachbearbeitung, Aktenlauf und Zuständigkeit gedacht.",
     "whyGood": "Verwaltungshandeln ist geprägt von klaren Zuständigkeiten, Aktenführung, Verfahrensregeln und der Trennung zwischen Vorbereitung und verbindlicher Entscheidung. Genau diese Strukturen helfen, KI-Systeme einzuordnen: Was darf vorbereitet, was muss verantwortet werden, wo braucht es Nachvollziehbarkeit.",
-    "bestExplainedTerms": [
-      "agent",
-      "ai-governance",
-      "guardrails",
-      "rag",
-      "prompt-injection",
-      "hallucination"
-    ],
     "helpfulWhen": "Hilfreich bei Fragen von Verantwortung, Nachvollziehbarkeit, Aktenbezug und rechtssicherer Entscheidung. Macht deutlich, warum KI vorbereiten kann, die Letztverantwortung aber bei Menschen bleibt.",
     "limits": "Verwaltung folgt festen Regeln und Rechtsnormen; ein KI-Modell kennt keine Rechtsverbindlichkeit, sondern erzeugt wahrscheinliche Texte. Die Analogie darf nicht den Eindruck erwecken, ein Modell träfe rechtlich gültige Entscheidungen.",
     "showcase": [
@@ -66,14 +50,6 @@
     "icon": "🩺",
     "tagline": "KI als Assistenzarzt, Labor, Leitlinie und ärztliche Letztentscheidung gedacht.",
     "whyGood": "Im Gesundheitswesen ist die Abstufung von Verantwortung selbstverständlich: Assistenz sammelt Befunde und schlägt Schritte vor, kritische Entscheidungen brauchen Freigabe und Fachverantwortung. Das hilft, KI-Unterstützung realistisch zwischen Hilfe und Verantwortung einzuordnen.",
-    "bestExplainedTerms": [
-      "agent",
-      "rag",
-      "embeddings",
-      "hallucination",
-      "guardrails",
-      "ai-governance"
-    ],
     "helpfulWhen": "Hilfreich, um das Spannungsfeld aus Unterstützung, Sicherheit und Verantwortung zu erklären, sowie warum Belege, Qualitätssicherung und menschliche Freigabe nötig sind.",
     "limits": "Medizin verlangt Evidenz, Haftung und Sorgfalt. Eine KI liefert wahrscheinliche Aussagen ohne Garantie und ohne Verantwortungsübernahme. Die Analogie darf Vertrauen nicht über das tatsächliche Sicherheitsniveau hinaus suggerieren.",
     "showcase": [
@@ -95,16 +71,6 @@
     "icon": "🏦",
     "tagline": "KI als Kreditprüfer, Risikomodell und Compliance-Filter gedacht.",
     "whyGood": "Finance-Fachleute denken in Risiko, Modell, Schwellenwert und Regulierung – genau die Konzepte, die KI-Systeme ebenfalls abbilden. Das macht Analogien präzise und konkret angreifbar.",
-    "bestExplainedTerms": [
-      "llm",
-      "hallucination",
-      "guardrails",
-      "prompt-injection",
-      "rag",
-      "embeddings",
-      "ai-governance",
-      "training-finetuning"
-    ],
     "helpfulWhen": "Wenn die Zielgruppe aus Bankern, Risikocontrollern, Compliance-Beauftragten oder Regulatoren besteht und Risikomodellierung sowie Regulierung bekannte Denkwelten sind.",
     "limits": "Finance-Analogien suggerieren eine Präzision und Regulierbarkeit, die heutige KI-Systeme noch nicht vollständig erfüllen. Nicht jedes Modellverhalten lässt sich wie ein Kreditrisiko quantifizieren oder backtesten.",
     "showcase": [

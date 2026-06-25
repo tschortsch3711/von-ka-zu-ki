@@ -31,7 +31,7 @@ const lernpfade = paths as LearningPath[];
           <div style="flex:1;min-width:200px">
             <h2 style="margin:0 0 0.4rem;font-size:1.15rem">{p.name}</h2>
             <p class="muted" style="margin:0 0 0.8rem">{p.description}</p>
-            <a class="split-btn" href={link('glossar/') + '?sort=learn'}>
+            <a class="split-btn" href={link('glossar/') + '?sort=learn'} title="Nach Schwierigkeit sortiert: Einstieg → Aufbau → Vertiefung">
               <span class="split-btn__text">Zum Glossar</span>
               <span class="split-btn__arrow">Lernbogen →</span>
             </a>

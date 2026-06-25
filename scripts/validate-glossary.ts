@@ -47,6 +47,9 @@ for (const term of glossary) {
       if (!a.analogy?.trim()) fail(`${ctx} [${key}] analogy leer`);
       if (!a.explanation?.trim()) fail(`${ctx} [${key}] explanation leer`);
       if (!a.limits?.trim()) fail(`${ctx} [${key}] limits leer (Pflichtfeld)`);
+      if (typeof a.quality !== 'number' || a.quality < 0 || a.quality > 1) {
+        fail(`${ctx} [${key}] quality fehlt oder außerhalb 0–1: '${a.quality}'`);
+      }
     }
   }
 
@@ -64,7 +67,7 @@ for (const term of glossary) {
 
 // ---------- Perspektiven (domains.json) ----------
 const requiredDomainFields: (keyof Domain)[] = [
-  'id', 'slug', 'name', 'key', 'icon', 'tagline', 'whyGood', 'bestExplainedTerms', 'helpfulWhen', 'limits',
+  'id', 'slug', 'name', 'key', 'icon', 'tagline', 'whyGood', 'helpfulWhen', 'limits',
 ];
 const seenDomainKeys = new Set<string>();
 
@@ -77,10 +80,6 @@ for (const domain of domains) {
 
   if (seenDomainKeys.has(domain.key)) fail(`${ctx} doppelter key: '${domain.key}'`);
   seenDomainKeys.add(domain.key);
-
-  for (const ref of domain.bestExplainedTerms ?? []) {
-    if (!knownRef(ref)) fail(`${ctx} bestExplainedTerms enthält unbekannte ID/Slug: '${ref}'`);
-  }
 }
 
 // ---------- Lernpfade (paths.json) ----------

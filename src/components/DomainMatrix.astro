@@ -1,19 +1,19 @@
 ---
-// Perspektiven-Matrix: welche Begriffe sich über welche Perspektive besonders gut erklären.
-// Datengetrieben: ein Haken, wenn der Begriff in domain.bestExplainedTerms steht.
+// Perspektiven-Matrix: wie anschaulich sich jeder Begriff über jede Perspektive erklären lässt.
+// Datengetrieben: Sterne aus dem quality-Score der jeweiligen Analogie (src/lib/rating.ts).
 import glossary from '../data/glossary.json';
 import domains from '../data/domains.json';
 import type { GlossaryTerm, Domain } from '../data/types';
 import { termHref } from '../lib/paths';
+import { scoreToStars, starGlyphs, starLabel } from '../lib/rating';
 
 const terms = (glossary as GlossaryTerm[]).slice().sort((a, b) => a.term.localeCompare(b.term, 'de'));
 const lenses = domains as Domain[];
-const bestSets = Object.fromEntries(lenses.map((d) => [d.id, new Set(d.bestExplainedTerms)]));
-const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) || bestSets[d.id].has(term.slug);
+const scoreOf = (term: GlossaryTerm, d: Domain) => term.domainAnalogies[d.key]?.quality ?? 0;
 ---
 <figure class="diagram-figure">
   <table class="matrix">
-    <caption class="sr-only">Abb. 4 — Perspektiven-Matrix: Begriffe und die besonders gut passenden Perspektiven</caption>
+    <caption class="sr-only">Abb. 4 — Perspektiven-Matrix: wie anschaulich sich jeder Begriff über jede Perspektive erklären lässt (Sterne)</caption>
     <thead>
       <tr>
         <th scope="col">Begriff</th>
@@ -29,17 +29,21 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
       {terms.map((term) => (
         <tr data-href={termHref(term.slug)}>
           <th scope="row"><a href={termHref(term.slug)}>{term.term}</a></th>
-          {lenses.map((d) => (
-            <td class={isBest(term, d) ? 'on' : 'off'}>
-              <span aria-hidden="true">{isBest(term, d) ? '●' : '·'}</span>
-              <span class="sr-only">{isBest(term, d) ? 'besonders gut erklärbar' : 'erklärbar'}</span>
-            </td>
-          ))}
+          {lenses.map((d) => {
+            const score = scoreOf(term, d);
+            const stars = scoreToStars(score);
+            return (
+              <td class={`stars stars--${stars}`}>
+                <span aria-hidden="true">{starGlyphs(score)}</span>
+                <span class="sr-only">{starLabel(score)}</span>
+              </td>
+            );
+          })}
         </tr>
       ))}
     </tbody>
   </table>
-  <figcaption>Abb. 4 — Ein gefüllter Punkt markiert eine besonders tragfähige Perspektive. Jeder Begriff lässt sich über alle Perspektiven erklären.</figcaption>
+  <figcaption>Abb. 4 — Mehr Sterne = anschaulicher aus Anwendersicht (★★★ sehr gut · ★★☆ gut · ★☆☆ okay). Ein „·" heißt: Analogie vorhanden, aber für Anwender kaum tragfähig.</figcaption>
 </figure>
 
 <script is:inline>
@@ -64,8 +68,10 @@ const isBest = (term: GlossaryTerm, d: Domain) => bestSets[d.id].has(term.id) ||
   .matrix tbody tr { cursor: pointer; }
   .matrix tbody tr:hover td,
   .matrix tbody tr:hover th { background: var(--accent-soft); }
-  .matrix td { text-align: center; font-size: 1.2rem; }
-  .matrix td.on { color: var(--accent); }
-  .matrix td.off { color: var(--text-muted); opacity: 0.5; }
+  .matrix td { text-align: center; font-size: 1rem; white-space: nowrap; letter-spacing: 0.05em; }
+  .matrix td.stars--3 { color: var(--accent); }
+  .matrix td.stars--2 { color: var(--accent); opacity: 0.8; }
+  .matrix td.stars--1 { color: var(--text-muted); }
+  .matrix td.stars--0 { color: var(--text-muted); opacity: 0.45; font-size: 1.2rem; }
   /* .sr-only kommt global aus global.css */
 </style>
