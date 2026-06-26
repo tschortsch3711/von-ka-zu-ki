@@ -19,3 +19,5 @@ Thumbs.db
 REVIEW.md
 build-prompt_*.md
 claude-code-task_*.md
+# Claude Code – nur lokale Einstellungen ignorieren, launch.json wird versioniert
+.claude/settings.local.json
